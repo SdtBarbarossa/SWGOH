@@ -1,0 +1,11 @@
+c:\users\alle\source\repos\SWGOH\SWGOH\bin\Debug\netcoreapp1.1\SWGOH.deps.json
+c:\users\alle\source\repos\SWGOH\SWGOH\bin\Debug\netcoreapp1.1\SWGOH.runtimeconfig.json
+c:\users\alle\source\repos\SWGOH\SWGOH\bin\Debug\netcoreapp1.1\SWGOH.runtimeconfig.dev.json
+c:\users\alle\source\repos\SWGOH\SWGOH\bin\Debug\netcoreapp1.1\SWGOH.dll
+c:\users\alle\source\repos\SWGOH\SWGOH\bin\Debug\netcoreapp1.1\SWGOH.pdb
+c:\users\alle\source\repos\SWGOH\SWGOH\obj\Debug\netcoreapp1.1\SWGOH.csprojResolveAssemblyReference.cache
+c:\users\alle\source\repos\SWGOH\SWGOH\obj\Debug\netcoreapp1.1\SWGOH.csproj.CoreCompileInputs.cache
+c:\users\alle\source\repos\SWGOH\SWGOH\obj\Debug\netcoreapp1.1\SWGOH.AssemblyInfoInputs.cache
+c:\users\alle\source\repos\SWGOH\SWGOH\obj\Debug\netcoreapp1.1\SWGOH.AssemblyInfo.cs
+c:\users\alle\source\repos\SWGOH\SWGOH\obj\Debug\netcoreapp1.1\SWGOH.dll
+c:\users\alle\source\repos\SWGOH\SWGOH\obj\Debug\netcoreapp1.1\SWGOH.pdb

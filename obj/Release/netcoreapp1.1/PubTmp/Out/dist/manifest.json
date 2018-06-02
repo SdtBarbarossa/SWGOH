@@ -1,0 +1,20 @@
+{
+  "short_name": "SWGOH-Helper",
+  "name": "SWGOH Helper from SdtBarbarossa",
+  "start_url": "/",
+
+  "theme_color": "#1d81f4",
+  "background_color": "#ffffff",
+
+  "display": "standalone",
+  "orientation": "portrait",
+
+  "icons": [
+    {
+      "src": "/assets/android-chrome-96x96.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+
+}

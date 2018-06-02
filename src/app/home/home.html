@@ -1,0 +1,38 @@
+<div style="text-align:center">
+  <h3>
+    Welcome to Swgoh-Helper!
+  </h3>
+
+  <table *ngIf="gildenService.gildenInfos.OGM>0" style="width: 100%;">
+    <tr>
+      <td>All Datas and Pictures are from <a href="http://www.swgoh.gg">www.swgoh.gg</a></td>
+    </tr>
+    <tr>
+      <td>GildenURL = {{settingsService.settings.gildenUrl}}</td>
+    </tr>
+    <tr>
+      <td>GildenAPI = {{settingsService.settings.apiUrl}}</td>
+    </tr>
+    <tr>
+      <td>GildenOGM = {{gildenService.gildenInfos.OGM}}</td>
+    </tr>
+    <tr>
+      <td>GildenCGM = {{gildenService.gildenInfos.CGM}}</td>
+    </tr>
+    <tr>
+      <td>GildenFGM = {{gildenService.gildenInfos.FGM}}</td>
+    </tr>
+    <tr>
+      <td>Gilden Chars for TW = {{gildenService.gildenInfos.CharsForTW}}</td>
+    </tr>
+    <tr>
+      <td>Last Sync = {{gildenService.gildenInfos.Lastsync}}</td>
+    </tr>
+  </table>
+
+  <h3 *ngIf="settingsService.settings.apiUrl==''">Please go to Settings and enter a Gilden-API!</h3>
+  <h3 *ngIf="gildenService.gildenInfos.OGM==0&&settingsService.settings.apiUrl!=''">Please Synchronise with swgoh.gg by hitting the button at the bottom!</h3>
+
+</div>
+
+<button (click)="syncApi()" style="position: absolute; bottom: 10px; left: 0px;">Synchronise ({{gildenService.syncstatus}})</button>

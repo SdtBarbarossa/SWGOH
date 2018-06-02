@@ -1,0 +1,40 @@
+<div style="width:100%;">
+
+  <select style="width:100%;" [(ngModel)]="ActualPhase" (ngModelChange)="loadTable()">
+    <option [ngValue]="DSTB1">DS-TB-Phase 1</option>
+    <option [ngValue]="DSTB2">DS-TB-Phase 2</option>
+    <option [ngValue]="DSTB3">DS-TB-Phase 3</option>
+    <option [ngValue]="LSTB1">LS-TB-Phase 1</option>
+    <option [ngValue]="LSTB2">LS-TB-Phase 2</option>
+    <option [ngValue]="LSTB3">LS-TB-Phase 3</option>
+    <option [ngValue]="AllChars1">All Chars - 1 Star</option>
+    <option [ngValue]="AllChars2">All Chars - 2 Star</option>
+    <option [ngValue]="AllChars3">All Chars - 3 Star</option>
+    <option [ngValue]="AllChars4">All Chars - 4 Star</option>
+    <option [ngValue]="AllChars5">All Chars - 5 Star</option>
+    <option [ngValue]="AllChars6">All Chars - 6 Star</option>
+    <option [ngValue]="AllChars7">All Chars - 7 Star</option>
+  </select>
+
+  <table id="platoons" style="width:100%">
+    <tr>
+      <th>Charname</th>
+      <th>Needed</th>
+      <th>Available</th>
+      <th>Difference</th>
+      <th>Stars Needed</th>
+    </tr>
+    <tr *ngFor="let neededChar of ActualPhase">
+      <td ><a (click)="showMembersWhoHave(neededChar)" href="javascript:void();">{{neededChar.name}}</a></td>
+      <td>{{neededChar.benoetigt}}</td>
+
+      <td *ngIf="neededChar.benoetigt > neededChar.gildenbesitz" style="background:red">{{neededChar.gildenbesitz}}</td>
+      <td *ngIf="(neededChar.benoetigt == neededChar.gildenbesitz)" style="background:orange">{{neededChar.gildenbesitz}}</td>
+      <td *ngIf="(neededChar.benoetigt < neededChar.gildenbesitz) && !(neededChar.benoetigt*2 <= neededChar.gildenbesitz)" style="background:yellow">{{neededChar.gildenbesitz}}</td>
+      <td *ngIf="neededChar.benoetigt*2 <= neededChar.gildenbesitz" style="background:green">{{neededChar.gildenbesitz}}</td>
+      <td>{{neededChar.differenz}}</td>
+      <td>{{neededChar.sterne}}</td>
+    </tr>
+  </table>
+
+</div>

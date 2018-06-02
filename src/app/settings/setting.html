@@ -1,0 +1,35 @@
+<div>
+
+  <fieldset>
+    <legend>Settings :</legend>
+
+    <p style="float:left">Gilden-URL:</p>
+    <input type="text" placeholder="api-url ( e.g https://swgoh.gg/g/39155/schatten-koll3ktiv/ )" [(ngModel)]="this.settings.gildenUrl">
+
+    <p style="float:left">Sort Member by:</p>
+    <select [(ngModel)]="this.settings.sortMemberBy">
+      <option value="OGM">Overall GM</option>
+      <option value="CGM">Charakter GM</option>
+      <option value="FGM">Fleet GM</option>
+      <option value="Name">Name</option>
+    </select>
+
+    <p>Use Autocomplete:</p>
+
+    <p>Show Errors:</p>
+
+    <label class="container" style="top:-85px">
+      <input type="checkbox" [(ngModel)]="this.settings.useAutoComplete">
+      <span class="checkmark"></span>
+    </label>
+
+
+    <label class="container">
+      <input type="checkbox" [(ngModel)]="this.settings.showErrors">
+      <span class="checkmark"></span>
+    </label>
+
+    <button (click)="saveSettings()">Save Settings</button>
+  </fieldset>
+
+</div>

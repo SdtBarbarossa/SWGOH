@@ -1,0 +1,26 @@
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+  <a routerLink="/home" routerLinkActive="active" (click)="closeNav()">Home</a>
+  <a routerLink="/charsearch" routerLinkActive="active" (click)="closeNav()">Charsearch</a>
+  <a routerLink="/squadsearch" routerLinkActive="active" (click)="closeNav()">Squadsearch</a>
+  <a routerLink="/platoontool" routerLinkActive="active" (click)="closeNav()">TB-Platoon</a>
+  <a routerLink="/raidplanner" routerLinkActive="active" (click)="closeNav()">Raid-Planner</a>
+  <a routerLink="/settings" routerLinkActive="active" (click)="closeNav()">Settings</a>
+</div>
+
+<!-- Use any element to open the sidenav -->
+<div>
+  <ul>
+    <li>
+      <a href="javascript:void(0)" (click)="openNav()">&#9776;</a>
+    </li>
+    <li style="float:right"><a routerLink="/settings" routerLinkActive="active" (click)="closeNav()">Settings</a></li>
+  </ul>
+  <div style="height:40px;">
+
+  </div>
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+
+  </div>
