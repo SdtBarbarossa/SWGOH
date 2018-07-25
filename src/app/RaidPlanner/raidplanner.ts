@@ -27,6 +27,10 @@ export class RaidPlannerComponent {
   public dmgP3 = 100;
   public dmgP4 = 100;
 
+  squadsFromGildenInfos: any;
+  myTeams: squad[] = new Array();
+  selectedTeam: any;
+
   constructor(public settingsService: SettingsService, public gildenService: gildenService) {
 
     this.ActualPlayer = gildenService.gildenInfos.Members[0];
@@ -43,6 +47,23 @@ export class RaidPlannerComponent {
     this.dmgP2 = 100;
     this.dmgP3 = 100;
     this.dmgP4 = 100;
+
+
+    this.getMyTeams();
+    if (this.myTeams.length < 1) {
+      var mySquad = new squad();
+      mySquad.Name = 'Phönix';
+      mySquad.Charaktere.push('Hera Syndulla');
+      mySquad.Charaktere.push('Ezra Bridger');
+      mySquad.Charaktere.push('Garazeb "Zeb" Orrelios');
+      mySquad.Charaktere.push('Kanan Jarrus');
+      mySquad.Charaktere.push('Chopper');
+      this.myTeams.push(mySquad);
+      this.selectedTeam = mySquad;
+    } else {
+      this.selectedTeam = this.myTeams[0];
+    }
+    this.getSquadsFromGildenInfos();
 
     this.loadRaidPlan();
 
@@ -299,6 +320,32 @@ export class RaidPlannerComponent {
 
   }
 
+
+  //FROM SquadSearch
+
+
+  getPowerOfSquad(charakters) {
+    var tempPower = 0;
+    for (var i = 0; i < charakters.length; i++) {
+      tempPower += charakters[i].Power;
+    }
+    return tempPower
+  }
+
+  getSquadsFromGildenInfos() {
+    this.squadsFromGildenInfos = this.gildenService.findSquads(this.selectedTeam);
+  }
+
+  getMyTeams() {
+    if (localStorage.midiMyTeams != null)
+      this.myTeams = JSON.parse(localStorage.midiMyTeams);
+  }
+
+  saveMyTeams() {
+    localStorage.midiMyTeams = JSON.stringify(this.myTeams);
+  }
+
+
   // When the user clicks the button, open the modal 
   openModal() {
     this.SelectedChars = new Array();
@@ -354,6 +401,23 @@ export class RaidPlannerComponent {
     var modal = document.getElementById('myModalEDIT');
     modal.style.display = "none";
   }
+
+
+
+  // When the user clicks the button, open the modal 
+  openModalSQUAD() {
+
+    alert('not ready yet');
+    // Get the modal
+    var modal = document.getElementById('myModalSQUAD');
+    modal.style.display = "block";
+  }
+
+  // When the user clicks on <span> (x), close the modal
+  closeModalSQUAD() {  // Get the modal
+    var modal = document.getElementById('myModalSQUAD');
+    modal.style.display = "none";
+  }
 }
 
 export class squadForRaid {
@@ -377,5 +441,12 @@ export class charNameAndMember {
     this.Name = name;
     this.Besitzer = besitzer;
   }
+
+}
+
+class squad {
+
+  Name: string = 'SquadName';
+  Charaktere: string[] = new Array();
 
 }

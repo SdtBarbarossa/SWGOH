@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { SettingsService, Settings } from '../services/settingsService';
-import { HttpClient, HttpClientJsonpModule  } from '@angular/common/http';
+import { HttpClient, HttpClientJsonpModule, HttpHeaders  } from '@angular/common/http';
 
 @Injectable()
 export class gildenService {
@@ -109,6 +109,37 @@ export class gildenService {
               });
 
           });
+      });
+
+  }
+
+  syncNewGildenInfos() {
+
+    this.gildenInfosTemp = new GildenInfos();
+    this.syncstatus = 'Frage an bei SWGOH.HELP';
+    
+    console.log('login');
+
+    this.loginToNewApi();
+    
+  }
+
+  loginToNewApi() {
+
+    var user = "username=sdtbarbarossa";
+    user += "&password=ExsJfR!nzYB*7Mqr";
+    user += "&grant_type=password";
+    user += "&client_id=";
+    user += "&client_secret=";
+
+    let headers = new HttpHeaders()
+    headers.append('Content-Type', 'application/x-www-form-urlencoded');
+    headers.append('Content-Length', user.length.toString());
+
+    this.http.post('https://api.swgoh.help/auth/signin/', user, { headers: headers })
+      .subscribe(data => {
+        console.log(data);
+        this.syncstatus = 'Anfrage 1 von ' + 2 + ' bei SWGOH OK';
       });
 
   }

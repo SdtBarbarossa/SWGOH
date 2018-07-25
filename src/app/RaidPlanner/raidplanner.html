@@ -2,6 +2,12 @@
 
   <div>
 
+    <button (click)="openModalSQUAD()" style="width:100%; margin-bottom: 5px;">Add-Squad</button>
+
+  </div>
+
+  <div>
+
     <select style="width:80%; display:inline-block;" [(ngModel)]="ActualPlayer">
       <option *ngFor="let player of gildenService.gildenInfos.Members" [ngValue]="player">{{player.Name}}</option>
     </select>
@@ -206,3 +212,206 @@
 
 </div>
 
+<!-- The Modal -->
+<div id="myModalSQUAD" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content" style="height:80%">
+    <div class="modal-header" style="height:10%">
+      <span class="close" (click)="closeModalSQUAD()">&times;</span>
+      <h2>Add a Squad</h2>
+    </div>
+    <div class="modal-body" style="height: 70%;">
+
+      <select style="width:100%;" [(ngModel)]="selectedTeam" (ngModelChange)="getSquadsFromGildenInfos()">
+        <option *ngFor="let team of myTeams" [ngValue]="team">{{team.Name}}</option>
+      </select>
+
+      <div style="height:100%; overflow:scroll;">
+
+        <div *ngFor="let squad of squadsFromGildenInfos" class="charNow">
+          <fieldset style="height:85%">
+            <legend>{{selectedTeam.Name}} of {{squad[0].Besitzer}}</legend>
+            Power: {{getPowerOfSquad(squad)}}
+            <br />
+            <div style="height:80%; width:100%">
+              <div *ngIf="squad[0]" class="divForChar">
+                <div class="parentOfImages">
+
+                  <img *ngIf="squad[0].Sterne>0" src="/assets/picture/star.png" class="star11">
+                  <img *ngIf="squad[0].Sterne<1" src="/assets/picture/nostar.png" class="star11">
+                  <img *ngIf="squad[0].Sterne>1" src="/assets/picture/star.png" class="star12">
+                  <img *ngIf="squad[0].Sterne<2" src="/assets/picture/nostar.png" class="star12">
+                  <img *ngIf="squad[0].Sterne>2" src="/assets/picture/star.png" class="star13">
+                  <img *ngIf="squad[0].Sterne<3" src="/assets/picture/nostar.png" class="star13">
+                  <img *ngIf="squad[0].Sterne>3" src="/assets/picture/star.png" class="star14">
+                  <img *ngIf="squad[0].Sterne<4" src="/assets/picture/nostar.png" class="star14">
+                  <img *ngIf="squad[0].Sterne>4" src="/assets/picture/star.png" class="star15">
+                  <img *ngIf="squad[0].Sterne<5" src="/assets/picture/nostar.png" class="star15">
+                  <img *ngIf="squad[0].Sterne>5" src="/assets/picture/star.png" class="star16">
+                  <img *ngIf="squad[0].Sterne<6" src="/assets/picture/nostar.png" class="star16">
+                  <img *ngIf="squad[0].Sterne>6" src="/assets/picture/star.png" class="star17">
+                  <img *ngIf="squad[0].Sterne<7" src="/assets/picture/nostar.png" class="star17">
+
+                  <img *ngIf="squad[0].Zetas>=1" src="/assets/picture/zeta.png" class="zeta1" style="left:0px;">
+                  <img *ngIf="squad[0].Zetas>=2" src="/assets/picture/zeta.png" class="zeta2" style="left:0px;">
+                  <img *ngIf="squad[0].Zetas>=3" src="/assets/picture/zeta.png" class="zeta3" style="left:0px;">
+
+                  <img class="charImage" src="/assets/picture/{{squad[0].imageUrl}}" alt="{{squad[0].Name}}">
+                  <img class="gearImage" src="/assets/GearPNG/gear-icon-g{{squad[0].gearLevel}}.png" alt="{{squad[0].Name}}">
+                  <span class="char-level">{{squad[0].Level}}</span>
+                  <span class="char-gear-level">{{formatGearLevel(squad[0].gearLevel)}}</span>
+                  <progress class="progress1" value="{{squad[0].Power}}" max="{{squad[0].MaxPower}}"></progress> <span class="progressText"><b>{{ roundNumber((squad[0].Power/squad[0].MaxPower)*100) }}%</b></span>
+                </div>
+
+              </div>
+
+              <div *ngIf="squad[1]" class="divForChar">
+                <div class="parentOfImages">
+
+                  <img *ngIf="squad[1].Sterne>0" src="/assets/picture/star.png" class="star11">
+                  <img *ngIf="squad[1].Sterne<1" src="/assets/picture/nostar.png" class="star11">
+                  <img *ngIf="squad[1].Sterne>1" src="/assets/picture/star.png" class="star12">
+                  <img *ngIf="squad[1].Sterne<2" src="/assets/picture/nostar.png" class="star12">
+                  <img *ngIf="squad[1].Sterne>2" src="/assets/picture/star.png" class="star13">
+                  <img *ngIf="squad[1].Sterne<3" src="/assets/picture/nostar.png" class="star13">
+                  <img *ngIf="squad[1].Sterne>3" src="/assets/picture/star.png" class="star14">
+                  <img *ngIf="squad[1].Sterne<4" src="/assets/picture/nostar.png" class="star14">
+                  <img *ngIf="squad[1].Sterne>4" src="/assets/picture/star.png" class="star15">
+                  <img *ngIf="squad[1].Sterne<5" src="/assets/picture/nostar.png" class="star15">
+                  <img *ngIf="squad[1].Sterne>5" src="/assets/picture/star.png" class="star16">
+                  <img *ngIf="squad[1].Sterne<6" src="/assets/picture/nostar.png" class="star16">
+                  <img *ngIf="squad[1].Sterne>6" src="/assets/picture/star.png" class="star17">
+                  <img *ngIf="squad[1].Sterne<7" src="/assets/picture/nostar.png" class="star17">
+
+                  <img *ngIf="squad[1].Zetas>=1" src="/assets/picture/zeta.png" class="zeta1" style="left:0px;">
+                  <img *ngIf="squad[1].Zetas>=2" src="/assets/picture/zeta.png" class="zeta2" style="left:0px;">
+                  <img *ngIf="squad[1].Zetas>=3" src="/assets/picture/zeta.png" class="zeta3" style="left:0px;">
+
+                  <img class="charImage" src="/assets/picture/{{squad[1].imageUrl}}" alt="{{squad[1].Name}}">
+                  <img class="gearImage" src="/assets/GearPNG/gear-icon-g{{squad[1].gearLevel}}.png" alt="{{squad[1].Name}}">
+                  <span class="char-level">{{squad[1].Level}}</span>
+                  <span class="char-gear-level">{{formatGearLevel(squad[1].gearLevel)}}</span>
+                  <progress class="progress1" value="{{squad[1].Power}}" max="{{squad[1].MaxPower}}"></progress> <span class="progressText"><b>{{ roundNumber((squad[1].Power/squad[1].MaxPower)*100) }}%</b></span>
+                </div>
+
+              </div>
+
+              <div *ngIf="squad[2]" class="divForChar">
+                <div class="parentOfImages">
+
+                  <img *ngIf="squad[2].Sterne>0" src="/assets/picture/star.png" class="star11">
+                  <img *ngIf="squad[2].Sterne<1" src="/assets/picture/nostar.png" class="star11">
+                  <img *ngIf="squad[2].Sterne>1" src="/assets/picture/star.png" class="star12">
+                  <img *ngIf="squad[2].Sterne<2" src="/assets/picture/nostar.png" class="star12">
+                  <img *ngIf="squad[2].Sterne>2" src="/assets/picture/star.png" class="star13">
+                  <img *ngIf="squad[2].Sterne<3" src="/assets/picture/nostar.png" class="star13">
+                  <img *ngIf="squad[2].Sterne>3" src="/assets/picture/star.png" class="star14">
+                  <img *ngIf="squad[2].Sterne<4" src="/assets/picture/nostar.png" class="star14">
+                  <img *ngIf="squad[2].Sterne>4" src="/assets/picture/star.png" class="star15">
+                  <img *ngIf="squad[2].Sterne<5" src="/assets/picture/nostar.png" class="star15">
+                  <img *ngIf="squad[2].Sterne>5" src="/assets/picture/star.png" class="star16">
+                  <img *ngIf="squad[2].Sterne<6" src="/assets/picture/nostar.png" class="star16">
+                  <img *ngIf="squad[2].Sterne>6" src="/assets/picture/star.png" class="star17">
+                  <img *ngIf="squad[2].Sterne<7" src="/assets/picture/nostar.png" class="star17">
+
+                  <img *ngIf="squad[2].Zetas>=1" src="/assets/picture/zeta.png" class="zeta1" style="left:0px;">
+                  <img *ngIf="squad[2].Zetas>=2" src="/assets/picture/zeta.png" class="zeta2" style="left:0px;">
+                  <img *ngIf="squad[2].Zetas>=3" src="/assets/picture/zeta.png" class="zeta3" style="left:0px;">
+
+                  <img class="charImage" src="/assets/picture/{{squad[2].imageUrl}}" alt="{{squad[2].Name}}">
+                  <img class="gearImage" src="/assets/GearPNG/gear-icon-g{{squad[2].gearLevel}}.png" alt="{{squad[2].Name}}">
+                  <span class="char-level">{{squad[2].Level}}</span>
+                  <span class="char-gear-level">{{formatGearLevel(squad[2].gearLevel)}}</span>
+                  <progress class="progress1" value="{{squad[2].Power}}" max="{{squad[2].MaxPower}}"></progress> <span class="progressText"><b>{{ roundNumber((squad[2].Power/squad[2].MaxPower)*100) }}%</b></span>
+                </div>
+
+              </div>
+
+              <div *ngIf="squad[3]" class="divForChar">
+                <div class="parentOfImages">
+
+                  <img *ngIf="squad[3].Sterne>0" src="/assets/picture/star.png" class="star11">
+                  <img *ngIf="squad[3].Sterne<1" src="/assets/picture/nostar.png" class="star11">
+                  <img *ngIf="squad[3].Sterne>1" src="/assets/picture/star.png" class="star12">
+                  <img *ngIf="squad[3].Sterne<2" src="/assets/picture/nostar.png" class="star12">
+                  <img *ngIf="squad[3].Sterne>2" src="/assets/picture/star.png" class="star13">
+                  <img *ngIf="squad[3].Sterne<3" src="/assets/picture/nostar.png" class="star13">
+                  <img *ngIf="squad[3].Sterne>3" src="/assets/picture/star.png" class="star14">
+                  <img *ngIf="squad[3].Sterne<4" src="/assets/picture/nostar.png" class="star14">
+                  <img *ngIf="squad[3].Sterne>4" src="/assets/picture/star.png" class="star15">
+                  <img *ngIf="squad[3].Sterne<5" src="/assets/picture/nostar.png" class="star15">
+                  <img *ngIf="squad[3].Sterne>5" src="/assets/picture/star.png" class="star16">
+                  <img *ngIf="squad[3].Sterne<6" src="/assets/picture/nostar.png" class="star16">
+                  <img *ngIf="squad[3].Sterne>6" src="/assets/picture/star.png" class="star17">
+                  <img *ngIf="squad[3].Sterne<7" src="/assets/picture/nostar.png" class="star17">
+
+                  <img *ngIf="squad[3].Zetas>=1" src="/assets/picture/zeta.png" class="zeta1" style="left:0px;">
+                  <img *ngIf="squad[3].Zetas>=2" src="/assets/picture/zeta.png" class="zeta2" style="left:0px;">
+                  <img *ngIf="squad[3].Zetas>=3" src="/assets/picture/zeta.png" class="zeta3" style="left:0px;">
+
+                  <img class="charImage" src="/assets/picture/{{squad[3].imageUrl}}" alt="{{squad[3].Name}}">
+                  <img class="gearImage" src="/assets/GearPNG/gear-icon-g{{squad[3].gearLevel}}.png" alt="{{squad[3].Name}}">
+                  <span class="char-level">{{squad[3].Level}}</span>
+                  <span class="char-gear-level">{{formatGearLevel(squad[3].gearLevel)}}</span>
+                  <progress class="progress1" value="{{squad[3].Power}}" max="{{squad[3].MaxPower}}"></progress> <span class="progressText"><b>{{ roundNumber((squad[3].Power/squad[3].MaxPower)*100) }}%</b></span>
+                </div>
+
+              </div>
+
+              <div *ngIf="squad[4]" class="divForChar">
+                <div class="parentOfImages">
+
+                  <img *ngIf="squad[4].Sterne>0" src="/assets/picture/star.png" class="star11">
+                  <img *ngIf="squad[4].Sterne<1" src="/assets/picture/nostar.png" class="star11">
+                  <img *ngIf="squad[4].Sterne>1" src="/assets/picture/star.png" class="star12">
+                  <img *ngIf="squad[4].Sterne<2" src="/assets/picture/nostar.png" class="star12">
+                  <img *ngIf="squad[4].Sterne>2" src="/assets/picture/star.png" class="star13">
+                  <img *ngIf="squad[4].Sterne<3" src="/assets/picture/nostar.png" class="star13">
+                  <img *ngIf="squad[4].Sterne>3" src="/assets/picture/star.png" class="star14">
+                  <img *ngIf="squad[4].Sterne<4" src="/assets/picture/nostar.png" class="star14">
+                  <img *ngIf="squad[4].Sterne>4" src="/assets/picture/star.png" class="star15">
+                  <img *ngIf="squad[4].Sterne<5" src="/assets/picture/nostar.png" class="star15">
+                  <img *ngIf="squad[4].Sterne>5" src="/assets/picture/star.png" class="star16">
+                  <img *ngIf="squad[4].Sterne<6" src="/assets/picture/nostar.png" class="star16">
+                  <img *ngIf="squad[4].Sterne>6" src="/assets/picture/star.png" class="star17">
+                  <img *ngIf="squad[4].Sterne<7" src="/assets/picture/nostar.png" class="star17">
+
+                  <img *ngIf="squad[4].Zetas>=1" src="/assets/picture/zeta.png" class="zeta1" style="left:0px;">
+                  <img *ngIf="squad[4].Zetas>=2" src="/assets/picture/zeta.png" class="zeta2" style="left:0px;">
+                  <img *ngIf="squad[4].Zetas>=3" src="/assets/picture/zeta.png" class="zeta3" style="left:0px;">
+
+                  <img class="charImage" src="/assets/picture/{{squad[4].imageUrl}}" alt="{{squad[4].Name}}">
+                  <img class="gearImage" src="/assets/GearPNG/gear-icon-g{{squad[4].gearLevel}}.png" alt="{{squad[4].Name}}">
+                  <span class="char-level">{{squad[4].Level}}</span>
+                  <span class="char-gear-level">{{formatGearLevel(squad[4].gearLevel)}}</span>
+                  <progress class="progress1" value="{{squad[4].Power}}" max="{{squad[4].MaxPower}}"></progress> <span class="progressText"><b>{{ roundNumber((squad[4].Power/squad[4].MaxPower)*100) }}%</b></span>
+                </div>
+
+              </div>
+
+            </div>
+          </fieldset>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="modal-body" style="height: 20%;">
+
+      Phase:
+      <select style="width:30%;" [(ngModel)]="SelectedPhase">
+        <option [ngValue]="1">Phase 1</option>
+        <option [ngValue]="2">Phase 2</option>
+        <option [ngValue]="3">Phase 3</option>
+        <option [ngValue]="4">Phase 4</option>
+      </select>
+      Damage:
+      <input type="number" step=".01" [(ngModel)]="DamageNow" />
+      <button style="width: 100%;" (click)="closeModalSQUAD()">Confirm</button>
+
+    </div>
+
+  </div>
+
+</div>
