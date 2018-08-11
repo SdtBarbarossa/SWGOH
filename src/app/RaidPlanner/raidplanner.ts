@@ -9,373 +9,281 @@ import { forEach } from '@angular/router/src/utils/collection';
   styleUrls: ['./raidplanner.css']
 })
 export class RaidPlannerComponent {
-
-  public ActualPlayer: any;
-  public SelectedChars: any[];
-  public TempEditChars: any[];
-  public TempIndexOfPhase: number;
-
-  public Phase1: squadForRaid[];
-  public Phase2: squadForRaid[];
-  public Phase3: squadForRaid[];
-  public Phase4: squadForRaid[];
-  public SelectedPhase: number;
-  public DamageNow: number;
-
-  public dmgP1 = 100;
-  public dmgP2 = 100;
-  public dmgP3 = 100;
+  
   public dmgP4 = 100;
+  public squads: squad[];
 
   constructor(public settingsService: SettingsService, public gildenService: gildenService) {
 
-    this.ActualPlayer = gildenService.gildenInfos.Members[0];
-    this.SelectedChars = new Array();
-    this.SelectedPhase = 1;
-    this.DamageNow = 0.1;
+    this.squads = new Array();
 
-    this.Phase1 = new Array();
-    this.Phase2 = new Array();
-    this.Phase3 = new Array();
-    this.Phase4 = new Array();
+    var jtr = new squad();
+    jtr.Name = "JTR P1"
 
-    this.dmgP1 = 100;
-    this.dmgP2 = 100;
-    this.dmgP3 = 100;
-    this.dmgP4 = 100;
+    jtr.Charaktere.push("Rey (Jedi Training)");
+    jtr.Charaktere.push("BB-8");
+    jtr.Charaktere.push("R2-D2");
+    jtr.Charaktere.push("Resistance Trooper");
+    jtr.Charaktere.push("Rey (Scavenger)");
 
-    this.loadRaidPlan();
+    jtr.Zetas.push(1);
+    jtr.Zetas.push(1);
+    jtr.Zetas.push(1);
+    jtr.Zetas.push(0);
+    jtr.Zetas.push(0);
+
+    this.squads.push(jtr);
+
+    var jedi = new squad();
+    jedi.Name = "Jedi P1"
+
+    jedi.Charaktere.push("Grand Master Yoda");
+    jedi.Charaktere.push("Hermit Yoda");
+    jedi.Charaktere.push("Ezra Bridger");
+    jedi.Charaktere.push("Aayla Secura");
+    jedi.Charaktere.push("Visas Marr");
+
+    jedi.Zetas.push(1);
+    jedi.Zetas.push(1);
+    jedi.Zetas.push(1);
+    jedi.Zetas.push(0);
+    jedi.Zetas.push(0);
+
+    this.squads.push(jedi);
+
+    var trooper = new squad();
+    trooper.Name = "Truppler P2"
+
+    trooper.Charaktere.push("General Veers");
+    trooper.Charaktere.push("Grand Admiral Thrawn");
+    trooper.Charaktere.push("Colonel Starck");
+    trooper.Charaktere.push("Shoretrooper");
+    trooper.Charaktere.push("Snowtrooper");
+
+    trooper.Zetas.push(1);
+    trooper.Zetas.push(0);
+    trooper.Zetas.push(0);
+    trooper.Zetas.push(0);
+    trooper.Zetas.push(0);
+
+    this.squads.push(trooper);
+
+    var ewoks = new squad();
+    ewoks.Name = "Ewoks P2"
+
+    ewoks.Charaktere.push("Chief Chirpa");
+    ewoks.Charaktere.push("Wicket");
+    ewoks.Charaktere.push("Logray");
+    ewoks.Charaktere.push("Ewok Scout");
+    ewoks.Charaktere.push("Ewok Elder");
+
+    ewoks.Zetas.push(1);
+    ewoks.Zetas.push(1);
+    ewoks.Zetas.push(1);
+    ewoks.Zetas.push(0);
+    ewoks.Zetas.push(0);
+
+    this.squads.push(ewoks);
+
+    var halunken = new squad();
+    halunken.Name = "Halunken P2"
+
+    halunken.Charaktere.push("Bossk");
+    halunken.Charaktere.push("Greedo");
+    halunken.Charaktere.push("Boba Fett");
+    halunken.Charaktere.push("IG-88");
+    halunken.Charaktere.push("Dengar");
+
+    halunken.Zetas.push(2);
+    halunken.Zetas.push(1);
+    halunken.Zetas.push(1);
+    halunken.Zetas.push(1);
+    halunken.Zetas.push(1);
+
+    this.squads.push(halunken);
+
+    var leia = new squad();
+    leia.Name = "Leia P2"
+
+    leia.Charaktere.push("Admiral Ackbar");
+    leia.Charaktere.push("Princess Leia");
+    leia.Charaktere.push("General Kenobi");
+    leia.Charaktere.push("Barriss Offee");
+    leia.Charaktere.push("Stormtrooper Han");
+
+    leia.Zetas.push(0);
+    leia.Zetas.push(0);
+    leia.Zetas.push(0);
+    leia.Zetas.push(1);
+    leia.Zetas.push(0);
+
+    this.squads.push(leia);
+
+    var impP2 = new squad();
+    impP2.Name = "Imp Darth P2"
+
+    impP2.Charaktere.push("Emperor Palpatine");
+    impP2.Charaktere.push("Darth Vader");
+    impP2.Charaktere.push("Darth Sion");
+    impP2.Charaktere.push("Darth Nihilus");
+    impP2.Charaktere.push("Sith Trooper");
+
+    impP2.Zetas.push(1);
+    impP2.Zetas.push(0);
+    impP2.Zetas.push(0);
+    impP2.Zetas.push(0);
+    impP2.Zetas.push(0);
+
+    this.squads.push(impP2);
+
+    var phoenix = new squad();
+    phoenix.Name = "Phoenix P2"
+
+    phoenix.Charaktere.push("Hera Syndulla");
+    phoenix.Charaktere.push("Sabine Wren");
+    phoenix.Charaktere.push("Ezra Bridger");
+    phoenix.Charaktere.push("Garazeb \"Zeb\" Orrelios");
+    phoenix.Charaktere.push("Kanan Jarrus");
+
+    phoenix.Zetas.push(1);
+    phoenix.Zetas.push(1);
+    phoenix.Zetas.push(1);
+    phoenix.Zetas.push(1);
+    phoenix.Zetas.push(1);
+
+    this.squads.push(phoenix);
+
+    var chexMix1 = new squad();
+    chexMix1.Name = "ChexMix (orig) P3"
+
+    chexMix1.Charaktere.push("Commander Luke Skywalker");
+    chexMix1.Charaktere.push("Han Solo");
+    chexMix1.Charaktere.push("Pao");
+    chexMix1.Charaktere.push("Chirrut Îmwe");
+    chexMix1.Charaktere.push("Death Trooper");
+
+    chexMix1.Zetas.push(2);
+    chexMix1.Zetas.push(1);
+    chexMix1.Zetas.push(0);
+    chexMix1.Zetas.push(0);
+    chexMix1.Zetas.push(0);
+
+    this.squads.push(chexMix1);
+
+    var chexMix2 = new squad();
+
+    chexMix2.Name = "ChexMix (Greedo) P3"
+
+    chexMix2.Charaktere.push("Boba Fett");
+    chexMix2.Charaktere.push("Greedo");
+    chexMix2.Charaktere.push("Pao");
+    chexMix2.Charaktere.push("Chirrut Îmwe");
+    chexMix2.Charaktere.push("Death Trooper");
+
+    chexMix2.Zetas.push(0);
+    chexMix2.Zetas.push(0);
+    chexMix2.Zetas.push(0);
+    chexMix2.Zetas.push(0);
+    chexMix2.Zetas.push(0);
+
+    this.squads.push(chexMix2);
+
+    var nsP4 = new squad();
+
+    nsP4.Name = "NS P4"
+
+    nsP4.Charaktere.push("Asajj Ventress");
+    nsP4.Charaktere.push("Mother Talzin");
+    nsP4.Charaktere.push("Talia");
+    nsP4.Charaktere.push("Nightsister Zombie");
+    nsP4.Charaktere.push("Old Daka");
+
+    nsP4.Zetas.push(2);
+    nsP4.Zetas.push(1);
+    nsP4.Zetas.push(0);
+    nsP4.Zetas.push(0);
+    nsP4.Zetas.push(0);
+
+    this.squads.push(nsP4);
+
+    var firstOrder = new squad();
+
+    firstOrder.Name = "FO P4"
+
+    firstOrder.Charaktere.push("Kylo Ren (Unmasked)");
+    firstOrder.Charaktere.push("First Order Executioner");
+    firstOrder.Charaktere.push("First Order SF TIE Pilot");
+    firstOrder.Charaktere.push("First Order Stormtrooper");
+    firstOrder.Charaktere.push("First Order Officer");
+
+    firstOrder.Zetas.push(0);
+    firstOrder.Zetas.push(0);
+    firstOrder.Zetas.push(0);
+    firstOrder.Zetas.push(0);
+    firstOrder.Zetas.push(0);
+
+    this.squads.push(firstOrder);
+
+  }
+
+  playerGotSquad(player, squadName) {
+
+    var squadNow = this.squads.find(s => s.Name == squadName);
+
+    var tempBewertung =  0;
+
+    if (squadNow == null)
+      return tempBewertung;
+    
+    var squadFound = this.gildenService.findSquadWithMember(squadNow, player);
+
+    var hasAll7Star = true;
+    var hasAllG11 = true;
+    var hasAllZeta = true;
+
+    if(squadFound.length < 5)
+      return -1;
+    
+    for (var i = 0; i < squadFound.length; i++) {
+      if (squadFound[i].Sterne < 7) {
+        hasAll7Star = false;
+      }
+      if (squadFound[i].gearLevel < 11) {
+        hasAllG11 = false;
+      }
+      if (squadFound[i].Zetas < squadNow.Zetas[i]) {
+        hasAllZeta = false;
+      }
+    }
+
+    if (hasAll7Star == true)
+      tempBewertung += 1;
+    if (hasAllG11 == true)
+      tempBewertung += 1;
+    if (hasAllZeta == true)
+      tempBewertung += 1;
+    
+    return tempBewertung;
+  }
+
+  alertSquad(squadNow: squad) {
+
+    var charString = "";
+
+    for (var i = 0; i < squadNow.Charaktere.length; i++) {
+      charString += "Name : '" + squadNow.Charaktere[i] + "' Zetas needed: " + squadNow.Zetas[i] + "\n\r";
+    }
+
+    alert('The squad ' + squadNow.Name + ' has the following Charackters: \n\r ' + charString);
 
   }
   
-  loadRaidPlan() {
-    if (localStorage.raidPhase1 != null)
-      this.Phase1 = JSON.parse(localStorage.raidPhase1);
-    if (localStorage.raidPhase2 != null)
-      this.Phase2 = JSON.parse(localStorage.raidPhase2);
-    if (localStorage.raidPhase3 != null)
-      this.Phase3 = JSON.parse(localStorage.raidPhase3);
-    if (localStorage.raidPhase4 != null)
-      this.Phase4 = JSON.parse(localStorage.raidPhase4);
-  }
-
-  saveRaidPlan() {
-    localStorage.raidPhase1 = JSON.stringify(this.Phase1);
-    localStorage.raidPhase2 = JSON.stringify(this.Phase2);
-    localStorage.raidPhase3 = JSON.stringify(this.Phase3);
-    localStorage.raidPhase4 = JSON.stringify(this.Phase4);
-  }
-
-  selectChar(charakter) {
-
-    if (this.SelectedChars.indexOf(charakter) > -1)
-    {
-      this.SelectedChars.splice(this.SelectedChars.indexOf(charakter), 1);
-    }
-    else
-    {
-      if (this.SelectedChars.length > 4)
-      {
-        alert('a team can only hold 5 members');
-      }
-      else
-      {
-        this.SelectedChars.push(charakter);
-      }
-    }
-
-  }
-
-  removeSquadP1(squadForRaid)
-  {
-    var strconfirm = confirm("Are you sure you want to delete this squad?");
-    if (strconfirm)
-    {
-      this.dmgP1 = 100;
-      this.Phase1.splice(this.Phase1.indexOf(squadForRaid), 1);
-      this.saveRaidPlan();
-    }
-  }
-
-  removeSquadP2(squadForRaid)
-  {
-    var strconfirm = confirm("Are you sure you want to delete this squad?");
-    if (strconfirm)
-    {
-      this.dmgP2 = 100;
-      this.Phase2.splice(this.Phase2.indexOf(squadForRaid), 1);
-      this.saveRaidPlan();
-    }
-  }
-
-  removeSquadP3(squadForRaid)
-  {
-    var strconfirm = confirm("Are you sure you want to delete this squad?");
-    if (strconfirm)
-    {
-      this.dmgP3 = 100;
-      this.Phase3.splice(this.Phase3.indexOf(squadForRaid), 1);
-      this.saveRaidPlan();
-    }
-  }
-
-  removeSquadP4(squadForRaid)
-  {
-    var strconfirm = confirm("Are you sure you want to delete this squad?");
-    if (strconfirm)
-    {
-      this.dmgP4 = 100;
-      this.Phase4.splice(this.Phase4.indexOf(squadForRaid), 1);
-      this.saveRaidPlan();
-    }
-   }
-
-  resetDmgDone() {
-    this.dmgP1 = 100;
-    this.dmgP2 = 100;
-    this.dmgP3 = 100;
-    this.dmgP4 = 100;
-  }
-
-  getDmg1Now(Damage) {
-    this.dmgP1 = this.dmgP1 - Damage;
-    return this.dmgP1.toFixed(2);
-  }
-
-  getDmg2Now(Damage) {
-    this.dmgP2 = this.dmgP2 - Damage;
-    return this.dmgP2.toFixed(2);
-  }
-
-  getDmg3Now(Damage) {
-    this.dmgP3 = this.dmgP3 - Damage;
-    return this.dmgP3.toFixed(2);
-  }
-
-  getDmg4Now(Damage) {
-    this.dmgP4 = this.dmgP4 - Damage;
-    return this.dmgP4.toFixed(2);
-  }
-
-  charInTemp(charakter) {
-    for (var i = 0; i < this.TempEditChars.length; i++) {
-      if (this.TempEditChars[i].Name == charakter.Name && this.TempEditChars[i].Besitzer == charakter.Besitzer) {
-        console.log('true for ' + charakter.Name);
-          return true;
-      }
-    }
-    return false;
-  }
-
-  charAlreadyPlaced(charakter)
-  {
-
-    for (var i = 0; i < this.Phase1.length; i++)
-    {
-      for (var x = 0; x < this.Phase1[i].charaktere.length; x++)
-      {
-        if (this.Phase1[i].charaktere[x].Name == charakter.Name && this.Phase1[i].charaktere[x].Besitzer == charakter.Besitzer )
-        {
-          return true;
-        }
-      }
-    }
-
-    for (var i = 0; i < this.Phase2.length; i++) {
-      for (var x = 0; x < this.Phase2[i].charaktere.length; x++) {
-        if (this.Phase2[i].charaktere[x].Name == charakter.Name && this.Phase2[i].charaktere[x].Besitzer == charakter.Besitzer) {
-          return true;
-        }
-      }
-    }
-
-    for (var i = 0; i < this.Phase3.length; i++) {
-      for (var x = 0; x < this.Phase3[i].charaktere.length; x++) {
-        if (this.Phase3[i].charaktere[x].Name == charakter.Name && this.Phase3[i].charaktere[x].Besitzer == charakter.Besitzer) {
-          return true;
-        }
-      }
-    }
-
-    for (var i = 0; i < this.Phase4.length; i++) {
-      for (var x = 0; x < this.Phase4[i].charaktere.length; x++) {
-        if (this.Phase4[i].charaktere[x].Name == charakter.Name && this.Phase4[i].charaktere[x].Besitzer == charakter.Besitzer) {
-          return true;
-        }
-      }
-    }
-
-    return false;;
-  }
-
-  editSquadInPhase() {
-
-    var nowSquad = new squadForRaid();
-
-    for (var i = 0; i < this.SelectedChars.length; i++) {
-      nowSquad.charaktere.push(new charNameAndMember(this.SelectedChars[i].Name, this.SelectedChars[i].Besitzer));
-    }
-
-    nowSquad.owner = this.SelectedChars[0].Besitzer;
-    nowSquad.damage = this.DamageNow;
-
-    if (this.SelectedPhase == 1)
-      this.Phase1[this.TempIndexOfPhase] = nowSquad;
-    if (this.SelectedPhase == 2)
-      this.Phase2[this.TempIndexOfPhase] = nowSquad;
-    if (this.SelectedPhase == 3)
-      this.Phase3[this.TempIndexOfPhase] = nowSquad;
-    if (this.SelectedPhase == 4)
-      this.Phase4[this.TempIndexOfPhase] = nowSquad;
-
-    this.SelectedChars = new Array();
-
-    this.closeModalEDIT();
-    this.saveRaidPlan();
-  }
-
-  addSquadToPhase() {
-
-    var nowSquad = new squadForRaid();
-
-    for (var i = 0; i < this.SelectedChars.length; i++) {
-      nowSquad.charaktere.push(new charNameAndMember(this.SelectedChars[i].Name, this.SelectedChars[i].Besitzer));
-    }
-    
-    nowSquad.owner = this.SelectedChars[0].Besitzer;
-    nowSquad.damage = this.DamageNow;
-
-    if(this.SelectedPhase == 1)
-      this.Phase1.push(nowSquad);
-    if (this.SelectedPhase == 2)
-      this.Phase2.push(nowSquad);
-    if (this.SelectedPhase == 3)
-      this.Phase3.push(nowSquad);
-    if (this.SelectedPhase == 4)
-      this.Phase4.push(nowSquad);
-
-    this.SelectedChars = new Array();
-    
-    this.closeModal();
-    this.saveRaidPlan();
-
-  }
-
-  roundNumber(number) {
-    return Math.round(number);
-  }
-
-  formatGearLevel(level) {
-    switch (level) {
-      case 0:
-        return '0';
-      case 1:
-        return 'I';
-      case 2:
-        return 'II';
-      case 3:
-        return 'III';
-      case 4:
-        return 'IV';
-      case 5:
-        return 'V';
-      case 6:
-        return 'VI';
-      case 7:
-        return 'VII';
-      case 8:
-        return 'VIII';
-      case 9:
-        return 'IX';
-      case 10:
-        return 'X';
-      case 11:
-        return 'XI';
-      case 12:
-        return 'XII';
-      default:
-        return 'Unknown';
-    }
-
-  }
-
-  // When the user clicks the button, open the modal 
-  openModal() {
-    this.SelectedChars = new Array();
-    if (this.ActualPlayer == null) {
-      alert('please pick a player');
-      return;
-    } else {
-      this.ActualPlayer.Charaktere = this.ActualPlayer.Charaktere.sort((a, b) => a.Power > b.Power ? -1 : a.Power < b.Power ? 1 : 0)
-    }
-    // Get the modal
-    var modal = document.getElementById('myModal');
-    modal.style.display = "block";
-  }
-
-  // When the user clicks on <span> (x), close the modal
-  closeModal() {  // Get the modal
-    var modal = document.getElementById('myModal');
-    modal.style.display = "none";
-  }
-
-  // When the user clicks the button, open the modal 
-  openModalEDIT(squadForRaid: squadForRaid, phase:number, index:number) {
-
-    this.DamageNow = squadForRaid.damage;
-    this.SelectedPhase = phase;
-    this.TempIndexOfPhase = index;
-    console.log(index);
-
-    this.ActualPlayer = this.gildenService.getMemberByName(squadForRaid.owner);
-    if (this.ActualPlayer == null) {
-      alert('couldnt find member with name ' + squadForRaid.owner);
-      return;
-    }
-    this.ActualPlayer.Charaktere = this.ActualPlayer.Charaktere.sort((a, b) => a.Power > b.Power ? -1 : a.Power < b.Power ? 1 : 0)
-
-    this.SelectedChars = new Array();
-    this.TempEditChars = new Array();
-    for (var i = 0; i < squadForRaid.charaktere.length; i++) {
-      var currChar = this.gildenService.findCharbyNameAndMember(squadForRaid.owner, squadForRaid.charaktere[i].Name);
-      this.SelectedChars.push(currChar);
-      this.TempEditChars.push(currChar);
-    }
-
-    console.log(this.TempEditChars);
-
-    // Get the modal
-    var modal = document.getElementById('myModalEDIT');
-    modal.style.display = "block";
-  }
-
-  // When the user clicks on <span> (x), close the modal
-  closeModalEDIT() {  // Get the modal
-    var modal = document.getElementById('myModalEDIT');
-    modal.style.display = "none";
-  }
 }
 
-export class squadForRaid {
+class squad {
 
-  public charaktere: charNameAndMember[];
-  public owner: string;
-  public damage: number;
-
-  constructor() {
-    this.charaktere = new Array();
-  }
-
-}
-
-export class charNameAndMember {
-
-  public Name: string;
-  public Besitzer: string;
-
-  constructor(name, besitzer) {
-    this.Name = name;
-    this.Besitzer = besitzer;
-  }
+  Name: string = 'SquadName';
+  Charaktere: string[] = new Array();
+  Zetas: number[] = new Array();
 
 }

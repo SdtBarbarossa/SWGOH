@@ -1,0 +1,41 @@
+<input type="text" placeholder="Charname ( e.g 'Boba Fett' or 'Boba'  )" [(ngModel)]="charToSearch" (ngModelChange)="searchCharaktere()">
+
+<div *ngIf="charaktere">
+  <fieldset *ngFor="let char of charaktere" class="maincharFieldset">
+    <legend>{{char.besitzer}}</legend>
+    <div style="height:60px;">
+      <img *ngIf="char.charakter.rarity>0" src="/assets/picture/star.png" class="sterne stern1">
+      <img *ngIf="char.charakter.rarity<1" src="/assets/picture/nostar.png" class="sterne stern1">
+      <img *ngIf="char.charakter.rarity>1" src="/assets/picture/star.png" class="sterne stern2">
+      <img *ngIf="char.charakter.rarity<2" src="/assets/picture/nostar.png" class="sterne stern2">
+      <img *ngIf="char.charakter.rarity>2" src="/assets/picture/star.png" class="sterne stern3">
+      <img *ngIf="char.charakter.rarity<3" src="/assets/picture/nostar.png" class="sterne stern3">
+      <img *ngIf="char.charakter.rarity>3" src="/assets/picture/star.png" class="sterne stern4">
+      <img *ngIf="char.charakter.rarity<4" src="/assets/picture/nostar.png" class="sterne stern4">
+      <img *ngIf="char.charakter.rarity>4" src="/assets/picture/star.png" class="sterne stern5">
+      <img *ngIf="char.charakter.rarity<5" src="/assets/picture/nostar.png" class="sterne stern5">
+      <img *ngIf="char.charakter.rarity>5" src="/assets/picture/star.png" class="sterne stern6">
+      <img *ngIf="char.charakter.rarity<6" src="/assets/picture/nostar.png" class="sterne stern6">
+      <img *ngIf="char.charakter.rarity>6" src="/assets/picture/star.png" class="sterne stern7">
+      <img *ngIf="char.charakter.rarity<7" src="/assets/picture/nostar.png" class="sterne stern7">
+
+      <img class="charImage" [src]="char.charakter | charimagelink" [alt]="char | charname">
+      <img class="gearImage" [src]="char.charakter | gearlink" [alt]="char | charname">
+      <span class="char-level">{{char.charakter.level}}</span>
+      <span class="char-gear-level">{{char.charakter | chargear}}</span>
+    </div>
+
+    <button (click)="switchShowMods()">Show/Hide</button>
+
+    <div *ngIf="showMods">
+      <fieldset *ngFor="let mod of char.charakter.mods" style="position:relative; float:left;">
+        <legend>{{mod.setId | modsetname}}-{{mod.slot | modslotname}} L:{{mod.level}} S:{{mod.pips}}</legend>
+        <div style="color:blue">{{mod.primaryBonusType | modstatname}}: {{mod.primaryBonusValue | modstatvalue : (mod.primaryBonusType | modstatname)}}</div>
+        <div>{{mod.secondaryType_1 | modstatname}}: {{mod.secondaryValue_1 | modstatvalue : (mod.secondaryType_1 | modstatname)}}</div>
+        <div>{{mod.secondaryType_2 | modstatname}}: {{mod.secondaryValue_2 | modstatvalue : (mod.secondaryType_2 | modstatname)}}</div>
+        <div>{{mod.secondaryType_3 | modstatname}}: {{mod.secondaryValue_3 | modstatvalue : (mod.secondaryType_3 | modstatname)}}</div>
+        <div>{{mod.secondaryType_4 | modstatname}}: {{mod.secondaryValue_4 | modstatvalue : (mod.secondaryType_4 | modstatname)}}</div>
+      </fieldset>
+    </div>
+  </fieldset>
+</div>

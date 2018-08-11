@@ -11,10 +11,8 @@
 </div>
 
 <div *ngFor="let squad of squadsFromGildenInfos" class="charNow">
-  <fieldset style="height:85%">
+  <fieldset style="height:80px">
     <legend>{{selectedTeam.Name}} of {{squad[0].Besitzer}}</legend>
-    Power: {{getPowerOfSquad(squad)}}
-    <br />
     <div style="height:80%; width:100%">
       <div *ngIf="squad[0]" class="divForChar">
         <div class="parentOfImages">
@@ -42,7 +40,6 @@
           <img class="gearImage" src="/assets/GearPNG/gear-icon-g{{squad[0].gearLevel}}.png" alt="{{squad[0].Name}}">
           <span class="char-level">{{squad[0].Level}}</span>
           <span class="char-gear-level">{{formatGearLevel(squad[0].gearLevel)}}</span>
-          <progress class="progress1" value="{{squad[0].Power}}" max="{{squad[0].MaxPower}}"></progress> <span class="progressText"><b>{{ roundNumber((squad[0].Power/squad[0].MaxPower)*100) }}%</b></span>
         </div>
         
       </div>
@@ -73,7 +70,6 @@
           <img class="gearImage" src="/assets/GearPNG/gear-icon-g{{squad[1].gearLevel}}.png" alt="{{squad[1].Name}}">
           <span class="char-level">{{squad[1].Level}}</span>
           <span class="char-gear-level">{{formatGearLevel(squad[1].gearLevel)}}</span>
-          <progress class="progress1" value="{{squad[1].Power}}" max="{{squad[1].MaxPower}}"></progress> <span class="progressText"><b>{{ roundNumber((squad[1].Power/squad[1].MaxPower)*100) }}%</b></span>
         </div>
         
       </div>
@@ -104,7 +100,6 @@
           <img class="gearImage" src="/assets/GearPNG/gear-icon-g{{squad[2].gearLevel}}.png" alt="{{squad[2].Name}}">
           <span class="char-level">{{squad[2].Level}}</span>
           <span class="char-gear-level">{{formatGearLevel(squad[2].gearLevel)}}</span>
-          <progress class="progress1" value="{{squad[2].Power}}" max="{{squad[2].MaxPower}}"></progress> <span class="progressText"><b>{{ roundNumber((squad[2].Power/squad[2].MaxPower)*100) }}%</b></span>
         </div>
         
       </div>
@@ -135,7 +130,6 @@
           <img class="gearImage" src="/assets/GearPNG/gear-icon-g{{squad[3].gearLevel}}.png" alt="{{squad[3].Name}}">
           <span class="char-level">{{squad[3].Level}}</span>
           <span class="char-gear-level">{{formatGearLevel(squad[3].gearLevel)}}</span>
-          <progress class="progress1" value="{{squad[3].Power}}" max="{{squad[3].MaxPower}}"></progress> <span class="progressText"><b>{{ roundNumber((squad[3].Power/squad[3].MaxPower)*100) }}%</b></span>
         </div>
         
       </div>
@@ -166,7 +160,6 @@
           <img class="gearImage" src="/assets/GearPNG/gear-icon-g{{squad[4].gearLevel}}.png" alt="{{squad[4].Name}}">
           <span class="char-level">{{squad[4].Level}}</span>
           <span class="char-gear-level">{{formatGearLevel(squad[4].gearLevel)}}</span>
-          <progress class="progress1" value="{{squad[4].Power}}" max="{{squad[4].MaxPower}}"></progress> <span class="progressText"><b>{{ roundNumber((squad[4].Power/squad[4].MaxPower)*100) }}%</b></span>
         </div>
         
       </div>

@@ -7,8 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="src\app\arenaTeams\arenaTeams.ts" />
     <None Remove="src\app\charSearch\charsearch.ts" />
     <None Remove="src\app\home\home.ts" />
+    <None Remove="src\app\newCharSearch\newCharSearch.ts" />
+    <None Remove="src\app\pipes\charpipe\charGear.pipe.ts" />
+    <None Remove="src\app\pipes\charpipe\charLink.pipe.ts" />
+    <None Remove="src\app\pipes\charpipe\charName.pipe.ts" />
+    <None Remove="src\app\pipes\charpipe\gearLink.pipe.ts" />
+    <None Remove="src\app\pipes\modpipes\ModSetName.pipe.ts" />
+    <None Remove="src\app\pipes\modpipes\ModSlotName.pipe.ts" />
+    <None Remove="src\app\pipes\modpipes\ModStatName.pipe.ts" />
+    <None Remove="src\app\pipes\modpipes\ModStatValue.pipe.ts" />
     <None Remove="src\app\RaidPlanner\raidplanner.ts" />
     <None Remove="src\app\services\gildenService.ts" />
     <None Remove="src\app\services\settingsService.ts" />
@@ -28,8 +38,18 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="src\app\newCharSearch\newCharSearch.ts" />
     <TypeScriptCompile Include="src\app\charSearch\charsearch.ts" />
     <TypeScriptCompile Include="src\app\home\home.ts" />
+    <TypeScriptCompile Include="src\app\arenaTeams\arenaTeams.ts" />
+    <TypeScriptCompile Include="src\app\pipes\charpipe\charLink.pipe.ts" />
+    <TypeScriptCompile Include="src\app\pipes\charpipe\charGear.pipe.ts" />
+    <TypeScriptCompile Include="src\app\pipes\charpipe\charName.pipe.ts" />
+    <TypeScriptCompile Include="src\app\pipes\charpipe\gearLink.pipe.ts" />
+    <TypeScriptCompile Include="src\app\pipes\modpipes\ModSlotName.pipe.ts" />
+    <TypeScriptCompile Include="src\app\pipes\modpipes\ModStatValue.pipe.ts" />
+    <TypeScriptCompile Include="src\app\pipes\modpipes\ModStatName.pipe.ts" />
+    <TypeScriptCompile Include="src\app\pipes\modpipes\ModSetName.pipe.ts" />
     <TypeScriptCompile Include="src\app\RaidPlanner\raidplanner.ts" />
     <TypeScriptCompile Include="src\app\services\gildenService.ts" />
     <TypeScriptCompile Include="src\app\services\settingsService.ts" />

@@ -7,14 +7,14 @@ input[type=text] {
 
 .parentOfImages {
   position: relative;
-  top: 0;
+  top: -25px;
   left: 0;
 }
 
 .charImage {
   position: absolute;
   z-index: -1;
-  top: -25px;
+  top: 0px;
   border-radius: 50%;
   transform: scale(0.7, 0.7);
   -ms-transform: scale(0.7, 0.7);
@@ -23,7 +23,7 @@ input[type=text] {
 
 .gearImage {
   position: absolute;
-  top: 0px;
+  top: 25px;
   left: 25px;
   z-index: 0;
   transform: scale(1.2, 1.2);
@@ -69,7 +69,7 @@ input[type=text] {
   border-radius: 100%/130% 130% 15px 15px;
   position: absolute;
   left: 70px;
-  top: 53px;
+  top: 78px;
   z-index: 3;
   width: 30px;
   padding: 0 5px;
@@ -83,7 +83,7 @@ input[type=text] {
   border-radius: 100%/130% 130% 15px 15px;
   position: absolute;
   left: 43px;
-  top: 65px;
+  top: 90px;
   z-index: 3;
   width: 30px;
   padding: 0 5px;

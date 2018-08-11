@@ -15,7 +15,18 @@ import { HttpClient, HttpClientModule, HttpClientJsonpModule  } from '@angular/c
 import { SquadSearchComponent } from './squadSearch/squadsearch';
 import { TBPlatoonComponent } from './TBPlatoons/platoontool';
 import { RaidPlannerComponent } from './RaidPlanner/raidplanner';
-import { SelectDropDownModule } from 'ngx-select-dropdown'
+import { SelectDropDownModule } from 'ngx-select-dropdown';
+import { LZStringModule, LZStringService } from 'ng-lz-string';
+import { ArenaTeamsComponent } from './arenaTeams/arenaTeams';
+import { gearLinkPipe } from './pipes/charpipe/gearLink.pipe';
+import { CharNamePipe } from './pipes/charpipe/charName.pipe';
+import { CharImageLinkPipe } from './pipes/charpipe/charLink.pipe';
+import { CharGearPipe } from './pipes/charpipe/charGear.pipe';
+import { ModSetNamePipe } from './pipes/modpipes/ModSetName.pipe';
+import { ModStatNamePipe } from './pipes/modpipes/ModStatName.pipe';
+import { ModStatValuePipe } from './pipes/modpipes/ModStatValue.pipe';
+import { ModSlotNamePipe } from './pipes/modpipes/ModSlotName.pipe';
+import { newCharSearchComponent } from './newCharSearch/newCharSearch';
 
 @NgModule({
   declarations: [
@@ -25,7 +36,21 @@ import { SelectDropDownModule } from 'ngx-select-dropdown'
     CharSearchComponent,
     SquadSearchComponent,
     TBPlatoonComponent,
-    RaidPlannerComponent
+    RaidPlannerComponent,
+    ArenaTeamsComponent,
+    newCharSearchComponent,
+
+    //Pipes here
+
+    gearLinkPipe,
+    CharNamePipe,
+    CharImageLinkPipe,
+    CharGearPipe,
+    ModSetNamePipe,
+    ModStatNamePipe,
+    ModStatValuePipe,
+    ModSlotNamePipe,
+
   ],
   imports: [
     BrowserModule,
@@ -35,9 +60,10 @@ import { SelectDropDownModule } from 'ngx-select-dropdown'
     ReactiveFormsModule,
     HttpClientModule,
     HttpClientJsonpModule,
-    SelectDropDownModule
+    SelectDropDownModule,
+    LZStringModule
   ],
-  providers: [SettingsService, gildenService, HttpClient ],
+  providers: [SettingsService, gildenService, HttpClient, LZStringService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

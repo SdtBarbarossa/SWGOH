@@ -11,6 +11,7 @@ export class HomeComponent {
   isSyncing: boolean = false;
 
   constructor(public settingsService: SettingsService, public gildenService: gildenService) {
+    console.log(this.settingsService.settings);
     if (this.settingsService.settings.autoSyncNow == true) {
       this.settingsService.settings.autoSyncNow = false;
       this.settingsService.saveSettings(this.settingsService.settings);

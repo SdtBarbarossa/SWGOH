@@ -1,9 +1,8 @@
 <input type="text" placeholder="Charname ( e.g 'Boba Fett' or 'Boba'  )" [(ngModel)]="charToSearch" (ngModelChange)="getCharsFromGildenInfos()">
 
 <div *ngFor="let char of charsFromGildenInfos" class="charNow">
-  <fieldset style="height: 170px;">
+  <fieldset style="height: 115px;">
     <legend>{{char.Name}} of {{char.Besitzer}}</legend>
-    Power: {{char.Power}}
     <br />
     <div class="parentOfImages">
       <img *ngIf="char.Sterne>0" src="/assets/picture/star.png">
@@ -31,7 +30,6 @@
         <span class="char-level">{{char.Level}}</span>
         <span class="char-gear-level">{{formatGearLevel(char.gearLevel)}}</span>
       </div>
-      <progress class="" value="{{char.Power}}" max="{{char.MaxPower}}"></progress> <span style="left: 55px; position: absolute; top: 115px; "><b>{{ roundNumber((char.Power/char.MaxPower)*100) }}%</b></span>
       </div>
       </fieldset>
 </div>

@@ -3,35 +3,42 @@
     Welcome to Swgoh-Helper!
   </h3>
 
-  <table *ngIf="gildenService.gildenInfos.OGM>0" style="width: 100%;">
+  <table *ngIf="gildenService.gildenInfos.members>0" style="width: 100%;">
     <tr>
-      <td>All Datas and Pictures are from <a href="http://www.swgoh.gg">www.swgoh.gg</a></td>
+      <td>All Datas are from <a href="http://swgoh.help">swgoh.help</a> and all Pictures from <a href="http://www.swgoh.gg">www.swgoh.gg</a></td>
     </tr>
     <tr>
-      <td>GildenURL = {{settingsService.settings.gildenUrl}}</td>
+      <td>Gilden Name = {{gildenService.gildenInfos.name}}</td>
     </tr>
     <tr>
-      <td>GildenAPI = {{settingsService.settings.apiUrl}}</td>
+      <td>Gilden GP = {{gildenService.gildenInfos.gp}}</td>
     </tr>
     <tr>
-      <td>GildenOGM = {{gildenService.gildenInfos.OGM}}</td>
+      <td>Gilden Description = {{gildenService.gildenInfos.desc}}</td>
+    </tr>
+    <tr> </tr>
+    <tr> </tr>
+    <tr>
+      <td>Raids Played:</td>
     </tr>
     <tr>
-      <td>GildenCGM = {{gildenService.gildenInfos.CGM}}</td>
+      <td>Rancor = {{gildenService.gildenInfos.raid.rancor}}</td>
     </tr>
     <tr>
-      <td>GildenFGM = {{gildenService.gildenInfos.FGM}}</td>
+      <td>AAT = {{gildenService.gildenInfos.raid.aat}}</td>
     </tr>
     <tr>
-      <td>Gilden Chars for TW = {{gildenService.gildenInfos.CharsForTW}}</td>
+      <td>STR = {{gildenService.gildenInfos.raid.sith_raid}}</td>
     </tr>
+    <tr> </tr>
+    <tr> </tr>
     <tr>
-      <td>Last Sync = {{gildenService.gildenInfos.Lastsync}}</td>
+      <td>Last Sync = {{gildenService.gildenInfos.updated | date: "dd.MM.yyyy HH:mm:ss"}}</td>
     </tr>
   </table>
 
-  <h3 *ngIf="settingsService.settings.apiUrl==''">Please go to Settings and enter a Gilden-API!</h3>
-  <h3 *ngIf="gildenService.gildenInfos.OGM==0&&settingsService.settings.apiUrl!=''">Please Synchronise with swgoh.gg by hitting the button at the bottom!</h3>
+  <h3 *ngIf="settingsService.settings.allycode==''">Please go to Settings and enter your Allycode!</h3>
+  <h3 *ngIf="gildenService.gildenInfos.members==0&&settingsService.settings.allycode!=''">Please Synchronise with swgoh.help by hitting the button at the bottom!</h3>
 
 </div>
 

@@ -6,6 +6,8 @@ import { CharSearchComponent } from './charSearch/charsearch';
 import { SquadSearchComponent } from './squadSearch/squadsearch';
 import { TBPlatoonComponent } from './TBPlatoons/platoontool';
 import { RaidPlannerComponent } from './RaidPlanner/raidplanner';
+import { ArenaTeamsComponent } from './arenaTeams/arenaTeams';
+import { newCharSearchComponent } from './newCharSearch/newCharSearch';
 
 const routes: Routes = [
   {
@@ -37,6 +39,14 @@ const routes: Routes = [
     path: 'raidplanner',
     component: RaidPlannerComponent
   },
+  {
+    path: 'arenateams',
+    component: ArenaTeamsComponent
+  },
+  {
+    path: 'newCharSearch',
+    component: newCharSearchComponent
+  }, 
   {
     path: '**',
     redirectTo: 'home'

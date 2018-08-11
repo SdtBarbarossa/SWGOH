@@ -16,21 +16,16 @@ export class SettingComponent {
   }
 
   saveSettings() {
-    if (this.settings.gildenUrl.startsWith("https://swgoh.gg/g/"))
-    {
-      this.settings.gildenUrl = this.settings.gildenUrl;
-      var urlTemp = this.settings.gildenUrl.replace("https://swgoh.gg/g/", "");
-      console.log(urlTemp);
-      var n = urlTemp.indexOf('/');
-      urlTemp = urlTemp.substring(0, n != -1 ? n : urlTemp.length);
-      console.log(urlTemp);
-      var urlTemp2 = "https://swgoh.gg/api/guilds/" + urlTemp + "/units/";
-      this.settings.apiUrl = urlTemp2;
-      console.log(this.settings.apiUrl);
-    }
     this.settings.autoSyncNow = true;
     this.settingsService.saveSettings(this.settings);
     this.router.navigate(['./home']);
+  }
+
+  changedAllycode() {
+    if (this.settings.allycode != "" && this.settings.allycode != null) {
+      var numb = this.settings.allycode.match(/\d/g);
+      this.settings.allycode = numb.join("");
+    }
   }
 
 }

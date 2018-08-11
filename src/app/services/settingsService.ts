@@ -22,8 +22,7 @@ export class SettingsService {
 }
 
 export class Settings {
-  apiUrl: string = "";
-  gildenUrl: string = "";
+  allycode: string = "";
   sortMemberBy: string = "OGM";
   showErrors: boolean = true;
   useAutoComplete: boolean = true;

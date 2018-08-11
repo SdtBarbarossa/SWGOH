@@ -9,3 +9,14 @@ C:\Users\Alle\source\repos\SWGOH\SWGOH\obj\Release\netcoreapp1.1\SWGOH.AssemblyI
 C:\Users\Alle\source\repos\SWGOH\SWGOH\obj\Release\netcoreapp1.1\SWGOH.AssemblyInfo.cs
 C:\Users\Alle\source\repos\SWGOH\SWGOH\obj\Release\netcoreapp1.1\SWGOH.dll
 C:\Users\Alle\source\repos\SWGOH\SWGOH\obj\Release\netcoreapp1.1\SWGOH.pdb
+C:\Users\Midi\source\repos\SWGOH\bin\Release\netcoreapp1.1\SWGOH.deps.json
+C:\Users\Midi\source\repos\SWGOH\bin\Release\netcoreapp1.1\SWGOH.runtimeconfig.json
+C:\Users\Midi\source\repos\SWGOH\bin\Release\netcoreapp1.1\SWGOH.runtimeconfig.dev.json
+C:\Users\Midi\source\repos\SWGOH\bin\Release\netcoreapp1.1\SWGOH.dll
+C:\Users\Midi\source\repos\SWGOH\bin\Release\netcoreapp1.1\SWGOH.pdb
+C:\Users\Midi\source\repos\SWGOH\obj\Release\netcoreapp1.1\SWGOH.csprojAssemblyReference.cache
+C:\Users\Midi\source\repos\SWGOH\obj\Release\netcoreapp1.1\SWGOH.csproj.CoreCompileInputs.cache
+C:\Users\Midi\source\repos\SWGOH\obj\Release\netcoreapp1.1\SWGOH.AssemblyInfoInputs.cache
+C:\Users\Midi\source\repos\SWGOH\obj\Release\netcoreapp1.1\SWGOH.AssemblyInfo.cs
+C:\Users\Midi\source\repos\SWGOH\obj\Release\netcoreapp1.1\SWGOH.dll
+C:\Users\Midi\source\repos\SWGOH\obj\Release\netcoreapp1.1\SWGOH.pdb

@@ -16,8 +16,7 @@ export class CharSearchComponent {
   }
 
   getCharsFromGildenInfos() {
-    this.charsFromGildenInfos = this.gildenService.findCharByName(this.charToSearch);
-    console.log(this.charsFromGildenInfos);
+    this.charsFromGildenInfos = this.gildenService.findMappedCharByName(this.charToSearch);
   }
 
   roundNumber(number) {

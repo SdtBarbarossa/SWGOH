@@ -3,8 +3,8 @@
   <fieldset>
     <legend>Settings :</legend>
 
-    <p style="float:left">Gilden-URL:</p>
-    <input type="text" placeholder="api-url ( e.g https://swgoh.gg/g/39155/schatten-koll3ktiv/ )" [(ngModel)]="this.settings.gildenUrl">
+    <p style="float:left">Allycode:</p>
+    <input type="text" placeholder="your allycode ( e.g 456789123 )" [(ngModel)]="this.settings.allycode" (change)="changedAllycode()">
 
     <p style="float:left">Sort Member by:</p>
     <select [(ngModel)]="this.settings.sortMemberBy">

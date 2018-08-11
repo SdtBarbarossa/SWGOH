@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { SettingsService, Settings } from '../services/settingsService';
-import { HttpClient, HttpClientJsonpModule  } from '@angular/common/http';
+import { HttpClient, HttpClientJsonpModule, HttpHeaders, HttpResponse } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
+import { LZStringService } from 'ng-lz-string';
+import { forEach } from '@angular/router/src/utils/collection';
 
 @Injectable()
 export class gildenService {
@@ -9,32 +12,54 @@ export class gildenService {
   gildenInfos: GildenInfos = new GildenInfos();
   gildenInfosTemp: GildenInfos = new GildenInfos();
   charInfos: any;
+  shipInfos: any;
+  ModStats: any;
+  ModSets: any;
   jsonResponseSWGOHCharacters: any;
   jsonResponseSWGOHShips: any;
   jsonResponseSWGOH: any;
   htmlResponseSWGOHZetas: any;
   syncstatus: string = '';
+  token: string = '';
   http: HttpClient;
 
-  constructor(private settingsService: SettingsService, http: HttpClient) {
+  //swgoh-help
+  apiHelpURL = 'https://api.swgoh.help';
+  jsonResponseSWGOHHelpGuild: any;
+  jsonResponseSWGOHHelpUnits: any;
+
+  constructor(private settingsService: SettingsService, http: HttpClient, private lz: LZStringService) {
     this.settings = this.settingsService.getSettings();
     this.http = http;
-    this.getGildenInfos();
     this.getCharInfos();
-    if (this.charInfos != null) {
-      console.log(this.charInfos);
-      console.log(this.charInfos[0].name);
-    }
+    this.getShipInfos();
+    this.getModStats();
+    this.getModSets();
+    this.getSWGOHHelpResponse();
+    console.log(this.charInfos);
+    console.log(this.shipInfos);
+    console.log(this.ModStats);
+    console.log(this.ModSets);
   }
 
-  getGildenInfos() {
-    if (localStorage.midiGildenInfos != null)
-      this.gildenInfos = JSON.parse(localStorage.midiGildenInfos);
+  getModStats() {
+    if (localStorage.midiModStats != null)
+      this.ModStats = JSON.parse(localStorage.midiModStats);
   }
 
-  saveGildenInfos(gildenInfos: GildenInfos) {
-    localStorage.midiGildenInfos = JSON.stringify(gildenInfos);
-    this.syncstatus = 'Gildeninfos Saved';
+  saveModStats(ModStats: any) {
+    localStorage.midiModStats = JSON.stringify(ModStats);
+    this.ModStats = ModStats;
+  }
+
+  getModSets() {
+    if (localStorage.midiModSets != null)
+      this.ModSets = JSON.parse(localStorage.midiModSets);
+  }
+
+  saveModSets(ModSets: any) {
+    localStorage.midiModSets = JSON.stringify(ModSets);
+    this.ModSets = ModSets;
   }
 
   getCharInfos() {
@@ -47,239 +72,214 @@ export class gildenService {
     this.charInfos = charInfos;
   }
 
-  syncGildenInfos() {
+  getShipInfos() {
+    if (localStorage.midiShipInfos != null)
+      this.shipInfos = JSON.parse(localStorage.midiShipInfos);
+  }
 
-    this.gildenInfosTemp = new GildenInfos();
-    this.syncstatus = 'Frage an bei SWGOH';
+  saveShipInfos(shipInfos: any) {
+    localStorage.midiShipInfos = JSON.stringify(shipInfos);
+    this.shipInfos = shipInfos;
+  }
 
-    var callsToGo = 3;
-    var zetaLink = "";
+  getSWGOHHelpResponse() {
+    if (localStorage.swgohHelpGilde != null) {
+      this.gildenInfos = JSON.parse(this.lz.decompress(localStorage.swgohHelpGilde));
+      this.gildenInfos.roster = this.gildenInfos.roster.sort(function (a, b) {
+        return b.gpFull - a.gpFull;
+      })
+      console.log(this.gildenInfos);
+    }
+  }
 
-    if (this.settings.gildenUrl != "") {
+  saveSWGOHHelpResponse() {
+    var answerAsJSON = JSON.stringify(this.jsonResponseSWGOHHelpGuild);
+    console.log('Full Size: ' + answerAsJSON.length);
+    var compressed = this.lz.compress(answerAsJSON);
+    console.log('Compressed Size: ' + compressed.length);
+    localStorage.swgohHelpGilde = compressed;
+    this.syncstatus = 'Gildeninfos Saved';
+    this.gildenInfos = this.jsonResponseSWGOHHelpGuild;
+    console.log(this.gildenInfos);
+  }
 
-      if (this.settings.gildenUrl.endsWith("/")){
-        zetaLink = this.settings.gildenUrl + "zetas/";
-      }
+  checkIfItsANumber(number) {
+    var numb = number.match(/\d/g);
+
+    if (numb == null)
+      return false;
+    else {
+      if (numb.join("") == number)
+        return true;
       else
-      {
-        zetaLink = this.settings.gildenUrl + "/zetas/";
-      }
-      callsToGo++;
+        return false;
     }
 
+  }
 
+  syncGildenInfos() {
 
-    console.log('first call = ' + 'https://cors-anywhere.herokuapp.com/' + 'https://swgoh.gg/api/characters/');
+    this.syncstatus = 'Frage an bei swgoh.help';
 
-    this.http.get('https://cors-anywhere.herokuapp.com/' + 'https://swgoh.gg/api/characters/', { responseType: 'json' })
+    var user = "username=sdtbarbarossa";
+    user += "&password=ExsJfR!nzYB*7Mqr";
+    user += "&grant_type=password";
+    user += "&client_id=123";
+    user += "&client_secret=ABC";
+
+    let headers = new HttpHeaders();
+    headers = headers.append('Content-Type', 'application/x-www-form-urlencoded');
+    headers.append('Content-Length', user.length.toString());
+
+    if (!this.checkIfItsANumber(this.settings.allycode)) {
+      alert('AllyCode "' + this.settings.allycode + '" is either empty or in the wrong format. It must be a string with 9 numbers ( no - )');
+      this.syncstatus = 'aborted';
+      return;
+    }
+
+    this.http.post('https://api.swgoh.help/auth/signin/', user, { headers: headers })
       .subscribe(data => {
-        this.jsonResponseSWGOHCharacters = data;
-        this.saveCharInfos(data);
-        this.syncstatus = 'Anfrage 1 von ' + callsToGo + ' bei SWGOH OK';
-        console.log('second call = ' + 'https://cors-anywhere.herokuapp.com/' + 'https://swgoh.gg/api/ships/');
+        var response = data as loginResponse;
+        this.token = response.access_token;
+        this.syncstatus = 'Warte auf swgoh.help...';
 
-        this.http.get('https://cors-anywhere.herokuapp.com/' + 'https://swgoh.gg/api/ships/', { responseType: 'json' })
+        this.http.get('https://cryptic-headland-94862.herokuapp.com/' + 'https://swgoh.gg/api/characters/', { responseType: 'json' })
           .subscribe(data => {
-            this.jsonResponseSWGOHShips = data;
-            this.syncstatus = 'Anfrage 2 von ' + callsToGo + ' bei SWGOH OK';
+            this.jsonResponseSWGOHCharacters = data;
+            this.saveCharInfos(data);
+            this.syncstatus = 'Anfrage 2 von ' + 2 + ' bei SWGOH OK';
+            console.log(this.jsonResponseSWGOHCharacters);
 
-            console.log('third call = ' + 'https://cors-anywhere.herokuapp.com/' + this.settings.apiUrl);
+            this.http.get('https://cryptic-headland-94862.herokuapp.com/' + 'https://swgoh.gg/api/ships/', { responseType: 'json' })
+              .subscribe(data => {
+                this.jsonResponseSWGOHCharacters = data;
+                this.saveShipInfos(data);
+                this.syncstatus = 'Rufe Gildendaten ab... dies kann 2 Min Dauern';
+                console.log(this.jsonResponseSWGOHCharacters);
 
-          this.http.get('https://cors-anywhere.herokuapp.com/' + this.settings.apiUrl, { responseType: 'json' })
-          .subscribe(data => {
-            this.jsonResponseSWGOH = data;
-            this.syncstatus = 'Anfrage 3 von ' + callsToGo + ' bei SWGOH OK';
 
-            console.log('fourth call = ' + 'https://cors-anywhere.herokuapp.com/' + zetaLink);
+            let header2 = new HttpHeaders();
+            header2 = header2.append("Authorization", "Bearer " + this.token);
+            header2.append('Access-Control-Allow-Headers', 'Authorization');
+            this.http.post('https://api.swgoh.help/swgoh/guild/' + this.settings.allycode, '', { headers: header2 })
+              .subscribe(data2 => {
+                this.jsonResponseSWGOHHelpGuild = data2;
+                this.syncstatus = 'Hole Mod-Set-Infos...';
+                this.saveSWGOHHelpResponse();
 
-            if (callsToGo == 4) {
-              this.http.get('https://cors-anywhere.herokuapp.com/' + zetaLink, { responseType: 'text' })
-                .subscribe(data => {
-                  this.htmlResponseSWGOHZetas = data;
-                  this.syncstatus = 'Anfrage 4 von ' + callsToGo + ' bei SWGOH OK';
+                let header2 = new HttpHeaders();
+                header2 = header2.append("Authorization", "Bearer " + this.token);
+                header2.append('Access-Control-Allow-Headers', 'Authorization');
+                this.http.post('https://api.swgoh.help/swgoh/data/mod-sets', '', { headers: header2 })
+                  .subscribe(data2 => {
+                    this.ModSets = data2;
+                    this.syncstatus = 'Hole Mod-Stat-Infos...';
+                    this.saveModSets(this.ModSets);
 
-                  this.updateGildenInfos();
+                    let header2 = new HttpHeaders();
+                    header2 = header2.append("Authorization", "Bearer " + this.token);
+                    header2.append('Access-Control-Allow-Headers', 'Authorization');
+                    this.http.post('https://api.swgoh.help/swgoh/data/mod-stats', '', { headers: header2 })
+                      .subscribe(data2 => {
+                        this.ModStats = data2;
+                        this.syncstatus = 'Verarbeite Gildendaten...';
+                        this.saveModStats(this.ModStats);
+                        this.syncstatus = 'Gildeninfos saved...';
 
-                });
-            }
-            else {
-              this.updateGildenInfos();
-            }
+                      });
+
+                  });
+
+                  });
 
               });
 
           });
+
+
       });
 
   }
 
-  updateGildenInfos() {
+  getAllCharsByName(name:string) {
 
-    this.syncstatus = 'updateGildenInfos ANFANG';
-    console.log('updateGildenInfos ANFANG');
+    var charsFound = new Array();
+
+    //MapCharName To IDName
+    var idName = this.charInfos.filter(info => info.name.toLowerCase().indexOf(name.toLowerCase()) >= 0);
     
-    for (var i = 0; i < this.jsonResponseSWGOHCharacters.length; i++) {
+    if (idName == null || idName.length == 0)
+      return null;
 
-      this.syncstatus = 'updateGildenInfos Charakter ' + i + ' of ' + this.jsonResponseSWGOHCharacters.length;
-      console.log('updateGildenInfos Charakter ' + i + ' of ' + this.jsonResponseSWGOHCharacters.length);
+    for (var i = 0; i < this.gildenInfos.roster.length; i++) {
+      for (var z = 0; z < idName.length; z++) {
 
-      var actualCharakters = this.jsonResponseSWGOH[this.jsonResponseSWGOHCharacters[i].base_id];
+      var foundChars = this.gildenInfos.roster[i].roster.filter(char => (idName[z].base_id.toLowerCase() == char.name.toLowerCase()) );
 
-      if (actualCharakters != null) {
-        for (var x = 0; x < actualCharakters.length; x++) {
-          var char = new Charakter();
-          char.Name = this.jsonResponseSWGOHCharacters[i].name;
-          char.Besitzer = actualCharakters[x].player;
-          char.Power = actualCharakters[x].power;
-          char.MaxPower = this.jsonResponseSWGOHCharacters[i].power; 
-          char.Level = actualCharakters[x].level;
-          char.Sterne = actualCharakters[x].rarity;
-          char.gearLevel = actualCharakters[x].gear_level;
-          char.imageUrl = this.jsonResponseSWGOHCharacters[i].image.replace("//swgoh.gg/static/img/assets/tex.",""); 
-          char.charUrl = this.jsonResponseSWGOHCharacters[i].url; 
-          this.addCharakterToGildenInfos(char);
-        }
+      if (foundChars == null || foundChars.length == 0)
+      {
+
       }
-    }
+      else
+      {
+        for (var x = 0; x < foundChars.length; x++)
+        {
 
-    for (var i = 0; i < this.jsonResponseSWGOHShips.length; i++) {
+          if (foundChars[x] == null || foundChars[x] == undefined) {
 
-      var actualShips = this.jsonResponseSWGOH[this.jsonResponseSWGOHShips[i].base_id];
-
-      if (actualShips != null) {
-        for (var x = 0; x < actualShips.length; x++) {
-          var ship = new Ship();
-          ship.Name = this.jsonResponseSWGOHShips[i].name;
-          ship.Besitzer = actualShips[x].player;
-          ship.Power = actualShips[x].power;
-          ship.MaxPower = this.jsonResponseSWGOHShips[i].power;
-          ship.Level = actualShips[x].level;
-          ship.Sterne = actualShips[x].rarity;
-          ship.imageUrl = this.jsonResponseSWGOHShips[i].image.replace("//swgoh.gg/static/img/assets/tex.", "");
-          this.addShipToGildenInfos(ship);
-        }
-      }
-    }
-
-    this.gildenInfosTemp.Lastsync = new Date();
-    this.gildenInfos = this.gildenInfosTemp;
-
-    if (this.htmlResponseSWGOHZetas != null) {
-
-      var parser = new DOMParser()
-      var doc = parser.parseFromString(this.htmlResponseSWGOHZetas, "text/html");
-
-      var table = doc.getElementsByTagName("tbody")[0];
-      var allTR = table.getElementsByTagName('tr');
-
-      for (var i = 0; i < allTR.length; i++) {
-
-        var currentMember = allTR[i].getElementsByTagName('td')[0].attributes.getNamedItem('data-sort-value').value;
-        console.log('Membername = ' + currentMember);
-
-        var memberZetas = allTR[i].getElementsByClassName('guild-member-zeta');
-        for (var x = 0; x < memberZetas.length; x++) {
-          var charNameNow = memberZetas[x].getElementsByClassName('char-portrait')[0].attributes.getNamedItem('title').value;
-          console.log(charNameNow);
-          var charNowZetas = memberZetas[x].getElementsByClassName('guild-member-zeta-ability').length;
-          console.log('Zetas = ' + charNowZetas);
-
-          var foundChar = this.findCharbyNameAndMember(currentMember, charNameNow);
-          if (foundChar != null) {
-            foundChar.Zetas = charNowZetas;
+          }
+          else {
+            var charHelperNow = new CharFindHelper();
+            charHelperNow.besitzer = this.gildenInfos.roster[i].name;
+            charHelperNow.charakter = foundChars[x];
+            charsFound.push(charHelperNow);
           }
 
         }
-
+      }
+        
       }
 
     }
 
-    console.log('updateGildenInfos ENDE');
-    this.syncstatus = 'updateGildenInfos ENDE ';
+    return charsFound;
 
-    switch (this.settings.sortMemberBy) {
-    case "OGM":
-        this.gildenInfos.Members = this.gildenInfos.Members.sort((a, b) => b.OGM - a.OGM);
-    break;
+  }
 
-    case "CGM":
-      this.gildenInfos.Members = this.gildenInfos.Members.sort((a, b) => b.CGM - a.CGM);
-    break;
+  getAllCharArenaTeams() {
+    var allTeams = new Array();
 
-    case "FGM":
-      this.gildenInfos.Members = this.gildenInfos.Members.sort((a, b) => b.FGM - a.FGM);
-    break;
+    for (var i = 0; i < this.gildenInfos.roster.length; i++) {
+      var arenaTeamNow = new ArenaTeamHelper();
+      arenaTeamNow.besitzer = this.gildenInfos.roster[i].name;
 
-    case "Name":
-      this.gildenInfos.Members = this.gildenInfos.Members.sort((a, b) => a.Name.localeCompare(b.Name));
-    break;
+      var teamNow = this.gildenInfos.roster[i].arena.char;
+      arenaTeamNow.rang = teamNow.rank;
 
-    default:
-      this.gildenInfos.Members = this.gildenInfos.Members.sort((a, b) => a.Name.localeCompare(b.Name));
-    break;
+      for (var x = 0; x < teamNow.squad.length; x++) {
+
+        var charNow = this.gildenInfos.roster[i].roster.find(char => char.name == teamNow.squad[x].name);
+
+        if (charNow != null)
+          arenaTeamNow.charaktere.push(charNow);
+      }
+
+      allTeams.push(arenaTeamNow);
+
     }
-    
-    this.saveGildenInfos(this.gildenInfos);
-    console.log(this.gildenInfos);
-
+    return allTeams as ArenaTeamHelper[];
   }
 
   getMemberByName(name: string) {
-    return this.gildenInfos.Members.find(a => a.Name == name);
+    return this.gildenInfos.roster.find(a => a.name == name);
   }
-
-  addCharakterToGildenInfos(char) {
-
-    this.gildenInfosTemp.OGM += char.Power;
-    this.gildenInfosTemp.CGM += char.Power;
-
-    if (char.Power > 6000) {
-      this.gildenInfosTemp.CharsForTW++;
-    }
-
-    var MemberNow = this.TempfindMemberbyName(char.Besitzer);
-    if (MemberNow != null) {
-      MemberNow.Charaktere.push(char);
-      MemberNow.OGM += char.Power;
-      MemberNow.CGM += char.Power;
-    } else {
-      var memberTemp = new Member();
-      memberTemp.Name = char.Besitzer;
-      memberTemp.Charaktere.push(char);
-      this.gildenInfosTemp.Members.push(memberTemp);
-      console.log('Added Member: ' + memberTemp.Name);
-    }
-
-  }
-
-  addShipToGildenInfos(ship) {
-
-    this.gildenInfosTemp.OGM += ship.Power;
-    this.gildenInfosTemp.FGM += ship.Power;
-
-    var MemberNow = this.TempfindMemberbyName(ship.Besitzer);
-    if (MemberNow != null) {
-      MemberNow.Ships.push(ship);
-      MemberNow.OGM += ship.Power;
-      MemberNow.FGM += ship.Power;
-    } else {
-      var memberTemp = new Member();
-      memberTemp.Name = ship.Besitzer;
-      memberTemp.Ships.push(ship);
-      this.gildenInfosTemp.Members.push(memberTemp);
-      console.log('Added Member: ' + memberTemp.Name);
-    }
-
-  }
-
 
   //GildenInfos Function
   findMemberbyName(memberName) {
 
-    for (var i = 0; i < this.gildenInfos.Members.length; i++) {
-      if (this.gildenInfos.Members[i].Name == memberName) {
-        return this.gildenInfos.Members[i];
+    for (var i = 0; i < this.gildenInfos.roster.length; i++) {
+      if (this.gildenInfos.roster[i].name == memberName) {
+        return this.gildenInfos.roster[i];
       }
     }
     return null;
@@ -287,11 +287,11 @@ export class gildenService {
 
   findCharbyNameAndMember(memberName, charName) {
 
-    for (var i = 0; i < this.gildenInfos.Members.length; i++) {
-      if (this.gildenInfos.Members[i].Name == memberName) {
-        for (var x = 0; x < this.gildenInfos.Members[i].Charaktere.length; x++) {
-          if (this.gildenInfos.Members[i].Charaktere[x].Name == charName) {
-            return this.gildenInfos.Members[i].Charaktere[x];
+    for (var i = 0; i < this.gildenInfos.roster.length; i++) {
+      if (this.gildenInfos.roster[i].name == memberName) {
+        for (var x = 0; x < this.gildenInfos.roster[i].roster.length; x++) {
+          if (this.gildenInfos.roster[i].roster[x].name == charName) {
+            return this.gildenInfos.roster[i].roster[x];
           }
         }
       }
@@ -299,26 +299,33 @@ export class gildenService {
     return null;
   }
 
-  TempfindMemberbyName(memberName) {
+  public findSquadWithMember(squadToFind: squad, member: Member) {
 
-    for (var i = 0; i < this.gildenInfosTemp.Members.length; i++) {
-      if (this.gildenInfosTemp.Members[i].Name == memberName) {
-        return this.gildenInfosTemp.Members[i];
-      }
+    var memberNow = this.gildenInfos.roster.find(m => m.name == member.name);
+    
+      var tempSquad = new Array();
+
+      for (var x = 0; x < squadToFind.Charaktere.length; x++) {
+        var charNow = this.getMappedCharByNameAndMemberExact(squadToFind.Charaktere[x], memberNow);
+        if (charNow != null) {
+          tempSquad.push(charNow);
+        }
     }
-    return null;
+
+    return tempSquad;
+    
   }
 
   public findSquads(squadToFind: squad) {
 
     var squads = new Array();
 
-    for (var i = 0; i < this.gildenInfos.Members.length; i++) {
+    for (var i = 0; i < this.gildenInfos.roster.length; i++) {
 
       var tempSquad = new Array();
 
       for (var x = 0; x < squadToFind.Charaktere.length; x++) {
-        var charNow = this.getCharByNameAndMemberExact(squadToFind.Charaktere[x], this.gildenInfos.Members[i]);
+        var charNow = this.getMappedCharByNameAndMemberExact(squadToFind.Charaktere[x], this.gildenInfos.roster[i]);
         if (charNow != null) {
           tempSquad.push(charNow);
         }
@@ -338,34 +345,59 @@ export class gildenService {
   }
 
   compareSquads(a, b) {
-
-    var tempPowerA = 0;
+    
+    var tempSumA = 0;
     for (var i = 0; i < a.length; i++) {
-      tempPowerA += a[i].Power;
+      tempSumA += a[i].gearLevel;
+      tempSumA += a[i].Zetas*4;
+      tempSumA += a[i].Sterne;
     }
-    var tempPowerB = 0;
+    var tempSumB = 0;
     for (var i = 0; i < b.length; i++) {
-      tempPowerB += b[i].Power;
+      tempSumB += b[i].gearLevel;
+      tempSumB += b[i].Zetas*4;
+      tempSumB += b[i].Sterne;
     }
-
-    if (tempPowerA > tempPowerB)
+    
+    if (tempSumA > tempSumB)
       return -1;
-    if (tempPowerA < tempPowerB)
+    if (tempSumA < tempSumB)
       return 1;
     return 0;
   }
 
   public findCharByName(charName) {
-    
+
     if (charName == '') {
       return null;
     }
 
     var allChars = new Array();
 
-    for (var i = 0; i < this.gildenInfos.Members.length; i++) {
-      var nowChar = this.getCharByNameAndMember(charName, this.gildenInfos.Members[i]);
+    for (var i = 0; i < this.gildenInfos.roster.length; i++) {
+      var nowChar = this.getCharByNameAndMember(charName, this.gildenInfos.roster[i]);
       if (nowChar != null) {
+        allChars.push(nowChar);
+      }
+    }
+
+    allChars.sort(this.compareChar);
+
+    return allChars;
+  }
+
+  public findMappedCharByName(charName) {
+
+    if (charName == '') {
+      return null;
+    }
+
+    var allChars = new Array();
+
+    for (var i = 0; i < this.gildenInfos.roster.length; i++) {
+      var nowChar = this.getMappedCharByNameAndMember(charName, this.gildenInfos.roster[i]);
+      if (nowChar != null) {
+
         allChars.push(nowChar);
       }
     }
@@ -383,8 +415,8 @@ export class gildenService {
 
     var allChars = new Array();
 
-    for (var i = 0; i < this.gildenInfos.Members.length; i++) {
-      var nowChar = this.getCharByNameAndMemberExact(charName, this.gildenInfos.Members[i]);
+    for (var i = 0; i < this.gildenInfos.roster.length; i++) {
+      var nowChar = this.getMappedCharByNameAndMemberExact(charName, this.gildenInfos.roster[i]);
       if (nowChar != null && nowChar.Sterne >= star) {
         allChars.push(nowChar);
       }
@@ -395,7 +427,7 @@ export class gildenService {
     return allChars;
   }
 
-  public findShipByNameAndStar(charName:string, star:number) {
+  public findShipByNameAndStar(charName: string, star: number) {
 
     if (charName == '') {
       return null;
@@ -403,8 +435,8 @@ export class gildenService {
 
     var allChars = new Array();
 
-    for (var i = 0; i < this.gildenInfos.Members.length; i++) {
-      var nowChar = this.getShipByNameAndMemberExact(charName, this.gildenInfos.Members[i]);
+    for (var i = 0; i < this.gildenInfos.roster.length; i++) {
+      var nowChar = this.getMappedShipByNameAndMemberExact(charName, this.gildenInfos.roster[i]);
       if (nowChar != null && nowChar.Sterne >= star) {
         allChars.push(nowChar);
       }
@@ -415,14 +447,46 @@ export class gildenService {
     return allChars;
   }
 
-  compareChar(a, b) {
-    if (a.Power > b.Power)
+  compareChar(a: MappedCharakter, b) {
+    if (a.gearLevel > b.gearLevel)
       return -1;
-    if (a.Power < b.Power)
+    if (a.gearLevel < b.gearLevel)
       return 1;
+    if (a.gearLevel == b.gearLevel) {
+      if (a.Zetas > b.Zetas)
+        return -1;
+      if (a.Zetas < b.Zetas)
+        return 1;
+    }
     return 0;
   }
 
+  getMappedCharByNameAndMember(name, member) {
+
+    if (name == undefined || name == '') {
+      return null;
+    }
+
+    //MapCharName To IDName
+    var idName = this.charInfos.find(info => info.name.toLowerCase().indexOf(name.toLowerCase()) >= 0);
+
+    if (idName != null)
+      name = idName.base_id;
+
+
+    for (var i = 0; i < member.roster.length; i++) {
+      if (member.roster[i].name.toLowerCase().includes(name.toLowerCase())) {
+        
+        if (idName != null)
+          var mappedChar = this.mappChar(member.roster[i], member.name, idName.name);
+        else
+          var mappedChar = this.mappChar(member.roster[i], member.name, member.roster[i].name);
+        return mappedChar;
+      }
+    }
+
+    return null;
+  }
 
   getCharByNameAndMember(name, member) {
 
@@ -430,9 +494,9 @@ export class gildenService {
       return null;
     }
 
-    for (var i = 0; i < member.Charaktere.length; i++) {
-      if (member.Charaktere[i].Name.toLowerCase().includes(name.toLowerCase())) {
-        return member.Charaktere[i];
+    for (var i = 0; i < member.roster.length; i++) {
+      if (member.roster[i].name.toLowerCase().includes(name.toLowerCase())) {
+        return member.roster[i];
       }
     }
 
@@ -445,27 +509,106 @@ export class gildenService {
       return null;
     }
 
-    for (var i = 0; i < member.Charaktere.length; i++) {
-      if (member.Charaktere[i].Name.toLowerCase() == name.toLowerCase()) {
-        return member.Charaktere[i];
+    //MapCharName To IDName
+    var idName = this.charInfos.find(info => info.name == name);
+
+    if (idName != null)
+      name = idName.base_id;
+
+    for (var i = 0; i < member.roster.length; i++) {
+      if (member.roster[i].name.toLowerCase() == name.toLowerCase()) {
+        return member.roster[i];
+      }
+    }
+    return null;
+  }
+  
+  mappChar(newchar, besitzer, oldName) {
+
+    var mappedChar = new MappedCharakter();
+    mappedChar.Besitzer = besitzer;
+
+    mappedChar.gearLevel = newchar.gear;
+    mappedChar.Level = newchar.level;
+    if (oldName != null) {
+      mappedChar.Name = oldName;
+    }
+    else
+      mappedChar.Name = newchar.name;
+
+    mappedChar.Power = newchar.xp;
+    mappedChar.Sterne = newchar.rarity;
+
+    if (this.charInfos != null) {
+
+      var charInfoNow = this.charInfos.find(info => info.base_id == newchar.name);
+
+      if (charInfoNow != null) {
+        mappedChar.MaxPower = charInfoNow.power;
+        mappedChar.charUrl = charInfoNow.url;
+        if (charInfoNow.image.indexOf('/tex.') > 0) {
+          mappedChar.imageUrl = charInfoNow.image.substr(charInfoNow.image.indexOf('/tex.') + 5, (charInfoNow.image.length - charInfoNow.image.indexOf('/tex.')) - 5);
+        }
+      }
+
+    }
+
+    mappedChar.Zetas = 0;
+    for (var index = 0; newchar.skills.length > index; index++) {
+      if (newchar.skills[index].isZeta == true && newchar.skills[index].tier == 8) {
+        mappedChar.Zetas += 1;
       }
     }
 
-    return null;
+    return mappedChar;
+
   }
 
-  getShipByNameAndMemberExact(name, member) {
+  getMappedCharByNameAndMemberExact(name, member) {
 
     if (name == undefined || name == '') {
       return null;
     }
 
-    for (var i = 0; i < member.Ships.length; i++) {
-      if (member.Ships[i].Name.toLowerCase() == name.toLowerCase()) {
-        return member.Ships[i];
+    //MapCharName To IDName
+    var idName = this.charInfos.find(info => info.name.toLowerCase() == name.toLowerCase());
+
+    if (idName != null)
+      name = idName.base_id;
+
+    for (var i = 0; i < member.roster.length; i++) {
+      if (member.roster[i].name.toLowerCase() == name.toLowerCase()) {
+        return this.mappChar(member.roster[i], member.name, idName.name);
       }
     }
+    return null;
+  }
 
+  getMappedShipByNameAndMemberExact(name, member) {
+
+    if (name == undefined || name == '') {
+      return null;
+    }
+    
+    //MapCharName To IDName
+    var idName = this.shipInfos.find(info => info.name.toLowerCase() == name.toLowerCase());
+    
+    if (idName != null) {
+      name = idName.base_id;
+    } else {
+      console.log('didnt found ' + name);
+    }
+    
+    for (var i = 0; i < member.roster.length; i++) {
+      if (member.roster[i].name.toLowerCase() == name.toLowerCase()) {
+        if (idName != null) {
+          return this.mappChar(member.roster[i], member.name, idName.name);
+        }
+        else {
+          return this.mappChar(member.roster[i], member.name, member.roster[i].name);
+        }
+      }
+    }
     return null;
   }
 
@@ -475,25 +618,70 @@ export class gildenService {
 
 export class GildenInfos {
 
-  Members: Member[] = new Array();
-  OGM: number = 0;
-  CGM: number = 0;
-  FGM: number = 0;
-  CharsForTW: number = 0;
-  Lastsync: Date;
-  
+  bannerColor: string = "";
+  bannerLogo: string = "";
+  desc: string = "";
+  gp: number = 0;
+  members: number = 0;
+  message: string = "";
+  name: string = "";
+  raid: Raid = new Raid();
+  required: number = 0;
+  roster: Member[] = new Array();
+  updated: Date = new Date();
+}
+
+class Raid {
+  aat: string = "";
+  rancor: string = "";
+  sith_raid: string = "";
 }
 
 class Member {
-  Name: string;
-  Charaktere: Charakter[] = new Array();
-  Ships: Ship[] = new Array();
-  OGM: number = 0;
-  CGM: number = 0;
-  FGM: number = 0;
+  allyCode: number = 0;
+  arena: Arena = new Arena();
+  gpChar: number = 0;
+  gpFull: number = 0;
+  gpShip: number = 0;
+  guildName: string = "";
+  level: number = 0;
+  name: string = "";
+  roster: Charakter[] = new Array();
+  updated: Date = new Date();
 }
 
-class Charakter {
+class Arena {
+  char: ArenaHelper = new ArenaHelper();
+  ship: ArenaHelper = new ArenaHelper();
+}
+
+class ArenaHelper {
+  rank: number = 0;
+  squad: ArenaChar[] = new Array();
+}
+
+class ArenaChar {
+  id: string = "";
+  name: string = "";
+  type: number = 0;
+}
+
+export class Charakter {
+  crew: any;
+  defId: string = "";
+  equipped: Gear[] = new Array();
+  gear: number = 0;
+  id: string = "";
+  level: number = 0;
+  mods: Mod[] = new Array();
+  name: string = "";
+  rarity: number = 0;
+  skills: Skill[] = new Array();
+  type: string = "";
+  xp: number = 0;
+}
+
+class MappedCharakter {
   Name: string;
   Besitzer: string;
   Power: number;
@@ -506,14 +694,35 @@ class Charakter {
   charUrl: string;
 }
 
-class Ship {
-  Name: string;
-  Besitzer: string;
-  Power: number;
-  MaxPower: number;
-  Level: number;
-  Sterne: number;
-  imageUrl: string;
+class Gear {
+  equipmentId: string = "";
+  slot: number = 0;
+}
+
+class Mod {
+  id: string = "";
+  level: number = 0;
+  pips: number = 0;
+  primaryBonusType: number = 0;
+  primaryBonusValue: number = 0;
+  secondaryType_1: number = 0;
+  secondaryType_2: number = 0;
+  secondaryType_3: number = 0;
+  secondaryType_4: number = 0;
+  secondaryValue_1: number = 0;
+  secondaryValue_2: number = 0;
+  secondaryValue_3: number = 0;
+  secondaryValue_4: number = 0;
+  set: number = 0;
+  setId: number = 0;
+  slot: number = 0;
+}
+
+class Skill {
+  id: string = "";
+  isZeta: boolean = false;
+  name: string = "";
+  tier: number = 0;
 }
 
 class squad {
@@ -521,4 +730,21 @@ class squad {
   Name: string = 'SquadName';
   Charaktere: string[] = new Array();
 
+}
+
+class loginResponse {
+  access_token: string;
+  expires_in: number;
+  token_type: string;
+}
+
+export class ArenaTeamHelper {
+  besitzer: string = "";
+  rang: number = 100000;
+  charaktere: Charakter[] = new Array();
+}
+
+export class CharFindHelper {
+  besitzer: string = "";
+  charakter: Charakter = new Charakter();
 }
