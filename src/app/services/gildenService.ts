@@ -104,16 +104,19 @@ export class gildenService {
   }
 
   checkIfItsANumber(number) {
+
+    if (number == null)
+      return false;
+    
     var numb = number.match(/\d/g);
 
     if (numb == null)
       return false;
-    else {
+
       if (numb.join("") == number)
         return true;
       else
         return false;
-    }
 
   }
 
@@ -186,18 +189,18 @@ export class gildenService {
                         this.saveModStats(this.ModStats);
                         this.syncstatus = 'Gildeninfos saved...';
 
-                      });
+                      }, Error => { alert(Error) });
 
-                  });
+                  }, Error => { alert(Error) });
 
-                  });
+              }, Error => { alert(Error) });
 
-              });
+              }, Error => { alert(Error) });
 
-          });
+          }, Error => { alert(Error) });
 
 
-      });
+      }, Error => { alert(Error) });
 
   }
 

@@ -41,7 +41,7 @@ module.exports = "input[type=text] {\r\n  width: 100%;\r\n  padding: 12px 20px;\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<table id=\"raidplannerTable\" style=\"width:100%\">\r\n  <tr>\r\n    <th>Member</th>\r\n    <th *ngFor=\"let squad of squads\" (click)=\"alertSquad(squad)\">{{squad.Name}}</th>\r\n  </tr>\r\n  <tr *ngFor=\"let player of gildenService.gildenInfos.roster\">\r\n    <td>{{player.name}}</td>\r\n    <td *ngFor=\"let squad of squads\">\r\n\r\n      <div *ngIf='(playerGotSquad(player, squad.Name) == 3)' style=\"background-color:green\">{{playerGotSquad(player, squad.Name)}}</div>\r\n      <div *ngIf='playerGotSquad(player, squad.Name) == 2' style=\"background-color:blue\">{{playerGotSquad(player, squad.Name)}}</div>\r\n      <div *ngIf='playerGotSquad(player, squad.Name) == 1' style=\"background-color:yellow\">{{playerGotSquad(player, squad.Name)}}</div>\r\n      <div *ngIf='playerGotSquad(player, squad.Name) == 0' style=\"background-color:orange\">{{playerGotSquad(player, squad.Name)}}</div>\r\n      <div *ngIf='playerGotSquad(player, squad.Name) < 0' style=\"background-color:brown\">{{playerGotSquad(player, squad.Name)}}</div>\r\n\r\n    </td>\r\n\r\n  </tr>\r\n  </table>\r\n"
+module.exports = "<div *ngIf=\"!raidDataSource\">Lädt Raidplan...</div>\r\n<dx-data-grid *ngIf=\"raidDataSource\"\r\n              [dataSource]=\"raidDataSource\"\r\n              [allowColumnReordering]=\"true\"\r\n              [showBorders]=\"true\"\r\n              (onCellPrepared)=\"colorizeCell($event)\">\r\n\r\n  <dxo-filter-row [visible]=\"true\"></dxo-filter-row>\r\n\r\n  <dxo-column-chooser [enabled]=\"true\"\r\n                      mode=\"dragAndDrop\">\r\n  </dxo-column-chooser>\r\n\r\n  <dxi-column *ngFor=\"let columnNow of columns; let i = index\" dataField=\"{{i}}\" caption=\"{{columnNow}}\"></dxi-column>\r\n\r\n</dx-data-grid>\r\n\r\n<!--<table id=\"raidplannerTable\" style=\"width:100%\">\r\n  <tr>\r\n    <th>Member</th>\r\n    <th *ngFor=\"let squad of squads\" (click)=\"alertSquad(squad)\">{{squad.Name}}</th>\r\n  </tr>\r\n  <tr *ngFor=\"let player of gildenService.gildenInfos.roster\">\r\n    <td>{{player.name}}</td>\r\n    <td *ngFor=\"let squad of squads\">\r\n\r\n      <div *ngIf='(playerGotSquad(player, squad.Name) == 3)' style=\"background-color:green\">{{playerGotSquad(player, squad.Name)}}</div>\r\n      <div *ngIf='playerGotSquad(player, squad.Name) == 2' style=\"background-color:blue\">{{playerGotSquad(player, squad.Name)}}</div>\r\n      <div *ngIf='playerGotSquad(player, squad.Name) == 1' style=\"background-color:yellow\">{{playerGotSquad(player, squad.Name)}}</div>\r\n      <div *ngIf='playerGotSquad(player, squad.Name) == 0' style=\"background-color:orange\">{{playerGotSquad(player, squad.Name)}}</div>\r\n      <div *ngIf='playerGotSquad(player, squad.Name) < 0' style=\"background-color:brown\">{{playerGotSquad(player, squad.Name)}}</div>\r\n\r\n    </td>\r\n\r\n  </tr>\r\n  </table>-->\r\n"
 
 /***/ }),
 
@@ -75,6 +75,7 @@ var RaidPlannerComponent = /** @class */ (function () {
         this.settingsService = settingsService;
         this.gildenService = gildenService;
         this.dmgP4 = 100;
+        this.columns = new Array();
         this.squads = new Array();
         var jtr = new squad();
         jtr.Name = "JTR P1";
@@ -232,7 +233,118 @@ var RaidPlannerComponent = /** @class */ (function () {
         firstOrder.Zetas.push(0);
         firstOrder.Zetas.push(0);
         this.squads.push(firstOrder);
+        this.loadGridDatasource();
     }
+    RaidPlannerComponent.prototype.onToolbarPreparing = function (e) {
+        e.toolbarOptions.items.unshift({
+            location: 'before',
+            template: 'totalGroupCount'
+        }, {
+            location: 'before',
+            widget: 'dxSelectBox',
+            options: {
+                width: 200,
+                items: [{
+                        value: 'CustomerStoreState',
+                        text: 'Grouping by State'
+                    }, {
+                        value: 'Employee',
+                        text: 'Grouping by Employee'
+                    }],
+                displayExpr: 'text',
+                valueExpr: 'value',
+                value: 'CustomerStoreState',
+            }
+        });
+    };
+    RaidPlannerComponent.prototype.loadGridDatasource = function () {
+        var dataSourceTemp = new Array();
+        var columnNames = new Array();
+        columnNames.push("Member");
+        for (var i = 0; i < this.squads.length; i++)
+            columnNames.push(this.squads[i].Name);
+        this.columns = columnNames;
+        for (var i = 0; i < this.gildenService.gildenInfos.roster.length; i++) {
+            var memberNow = new Array();
+            memberNow.push(this.gildenService.gildenInfos.roster[i].name);
+            for (var x = 0; x < this.squads.length; x++) {
+                memberNow.push(this.playerGotSquadExact(this.gildenService.gildenInfos.roster[i], this.squads[x]));
+            }
+            dataSourceTemp.push(memberNow);
+        }
+        this.raidDataSource = dataSourceTemp;
+        console.log(this.raidDataSource);
+    };
+    RaidPlannerComponent.prototype.colorizeCell = function (event) {
+        if (event.columnIndex == 0)
+            return;
+        // debugger;
+        if (event.value < 5)
+            event.cellElement.bgColor = "FF0000";
+        else if (event.value < 10)
+            event.cellElement.bgColor = "FF1900";
+        else if (event.value < 15)
+            event.cellElement.bgColor = "FF3300";
+        else if (event.value < 20)
+            event.cellElement.bgColor = "FF4C00";
+        else if (event.value < 25)
+            event.cellElement.bgColor = "FF6600";
+        else if (event.value < 30)
+            event.cellElement.bgColor = "FF7F00";
+        else if (event.value < 35)
+            event.cellElement.bgColor = "FF9900";
+        else if (event.value < 40)
+            event.cellElement.bgColor = "FFB200";
+        else if (event.value < 45)
+            event.cellElement.bgColor = "FFCC00";
+        else if (event.value < 50)
+            event.cellElement.bgColor = "FFE500";
+        else if (event.value < 55)
+            event.cellElement.bgColor = "FFFF00";
+        else if (event.value < 60)
+            event.cellElement.bgColor = "FFF000";
+        else if (event.value < 65)
+            event.cellElement.bgColor = "E5F100";
+        else if (event.value < 70)
+            event.cellElement.bgColor = "CCF300";
+        else if (event.value < 75)
+            event.cellElement.bgColor = "B2F400";
+        else if (event.value < 80)
+            event.cellElement.bgColor = "99F600";
+        else if (event.value < 85)
+            event.cellElement.bgColor = "7FF700";
+        else if (event.value < 90)
+            event.cellElement.bgColor = "66F900";
+        else if (event.value < 95)
+            event.cellElement.bgColor = "4CFA00";
+        else if (event.value < 100)
+            event.cellElement.bgColor = "32FC00";
+        else if (event.value > 99)
+            event.cellElement.bgColor = "32FC00";
+    };
+    RaidPlannerComponent.prototype.playerGotSquadExact = function (player, squad) {
+        var squadNow = squad;
+        if (squadNow == null)
+            return -100;
+        var squadFound = this.gildenService.findSquadWithMember(squadNow, player);
+        var zetasInSquad = 0;
+        for (var i = 0; i < squadFound.length; i++) {
+            zetasInSquad += squadNow.Zetas[i];
+        }
+        var onehundredPercent = (1 * 7 * 5) + (2 * 12 * 5) + (5 * zetasInSquad);
+        if (squadFound.length < 1)
+            return 0;
+        var sterneSum = 0;
+        var GearSum = 0;
+        var ZetasSum = 0;
+        for (var i = 0; i < squadFound.length; i++) {
+            sterneSum += squadFound[i].Sterne;
+            GearSum += squadFound[i].gearLevel;
+            ZetasSum += squadFound[i].Zetas;
+        }
+        var getPercent = (1 * sterneSum) + (2 * GearSum) + (5 * ZetasSum);
+        return ((getPercent / onehundredPercent) * 100).toFixed(0);
+    };
     RaidPlannerComponent.prototype.playerGotSquad = function (player, squadName) {
         var squadNow = this.squads.find(function (s) { return s.Name == squadName; });
         var tempBewertung = 0;
@@ -893,7 +1005,7 @@ module.exports = "ul {\r\n  list-style-type: none;\r\n  margin: 0;\r\n  padding:
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"mySidenav\" class=\"sidenav\">\r\n  <a href=\"javascript:void(0)\" class=\"closebtn\" (click)=\"closeNav()\">&times;</a>\r\n  <a routerLink=\"/home\" routerLinkActive=\"active\" (click)=\"closeNav()\">Home</a>\r\n  <a routerLink=\"/charsearch\" routerLinkActive=\"active\" (click)=\"closeNav()\">Charsearch</a>\r\n  <a routerLink=\"/squadsearch\" routerLinkActive=\"active\" (click)=\"closeNav()\">Squadsearch</a>\r\n  <a routerLink=\"/platoontool\" routerLinkActive=\"active\" (click)=\"closeNav()\">TB-Platoon</a>\r\n  <a routerLink=\"/raidplanner\" routerLinkActive=\"active\" (click)=\"closeNav()\">Raid-Planner</a>\r\n  <a routerLink=\"/arenateams\" routerLinkActive=\"active\" (click)=\"closeNav()\">ArenaTeams</a>\r\n  <a routerLink=\"/settings\" routerLinkActive=\"active\" (click)=\"closeNav()\">Settings</a>\r\n  <a routerLink=\"/newCharSearch\" routerLinkActive=\"active\" (click)=\"closeNav()\">New Charsearch</a>\r\n</div>\r\n\r\n<!-- Use any element to open the sidenav -->\r\n<div>\r\n  <ul>\r\n    <li>\r\n      <a href=\"javascript:void(0)\" (click)=\"openNav()\">&#9776;</a>\r\n    </li>\r\n    <li style=\"float:right\"><a routerLink=\"/settings\" routerLinkActive=\"active\" (click)=\"closeNav()\">Settings</a></li>\r\n  </ul>\r\n  <div style=\"height:40px;\">\r\n\r\n  </div>\r\n  <div>\r\n    <router-outlet></router-outlet>\r\n  </div>\r\n\r\n  </div>\r\n"
+module.exports = "<div id=\"mySidenav\" class=\"sidenav\">\r\n  <a href=\"javascript:void(0)\" class=\"closebtn\" (click)=\"closeNav()\">&times;</a>\r\n  <a routerLink=\"/home\" routerLinkActive=\"active\" (click)=\"closeNav()\">Home</a>\r\n  <a routerLink=\"/newCharSearch\" routerLinkActive=\"active\" (click)=\"closeNav()\">Charsearch</a>\r\n  <a routerLink=\"/squadsearch\" routerLinkActive=\"active\" (click)=\"closeNav()\">Squadsearch</a>\r\n  <a routerLink=\"/platoontool\" routerLinkActive=\"active\" (click)=\"closeNav()\">TB-Platoon</a>\r\n  <a routerLink=\"/raidplanner\" routerLinkActive=\"active\" (click)=\"closeNav()\">Raid-Planner</a>\r\n  <a routerLink=\"/arenateams\" routerLinkActive=\"active\" (click)=\"closeNav()\">ArenaTeams</a>\r\n  <a routerLink=\"/settings\" routerLinkActive=\"active\" (click)=\"closeNav()\">Settings</a>\r\n</div>\r\n\r\n<!-- Use any element to open the sidenav -->\r\n<div>\r\n  <ul>\r\n    <li>\r\n      <a href=\"javascript:void(0)\" (click)=\"openNav()\">&#9776;</a>\r\n    </li>\r\n    <li style=\"float:right\"><a routerLink=\"/settings\" routerLinkActive=\"active\" (click)=\"closeNav()\">Settings</a></li>\r\n  </ul>\r\n  <div style=\"height:40px;\">\r\n\r\n  </div>\r\n  <div>\r\n    <router-outlet></router-outlet>\r\n  </div>\r\n\r\n  </div>\r\n"
 
 /***/ }),
 
@@ -991,6 +1103,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pipes_modpipes_ModStatValue_pipe__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./pipes/modpipes/ModStatValue.pipe */ "./src/app/pipes/modpipes/ModStatValue.pipe.ts");
 /* harmony import */ var _pipes_modpipes_ModSlotName_pipe__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./pipes/modpipes/ModSlotName.pipe */ "./src/app/pipes/modpipes/ModSlotName.pipe.ts");
 /* harmony import */ var _newCharSearch_newCharSearch__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./newCharSearch/newCharSearch */ "./src/app/newCharSearch/newCharSearch.ts");
+/* harmony import */ var devextreme_angular__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! devextreme-angular */ "./node_modules/devextreme-angular/index.js");
+/* harmony import */ var devextreme_angular__WEBPACK_IMPORTED_MODULE_28___default = /*#__PURE__*/__webpack_require__.n(devextreme_angular__WEBPACK_IMPORTED_MODULE_28__);
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1025,6 +1139,8 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
+;
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -1059,7 +1175,8 @@ var AppModule = /** @class */ (function () {
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_12__["HttpClientModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_12__["HttpClientJsonpModule"],
                 ngx_select_dropdown__WEBPACK_IMPORTED_MODULE_16__["SelectDropDownModule"],
-                ng_lz_string__WEBPACK_IMPORTED_MODULE_17__["LZStringModule"]
+                ng_lz_string__WEBPACK_IMPORTED_MODULE_17__["LZStringModule"],
+                devextreme_angular__WEBPACK_IMPORTED_MODULE_28__["DxDataGridModule"]
             ],
             providers: [_services_settingsService__WEBPACK_IMPORTED_MODULE_10__["SettingsService"], _services_gildenService__WEBPACK_IMPORTED_MODULE_11__["gildenService"], _angular_common_http__WEBPACK_IMPORTED_MODULE_12__["HttpClient"], ng_lz_string__WEBPACK_IMPORTED_MODULE_17__["LZStringService"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
@@ -1952,15 +2069,15 @@ var gildenService = /** @class */ (function () {
         console.log(this.gildenInfos);
     };
     gildenService.prototype.checkIfItsANumber = function (number) {
+        if (number == null)
+            return false;
         var numb = number.match(/\d/g);
         if (numb == null)
             return false;
-        else {
-            if (numb.join("") == number)
-                return true;
-            else
-                return false;
-        }
+        if (numb.join("") == number)
+            return true;
+        else
+            return false;
     };
     gildenService.prototype.syncGildenInfos = function () {
         var _this = this;
@@ -2020,12 +2137,12 @@ var gildenService = /** @class */ (function () {
                                 _this.syncstatus = 'Verarbeite Gildendaten...';
                                 _this.saveModStats(_this.ModStats);
                                 _this.syncstatus = 'Gildeninfos saved...';
-                            });
-                        });
-                    });
-                });
-            });
-        });
+                            }, function (Error) { alert(Error); });
+                        }, function (Error) { alert(Error); });
+                    }, function (Error) { alert(Error); });
+                }, function (Error) { alert(Error); });
+            }, function (Error) { alert(Error); });
+        }, function (Error) { alert(Error); });
     };
     gildenService.prototype.getAllCharsByName = function (name) {
         var charsFound = new Array();
@@ -2872,7 +2989,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Midi\source\repos\SWGOH\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\Alle\source\repos\SWGOH\SWGOH\src\main.ts */"./src/main.ts");
 
 
 /***/ })

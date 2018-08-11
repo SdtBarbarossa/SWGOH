@@ -22,7 +22,9 @@
               "src/manifest.json"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "./node_modules/devextreme/dist/css/dx.common.css",
+              "./node_modules/devextreme/dist/css/dx.light.css"
             ],
             "scripts": []
           },

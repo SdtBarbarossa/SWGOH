@@ -1,4 +1,21 @@
-<table id="raidplannerTable" style="width:100%">
+<div *ngIf="!raidDataSource">Lädt Raidplan...</div>
+<dx-data-grid *ngIf="raidDataSource"
+              [dataSource]="raidDataSource"
+              [allowColumnReordering]="true"
+              [showBorders]="true"
+              (onCellPrepared)="colorizeCell($event)">
+
+  <dxo-filter-row [visible]="true"></dxo-filter-row>
+
+  <dxo-column-chooser [enabled]="true"
+                      mode="dragAndDrop">
+  </dxo-column-chooser>
+
+  <dxi-column *ngFor="let columnNow of columns; let i = index" dataField="{{i}}" caption="{{columnNow}}"></dxi-column>
+
+</dx-data-grid>
+
+<!--<table id="raidplannerTable" style="width:100%">
   <tr>
     <th>Member</th>
     <th *ngFor="let squad of squads" (click)="alertSquad(squad)">{{squad.Name}}</th>
@@ -16,4 +33,4 @@
     </td>
 
   </tr>
-  </table>
+  </table>-->

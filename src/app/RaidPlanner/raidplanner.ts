@@ -12,6 +12,8 @@ export class RaidPlannerComponent {
   
   public dmgP4 = 100;
   public squads: squad[];
+  public raidDataSource: any;
+  public columns: string[] = new Array();
 
   constructor(public settingsService: SettingsService, public gildenService: gildenService) {
 
@@ -224,6 +226,151 @@ export class RaidPlannerComponent {
 
     this.squads.push(firstOrder);
 
+    this.loadGridDatasource();
+
+  }
+
+  onToolbarPreparing(e) {
+    e.toolbarOptions.items.unshift(
+      {
+      location: 'before',
+      template: 'totalGroupCount'
+    }, {
+        location: 'before',
+        widget: 'dxSelectBox',
+        options: {
+          width: 200,
+          items: [{
+            value: 'CustomerStoreState',
+            text: 'Grouping by State'
+          }, {
+            value: 'Employee',
+            text: 'Grouping by Employee'
+          }],
+          displayExpr: 'text',
+          valueExpr: 'value',
+          value: 'CustomerStoreState',
+        }
+      }, 
+    );
+  }
+
+  loadGridDatasource() {
+
+    var dataSourceTemp = new Array();
+
+    var columnNames = new Array();
+
+    columnNames.push("Member");
+
+    for (var i = 0; i < this.squads.length; i++)
+      columnNames.push(this.squads[i].Name);
+
+    this.columns = columnNames;
+
+    for (var i = 0; i < this.gildenService.gildenInfos.roster.length; i++)
+    {
+
+      var memberNow = new Array();
+      memberNow.push(this.gildenService.gildenInfos.roster[i].name);
+
+      for (var x = 0; x < this.squads.length; x++) {
+        memberNow.push(this.playerGotSquadExact(this.gildenService.gildenInfos.roster[i], this.squads[x]));
+      }
+
+      dataSourceTemp.push(memberNow);
+
+    }
+
+    this.raidDataSource = dataSourceTemp;
+
+    console.log(this.raidDataSource);
+
+  }
+
+  colorizeCell(event) {
+    if (event.columnIndex == 0)
+      return;
+    
+    // debugger;
+    if (event.value < 5)
+      event.cellElement.bgColor = "FF0000";
+    else if (event.value < 10)
+      event.cellElement.bgColor = "FF1900";
+    else if (event.value < 15)
+      event.cellElement.bgColor = "FF3300";
+    else if (event.value < 20)
+      event.cellElement.bgColor = "FF4C00";
+    else if (event.value < 25)
+      event.cellElement.bgColor = "FF6600";
+    else if (event.value < 30)
+      event.cellElement.bgColor = "FF7F00";
+    else if (event.value < 35)
+      event.cellElement.bgColor = "FF9900";
+    else if (event.value < 40)
+      event.cellElement.bgColor = "FFB200";
+    else if (event.value < 45)
+      event.cellElement.bgColor = "FFCC00";
+    else if (event.value < 50)
+      event.cellElement.bgColor = "FFE500";
+    else if (event.value < 55)
+      event.cellElement.bgColor = "FFFF00";
+    else if (event.value < 60)
+      event.cellElement.bgColor = "FFF000";
+    else if (event.value < 65)
+      event.cellElement.bgColor = "E5F100";
+    else if (event.value < 70)
+      event.cellElement.bgColor = "CCF300";
+    else if (event.value < 75)
+      event.cellElement.bgColor = "B2F400";
+    else if (event.value < 80)
+      event.cellElement.bgColor = "99F600";
+    else if (event.value < 85)
+      event.cellElement.bgColor = "7FF700";
+    else if (event.value < 90)
+      event.cellElement.bgColor = "66F900";
+    else if (event.value < 95)
+      event.cellElement.bgColor = "4CFA00";
+    else if (event.value < 100)
+      event.cellElement.bgColor = "32FC00";
+    else if (event.value > 99)
+      event.cellElement.bgColor = "32FC00";
+  }
+
+  playerGotSquadExact(player, squad) {
+
+    var squadNow = squad;
+    
+    if (squadNow == null)
+      return -100;
+
+    var squadFound = this.gildenService.findSquadWithMember(squadNow, player);
+
+    var zetasInSquad = 0;
+    for (var i = 0; i < squadFound.length; i++) {
+      zetasInSquad += squadNow.Zetas[i]
+    }
+
+    var onehundredPercent = (1 * 7 * 5) + (2 * 12 * 5) + (5*zetasInSquad);
+
+    if (squadFound.length < 1)
+      return 0;
+
+    var sterneSum = 0;
+    var GearSum = 0;
+    var ZetasSum = 0;
+
+    for (var i = 0; i < squadFound.length; i++) {
+
+      sterneSum += squadFound[i].Sterne;
+      GearSum += squadFound[i].gearLevel;
+      ZetasSum += squadFound[i].Zetas;
+
+    }
+
+    var getPercent = (1 * sterneSum) + (2 * GearSum) + (5 * ZetasSum);
+    
+    return ((getPercent / onehundredPercent) * 100).toFixed(0);
   }
 
   playerGotSquad(player, squadName) {

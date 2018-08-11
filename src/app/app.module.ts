@@ -27,6 +27,7 @@ import { ModStatNamePipe } from './pipes/modpipes/ModStatName.pipe';
 import { ModStatValuePipe } from './pipes/modpipes/ModStatValue.pipe';
 import { ModSlotNamePipe } from './pipes/modpipes/ModSlotName.pipe';
 import { newCharSearchComponent } from './newCharSearch/newCharSearch';
+import { DxDataGridModule } from 'devextreme-angular';;
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { newCharSearchComponent } from './newCharSearch/newCharSearch';
     HttpClientModule,
     HttpClientJsonpModule,
     SelectDropDownModule,
-    LZStringModule
+    LZStringModule,
+    DxDataGridModule
   ],
   providers: [SettingsService, gildenService, HttpClient, LZStringService ],
   bootstrap: [AppComponent]
