@@ -24,4 +24,9 @@ export class HomeComponent {
     this.gildenService.syncGildenInfos();
   }
 
+  syncNewApi() {
+    this.isSyncing = true;
+    this.gildenService.syncNewGildenInfos();
+  }
+
 }
