@@ -1,7 +1,7 @@
-<input type="text" placeholder="Charname ( e.g 'Boba Fett' or 'Boba'  )" [(ngModel)]="charToSearch" (ngModelChange)="searchCharaktere()">
+<input type="text" placeholder="{{'CharNamePlaceHolder'| language}}" [(ngModel)]="charToSearch" (ngModelChange)="searchCharaktere()">
 
 <div *ngIf="charaktere">
-  <fieldset *ngFor="let char of charaktere" class="maincharFieldset">
+  <fieldset *ngFor="let char of charaktere;let i = index" class="maincharFieldset">
     <legend>{{char.besitzer}}</legend>
     <div style="height:60px;">
       <img *ngIf="char.charakter.rarity>0" src="/assets/picture/star.png" class="sterne stern1">
@@ -25,16 +25,16 @@
       <span class="char-gear-level">{{char.charakter | chargear}}</span>
     </div>
 
-    <button (click)="switchShowMods()">Show/Hide</button>
+    <button (click)="showMods[i] = !showMods[i]">{{'Show/Hide'| language}}</button>
 
-    <div *ngIf="showMods">
+    <div *ngIf="showMods[i]">
       <fieldset *ngFor="let mod of char.charakter.mods" style="position:relative; float:left;">
-        <legend>{{mod.setId | modsetname}}-{{mod.slot | modslotname}} L:{{mod.level}} S:{{mod.pips}}</legend>
-        <div style="color:blue">{{mod.primaryBonusType | modstatname}}: {{mod.primaryBonusValue | modstatvalue : (mod.primaryBonusType | modstatname)}}</div>
-        <div>{{mod.secondaryType_1 | modstatname}}: {{mod.secondaryValue_1 | modstatvalue : (mod.secondaryType_1 | modstatname)}}</div>
-        <div>{{mod.secondaryType_2 | modstatname}}: {{mod.secondaryValue_2 | modstatvalue : (mod.secondaryType_2 | modstatname)}}</div>
-        <div>{{mod.secondaryType_3 | modstatname}}: {{mod.secondaryValue_3 | modstatvalue : (mod.secondaryType_3 | modstatname)}}</div>
-        <div>{{mod.secondaryType_4 | modstatname}}: {{mod.secondaryValue_4 | modstatvalue : (mod.secondaryType_4 | modstatname)}}</div>
+        <legend>{{(mod.setId | modsetname) | language}}-{{(mod.slot | modslotname) | language}} L:{{mod.level}} S:{{mod.pips}}</legend>
+        <div style="color:blue">{{(mod.primaryBonusType | modstatname) | language}}: {{mod.primaryBonusValue | modstatvalue : (mod.primaryBonusType | modstatname)}}</div>
+        <div>{{(mod.secondaryType_1 | modstatname) | language}}: {{mod.secondaryValue_1 | modstatvalue : (mod.secondaryType_1 | modstatname)}}</div>
+        <div>{{(mod.secondaryType_2 | modstatname) | language}}: {{mod.secondaryValue_2 | modstatvalue : (mod.secondaryType_2 | modstatname)}}</div>
+        <div>{{(mod.secondaryType_3 | modstatname) | language}}: {{mod.secondaryValue_3 | modstatvalue : (mod.secondaryType_3 | modstatname)}}</div>
+        <div>{{(mod.secondaryType_4 | modstatname) | language}}: {{mod.secondaryValue_4 | modstatvalue : (mod.secondaryType_4 | modstatname)}}</div>
       </fieldset>
     </div>
   </fieldset>

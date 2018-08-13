@@ -1,12 +1,12 @@
 <div>
 
   <fieldset>
-    <legend>Settings :</legend>
+    <legend>{{'Settings' | language}} :</legend>
 
-    <p style="float:left">Allycode:</p>
-    <input type="text" placeholder="your allycode ( e.g 456789123 )" [(ngModel)]="this.settings.allycode" (change)="changedAllycode()">
+    <p style="float:left">{{'Allycode' | language}}:</p>
+    <input type="text" placeholder="{{'AllycodeEG' | language}}" [(ngModel)]="this.settings.allycode" (change)="changedAllycode()">
 
-    <p style="float:left">Sort Member by:</p>
+    <p style="float:left">{{'SortMemberby' | language}}:</p>
     <select [(ngModel)]="this.settings.sortMemberBy">
       <option value="OGM">Overall GM</option>
       <option value="CGM">Charakter GM</option>
@@ -14,9 +14,9 @@
       <option value="Name">Name</option>
     </select>
 
-    <p>Use Autocomplete:</p>
+    <p>{{'UseAutocomplete' | language}}:</p>
 
-    <p>Show Errors:</p>
+    <p>{{'ShowErrors' | language}}:</p>
 
     <label class="container" style="top:-85px">
       <input type="checkbox" [(ngModel)]="this.settings.useAutoComplete">
@@ -29,7 +29,7 @@
       <span class="checkmark"></span>
     </label>
 
-    <button (click)="saveSettings()">Save Settings</button>
+    <button (click)="saveSettings()">{{'SaveSettings' | language}}</button>
   </fieldset>
 
 </div>

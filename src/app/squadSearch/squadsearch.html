@@ -5,14 +5,14 @@
     </select>
   </div>
   <div style="width: 30%; display: inline-block;">
-<button (click)="deleteThisTeam()" style="display: inline-block; position: relative; padding: 7px 5px; width: 30%;">Del</button>
-<button (click)="openModal()" style="display: inline-block; position: relative; padding: 7px 5px; width: 30%;">Add</button>
+    <button (click)="deleteThisTeam()" style="display: inline-block; position: relative; padding: 7px 5px; width: 30%;">{{'Del'| language}}</button>
+    <button (click)="openModal()" style="display: inline-block; position: relative; padding: 7px 5px; width: 30%;">{{'Add'| language}}</button>
     </div>
 </div>
 
 <div *ngFor="let squad of squadsFromGildenInfos" class="charNow">
   <fieldset style="height:80px">
-    <legend>{{selectedTeam.Name}} of {{squad[0].Besitzer}}</legend>
+    <legend>{{selectedTeam.Name}} {{'of'| language}} {{squad[0].Besitzer}}</legend>
     <div style="height:80%; width:100%">
       <div *ngIf="squad[0]" class="divForChar">
         <div class="parentOfImages">
@@ -177,7 +177,7 @@
   <div class="modal-content">
     <div class="modal-header">
       <span class="close" (click)="closeModal()">&times;</span>
-      <h2>Add a Squad</h2>
+      <h2>{{'AddSquad'| language}}</h2>
     </div>
     <div class="modal-body">
 
@@ -235,7 +235,7 @@
         </ngx-select-dropdown>
       </p>
 
-      <button style="width: 100%" (click)="addSquadToMyTeams()">Confirm</button>
+      <button style="width: 100%" (click)="addSquadToMyTeams()">{{'Confirm'| language}}</button>
 
     </div>
   </div>

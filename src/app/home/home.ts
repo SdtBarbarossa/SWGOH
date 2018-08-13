@@ -9,9 +9,11 @@ import { SettingsService, Settings } from '../services/settingsService';
 })
 export class HomeComponent {
   isSyncing: boolean = false;
+  windowNow: any;
 
   constructor(public settingsService: SettingsService, public gildenService: gildenService) {
     console.log(this.settingsService.settings);
+    this.windowNow = window;
     if (this.settingsService.settings.autoSyncNow == true) {
       this.settingsService.settings.autoSyncNow = false;
       this.settingsService.saveSettings(this.settingsService.settings);

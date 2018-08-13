@@ -27,7 +27,13 @@ import { ModStatNamePipe } from './pipes/modpipes/ModStatName.pipe';
 import { ModStatValuePipe } from './pipes/modpipes/ModStatValue.pipe';
 import { ModSlotNamePipe } from './pipes/modpipes/ModSlotName.pipe';
 import { newCharSearchComponent } from './newCharSearch/newCharSearch';
-import { DxDataGridModule } from 'devextreme-angular';;
+import { DxDataGridModule, DxTextAreaModule } from 'devextreme-angular';
+import { ColumnWidthPipe } from './pipes/columnwidth.pipe';
+import { ColumnTypePipe } from './pipes/columntype.pipe';
+import { ColumnFixedPipe } from './pipes/columnfixed.pipe';
+import { LanguagePipe } from './pipes/language/language.pipe';
+import { EventsComponent } from './events/events';
+import { EventShowPipe } from './pipes/events/eventShow.pipe';
 
 @NgModule({
   declarations: [
@@ -40,6 +46,7 @@ import { DxDataGridModule } from 'devextreme-angular';;
     RaidPlannerComponent,
     ArenaTeamsComponent,
     newCharSearchComponent,
+    EventsComponent,
 
     //Pipes here
 
@@ -51,6 +58,11 @@ import { DxDataGridModule } from 'devextreme-angular';;
     ModStatNamePipe,
     ModStatValuePipe,
     ModSlotNamePipe,
+    ColumnWidthPipe,
+    ColumnTypePipe,
+    ColumnFixedPipe,
+    LanguagePipe,
+    EventShowPipe,
 
   ],
   imports: [
@@ -63,7 +75,8 @@ import { DxDataGridModule } from 'devextreme-angular';;
     HttpClientJsonpModule,
     SelectDropDownModule,
     LZStringModule,
-    DxDataGridModule
+    DxDataGridModule,
+    DxTextAreaModule
   ],
   providers: [SettingsService, gildenService, HttpClient, LZStringService ],
   bootstrap: [AppComponent]

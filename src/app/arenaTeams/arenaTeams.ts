@@ -11,23 +11,11 @@ import { forEach } from '@angular/router/src/utils/collection';
 export class ArenaTeamsComponent {
 
   AllCharTeams: ArenaTeamHelper[];
-  public showMods = false;
+  public showMods: boolean[] = new Array();
 
   constructor(public settingsService: SettingsService, public gildenService: gildenService) {
     this.AllCharTeams = gildenService.getAllCharArenaTeams();
     this.AllCharTeams.sort(function (a, b) { return a.rang - b.rang });
-  }
-
-  switchShowMods() {
-
-    if (this.showMods == true)
-    {
-      this.showMods = false;
-    }
-    else {
-      this.showMods = true;
-    }
-      
   }
   
 }

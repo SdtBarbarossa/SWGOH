@@ -41,7 +41,7 @@ module.exports = "input[type=text] {\r\n  width: 100%;\r\n  padding: 12px 20px;\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"!raidDataSource\">Lädt Raidplan...</div>\r\n<dx-data-grid *ngIf=\"raidDataSource\"\r\n              [dataSource]=\"raidDataSource\"\r\n              [allowColumnReordering]=\"true\"\r\n              [showBorders]=\"true\"\r\n              (onCellPrepared)=\"colorizeCell($event)\">\r\n\r\n  <dxo-filter-row [visible]=\"true\"></dxo-filter-row>\r\n\r\n  <dxo-column-chooser [enabled]=\"true\"\r\n                      mode=\"dragAndDrop\">\r\n  </dxo-column-chooser>\r\n\r\n  <dxi-column *ngFor=\"let columnNow of columns; let i = index\" dataField=\"{{i}}\" caption=\"{{columnNow}}\"></dxi-column>\r\n\r\n</dx-data-grid>\r\n\r\n<!--<table id=\"raidplannerTable\" style=\"width:100%\">\r\n  <tr>\r\n    <th>Member</th>\r\n    <th *ngFor=\"let squad of squads\" (click)=\"alertSquad(squad)\">{{squad.Name}}</th>\r\n  </tr>\r\n  <tr *ngFor=\"let player of gildenService.gildenInfos.roster\">\r\n    <td>{{player.name}}</td>\r\n    <td *ngFor=\"let squad of squads\">\r\n\r\n      <div *ngIf='(playerGotSquad(player, squad.Name) == 3)' style=\"background-color:green\">{{playerGotSquad(player, squad.Name)}}</div>\r\n      <div *ngIf='playerGotSquad(player, squad.Name) == 2' style=\"background-color:blue\">{{playerGotSquad(player, squad.Name)}}</div>\r\n      <div *ngIf='playerGotSquad(player, squad.Name) == 1' style=\"background-color:yellow\">{{playerGotSquad(player, squad.Name)}}</div>\r\n      <div *ngIf='playerGotSquad(player, squad.Name) == 0' style=\"background-color:orange\">{{playerGotSquad(player, squad.Name)}}</div>\r\n      <div *ngIf='playerGotSquad(player, squad.Name) < 0' style=\"background-color:brown\">{{playerGotSquad(player, squad.Name)}}</div>\r\n\r\n    </td>\r\n\r\n  </tr>\r\n  </table>-->\r\n"
+module.exports = "<div *ngIf=\"!raidDataSource\">Lädt Raidplan...</div>\r\n\r\n<dx-data-grid *ngIf=\"raidDataSource\"\r\n              [dataSource]=\"raidDataSource\"\r\n              [allowColumnReordering]=\"true\"\r\n              [showBorders]=\"true\"\r\n              (onCellPrepared)=\"colorizeCell($event)\">\r\n\r\n  <dxo-filter-row [visible]=\"true\"></dxo-filter-row>\r\n  <dxo-scrolling mode=\"infinite\"></dxo-scrolling>\r\n  <dxo-state-storing [enabled]=\"true\" type=\"localStorage\" storageKey=\"gridstorage\"></dxo-state-storing>\r\n\r\n  <dxo-column-chooser [enabled]=\"true\"\r\n                      mode=\"dragAndDrop\">\r\n  </dxo-column-chooser>\r\n\r\n  <dxi-column *ngFor=\"let columnNow of columns; let i = index\" dataField=\"{{i}}\" [caption]=\"columnNow\" [width]=\"i | columnwidth\" [dataType]=\"i | columntype\" [fixed]=\"i | columnfixed\"></dxi-column>\r\n\r\n</dx-data-grid>\r\n"
 
 /***/ }),
 
@@ -423,7 +423,7 @@ module.exports = "input[type=text] {\r\n  width: 100%;\r\n  padding: 12px 20px;\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"width:100%;\">\r\n\r\n  <select style=\"width:100%;\" [(ngModel)]=\"ActualPhase\" (ngModelChange)=\"loadTable()\">\r\n    <option [ngValue]=\"DSTB1\">DS-TB-Phase 1</option>\r\n    <option [ngValue]=\"DSTB2\">DS-TB-Phase 2</option>\r\n    <option [ngValue]=\"DSTB3\">DS-TB-Phase 3</option>\r\n    <option [ngValue]=\"LSTB1\">LS-TB-Phase 1</option>\r\n    <option [ngValue]=\"LSTB2\">LS-TB-Phase 2</option>\r\n    <option [ngValue]=\"LSTB3\">LS-TB-Phase 3</option>\r\n    <option [ngValue]=\"AllChars1\">All Chars - 1 Star</option>\r\n    <option [ngValue]=\"AllChars2\">All Chars - 2 Star</option>\r\n    <option [ngValue]=\"AllChars3\">All Chars - 3 Star</option>\r\n    <option [ngValue]=\"AllChars4\">All Chars - 4 Star</option>\r\n    <option [ngValue]=\"AllChars5\">All Chars - 5 Star</option>\r\n    <option [ngValue]=\"AllChars6\">All Chars - 6 Star</option>\r\n    <option [ngValue]=\"AllChars7\">All Chars - 7 Star</option>\r\n  </select>\r\n\r\n  <table id=\"platoons\" style=\"width:100%\">\r\n    <tr>\r\n      <th>Charname</th>\r\n      <th>Needed</th>\r\n      <th>Available</th>\r\n      <th>Difference</th>\r\n      <th>Stars Needed</th>\r\n    </tr>\r\n    <tr *ngFor=\"let neededChar of ActualPhase\">\r\n      <td ><a (click)=\"showMembersWhoHave(neededChar)\" href=\"javascript:void();\">{{neededChar.name}}</a></td>\r\n      <td>{{neededChar.benoetigt}}</td>\r\n\r\n      <td *ngIf=\"neededChar.benoetigt > neededChar.gildenbesitz\" style=\"background:red\">{{neededChar.gildenbesitz}}</td>\r\n      <td *ngIf=\"(neededChar.benoetigt == neededChar.gildenbesitz)\" style=\"background:orange\">{{neededChar.gildenbesitz}}</td>\r\n      <td *ngIf=\"(neededChar.benoetigt < neededChar.gildenbesitz) && !(neededChar.benoetigt*2 <= neededChar.gildenbesitz)\" style=\"background:yellow\">{{neededChar.gildenbesitz}}</td>\r\n      <td *ngIf=\"neededChar.benoetigt*2 <= neededChar.gildenbesitz\" style=\"background:green\">{{neededChar.gildenbesitz}}</td>\r\n      <td>{{neededChar.differenz}}</td>\r\n      <td>{{neededChar.sterne}}</td>\r\n    </tr>\r\n  </table>\r\n\r\n</div>\r\n"
+module.exports = "<div style=\"width:100%;\">\r\n\r\n  <select style=\"width:100%;\" [(ngModel)]=\"ActualPhase\" (ngModelChange)=\"loadTable()\">\r\n    <option [ngValue]=\"DSTB1\">DS-TB-Phase 1</option>\r\n    <option [ngValue]=\"DSTB2\">DS-TB-Phase 2</option>\r\n    <option [ngValue]=\"DSTB3\">DS-TB-Phase 3</option>\r\n    <option [ngValue]=\"LSTB1\">LS-TB-Phase 1</option>\r\n    <option [ngValue]=\"LSTB2\">LS-TB-Phase 2</option>\r\n    <option [ngValue]=\"LSTB3\">LS-TB-Phase 3</option>\r\n    <option [ngValue]=\"AllChars1\">All Chars - 1 Star</option>\r\n    <option [ngValue]=\"AllChars2\">All Chars - 2 Star</option>\r\n    <option [ngValue]=\"AllChars3\">All Chars - 3 Star</option>\r\n    <option [ngValue]=\"AllChars4\">All Chars - 4 Star</option>\r\n    <option [ngValue]=\"AllChars5\">All Chars - 5 Star</option>\r\n    <option [ngValue]=\"AllChars6\">All Chars - 6 Star</option>\r\n    <option [ngValue]=\"AllChars7\">All Chars - 7 Star</option>\r\n  </select>\r\n\r\n  <table id=\"platoons\" style=\"width:100%\">\r\n    <tr>\r\n      <th>{{'Charname'| language}}</th>\r\n      <th>{{'Needed'| language}}</th>\r\n      <th>{{'Available'| language}}</th>\r\n      <th>{{'Difference'| language}}</th>\r\n      <th>{{'Stars Needed'| language}}</th>\r\n    </tr>\r\n    <tr *ngFor=\"let neededChar of ActualPhase\">\r\n      <td ><a (click)=\"showMembersWhoHave(neededChar)\" href=\"javascript:void();\">{{neededChar.name}}</a></td>\r\n      <td>{{neededChar.benoetigt}}</td>\r\n\r\n      <td *ngIf=\"neededChar.benoetigt > neededChar.gildenbesitz\" style=\"background:red\">{{neededChar.gildenbesitz}}</td>\r\n      <td *ngIf=\"(neededChar.benoetigt == neededChar.gildenbesitz)\" style=\"background:orange\">{{neededChar.gildenbesitz}}</td>\r\n      <td *ngIf=\"(neededChar.benoetigt < neededChar.gildenbesitz) && !(neededChar.benoetigt*2 <= neededChar.gildenbesitz)\" style=\"background:yellow\">{{neededChar.gildenbesitz}}</td>\r\n      <td *ngIf=\"neededChar.benoetigt*2 <= neededChar.gildenbesitz\" style=\"background:green\">{{neededChar.gildenbesitz}}</td>\r\n      <td>{{neededChar.differenz}}</td>\r\n      <td>{{neededChar.sterne}}</td>\r\n    </tr>\r\n  </table>\r\n\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1005,7 +1005,7 @@ module.exports = "ul {\r\n  list-style-type: none;\r\n  margin: 0;\r\n  padding:
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"mySidenav\" class=\"sidenav\">\r\n  <a href=\"javascript:void(0)\" class=\"closebtn\" (click)=\"closeNav()\">&times;</a>\r\n  <a routerLink=\"/home\" routerLinkActive=\"active\" (click)=\"closeNav()\">Home</a>\r\n  <a routerLink=\"/newCharSearch\" routerLinkActive=\"active\" (click)=\"closeNav()\">Charsearch</a>\r\n  <a routerLink=\"/squadsearch\" routerLinkActive=\"active\" (click)=\"closeNav()\">Squadsearch</a>\r\n  <a routerLink=\"/platoontool\" routerLinkActive=\"active\" (click)=\"closeNav()\">TB-Platoon</a>\r\n  <a routerLink=\"/raidplanner\" routerLinkActive=\"active\" (click)=\"closeNav()\">Raid-Planner</a>\r\n  <a routerLink=\"/arenateams\" routerLinkActive=\"active\" (click)=\"closeNav()\">ArenaTeams</a>\r\n  <a routerLink=\"/settings\" routerLinkActive=\"active\" (click)=\"closeNav()\">Settings</a>\r\n</div>\r\n\r\n<!-- Use any element to open the sidenav -->\r\n<div>\r\n  <ul>\r\n    <li>\r\n      <a href=\"javascript:void(0)\" (click)=\"openNav()\">&#9776;</a>\r\n    </li>\r\n    <li style=\"float:right\"><a routerLink=\"/settings\" routerLinkActive=\"active\" (click)=\"closeNav()\">Settings</a></li>\r\n  </ul>\r\n  <div style=\"height:40px;\">\r\n\r\n  </div>\r\n  <div>\r\n    <router-outlet></router-outlet>\r\n  </div>\r\n\r\n  </div>\r\n"
+module.exports = "<div id=\"mySidenav\" class=\"sidenav\">\r\n  <a href=\"javascript:void(0)\" class=\"closebtn\" (click)=\"closeNav()\">&times;</a>\r\n  <a routerLink=\"/home\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Home' | language}}</a>\r\n  <a routerLink=\"/newCharSearch\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Charsearch' | language}}</a>\r\n  <a routerLink=\"/squadsearch\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Squadsearch' | language}}</a>\r\n  <a routerLink=\"/platoontool\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'TB-Platoon' | language}}</a>\r\n  <a routerLink=\"/raidplanner\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Raid-Planner' | language}}</a>\r\n  <a routerLink=\"/arenateams\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'ArenaTeams' | language}}</a>\r\n  <a routerLink=\"/settings\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Settings' | language}}</a>\r\n</div>\r\n\r\n<!-- Use any element to open the sidenav -->\r\n<div>\r\n  <ul>\r\n    <li>\r\n      <a href=\"javascript:void(0)\" (click)=\"openNav()\">&#9776;</a>\r\n    </li>\r\n    <li style=\"float:right\"><a routerLink=\"/settings\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Settings' | language}}</a></li>\r\n  </ul>\r\n  <div style=\"height:40px;\">\r\n\r\n  </div>\r\n  <div>\r\n    <router-outlet></router-outlet>\r\n  </div>\r\n\r\n  </div>\r\n"
 
 /***/ }),
 
@@ -1105,6 +1105,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _newCharSearch_newCharSearch__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./newCharSearch/newCharSearch */ "./src/app/newCharSearch/newCharSearch.ts");
 /* harmony import */ var devextreme_angular__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! devextreme-angular */ "./node_modules/devextreme-angular/index.js");
 /* harmony import */ var devextreme_angular__WEBPACK_IMPORTED_MODULE_28___default = /*#__PURE__*/__webpack_require__.n(devextreme_angular__WEBPACK_IMPORTED_MODULE_28__);
+/* harmony import */ var _pipes_columnwidth_pipe__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./pipes/columnwidth.pipe */ "./src/app/pipes/columnwidth.pipe.ts");
+/* harmony import */ var _pipes_columntype_pipe__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./pipes/columntype.pipe */ "./src/app/pipes/columntype.pipe.ts");
+/* harmony import */ var _pipes_columnfixed_pipe__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./pipes/columnfixed.pipe */ "./src/app/pipes/columnfixed.pipe.ts");
+/* harmony import */ var _pipes_language_language_pipe__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./pipes/language/language.pipe */ "./src/app/pipes/language/language.pipe.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1140,7 +1144,10 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
-;
+
+
+
+
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -1165,6 +1172,10 @@ var AppModule = /** @class */ (function () {
                 _pipes_modpipes_ModStatName_pipe__WEBPACK_IMPORTED_MODULE_24__["ModStatNamePipe"],
                 _pipes_modpipes_ModStatValue_pipe__WEBPACK_IMPORTED_MODULE_25__["ModStatValuePipe"],
                 _pipes_modpipes_ModSlotName_pipe__WEBPACK_IMPORTED_MODULE_26__["ModSlotNamePipe"],
+                _pipes_columnwidth_pipe__WEBPACK_IMPORTED_MODULE_29__["ColumnWidthPipe"],
+                _pipes_columntype_pipe__WEBPACK_IMPORTED_MODULE_30__["ColumnTypePipe"],
+                _pipes_columnfixed_pipe__WEBPACK_IMPORTED_MODULE_31__["ColumnFixedPipe"],
+                _pipes_language_language_pipe__WEBPACK_IMPORTED_MODULE_32__["LanguagePipe"],
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -1176,7 +1187,8 @@ var AppModule = /** @class */ (function () {
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_12__["HttpClientJsonpModule"],
                 ngx_select_dropdown__WEBPACK_IMPORTED_MODULE_16__["SelectDropDownModule"],
                 ng_lz_string__WEBPACK_IMPORTED_MODULE_17__["LZStringModule"],
-                devextreme_angular__WEBPACK_IMPORTED_MODULE_28__["DxDataGridModule"]
+                devextreme_angular__WEBPACK_IMPORTED_MODULE_28__["DxDataGridModule"],
+                devextreme_angular__WEBPACK_IMPORTED_MODULE_28__["DxTextAreaModule"]
             ],
             providers: [_services_settingsService__WEBPACK_IMPORTED_MODULE_10__["SettingsService"], _services_gildenService__WEBPACK_IMPORTED_MODULE_11__["gildenService"], _angular_common_http__WEBPACK_IMPORTED_MODULE_12__["HttpClient"], ng_lz_string__WEBPACK_IMPORTED_MODULE_17__["LZStringService"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
@@ -1207,7 +1219,7 @@ module.exports = "input[type=text] {\r\n  width: 100%;\r\n  padding: 12px 20px;\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngFor=\"let team of AllCharTeams\" class=\"charNow\">\r\n  <fieldset>\r\n    <legend>{{team.besitzer}} with rank {{team.rang}}</legend>\r\n    <fieldset *ngFor=\"let char of team.charaktere\" class=\"maincharFieldset\">\r\n      <legend>{{char | charname}}</legend>\r\n      <div style=\"height:60px;\">\r\n        <img *ngIf=\"char.rarity>0\" src=\"/assets/picture/star.png\" class=\"sterne stern1\">\r\n        <img *ngIf=\"char.rarity<1\" src=\"/assets/picture/nostar.png\" class=\"sterne stern1\">\r\n        <img *ngIf=\"char.rarity>1\" src=\"/assets/picture/star.png\" class=\"sterne stern2\">\r\n        <img *ngIf=\"char.rarity<2\" src=\"/assets/picture/nostar.png\" class=\"sterne stern2\">\r\n        <img *ngIf=\"char.rarity>2\" src=\"/assets/picture/star.png\" class=\"sterne stern3\">\r\n        <img *ngIf=\"char.rarity<3\" src=\"/assets/picture/nostar.png\" class=\"sterne stern3\">\r\n        <img *ngIf=\"char.rarity>3\" src=\"/assets/picture/star.png\" class=\"sterne stern4\">\r\n        <img *ngIf=\"char.rarity<4\" src=\"/assets/picture/nostar.png\" class=\"sterne stern4\">\r\n        <img *ngIf=\"char.rarity>4\" src=\"/assets/picture/star.png\" class=\"sterne stern5\">\r\n        <img *ngIf=\"char.rarity<5\" src=\"/assets/picture/nostar.png\" class=\"sterne stern5\">\r\n        <img *ngIf=\"char.rarity>5\" src=\"/assets/picture/star.png\" class=\"sterne stern6\">\r\n        <img *ngIf=\"char.rarity<6\" src=\"/assets/picture/nostar.png\" class=\"sterne stern6\">\r\n        <img *ngIf=\"char.rarity>6\" src=\"/assets/picture/star.png\" class=\"sterne stern7\">\r\n        <img *ngIf=\"char.rarity<7\" src=\"/assets/picture/nostar.png\" class=\"sterne stern7\">\r\n\r\n        <img class=\"charImage\" [src]=\"char | charimagelink\" [alt]=\"char | charname\">\r\n        <img class=\"gearImage\" [src]=\"char | gearlink\" [alt]=\"char | charname\">\r\n        <span class=\"char-level\">{{char.level}}</span>\r\n        <span class=\"char-gear-level\">{{char | chargear}}</span>\r\n      </div>\r\n\r\n      <button (click)=\"switchShowMods()\" >Show/Hide</button>\r\n\r\n      <div *ngIf=\"showMods\">\r\n        <fieldset *ngFor=\"let mod of char.mods\" style=\"position:relative; float:left;\">\r\n          <legend>{{mod.setId | modsetname}}-{{mod.slot | modslotname}} L:{{mod.level}} S:{{mod.pips}}</legend>\r\n          <div style=\"color:blue\">{{mod.primaryBonusType | modstatname}}: {{mod.primaryBonusValue | modstatvalue : (mod.primaryBonusType | modstatname)}}</div>\r\n          <div>{{mod.secondaryType_1 | modstatname}}: {{mod.secondaryValue_1 | modstatvalue : (mod.secondaryType_1 | modstatname)}}</div>\r\n          <div>{{mod.secondaryType_2 | modstatname}}: {{mod.secondaryValue_2 | modstatvalue : (mod.secondaryType_2 | modstatname)}}</div>\r\n          <div>{{mod.secondaryType_3 | modstatname}}: {{mod.secondaryValue_3 | modstatvalue : (mod.secondaryType_3 | modstatname)}}</div>\r\n          <div>{{mod.secondaryType_4 | modstatname}}: {{mod.secondaryValue_4 | modstatvalue : (mod.secondaryType_4 | modstatname)}}</div>\r\n        </fieldset>\r\n        </div>\r\n    </fieldset>\r\n  </fieldset>\r\n</div>\r\n"
+module.exports = "<div *ngFor=\"let team of AllCharTeams;let i = index\" class=\"charNow\">\r\n  <fieldset>\r\n    <legend>{{team.besitzer}} {{'WithRank' | language}} {{team.rang}}</legend>\r\n    <fieldset *ngFor=\"let char of team.charaktere\" class=\"maincharFieldset\">\r\n      <legend>{{char | charname}}</legend>\r\n      <div style=\"height:60px;\">\r\n        <img *ngIf=\"char.rarity>0\" src=\"/assets/picture/star.png\" class=\"sterne stern1\">\r\n        <img *ngIf=\"char.rarity<1\" src=\"/assets/picture/nostar.png\" class=\"sterne stern1\">\r\n        <img *ngIf=\"char.rarity>1\" src=\"/assets/picture/star.png\" class=\"sterne stern2\">\r\n        <img *ngIf=\"char.rarity<2\" src=\"/assets/picture/nostar.png\" class=\"sterne stern2\">\r\n        <img *ngIf=\"char.rarity>2\" src=\"/assets/picture/star.png\" class=\"sterne stern3\">\r\n        <img *ngIf=\"char.rarity<3\" src=\"/assets/picture/nostar.png\" class=\"sterne stern3\">\r\n        <img *ngIf=\"char.rarity>3\" src=\"/assets/picture/star.png\" class=\"sterne stern4\">\r\n        <img *ngIf=\"char.rarity<4\" src=\"/assets/picture/nostar.png\" class=\"sterne stern4\">\r\n        <img *ngIf=\"char.rarity>4\" src=\"/assets/picture/star.png\" class=\"sterne stern5\">\r\n        <img *ngIf=\"char.rarity<5\" src=\"/assets/picture/nostar.png\" class=\"sterne stern5\">\r\n        <img *ngIf=\"char.rarity>5\" src=\"/assets/picture/star.png\" class=\"sterne stern6\">\r\n        <img *ngIf=\"char.rarity<6\" src=\"/assets/picture/nostar.png\" class=\"sterne stern6\">\r\n        <img *ngIf=\"char.rarity>6\" src=\"/assets/picture/star.png\" class=\"sterne stern7\">\r\n        <img *ngIf=\"char.rarity<7\" src=\"/assets/picture/nostar.png\" class=\"sterne stern7\">\r\n\r\n        <img class=\"charImage\" [src]=\"char | charimagelink\" [alt]=\"char | charname\">\r\n        <img class=\"gearImage\" [src]=\"char | gearlink\" [alt]=\"char | charname\">\r\n        <span class=\"char-level\">{{char.level}}</span>\r\n        <span class=\"char-gear-level\">{{char | chargear}}</span>\r\n      </div>\r\n\r\n      <button (click)=\"showMods[i] = !showMods[i]\">{{'Show/Hide'| language}}</button>\r\n\r\n      <div *ngIf=\"showMods[i]\">\r\n        <fieldset *ngFor=\"let mod of char.mods\" style=\"position:relative; float:left;\">\r\n          <legend>{{(mod.setId | modsetname) | language}}-{{(mod.slot | modslotname) | language}} L:{{mod.level}} S:{{mod.pips}}</legend>\r\n          <div style=\"color:blue\">{{(mod.primaryBonusType | modstatname) | language}}: {{mod.primaryBonusValue | modstatvalue : (mod.primaryBonusType | modstatname)}}</div>\r\n          <div>{{(mod.secondaryType_1 | modstatname) | language}}: {{mod.secondaryValue_1 | modstatvalue : (mod.secondaryType_1 | modstatname)}}</div>\r\n          <div>{{(mod.secondaryType_2 | modstatname) | language}}: {{mod.secondaryValue_2 | modstatvalue : (mod.secondaryType_2 | modstatname)}}</div>\r\n          <div>{{(mod.secondaryType_3 | modstatname) | language}}: {{mod.secondaryValue_3 | modstatvalue : (mod.secondaryType_3 | modstatname)}}</div>\r\n          <div>{{(mod.secondaryType_4 | modstatname) | language}}: {{mod.secondaryValue_4 | modstatvalue : (mod.secondaryType_4 | modstatname)}}</div>\r\n        </fieldset>\r\n        </div>\r\n    </fieldset>\r\n  </fieldset>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1240,18 +1252,10 @@ var ArenaTeamsComponent = /** @class */ (function () {
     function ArenaTeamsComponent(settingsService, gildenService) {
         this.settingsService = settingsService;
         this.gildenService = gildenService;
-        this.showMods = false;
+        this.showMods = new Array();
         this.AllCharTeams = gildenService.getAllCharArenaTeams();
         this.AllCharTeams.sort(function (a, b) { return a.rang - b.rang; });
     }
-    ArenaTeamsComponent.prototype.switchShowMods = function () {
-        if (this.showMods == true) {
-            this.showMods = false;
-        }
-        else {
-            this.showMods = true;
-        }
-    };
     ArenaTeamsComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'arenaTeams',
@@ -1285,7 +1289,7 @@ module.exports = "input[type=text] {\r\n  width: 100%;\r\n  padding: 12px 20px;\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<input type=\"text\" placeholder=\"Charname ( e.g 'Boba Fett' or 'Boba'  )\" [(ngModel)]=\"charToSearch\" (ngModelChange)=\"getCharsFromGildenInfos()\">\r\n\r\n<div *ngFor=\"let char of charsFromGildenInfos\" class=\"charNow\">\r\n  <fieldset style=\"height: 115px;\">\r\n    <legend>{{char.Name}} of {{char.Besitzer}}</legend>\r\n    <br />\r\n    <div class=\"parentOfImages\">\r\n      <img *ngIf=\"char.Sterne>0\" src=\"/assets/picture/star.png\">\r\n      <img *ngIf=\"char.Sterne<1\" src=\"/assets/picture/nostar.png\">\r\n      <img *ngIf=\"char.Sterne>1\" src=\"/assets/picture/star.png\">\r\n      <img *ngIf=\"char.Sterne<2\" src=\"/assets/picture/nostar.png\">\r\n      <img *ngIf=\"char.Sterne>2\" src=\"/assets/picture/star.png\">\r\n      <img *ngIf=\"char.Sterne<3\" src=\"/assets/picture/nostar.png\">\r\n      <img *ngIf=\"char.Sterne>3\" src=\"/assets/picture/star.png\">\r\n      <img *ngIf=\"char.Sterne<4\" src=\"/assets/picture/nostar.png\">\r\n      <img *ngIf=\"char.Sterne>4\" src=\"/assets/picture/star.png\">\r\n      <img *ngIf=\"char.Sterne<5\" src=\"/assets/picture/nostar.png\">\r\n      <img *ngIf=\"char.Sterne>5\" src=\"/assets/picture/star.png\">\r\n      <img *ngIf=\"char.Sterne<6\" src=\"/assets/picture/nostar.png\">\r\n      <img *ngIf=\"char.Sterne>6\" src=\"/assets/picture/star.png\">\r\n      <img *ngIf=\"char.Sterne<7\" src=\"/assets/picture/nostar.png\">\r\n\r\n      <img *ngIf=\"char.Zetas>=1\" src=\"/assets/picture/zeta.png\" class=\"zeta1\">\r\n      <img *ngIf=\"char.Zetas>=2\" src=\"/assets/picture/zeta.png\" class=\"zeta2\">\r\n      <img *ngIf=\"char.Zetas>=3\" src=\"/assets/picture/zeta.png\" class=\"zeta3\">\r\n\r\n      <div class=\"parentOfImages\">\r\n        <img class=\"charImage\" src=\"/assets/picture/{{char.imageUrl}}\" alt=\"{{char.Name}}\">\r\n        <img class=\"gearImage\" src=\"/assets/GearPNG/gear-icon-g{{char.gearLevel}}.png\" alt=\"{{char.Name}}\">\r\n        <span class=\"char-level\">{{char.Level}}</span>\r\n        <span class=\"char-gear-level\">{{formatGearLevel(char.gearLevel)}}</span>\r\n      </div>\r\n      </div>\r\n      </fieldset>\r\n</div>\r\n"
+module.exports = "<input type=\"text\" placeholder=\"{{'CharNamePlaceHolder'| language}}\" [(ngModel)]=\"charToSearch\" (ngModelChange)=\"getCharsFromGildenInfos()\">\r\n\r\n<div *ngFor=\"let char of charsFromGildenInfos\" class=\"charNow\">\r\n  <fieldset style=\"height: 115px;\">\r\n    <legend>{{char.Name}} {{'of'| language}} {{char.Besitzer}}</legend>\r\n    <br />\r\n    <div class=\"parentOfImages\">\r\n      <img *ngIf=\"char.Sterne>0\" src=\"/assets/picture/star.png\">\r\n      <img *ngIf=\"char.Sterne<1\" src=\"/assets/picture/nostar.png\">\r\n      <img *ngIf=\"char.Sterne>1\" src=\"/assets/picture/star.png\">\r\n      <img *ngIf=\"char.Sterne<2\" src=\"/assets/picture/nostar.png\">\r\n      <img *ngIf=\"char.Sterne>2\" src=\"/assets/picture/star.png\">\r\n      <img *ngIf=\"char.Sterne<3\" src=\"/assets/picture/nostar.png\">\r\n      <img *ngIf=\"char.Sterne>3\" src=\"/assets/picture/star.png\">\r\n      <img *ngIf=\"char.Sterne<4\" src=\"/assets/picture/nostar.png\">\r\n      <img *ngIf=\"char.Sterne>4\" src=\"/assets/picture/star.png\">\r\n      <img *ngIf=\"char.Sterne<5\" src=\"/assets/picture/nostar.png\">\r\n      <img *ngIf=\"char.Sterne>5\" src=\"/assets/picture/star.png\">\r\n      <img *ngIf=\"char.Sterne<6\" src=\"/assets/picture/nostar.png\">\r\n      <img *ngIf=\"char.Sterne>6\" src=\"/assets/picture/star.png\">\r\n      <img *ngIf=\"char.Sterne<7\" src=\"/assets/picture/nostar.png\">\r\n\r\n      <img *ngIf=\"char.Zetas>=1\" src=\"/assets/picture/zeta.png\" class=\"zeta1\">\r\n      <img *ngIf=\"char.Zetas>=2\" src=\"/assets/picture/zeta.png\" class=\"zeta2\">\r\n      <img *ngIf=\"char.Zetas>=3\" src=\"/assets/picture/zeta.png\" class=\"zeta3\">\r\n\r\n      <div class=\"parentOfImages\">\r\n        <img class=\"charImage\" src=\"/assets/picture/{{char.imageUrl}}\" alt=\"{{char.Name}}\">\r\n        <img class=\"gearImage\" src=\"/assets/GearPNG/gear-icon-g{{char.gearLevel}}.png\" alt=\"{{char.Name}}\">\r\n        <span class=\"char-level\">{{char.Level}}</span>\r\n        <span class=\"char-gear-level\">{{formatGearLevel(char.gearLevel)}}</span>\r\n      </div>\r\n      </div>\r\n      </fieldset>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1391,7 +1395,7 @@ module.exports = "tr:nth-child(even) {\r\n  background-color: #f2f2f2;\r\n}\r\n\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"text-align:center\">\r\n  <h3>\r\n    Welcome to Swgoh-Helper!\r\n  </h3>\r\n\r\n  <table *ngIf=\"gildenService.gildenInfos.members>0\" style=\"width: 100%;\">\r\n    <tr>\r\n      <td>All Datas are from <a href=\"http://swgoh.help\">swgoh.help</a> and all Pictures from <a href=\"http://www.swgoh.gg\">www.swgoh.gg</a></td>\r\n    </tr>\r\n    <tr>\r\n      <td>Gilden Name = {{gildenService.gildenInfos.name}}</td>\r\n    </tr>\r\n    <tr>\r\n      <td>Gilden GP = {{gildenService.gildenInfos.gp}}</td>\r\n    </tr>\r\n    <tr>\r\n      <td>Gilden Description = {{gildenService.gildenInfos.desc}}</td>\r\n    </tr>\r\n    <tr> </tr>\r\n    <tr> </tr>\r\n    <tr>\r\n      <td>Raids Played:</td>\r\n    </tr>\r\n    <tr>\r\n      <td>Rancor = {{gildenService.gildenInfos.raid.rancor}}</td>\r\n    </tr>\r\n    <tr>\r\n      <td>AAT = {{gildenService.gildenInfos.raid.aat}}</td>\r\n    </tr>\r\n    <tr>\r\n      <td>STR = {{gildenService.gildenInfos.raid.sith_raid}}</td>\r\n    </tr>\r\n    <tr> </tr>\r\n    <tr> </tr>\r\n    <tr>\r\n      <td>Last Sync = {{gildenService.gildenInfos.updated | date: \"dd.MM.yyyy HH:mm:ss\"}}</td>\r\n    </tr>\r\n  </table>\r\n\r\n  <h3 *ngIf=\"settingsService.settings.allycode==''\">Please go to Settings and enter your Allycode!</h3>\r\n  <h3 *ngIf=\"gildenService.gildenInfos.members==0&&settingsService.settings.allycode!=''\">Please Synchronise with swgoh.help by hitting the button at the bottom!</h3>\r\n\r\n</div>\r\n\r\n<button (click)=\"syncApi()\" style=\"position: absolute; bottom: 10px; left: 0px;\">Synchronise ({{gildenService.syncstatus}})</button>\r\n"
+module.exports = "<div style=\"text-align:center\">\r\n  <h3>\r\n    {{'WelcomeText' | language}}\r\n  </h3>\r\n\r\n  <table *ngIf=\"gildenService.gildenInfos.members>0 && !gildenService.isInSync\" style=\"width: 100%;\">\r\n    <tr>\r\n      <td>{{'AllDataText' | language}} <a href=\"http://swgoh.help\">swgoh.help</a> {{'AllPictureText' | language}} <a href=\"http://www.swgoh.gg\">www.swgoh.gg</a></td>\r\n    </tr>\r\n    <tr>\r\n      <td>{{'GuildName' | language}} = {{gildenService.gildenInfos.name}}</td>\r\n    </tr>\r\n    <tr>\r\n      <td>{{'GildenGP' | language}} = {{gildenService.gildenInfos.gp}}</td>\r\n    </tr>\r\n    <tr>\r\n      <td>{{'GildenDescription' | language}} = {{gildenService.gildenInfos.desc}}</td>\r\n    </tr>\r\n    <tr> </tr>\r\n    <tr> </tr>\r\n    <tr>\r\n      <td>{{'RaidsPlayed' | language}}:</td>\r\n    </tr>\r\n    <tr>\r\n      <td>Rancor = {{gildenService.gildenInfos.raid.rancor}}</td>\r\n    </tr>\r\n    <tr>\r\n      <td>AAT = {{gildenService.gildenInfos.raid.aat}}</td>\r\n    </tr>\r\n    <tr>\r\n      <td>STR = {{gildenService.gildenInfos.raid.sith_raid}}</td>\r\n    </tr>\r\n    <tr> </tr>\r\n    <tr> </tr>\r\n    <tr>\r\n      <td>{{'LastSync' | language}} = {{gildenService.gildenInfos.updated | date: \"dd.MM.yyyy HH:mm:ss\"}}</td>\r\n    </tr>\r\n  </table>\r\n\r\n  <div style=\"height:500px\">\r\n    <dx-text-area *ngIf=\"gildenService.isInSync\" style=\"height:100%\" [readOnly]=\"true\" [(value)]=\"gildenService.syncstatus\"></dx-text-area>\r\n  </div>\r\n  \r\n  <h3 *ngIf=\"settingsService.settings.allycode==''\">{{'EnterAllyCode' | language}}</h3>\r\n  <h3 *ngIf=\"gildenService.gildenInfos.members==0&&settingsService.settings.allycode!=''\">{{'PleaseSync' | language}}</h3>\r\n\r\n</div>\r\n\r\n<button (click)=\"syncApi()\" style=\"position: absolute; bottom: 10px; left: 0px;\">{{'Synchronise' | language}} ({{gildenService.isInSync}})</button>\r\n"
 
 /***/ }),
 
@@ -1469,7 +1473,7 @@ module.exports = "input[type=text] {\r\n  width: 100%;\r\n  padding: 12px 20px;\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<input type=\"text\" placeholder=\"Charname ( e.g 'Boba Fett' or 'Boba'  )\" [(ngModel)]=\"charToSearch\" (ngModelChange)=\"searchCharaktere()\">\r\n\r\n<div *ngIf=\"charaktere\">\r\n  <fieldset *ngFor=\"let char of charaktere\" class=\"maincharFieldset\">\r\n    <legend>{{char.besitzer}}</legend>\r\n    <div style=\"height:60px;\">\r\n      <img *ngIf=\"char.charakter.rarity>0\" src=\"/assets/picture/star.png\" class=\"sterne stern1\">\r\n      <img *ngIf=\"char.charakter.rarity<1\" src=\"/assets/picture/nostar.png\" class=\"sterne stern1\">\r\n      <img *ngIf=\"char.charakter.rarity>1\" src=\"/assets/picture/star.png\" class=\"sterne stern2\">\r\n      <img *ngIf=\"char.charakter.rarity<2\" src=\"/assets/picture/nostar.png\" class=\"sterne stern2\">\r\n      <img *ngIf=\"char.charakter.rarity>2\" src=\"/assets/picture/star.png\" class=\"sterne stern3\">\r\n      <img *ngIf=\"char.charakter.rarity<3\" src=\"/assets/picture/nostar.png\" class=\"sterne stern3\">\r\n      <img *ngIf=\"char.charakter.rarity>3\" src=\"/assets/picture/star.png\" class=\"sterne stern4\">\r\n      <img *ngIf=\"char.charakter.rarity<4\" src=\"/assets/picture/nostar.png\" class=\"sterne stern4\">\r\n      <img *ngIf=\"char.charakter.rarity>4\" src=\"/assets/picture/star.png\" class=\"sterne stern5\">\r\n      <img *ngIf=\"char.charakter.rarity<5\" src=\"/assets/picture/nostar.png\" class=\"sterne stern5\">\r\n      <img *ngIf=\"char.charakter.rarity>5\" src=\"/assets/picture/star.png\" class=\"sterne stern6\">\r\n      <img *ngIf=\"char.charakter.rarity<6\" src=\"/assets/picture/nostar.png\" class=\"sterne stern6\">\r\n      <img *ngIf=\"char.charakter.rarity>6\" src=\"/assets/picture/star.png\" class=\"sterne stern7\">\r\n      <img *ngIf=\"char.charakter.rarity<7\" src=\"/assets/picture/nostar.png\" class=\"sterne stern7\">\r\n\r\n      <img class=\"charImage\" [src]=\"char.charakter | charimagelink\" [alt]=\"char | charname\">\r\n      <img class=\"gearImage\" [src]=\"char.charakter | gearlink\" [alt]=\"char | charname\">\r\n      <span class=\"char-level\">{{char.charakter.level}}</span>\r\n      <span class=\"char-gear-level\">{{char.charakter | chargear}}</span>\r\n    </div>\r\n\r\n    <button (click)=\"switchShowMods()\">Show/Hide</button>\r\n\r\n    <div *ngIf=\"showMods\">\r\n      <fieldset *ngFor=\"let mod of char.charakter.mods\" style=\"position:relative; float:left;\">\r\n        <legend>{{mod.setId | modsetname}}-{{mod.slot | modslotname}} L:{{mod.level}} S:{{mod.pips}}</legend>\r\n        <div style=\"color:blue\">{{mod.primaryBonusType | modstatname}}: {{mod.primaryBonusValue | modstatvalue : (mod.primaryBonusType | modstatname)}}</div>\r\n        <div>{{mod.secondaryType_1 | modstatname}}: {{mod.secondaryValue_1 | modstatvalue : (mod.secondaryType_1 | modstatname)}}</div>\r\n        <div>{{mod.secondaryType_2 | modstatname}}: {{mod.secondaryValue_2 | modstatvalue : (mod.secondaryType_2 | modstatname)}}</div>\r\n        <div>{{mod.secondaryType_3 | modstatname}}: {{mod.secondaryValue_3 | modstatvalue : (mod.secondaryType_3 | modstatname)}}</div>\r\n        <div>{{mod.secondaryType_4 | modstatname}}: {{mod.secondaryValue_4 | modstatvalue : (mod.secondaryType_4 | modstatname)}}</div>\r\n      </fieldset>\r\n    </div>\r\n  </fieldset>\r\n</div>\r\n"
+module.exports = "<input type=\"text\" placeholder=\"{{'CharNamePlaceHolder'| language}}\" [(ngModel)]=\"charToSearch\" (ngModelChange)=\"searchCharaktere()\">\r\n\r\n<div *ngIf=\"charaktere\">\r\n  <fieldset *ngFor=\"let char of charaktere;let i = index\" class=\"maincharFieldset\">\r\n    <legend>{{char.besitzer}}</legend>\r\n    <div style=\"height:60px;\">\r\n      <img *ngIf=\"char.charakter.rarity>0\" src=\"/assets/picture/star.png\" class=\"sterne stern1\">\r\n      <img *ngIf=\"char.charakter.rarity<1\" src=\"/assets/picture/nostar.png\" class=\"sterne stern1\">\r\n      <img *ngIf=\"char.charakter.rarity>1\" src=\"/assets/picture/star.png\" class=\"sterne stern2\">\r\n      <img *ngIf=\"char.charakter.rarity<2\" src=\"/assets/picture/nostar.png\" class=\"sterne stern2\">\r\n      <img *ngIf=\"char.charakter.rarity>2\" src=\"/assets/picture/star.png\" class=\"sterne stern3\">\r\n      <img *ngIf=\"char.charakter.rarity<3\" src=\"/assets/picture/nostar.png\" class=\"sterne stern3\">\r\n      <img *ngIf=\"char.charakter.rarity>3\" src=\"/assets/picture/star.png\" class=\"sterne stern4\">\r\n      <img *ngIf=\"char.charakter.rarity<4\" src=\"/assets/picture/nostar.png\" class=\"sterne stern4\">\r\n      <img *ngIf=\"char.charakter.rarity>4\" src=\"/assets/picture/star.png\" class=\"sterne stern5\">\r\n      <img *ngIf=\"char.charakter.rarity<5\" src=\"/assets/picture/nostar.png\" class=\"sterne stern5\">\r\n      <img *ngIf=\"char.charakter.rarity>5\" src=\"/assets/picture/star.png\" class=\"sterne stern6\">\r\n      <img *ngIf=\"char.charakter.rarity<6\" src=\"/assets/picture/nostar.png\" class=\"sterne stern6\">\r\n      <img *ngIf=\"char.charakter.rarity>6\" src=\"/assets/picture/star.png\" class=\"sterne stern7\">\r\n      <img *ngIf=\"char.charakter.rarity<7\" src=\"/assets/picture/nostar.png\" class=\"sterne stern7\">\r\n\r\n      <img class=\"charImage\" [src]=\"char.charakter | charimagelink\" [alt]=\"char | charname\">\r\n      <img class=\"gearImage\" [src]=\"char.charakter | gearlink\" [alt]=\"char | charname\">\r\n      <span class=\"char-level\">{{char.charakter.level}}</span>\r\n      <span class=\"char-gear-level\">{{char.charakter | chargear}}</span>\r\n    </div>\r\n\r\n    <button (click)=\"showMods[i] = !showMods[i]\">{{'Show/Hide'| language}}</button>\r\n\r\n    <div *ngIf=\"showMods[i]\">\r\n      <fieldset *ngFor=\"let mod of char.charakter.mods\" style=\"position:relative; float:left;\">\r\n        <legend>{{(mod.setId | modsetname) | language}}-{{(mod.slot | modslotname) | language}} L:{{mod.level}} S:{{mod.pips}}</legend>\r\n        <div style=\"color:blue\">{{(mod.primaryBonusType | modstatname) | language}}: {{mod.primaryBonusValue | modstatvalue : (mod.primaryBonusType | modstatname)}}</div>\r\n        <div>{{(mod.secondaryType_1 | modstatname) | language}}: {{mod.secondaryValue_1 | modstatvalue : (mod.secondaryType_1 | modstatname)}}</div>\r\n        <div>{{(mod.secondaryType_2 | modstatname) | language}}: {{mod.secondaryValue_2 | modstatvalue : (mod.secondaryType_2 | modstatname)}}</div>\r\n        <div>{{(mod.secondaryType_3 | modstatname) | language}}: {{mod.secondaryValue_3 | modstatvalue : (mod.secondaryType_3 | modstatname)}}</div>\r\n        <div>{{(mod.secondaryType_4 | modstatname) | language}}: {{mod.secondaryValue_4 | modstatvalue : (mod.secondaryType_4 | modstatname)}}</div>\r\n      </fieldset>\r\n    </div>\r\n  </fieldset>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1502,19 +1506,11 @@ var newCharSearchComponent = /** @class */ (function () {
     function newCharSearchComponent(settingsService, GildenService) {
         this.settingsService = settingsService;
         this.GildenService = GildenService;
-        this.showMods = false;
+        this.showMods = new Array();
     }
     newCharSearchComponent.prototype.searchCharaktere = function () {
         if (this.charToSearch != null && this.charToSearch != "" && this.charToSearch.length > 1)
             this.charaktere = this.GildenService.getAllCharsByName(this.charToSearch);
-    };
-    newCharSearchComponent.prototype.switchShowMods = function () {
-        if (this.showMods == true) {
-            this.showMods = false;
-        }
-        else {
-            this.showMods = true;
-        }
     };
     newCharSearchComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -1728,6 +1724,271 @@ var gearLinkPipe = /** @class */ (function () {
         })
     ], gearLinkPipe);
     return gearLinkPipe;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/pipes/columnfixed.pipe.ts":
+/*!*******************************************!*\
+  !*** ./src/app/pipes/columnfixed.pipe.ts ***!
+  \*******************************************/
+/*! exports provided: ColumnFixedPipe */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ColumnFixedPipe", function() { return ColumnFixedPipe; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var ColumnFixedPipe = /** @class */ (function () {
+    function ColumnFixedPipe() {
+    }
+    ColumnFixedPipe.prototype.transform = function (value) {
+        if (value < 1)
+            return true;
+        else
+            return false;
+    };
+    ColumnFixedPipe = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Pipe"])({
+            name: 'columnfixed'
+        })
+    ], ColumnFixedPipe);
+    return ColumnFixedPipe;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/pipes/columntype.pipe.ts":
+/*!******************************************!*\
+  !*** ./src/app/pipes/columntype.pipe.ts ***!
+  \******************************************/
+/*! exports provided: ColumnTypePipe */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ColumnTypePipe", function() { return ColumnTypePipe; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var ColumnTypePipe = /** @class */ (function () {
+    function ColumnTypePipe() {
+    }
+    ColumnTypePipe.prototype.transform = function (value) {
+        if (value < 1)
+            return "string";
+        else
+            return "number";
+    };
+    ColumnTypePipe = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Pipe"])({
+            name: 'columntype'
+        })
+    ], ColumnTypePipe);
+    return ColumnTypePipe;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/pipes/columnwidth.pipe.ts":
+/*!*******************************************!*\
+  !*** ./src/app/pipes/columnwidth.pipe.ts ***!
+  \*******************************************/
+/*! exports provided: ColumnWidthPipe */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ColumnWidthPipe", function() { return ColumnWidthPipe; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var ColumnWidthPipe = /** @class */ (function () {
+    function ColumnWidthPipe() {
+    }
+    ColumnWidthPipe.prototype.transform = function (value) {
+        if (value < 1)
+            return 100;
+        else
+            return 70;
+    };
+    ColumnWidthPipe = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Pipe"])({
+            name: 'columnwidth'
+        })
+    ], ColumnWidthPipe);
+    return ColumnWidthPipe;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/pipes/language/language.pipe.ts":
+/*!*************************************************!*\
+  !*** ./src/app/pipes/language/language.pipe.ts ***!
+  \*************************************************/
+/*! exports provided: LanguagePipe */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LanguagePipe", function() { return LanguagePipe; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var LanguagePipe = /** @class */ (function () {
+    function LanguagePipe() {
+        this.languageDE = {
+            "Settings": "Einstellungen",
+            "Home": "Startseite",
+            "Charsearch": "Charaktersuche",
+            "Squadsearch": "Teamsuche",
+            "TB-Platoon": "TB-Platoon",
+            "Raid-Planner": "Raidplaner",
+            "ArenaTeams": "Arenateams",
+            "WelcomeText": "Willkommen auf Swgoh-Helper!",
+            "AllDataText": "Alle Daten von",
+            "AllPictureText": "und alle Bilder von",
+            "GuildName": "Gildenname",
+            "GildenGP": "Gilden GP",
+            "GildenDescription": "Gildenbeschreibung",
+            "RaidsPlayed": "Gespielte Raids",
+            "LastSync": "Letzte Synchronisation",
+            "EnterAllyCode": "Bitte gehen Sie in die Einstellungen und geben sie Ihren Verbündetencode an!",
+            "PleaseSync": "Bitte synchronisieren Sie sich indem sie den Knopf unten drücken!",
+            "Synchronise": "Synchronisieren",
+            "Allycode": "Verbündetencode",
+            "AllycodeEG": "dein Verbündetencode ( z.B. 456789123 )",
+            "SortMemberby": "Mitglieder sortieren nach",
+            "UseAutocomplete": "Autovervollständigung",
+            "ShowErrors": "Zeige Fehler",
+            "SaveSettings": "Einstellungen speichern",
+            "WithRank": "mit Rang",
+            "Speed": "Tempo",
+            "Potency": "Effektivität",
+            "Health": "Gesundheit",
+            "Offense %": "Angriff %",
+            "Critical Chance": "Kirt. Trefferchance",
+            "Health %": "Gesundheit %",
+            "Defense %": "Abwehr %",
+            "Protection %": "Schutz %",
+            "Critical Damage": "Krit. Schaden",
+            "Offense": "Angriff",
+            "Protection": "Schutz",
+            "Tenacity": "Zähigkeit",
+            "Defense": "Abwehr",
+            "Critical Avoidance": "Krit. Ausweichen",
+            "Accuracy": "Genauigkeit",
+            "Show/Hide": "Ein-/Ausblenden",
+            "CharNamePlaceHolder": "Charaktername ( z.B. 'Boba Fett' oder 'Boba'  )",
+            "of": "von",
+            "Charname": "Charaktername",
+            "Needed": "Benötigt",
+            "Available": "Verfügbar",
+            "Difference": "Differenz",
+            "Stars Needed": "Erforderliche Sterne",
+        };
+        this.languageENG = {
+            "Settings": "Settings",
+            "Home": "Home",
+            "Charsearch": "Charsearch",
+            "Squadsearch": "Squadsearch",
+            "TB-Platoon": "TB-Platoon",
+            "Raid-Planner": "Raid-Planner",
+            "ArenaTeams": "Arena Teams",
+            "WelcomeText": "Welcome to Swgoh-Helper!",
+            "AllDataText": "All Datas are from",
+            "AllPictureText": "and all Pictures from",
+            "GuildName": "Guildname",
+            "GildenGP": "Guild GP",
+            "GildenDescription": "Gilden Description",
+            "RaidsPlayed": "Raids Played",
+            "LastSync": "Last Sync",
+            "EnterAllyCode": "Please go to Settings and enter your Allycode!",
+            "PleaseSync": "Please Synchronise with swgoh.help by hitting the button at the bottom!",
+            "Synchronise": "Synchronisieren",
+            "Allycode": "Allycode",
+            "AllycodeEG": "your allycode ( e.g 456789123 )",
+            "SortMemberby": "Sort Member by",
+            "UseAutocomplete": "Use Autocomplete",
+            "ShowErrors": "Show Errors",
+            "SaveSettings": "Save Settings",
+            "WithRank": "with rank",
+            "Speed": "Speed",
+            "Potency": "Potency",
+            "Health": "Health",
+            "Offense %": "Offense %",
+            "Critical Chance": "Critical Chance",
+            "Health %": "Health %",
+            "Defense %": "Defense %",
+            "Protection %": "Protection %",
+            "Critical Damage": "Critical Damage",
+            "Offense": "Offense",
+            "Protection": "Protection",
+            "Tenacity": "Tenacity",
+            "Defense": "Defense",
+            "Critical Avoidance": "Critical Avoidance",
+            "Accuracy": "Accuracy",
+            "Show/Hide": "Show/Hide",
+            "CharNamePlaceHolder": "Charname ( e.g 'Boba Fett' or 'Boba'  )",
+            "of": "of",
+            "Charname": "Charname",
+            "Needed": "Needed",
+            "Available": "Available",
+            "Difference": "Difference",
+            "Stars Needed": "Stars Needed",
+        };
+    }
+    LanguagePipe.prototype.transform = function (value) {
+        var userLang = navigator.language;
+        if (userLang == "de-DE") {
+            if (this.languageDE[value] != null)
+                return this.languageDE[value];
+            else
+                return value;
+        }
+        else {
+            if (this.languageENG[value] != null)
+                return this.languageENG[value];
+            else
+                return value;
+        }
+    };
+    LanguagePipe = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Pipe"])({
+            name: 'language'
+        })
+    ], LanguagePipe);
+    return LanguagePipe;
 }());
 
 
@@ -2002,6 +2263,7 @@ var gildenService = /** @class */ (function () {
         this.gildenInfos = new GildenInfos();
         this.gildenInfosTemp = new GildenInfos();
         this.syncstatus = '';
+        this.isInSync = false;
         this.token = '';
         //swgoh-help
         this.apiHelpURL = 'https://api.swgoh.help';
@@ -2064,7 +2326,7 @@ var gildenService = /** @class */ (function () {
         var compressed = this.lz.compress(answerAsJSON);
         console.log('Compressed Size: ' + compressed.length);
         localStorage.swgohHelpGilde = compressed;
-        this.syncstatus = 'Gildeninfos Saved';
+        this.syncstatus += 'Gildeninfos Saved \n\r';
         this.gildenInfos = this.jsonResponseSWGOHHelpGuild;
         console.log(this.gildenInfos);
     };
@@ -2079,9 +2341,8 @@ var gildenService = /** @class */ (function () {
         else
             return false;
     };
-    gildenService.prototype.syncGildenInfos = function () {
+    gildenService.prototype.loginToSWGOHHelp = function () {
         var _this = this;
-        this.syncstatus = 'Frage an bei swgoh.help';
         var user = "username=sdtbarbarossa";
         user += "&password=ExsJfR!nzYB*7Mqr";
         user += "&grant_type=password";
@@ -2090,59 +2351,127 @@ var gildenService = /** @class */ (function () {
         var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]();
         headers = headers.append('Content-Type', 'application/x-www-form-urlencoded');
         headers.append('Content-Length', user.length.toString());
+        if (this.token != null && this.token != "") {
+            this.syncstatus += 'Bereits eingeloggt... überspringe login \n\r';
+            this.loadGildenInfos();
+        }
+        else {
+            this.syncstatus += 'Logge ein bei swgoh.help... \n\r';
+            this.http.post('https://api.swgoh.help/auth/signin/', user, { headers: headers })
+                .subscribe(function (data) {
+                var response = data;
+                _this.token = response.access_token;
+                _this.syncstatus += 'Login erfolgreich! \n\r';
+                _this.loadGildenInfos();
+            }, function (Error) {
+                _this.syncstatus += 'Fehler beim Login... breche ab \n\r';
+                _this.syncstatus += Error.message;
+                _this.syncstatus += 'Ende der Synchronisation! \n\r';
+            });
+        }
+    };
+    gildenService.prototype.loadGildenInfos = function () {
+        var _this = this;
+        this.syncstatus += 'Lade Gildendaten für ' + this.settings.allycode + '... \n\r';
+        this.syncstatus += 'Dies kann bis zu 2 min dauern... \n\r';
+        var header2 = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]();
+        header2 = header2.append("Authorization", "Bearer " + this.token);
+        header2.append('Access-Control-Allow-Headers', 'Authorization');
+        this.http.post('https://api.swgoh.help/swgoh/guild/' + this.settings.allycode, '', { headers: header2 })
+            .subscribe(function (data2) {
+            _this.jsonResponseSWGOHHelpGuild = data2;
+            _this.saveSWGOHHelpResponse();
+            _this.loadSWGOHHelpExtras();
+        }, function (Error) {
+            _this.syncstatus += 'Fehler beim abrufen der Daten... breche ab \n\r';
+            _this.syncstatus += Error.message;
+            _this.syncstatus += 'Ende der Synchronisation! \n\r';
+        });
+    };
+    gildenService.prototype.loadSWGOHHelpExtras = function () {
+        var _this = this;
+        this.syncstatus += 'Hole Mod-Set-Infos... \n\r';
+        var header2 = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]();
+        header2 = header2.append("Authorization", "Bearer " + this.token);
+        header2.append('Access-Control-Allow-Headers', 'Authorization');
+        this.http.post('https://api.swgoh.help/swgoh/data/mod-sets', '', { headers: header2 })
+            .subscribe(function (data2) {
+            _this.ModSets = data2;
+            _this.saveModSets(_this.ModSets);
+            _this.syncstatus += 'Hole Mod-Stat-Infos... \n\r';
+            var header2 = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]();
+            header2 = header2.append("Authorization", "Bearer " + _this.token);
+            header2.append('Access-Control-Allow-Headers', 'Authorization');
+            _this.http.post('https://api.swgoh.help/swgoh/data/mod-stats', '', { headers: header2 })
+                .subscribe(function (data2) {
+                _this.ModStats = data2;
+                _this.saveModStats(_this.ModStats);
+                _this.syncstatus += 'Mod-Stat-Infos erfolgreich... \n\r';
+                _this.loadSWGOHggChars();
+            }, function (Error) {
+                _this.syncstatus += 'Fehler beim abrufen der Daten... breche ab \n\r';
+                _this.syncstatus += Error.message;
+                _this.syncstatus += 'Ende der Synchronisation! \n\r';
+            });
+        }, function (Error) {
+            _this.syncstatus += 'Fehler beim abrufen der Daten... breche ab \n\r';
+            _this.syncstatus += Error.message;
+            _this.syncstatus += 'Ende der Synchronisation! \n\r';
+        });
+    };
+    gildenService.prototype.loadSWGOHggChars = function () {
+        var _this = this;
+        this.syncstatus += 'Hole Charinfo von swgoh.gg... \n\r';
+        this.http.get('https://cors-anywhere.herokuapp.com/' + 'https://swgoh.gg/api/characters/', { responseType: 'json' })
+            .subscribe(function (data) {
+            _this.jsonResponseSWGOHCharacters = data;
+            _this.saveCharInfos(data);
+            _this.syncstatus += 'Charinfos erfolgreich abgerufen... \n\r';
+            _this.loadSWGOHggShips();
+        }, function (Error) {
+            if (_this.charInfos != null) {
+                _this.syncstatus += 'Fehler beim abrufen der Daten... kann aber alte Daten verwenden \n\r';
+                _this.loadSWGOHggShips();
+                _this.isInSync = false;
+            }
+            else {
+                _this.syncstatus += 'Fehler beim abrufen der Daten... breche ab \n\r';
+                _this.syncstatus += Error.message;
+                _this.syncstatus += 'Ende der Synchronisation! \n\r';
+            }
+        });
+    };
+    gildenService.prototype.loadSWGOHggShips = function () {
+        var _this = this;
+        this.syncstatus += 'Hole Shipinfo von swgoh.gg... \n\r';
+        this.http.get('https://cors-anywhere.herokuapp.com/' + 'https://swgoh.gg/api/ships/', { responseType: 'json' })
+            .subscribe(function (data) {
+            _this.jsonResponseSWGOHCharacters = data;
+            _this.saveShipInfos(data);
+            _this.syncstatus += 'Ende der Synchronisation! \n\r';
+            _this.isInSync = false;
+        }, function (Error) {
+            if (_this.shipInfos != null) {
+                _this.syncstatus += 'Fehler beim abrufen der Daten... kann aber alte Daten verwenden \n\r';
+                _this.syncstatus += 'Ende der Synchronisation! \n\r';
+                _this.isInSync = false;
+            }
+            else {
+                _this.syncstatus += 'Fehler beim abrufen der Daten... breche ab \n\r';
+                _this.syncstatus += Error.message;
+                _this.syncstatus += 'Ende der Synchronisation! \n\r';
+            }
+        });
+    };
+    gildenService.prototype.syncGildenInfos = function () {
+        this.syncstatus += 'Frage an bei swgoh.help \n\r';
+        this.isInSync = true;
         if (!this.checkIfItsANumber(this.settings.allycode)) {
             alert('AllyCode "' + this.settings.allycode + '" is either empty or in the wrong format. It must be a string with 9 numbers ( no - )');
-            this.syncstatus = 'aborted';
+            this.syncstatus += 'aborted \n\r';
             return;
         }
-        this.http.post('https://api.swgoh.help/auth/signin/', user, { headers: headers })
-            .subscribe(function (data) {
-            var response = data;
-            _this.token = response.access_token;
-            _this.syncstatus = 'Warte auf swgoh.help...';
-            _this.http.get('https://cryptic-headland-94862.herokuapp.com/' + 'https://swgoh.gg/api/characters/', { responseType: 'json' })
-                .subscribe(function (data) {
-                _this.jsonResponseSWGOHCharacters = data;
-                _this.saveCharInfos(data);
-                _this.syncstatus = 'Anfrage 2 von ' + 2 + ' bei SWGOH OK';
-                console.log(_this.jsonResponseSWGOHCharacters);
-                _this.http.get('https://cryptic-headland-94862.herokuapp.com/' + 'https://swgoh.gg/api/ships/', { responseType: 'json' })
-                    .subscribe(function (data) {
-                    _this.jsonResponseSWGOHCharacters = data;
-                    _this.saveShipInfos(data);
-                    _this.syncstatus = 'Rufe Gildendaten ab... dies kann 2 Min Dauern';
-                    console.log(_this.jsonResponseSWGOHCharacters);
-                    var header2 = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]();
-                    header2 = header2.append("Authorization", "Bearer " + _this.token);
-                    header2.append('Access-Control-Allow-Headers', 'Authorization');
-                    _this.http.post('https://api.swgoh.help/swgoh/guild/' + _this.settings.allycode, '', { headers: header2 })
-                        .subscribe(function (data2) {
-                        _this.jsonResponseSWGOHHelpGuild = data2;
-                        _this.syncstatus = 'Hole Mod-Set-Infos...';
-                        _this.saveSWGOHHelpResponse();
-                        var header2 = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]();
-                        header2 = header2.append("Authorization", "Bearer " + _this.token);
-                        header2.append('Access-Control-Allow-Headers', 'Authorization');
-                        _this.http.post('https://api.swgoh.help/swgoh/data/mod-sets', '', { headers: header2 })
-                            .subscribe(function (data2) {
-                            _this.ModSets = data2;
-                            _this.syncstatus = 'Hole Mod-Stat-Infos...';
-                            _this.saveModSets(_this.ModSets);
-                            var header2 = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]();
-                            header2 = header2.append("Authorization", "Bearer " + _this.token);
-                            header2.append('Access-Control-Allow-Headers', 'Authorization');
-                            _this.http.post('https://api.swgoh.help/swgoh/data/mod-stats', '', { headers: header2 })
-                                .subscribe(function (data2) {
-                                _this.ModStats = data2;
-                                _this.syncstatus = 'Verarbeite Gildendaten...';
-                                _this.saveModStats(_this.ModStats);
-                                _this.syncstatus = 'Gildeninfos saved...';
-                            }, function (Error) { alert(Error); });
-                        }, function (Error) { alert(Error); });
-                    }, function (Error) { alert(Error); });
-                }, function (Error) { alert(Error); });
-            }, function (Error) { alert(Error); });
-        }, function (Error) { alert(Error); });
+        this.loginToSWGOHHelp();
     };
     gildenService.prototype.getAllCharsByName = function (name) {
         var charsFound = new Array();
@@ -2665,7 +2994,7 @@ var Settings = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "select {\r\n  width: 100%;\r\n  padding: 16px 20px;\r\n  border: none;\r\n  border-radius: 4px;\r\n  background-color: #f1f1f1;\r\n}\r\n\r\ninput[type=text] {\r\n  width: 100%;\r\n  padding: 12px 20px;\r\n  margin: 8px 0;\r\n  box-sizing: border-box;\r\n}\r\n\r\nbutton {\r\n  background-color: #2196F3;\r\n  border: none;\r\n  color: white;\r\n  padding: 16px 32px;\r\n  text-decoration: none;\r\n  margin: 4px 2px;\r\n  cursor: pointer;\r\n  width: 100%;\r\n}\r\n\r\n/* Customize the label (the container) */\r\n\r\n.container {\r\n  display: block;\r\n  position: relative;\r\n  float: left;\r\n  left: 135px;\r\n  margin-bottom: 12px;\r\n  cursor: pointer;\r\n  /*font-size: 22px;*/\r\n  -webkit-user-select: none;\r\n  -moz-user-select: none;\r\n  -ms-user-select: none;\r\n  user-select: none;\r\n  top: -50px;\r\n}\r\n\r\n/* Hide the browser's default checkbox */\r\n\r\n.container input {\r\n    position: absolute;\r\n    opacity: 0;\r\n    cursor: pointer;\r\n  }\r\n\r\n/* Create a custom checkbox */\r\n\r\n.checkmark {\r\n  position: absolute;\r\n  top:12px;\r\n  height: 25px;\r\n  width: 25px;\r\n  background-color: #eee;\r\n  float: left;\r\n}\r\n\r\n/* On mouse-over, add a grey background color */\r\n\r\n.container:hover input ~ .checkmark {\r\n  background-color: #ccc;\r\n}\r\n\r\n/* When the checkbox is checked, add a blue background */\r\n\r\n.container input:checked ~ .checkmark {\r\n  background-color: #2196F3;\r\n}\r\n\r\n/* Create the checkmark/indicator (hidden when not checked) */\r\n\r\n.checkmark:after {\r\n  content: \"\";\r\n  position: absolute;\r\n  display: none;\r\n}\r\n\r\n/* Show the checkmark when checked */\r\n\r\n.container input:checked ~ .checkmark:after {\r\n  display: block;\r\n}\r\n\r\n/* Style the checkmark/indicator */\r\n\r\n.container .checkmark:after {\r\n  left: 9px;\r\n  top: 5px;\r\n  width: 5px;\r\n  height: 10px;\r\n  border: solid white;\r\n  border-width: 0 3px 3px 0;\r\n  -webkit-transform: rotate(45deg);\r\n  transform: rotate(45deg);\r\n} \r\n"
+module.exports = "select {\r\n  width: 100%;\r\n  padding: 16px 20px;\r\n  border: none;\r\n  border-radius: 4px;\r\n  background-color: #f1f1f1;\r\n}\r\n\r\ninput[type=text] {\r\n  width: 100%;\r\n  padding: 12px 20px;\r\n  margin: 8px 0;\r\n  box-sizing: border-box;\r\n}\r\n\r\nbutton {\r\n  background-color: #2196F3;\r\n  border: none;\r\n  color: white;\r\n  padding: 16px 32px;\r\n  text-decoration: none;\r\n  margin: 4px 2px;\r\n  cursor: pointer;\r\n  width: 100%;\r\n}\r\n\r\n/* Customize the label (the container) */\r\n\r\n.container {\r\n  display: block;\r\n  position: relative;\r\n  float: left;\r\n  left: 155px;\r\n  margin-bottom: 12px;\r\n  cursor: pointer;\r\n  /*font-size: 22px;*/\r\n  -webkit-user-select: none;\r\n  -moz-user-select: none;\r\n  -ms-user-select: none;\r\n  user-select: none;\r\n  top: -50px;\r\n}\r\n\r\n/* Hide the browser's default checkbox */\r\n\r\n.container input {\r\n    position: absolute;\r\n    opacity: 0;\r\n    cursor: pointer;\r\n  }\r\n\r\n/* Create a custom checkbox */\r\n\r\n.checkmark {\r\n  position: absolute;\r\n  top:12px;\r\n  height: 25px;\r\n  width: 25px;\r\n  background-color: #eee;\r\n  float: left;\r\n}\r\n\r\n/* On mouse-over, add a grey background color */\r\n\r\n.container:hover input ~ .checkmark {\r\n  background-color: #ccc;\r\n}\r\n\r\n/* When the checkbox is checked, add a blue background */\r\n\r\n.container input:checked ~ .checkmark {\r\n  background-color: #2196F3;\r\n}\r\n\r\n/* Create the checkmark/indicator (hidden when not checked) */\r\n\r\n.checkmark:after {\r\n  content: \"\";\r\n  position: absolute;\r\n  display: none;\r\n}\r\n\r\n/* Show the checkmark when checked */\r\n\r\n.container input:checked ~ .checkmark:after {\r\n  display: block;\r\n}\r\n\r\n/* Style the checkmark/indicator */\r\n\r\n.container .checkmark:after {\r\n  left: 9px;\r\n  top: 5px;\r\n  width: 5px;\r\n  height: 10px;\r\n  border: solid white;\r\n  border-width: 0 3px 3px 0;\r\n  -webkit-transform: rotate(45deg);\r\n  transform: rotate(45deg);\r\n} \r\n"
 
 /***/ }),
 
@@ -2676,7 +3005,7 @@ module.exports = "select {\r\n  width: 100%;\r\n  padding: 16px 20px;\r\n  borde
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\r\n\r\n  <fieldset>\r\n    <legend>Settings :</legend>\r\n\r\n    <p style=\"float:left\">Allycode:</p>\r\n    <input type=\"text\" placeholder=\"your allycode ( e.g 456789123 )\" [(ngModel)]=\"this.settings.allycode\" (change)=\"changedAllycode()\">\r\n\r\n    <p style=\"float:left\">Sort Member by:</p>\r\n    <select [(ngModel)]=\"this.settings.sortMemberBy\">\r\n      <option value=\"OGM\">Overall GM</option>\r\n      <option value=\"CGM\">Charakter GM</option>\r\n      <option value=\"FGM\">Fleet GM</option>\r\n      <option value=\"Name\">Name</option>\r\n    </select>\r\n\r\n    <p>Use Autocomplete:</p>\r\n\r\n    <p>Show Errors:</p>\r\n\r\n    <label class=\"container\" style=\"top:-85px\">\r\n      <input type=\"checkbox\" [(ngModel)]=\"this.settings.useAutoComplete\">\r\n      <span class=\"checkmark\"></span>\r\n    </label>\r\n\r\n\r\n    <label class=\"container\">\r\n      <input type=\"checkbox\" [(ngModel)]=\"this.settings.showErrors\">\r\n      <span class=\"checkmark\"></span>\r\n    </label>\r\n\r\n    <button (click)=\"saveSettings()\">Save Settings</button>\r\n  </fieldset>\r\n\r\n</div>\r\n"
+module.exports = "<div>\r\n\r\n  <fieldset>\r\n    <legend>{{'Settings' | language}} :</legend>\r\n\r\n    <p style=\"float:left\">{{'Allycode' | language}}:</p>\r\n    <input type=\"text\" placeholder=\"{{'AllycodeEG' | language}}\" [(ngModel)]=\"this.settings.allycode\" (change)=\"changedAllycode()\">\r\n\r\n    <p style=\"float:left\">{{'SortMemberby' | language}}:</p>\r\n    <select [(ngModel)]=\"this.settings.sortMemberBy\">\r\n      <option value=\"OGM\">Overall GM</option>\r\n      <option value=\"CGM\">Charakter GM</option>\r\n      <option value=\"FGM\">Fleet GM</option>\r\n      <option value=\"Name\">Name</option>\r\n    </select>\r\n\r\n    <p>{{'UseAutocomplete' | language}}:</p>\r\n\r\n    <p>{{'ShowErrors' | language}}:</p>\r\n\r\n    <label class=\"container\" style=\"top:-85px\">\r\n      <input type=\"checkbox\" [(ngModel)]=\"this.settings.useAutoComplete\">\r\n      <span class=\"checkmark\"></span>\r\n    </label>\r\n\r\n\r\n    <label class=\"container\">\r\n      <input type=\"checkbox\" [(ngModel)]=\"this.settings.showErrors\">\r\n      <span class=\"checkmark\"></span>\r\n    </label>\r\n\r\n    <button (click)=\"saveSettings()\">{{'SaveSettings' | language}}</button>\r\n  </fieldset>\r\n\r\n</div>\r\n"
 
 /***/ }),
 
@@ -2989,7 +3318,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Alle\source\repos\SWGOH\SWGOH\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\Midi\source\repos\SWGOH\src\main.ts */"./src/main.ts");
 
 
 /***/ })

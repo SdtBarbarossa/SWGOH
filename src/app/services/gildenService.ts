@@ -15,11 +15,13 @@ export class gildenService {
   shipInfos: any;
   ModStats: any;
   ModSets: any;
+  SWGOHEvents: SWGOHEvent[];
   jsonResponseSWGOHCharacters: any;
   jsonResponseSWGOHShips: any;
   jsonResponseSWGOH: any;
   htmlResponseSWGOHZetas: any;
   syncstatus: string = '';
+  isInSync: boolean = false;
   token: string = '';
   http: HttpClient;
 
@@ -98,7 +100,7 @@ export class gildenService {
     var compressed = this.lz.compress(answerAsJSON);
     console.log('Compressed Size: ' + compressed.length);
     localStorage.swgohHelpGilde = compressed;
-    this.syncstatus = 'Gildeninfos Saved';
+    this.syncstatus += 'Gildeninfos Saved \n\r';
     this.gildenInfos = this.jsonResponseSWGOHHelpGuild;
     console.log(this.gildenInfos);
   }
@@ -120,9 +122,7 @@ export class gildenService {
 
   }
 
-  syncGildenInfos() {
-
-    this.syncstatus = 'Frage an bei swgoh.help';
+  loginToSWGOHHelp() {
 
     var user = "username=sdtbarbarossa";
     user += "&password=ExsJfR!nzYB*7Mqr";
@@ -134,73 +134,247 @@ export class gildenService {
     headers = headers.append('Content-Type', 'application/x-www-form-urlencoded');
     headers.append('Content-Length', user.length.toString());
 
+    if (this.token != null && this.token != "") {
+      if (navigator.language == "de-DE")
+        this.syncstatus += 'Bereits eingeloggt... überspringe login \n\r';
+      else
+        this.syncstatus += 'Already logged in.... skip login \n\r';
+
+      this.loadGildenInfos();
+    }
+    else
+    {
+      if (navigator.language == "de-DE")
+        this.syncstatus += 'Logge ein bei swgoh.help... \n\r';
+      else
+        this.syncstatus += 'Login at swgoh.help... \n\r';
+
+      this.http.post('https://api.swgoh.help/auth/signin/', user, { headers: headers })
+        .subscribe(data => {
+          var response = data as loginResponse;
+          this.token = response.access_token;
+
+          if (navigator.language == "de-DE")
+            this.syncstatus += 'Login erfolgreich! \n\r';
+          else
+            this.syncstatus += 'Login suceeded! \n\r';
+
+          this.loadGildenInfos();
+
+        }, Error => {
+          if (navigator.language == "de-DE") {
+            this.syncstatus += 'Fehler beim Login... breche ab \n\r';
+            this.syncstatus += Error.message + '\n\r';
+            this.syncstatus += 'Ende der Synchronisation! \n\r';
+          }
+          else
+          {
+            this.syncstatus += 'Error on Login... abort Sync \n\r';
+            this.syncstatus += Error.message + '\n\r';
+            this.syncstatus += 'End of Sync! \n\r';
+          }
+          
+        });
+    }
+    
+  }
+
+  loginEventToSWGOHHelp() {
+
+    var user = "username=sdtbarbarossa";
+    user += "&password=ExsJfR!nzYB*7Mqr";
+    user += "&grant_type=password";
+    user += "&client_id=123";
+    user += "&client_secret=ABC";
+
+    let headers = new HttpHeaders();
+    headers = headers.append('Content-Type', 'application/x-www-form-urlencoded');
+    headers.append('Content-Length', user.length.toString());
+
+    if (this.token != null && this.token != "") {
+
+      this.loadEventData();
+    }
+    else {
+
+      this.http.post('https://api.swgoh.help/auth/signin/', user, { headers: headers })
+        .subscribe(data => {
+          var response = data as loginResponse;
+          this.token = response.access_token;
+
+          if (navigator.language == "de-DE")
+            this.syncstatus += 'Login erfolgreich! \n\r';
+          else
+            this.syncstatus += 'Login suceeded! \n\r';
+
+          this.loadEventData();
+
+        }, Error => {
+          alert(Error.message);
+        });
+    }
+
+  }
+
+  loadEventData() {
+
+    let header2 = new HttpHeaders();
+    header2 = header2.append("Authorization", "Bearer " + this.token);
+    header2.append('Access-Control-Allow-Headers', 'Authorization');
+    this.http.post('https://api.swgoh.help/swgoh/data/events', '', { headers: header2 })
+      .subscribe(data2 => {
+        this.SWGOHEvents = data2 as SWGOHEvent[];
+      }, Error => {
+        alert(Error.message);
+      });
+
+  }
+
+  loadGildenInfos() {
+
+    if (navigator.language == "de-DE") {
+      this.syncstatus += 'Lade Gildendaten für ' + this.settings.allycode + '... \n\r';
+      this.syncstatus += 'Dies kann bis zu 2 min dauern... \n\r';
+    }
+    else
+    {
+      this.syncstatus += 'Load Guilddata for ' + this.settings.allycode + '... \n\r';
+      this.syncstatus += 'This can take several minutes... \n\r';
+    }
+
+    let header2 = new HttpHeaders();
+    header2 = header2.append("Authorization", "Bearer " + this.token);
+    header2.append('Access-Control-Allow-Headers', 'Authorization');
+    this.http.post('https://api.swgoh.help/swgoh/guild/' + this.settings.allycode, '', { headers: header2 })
+      .subscribe(data2 => {
+        this.jsonResponseSWGOHHelpGuild = data2;
+        this.saveSWGOHHelpResponse();
+        this.loadSWGOHHelpExtras();
+
+      }, Error => {
+        if (navigator.language == "de-DE") {
+          this.syncstatus += 'Fehler beim abrufen der Daten... breche ab \n\r';
+          this.syncstatus += Error.message + '\n\r';
+          this.syncstatus += 'Ende der Synchronisation! \n\r';
+        }
+        else {
+          this.syncstatus += 'Error on getting Guilddata...aborting... \n\r';
+          this.syncstatus += Error.message + '\n\r';
+          this.syncstatus += 'End of Sync! \n\r';
+        }
+      });
+    
+  }
+
+  loadSWGOHHelpExtras()
+  {
+    this.syncstatus += 'Hole Mod-Set-Infos... \n\r';
+
+    let header2 = new HttpHeaders();
+    header2 = header2.append("Authorization", "Bearer " + this.token);
+    header2.append('Access-Control-Allow-Headers', 'Authorization');
+    this.http.post('https://api.swgoh.help/swgoh/data/mod-sets', '', { headers: header2 })
+      .subscribe(data2 => {
+        this.ModSets = data2;
+        this.saveModSets(this.ModSets);
+        this.syncstatus += 'Hole Mod-Stat-Infos... \n\r';
+
+        let header2 = new HttpHeaders();
+        header2 = header2.append("Authorization", "Bearer " + this.token);
+        header2.append('Access-Control-Allow-Headers', 'Authorization');
+        this.http.post('https://api.swgoh.help/swgoh/data/mod-stats', '', { headers: header2 })
+          .subscribe(data2 => {
+            this.ModStats = data2;
+            this.saveModStats(this.ModStats);
+            this.syncstatus += 'Mod-Stat-Infos erfolgreich... \n\r';
+            this.loadSWGOHggChars();
+          }, Error => {
+            this.syncstatus += 'Fehler beim abrufen der Daten... breche ab \n\r';
+            this.syncstatus += Error.message + '\n\r';
+            this.syncstatus += 'Ende der Synchronisation! \n\r';
+          });
+
+      }, Error => {
+        this.syncstatus += 'Fehler beim abrufen der Daten... breche ab \n\r';
+        this.syncstatus += Error.message + '\n\r';
+        this.syncstatus += 'Ende der Synchronisation! \n\r';
+      });
+  }
+
+  loadSWGOHggChars() {
+
+    this.syncstatus += 'Hole Charinfo von swgoh.gg... \n\r';
+
+    this.http.get('https://cors-anywhere.herokuapp.com/' + 'https://swgoh.gg/api/characters/', { responseType: 'json' })
+      .subscribe(data => {
+        this.jsonResponseSWGOHCharacters = data;
+        this.saveCharInfos(data);
+        this.syncstatus += 'Charinfos erfolgreich abgerufen... \n\r';
+        this.loadSWGOHggShips();
+        
+      }, Error => {
+        if (this.charInfos != null) {
+          this.syncstatus += 'Fehler beim abrufen der Daten... kann aber alte Daten verwenden \n\r';
+          this.loadSWGOHggShips();
+          this.isInSync = false;
+        }
+        else {
+          this.syncstatus += 'Fehler beim abrufen der Daten... breche ab \n\r';
+          this.syncstatus += Error.message + '\n\r';
+          this.syncstatus += 'Ende der Synchronisation! \n\r';
+        }
+      });
+  }
+
+  loadSWGOHggShips() {
+
+    this.syncstatus += 'Hole Shipinfo von swgoh.gg... \n\r';
+
+    this.http.get('https://cors-anywhere.herokuapp.com/' + 'https://swgoh.gg/api/ships/', { responseType: 'json' })
+          .subscribe(data => {
+            this.jsonResponseSWGOHCharacters = data;
+            this.saveShipInfos(data);
+            this.syncstatus += 'Ende der Synchronisation! \n\r';
+            this.isInSync = false;
+
+      }, Error => {
+        if (this.shipInfos != null) {
+          this.syncstatus += 'Fehler beim abrufen der Daten... kann aber alte Daten verwenden \n\r';
+          this.syncstatus += 'Ende der Synchronisation! \n\r';
+          this.isInSync = false;
+        }
+        else {
+          this.syncstatus += 'Fehler beim abrufen der Daten... breche ab \n\r';
+          this.syncstatus += Error.message + '\n\r';
+          this.syncstatus += 'Ende der Synchronisation! \n\r';
+        }
+          });
+  }
+
+  syncGildenInfos() {
+
+    if (navigator.language == "de-DE")
+      this.syncstatus = 'Frage an bei swgoh.help \n\r';
+    else
+      this.syncstatus = 'Request from swgoh.help \n\r';
+
+    this.isInSync = true;
+    
     if (!this.checkIfItsANumber(this.settings.allycode)) {
-      alert('AllyCode "' + this.settings.allycode + '" is either empty or in the wrong format. It must be a string with 9 numbers ( no - )');
-      this.syncstatus = 'aborted';
+      if (navigator.language == "de-DE") {
+        alert('Verbündetencode "' + this.settings.allycode + '" ist entweder leer oder im falschen Format. Es muss eine 9 stellige Zahl sein ( ohne - )');
+        this.syncstatus += 'abgebrochen \n\r';
+      }
+      else
+      {
+        alert('AllyCode "' + this.settings.allycode + '" is either empty or in the wrong format. It must be a string with 9 numbers ( no - )');
+        this.syncstatus += 'aborted \n\r';
+      }
+
       return;
     }
 
-    this.http.post('https://api.swgoh.help/auth/signin/', user, { headers: headers })
-      .subscribe(data => {
-        var response = data as loginResponse;
-        this.token = response.access_token;
-        this.syncstatus = 'Warte auf swgoh.help...';
-
-        this.http.get('https://cryptic-headland-94862.herokuapp.com/' + 'https://swgoh.gg/api/characters/', { responseType: 'json' })
-          .subscribe(data => {
-            this.jsonResponseSWGOHCharacters = data;
-            this.saveCharInfos(data);
-            this.syncstatus = 'Anfrage 2 von ' + 2 + ' bei SWGOH OK';
-            console.log(this.jsonResponseSWGOHCharacters);
-
-            this.http.get('https://cryptic-headland-94862.herokuapp.com/' + 'https://swgoh.gg/api/ships/', { responseType: 'json' })
-              .subscribe(data => {
-                this.jsonResponseSWGOHCharacters = data;
-                this.saveShipInfos(data);
-                this.syncstatus = 'Rufe Gildendaten ab... dies kann 2 Min Dauern';
-                console.log(this.jsonResponseSWGOHCharacters);
-
-
-            let header2 = new HttpHeaders();
-            header2 = header2.append("Authorization", "Bearer " + this.token);
-            header2.append('Access-Control-Allow-Headers', 'Authorization');
-            this.http.post('https://api.swgoh.help/swgoh/guild/' + this.settings.allycode, '', { headers: header2 })
-              .subscribe(data2 => {
-                this.jsonResponseSWGOHHelpGuild = data2;
-                this.syncstatus = 'Hole Mod-Set-Infos...';
-                this.saveSWGOHHelpResponse();
-
-                let header2 = new HttpHeaders();
-                header2 = header2.append("Authorization", "Bearer " + this.token);
-                header2.append('Access-Control-Allow-Headers', 'Authorization');
-                this.http.post('https://api.swgoh.help/swgoh/data/mod-sets', '', { headers: header2 })
-                  .subscribe(data2 => {
-                    this.ModSets = data2;
-                    this.syncstatus = 'Hole Mod-Stat-Infos...';
-                    this.saveModSets(this.ModSets);
-
-                    let header2 = new HttpHeaders();
-                    header2 = header2.append("Authorization", "Bearer " + this.token);
-                    header2.append('Access-Control-Allow-Headers', 'Authorization');
-                    this.http.post('https://api.swgoh.help/swgoh/data/mod-stats', '', { headers: header2 })
-                      .subscribe(data2 => {
-                        this.ModStats = data2;
-                        this.syncstatus = 'Verarbeite Gildendaten...';
-                        this.saveModStats(this.ModStats);
-                        this.syncstatus = 'Gildeninfos saved...';
-
-                      }, Error => { alert(Error) });
-
-                  }, Error => { alert(Error) });
-
-              }, Error => { alert(Error) });
-
-              }, Error => { alert(Error) });
-
-          }, Error => { alert(Error) });
-
-
-      }, Error => { alert(Error) });
+    this.loginToSWGOHHelp();
 
   }
 
@@ -750,4 +924,22 @@ export class ArenaTeamHelper {
 export class CharFindHelper {
   besitzer: string = "";
   charakter: Charakter = new Charakter();
+}
+
+export class Schedule {
+  start: number;
+  end: number;
+  show: number;
+  hide: number;
+}
+
+export class SWGOHEvent {
+  id: string;
+  priority: number;
+  name: string;
+  summary: string;
+  desc: string;
+  type: number;
+  status: number;
+  schedule: Schedule[];
 }

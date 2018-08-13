@@ -9,12 +9,18 @@
   <ItemGroup>
     <None Remove="src\app\arenaTeams\arenaTeams.ts" />
     <None Remove="src\app\charSearch\charsearch.ts" />
+    <None Remove="src\app\events\events.ts" />
     <None Remove="src\app\home\home.ts" />
     <None Remove="src\app\newCharSearch\newCharSearch.ts" />
     <None Remove="src\app\pipes\charpipe\charGear.pipe.ts" />
     <None Remove="src\app\pipes\charpipe\charLink.pipe.ts" />
     <None Remove="src\app\pipes\charpipe\charName.pipe.ts" />
     <None Remove="src\app\pipes\charpipe\gearLink.pipe.ts" />
+    <None Remove="src\app\pipes\columnfixed.pipe.ts" />
+    <None Remove="src\app\pipes\columntype.pipe.ts" />
+    <None Remove="src\app\pipes\columnwidth.pipe.ts" />
+    <None Remove="src\app\pipes\events\eventShow.pipe.ts" />
+    <None Remove="src\app\pipes\language\language.pipe.ts" />
     <None Remove="src\app\pipes\modpipes\ModSetName.pipe.ts" />
     <None Remove="src\app\pipes\modpipes\ModSlotName.pipe.ts" />
     <None Remove="src\app\pipes\modpipes\ModStatName.pipe.ts" />
@@ -38,6 +44,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="src\app\events\events.ts" />
     <TypeScriptCompile Include="src\app\newCharSearch\newCharSearch.ts" />
     <TypeScriptCompile Include="src\app\charSearch\charsearch.ts" />
     <TypeScriptCompile Include="src\app\home\home.ts" />
@@ -46,10 +53,15 @@
     <TypeScriptCompile Include="src\app\pipes\charpipe\charGear.pipe.ts" />
     <TypeScriptCompile Include="src\app\pipes\charpipe\charName.pipe.ts" />
     <TypeScriptCompile Include="src\app\pipes\charpipe\gearLink.pipe.ts" />
+    <TypeScriptCompile Include="src\app\pipes\columnfixed.pipe.ts" />
+    <TypeScriptCompile Include="src\app\pipes\columntype.pipe.ts" />
+    <TypeScriptCompile Include="src\app\pipes\events\eventShow.pipe.ts" />
+    <TypeScriptCompile Include="src\app\pipes\language\language.pipe.ts" />
     <TypeScriptCompile Include="src\app\pipes\modpipes\ModSlotName.pipe.ts" />
     <TypeScriptCompile Include="src\app\pipes\modpipes\ModStatValue.pipe.ts" />
     <TypeScriptCompile Include="src\app\pipes\modpipes\ModStatName.pipe.ts" />
     <TypeScriptCompile Include="src\app\pipes\modpipes\ModSetName.pipe.ts" />
+    <TypeScriptCompile Include="src\app\pipes\columnwidth.pipe.ts" />
     <TypeScriptCompile Include="src\app\RaidPlanner\raidplanner.ts" />
     <TypeScriptCompile Include="src\app\services\gildenService.ts" />
     <TypeScriptCompile Include="src\app\services\settingsService.ts" />

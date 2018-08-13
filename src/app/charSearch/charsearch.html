@@ -1,8 +1,8 @@
-<input type="text" placeholder="Charname ( e.g 'Boba Fett' or 'Boba'  )" [(ngModel)]="charToSearch" (ngModelChange)="getCharsFromGildenInfos()">
+<input type="text" placeholder="{{'CharNamePlaceHolder'| language}}" [(ngModel)]="charToSearch" (ngModelChange)="getCharsFromGildenInfos()">
 
 <div *ngFor="let char of charsFromGildenInfos" class="charNow">
   <fieldset style="height: 115px;">
-    <legend>{{char.Name}} of {{char.Besitzer}}</legend>
+    <legend>{{char.Name}} {{'of'| language}} {{char.Besitzer}}</legend>
     <br />
     <div class="parentOfImages">
       <img *ngIf="char.Sterne>0" src="/assets/picture/star.png">

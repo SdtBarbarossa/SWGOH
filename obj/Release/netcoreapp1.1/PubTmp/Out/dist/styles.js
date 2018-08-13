@@ -89,7 +89,7 @@ module.exports = "/*!\n* DevExtreme\n* Version: 18.1.5\n* Build date: Jul 27, 20
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* You can add global styles to this file, and also import other style files */\n"
+module.exports = "/* You can add global styles to this file, and also import other style files */\r\n"
 
 /***/ }),
 
@@ -621,9 +621,9 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Alle\source\repos\SWGOH\SWGOH\src\styles.css */"./src/styles.css");
-__webpack_require__(/*! C:\Users\Alle\source\repos\SWGOH\SWGOH\node_modules\devextreme\dist\css\dx.common.css */"./node_modules/devextreme/dist/css/dx.common.css");
-module.exports = __webpack_require__(/*! C:\Users\Alle\source\repos\SWGOH\SWGOH\node_modules\devextreme\dist\css\dx.light.css */"./node_modules/devextreme/dist/css/dx.light.css");
+__webpack_require__(/*! C:\Users\Midi\source\repos\SWGOH\src\styles.css */"./src/styles.css");
+__webpack_require__(/*! C:\Users\Midi\source\repos\SWGOH\node_modules\devextreme\dist\css\dx.common.css */"./node_modules/devextreme/dist/css/dx.common.css");
+module.exports = __webpack_require__(/*! C:\Users\Midi\source\repos\SWGOH\node_modules\devextreme\dist\css\dx.light.css */"./node_modules/devextreme/dist/css/dx.light.css");
 
 
 /***/ })

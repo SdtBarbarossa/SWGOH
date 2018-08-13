@@ -1,4 +1,5 @@
 <div *ngIf="!raidDataSource">Lädt Raidplan...</div>
+
 <dx-data-grid *ngIf="raidDataSource"
               [dataSource]="raidDataSource"
               [allowColumnReordering]="true"
@@ -6,31 +7,13 @@
               (onCellPrepared)="colorizeCell($event)">
 
   <dxo-filter-row [visible]="true"></dxo-filter-row>
+  <dxo-scrolling mode="infinite"></dxo-scrolling>
+  <dxo-state-storing [enabled]="true" type="localStorage" storageKey="gridstorage"></dxo-state-storing>
 
   <dxo-column-chooser [enabled]="true"
                       mode="dragAndDrop">
   </dxo-column-chooser>
 
-  <dxi-column *ngFor="let columnNow of columns; let i = index" dataField="{{i}}" caption="{{columnNow}}"></dxi-column>
+  <dxi-column *ngFor="let columnNow of columns; let i = index" dataField="{{i}}" [caption]="columnNow" [width]="i | columnwidth" [dataType]="i | columntype" [fixed]="i | columnfixed"></dxi-column>
 
 </dx-data-grid>
-
-<!--<table id="raidplannerTable" style="width:100%">
-  <tr>
-    <th>Member</th>
-    <th *ngFor="let squad of squads" (click)="alertSquad(squad)">{{squad.Name}}</th>
-  </tr>
-  <tr *ngFor="let player of gildenService.gildenInfos.roster">
-    <td>{{player.name}}</td>
-    <td *ngFor="let squad of squads">
-
-      <div *ngIf='(playerGotSquad(player, squad.Name) == 3)' style="background-color:green">{{playerGotSquad(player, squad.Name)}}</div>
-      <div *ngIf='playerGotSquad(player, squad.Name) == 2' style="background-color:blue">{{playerGotSquad(player, squad.Name)}}</div>
-      <div *ngIf='playerGotSquad(player, squad.Name) == 1' style="background-color:yellow">{{playerGotSquad(player, squad.Name)}}</div>
-      <div *ngIf='playerGotSquad(player, squad.Name) == 0' style="background-color:orange">{{playerGotSquad(player, squad.Name)}}</div>
-      <div *ngIf='playerGotSquad(player, squad.Name) < 0' style="background-color:brown">{{playerGotSquad(player, squad.Name)}}</div>
-
-    </td>
-
-  </tr>
-  </table>-->

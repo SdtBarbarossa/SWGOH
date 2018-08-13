@@ -18,11 +18,11 @@
 
   <table id="platoons" style="width:100%">
     <tr>
-      <th>Charname</th>
-      <th>Needed</th>
-      <th>Available</th>
-      <th>Difference</th>
-      <th>Stars Needed</th>
+      <th>{{'Charname'| language}}</th>
+      <th>{{'Needed'| language}}</th>
+      <th>{{'Available'| language}}</th>
+      <th>{{'Difference'| language}}</th>
+      <th>{{'Stars Needed'| language}}</th>
     </tr>
     <tr *ngFor="let neededChar of ActualPhase">
       <td ><a (click)="showMembersWhoHave(neededChar)" href="javascript:void();">{{neededChar.name}}</a></td>

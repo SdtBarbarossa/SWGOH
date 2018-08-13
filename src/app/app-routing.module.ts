@@ -8,6 +8,7 @@ import { TBPlatoonComponent } from './TBPlatoons/platoontool';
 import { RaidPlannerComponent } from './RaidPlanner/raidplanner';
 import { ArenaTeamsComponent } from './arenaTeams/arenaTeams';
 import { newCharSearchComponent } from './newCharSearch/newCharSearch';
+import { EventsComponent } from './events/events';
 
 const routes: Routes = [
   {
@@ -46,6 +47,10 @@ const routes: Routes = [
   {
     path: 'newCharSearch',
     component: newCharSearchComponent
+  },
+  {
+    path: 'events',
+    component: EventsComponent
   }, 
   {
     path: '**',

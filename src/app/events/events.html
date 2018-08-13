@@ -1,0 +1,18 @@
+<div *ngIf="GildenService.SWGOHEvents">
+  <div *ngFor="let event of GildenService.SWGOHEvents">
+    <fieldset *ngIf="(event.id | eventShow)" style="width:100%">
+      <legend>
+        <span *ngIf="event.id == 'EVENT_TRAINING_DROID_SMUGGLING' || event.id == 'EVENT_CREDIT_HEIST' || event.type == 3" style="color:#0000ff">
+          {{event.name}}
+        </span>
+        <span *ngIf="event.id != 'EVENT_TRAINING_DROID_SMUGGLING' && event.id != 'EVENT_CREDIT_HEIST' && event.type != 3">
+          {{event.name}}
+        </span>
+      </legend>
+        Desc: {{event.desc}} <br />
+        Start: {{event.schedule[0].start | date : 'dd.MM.yyyy HH:mm'}} <br />
+        End: {{event.schedule[0].end | date : 'dd.MM.yyyy HH:mm'}} <br />
+
+</fieldset>
+  </div>
+</div>
