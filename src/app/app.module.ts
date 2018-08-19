@@ -27,13 +27,15 @@ import { ModStatNamePipe } from './pipes/modpipes/ModStatName.pipe';
 import { ModStatValuePipe } from './pipes/modpipes/ModStatValue.pipe';
 import { ModSlotNamePipe } from './pipes/modpipes/ModSlotName.pipe';
 import { newCharSearchComponent } from './newCharSearch/newCharSearch';
-import { DxDataGridModule, DxTextAreaModule } from 'devextreme-angular';
+import { DxDataGridModule, DxTextAreaModule, DxSelectBoxModule } from 'devextreme-angular';
 import { ColumnWidthPipe } from './pipes/columnwidth.pipe';
 import { ColumnTypePipe } from './pipes/columntype.pipe';
 import { ColumnFixedPipe } from './pipes/columnfixed.pipe';
 import { LanguagePipe } from './pipes/language/language.pipe';
 import { EventsComponent } from './events/events';
 import { EventShowPipe } from './pipes/events/eventShow.pipe';
+import { ComparerComponent } from './comparer/comparer';
+import { MapToIterable } from './pipes/MapToIterable.pipe';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,7 @@ import { EventShowPipe } from './pipes/events/eventShow.pipe';
     ArenaTeamsComponent,
     newCharSearchComponent,
     EventsComponent,
+    ComparerComponent,
 
     //Pipes here
 
@@ -63,6 +66,7 @@ import { EventShowPipe } from './pipes/events/eventShow.pipe';
     ColumnFixedPipe,
     LanguagePipe,
     EventShowPipe,
+    MapToIterable
 
   ],
   imports: [
@@ -76,7 +80,8 @@ import { EventShowPipe } from './pipes/events/eventShow.pipe';
     SelectDropDownModule,
     LZStringModule,
     DxDataGridModule,
-    DxTextAreaModule
+    DxTextAreaModule,
+    DxSelectBoxModule 
   ],
   providers: [SettingsService, gildenService, HttpClient, LZStringService ],
   bootstrap: [AppComponent]

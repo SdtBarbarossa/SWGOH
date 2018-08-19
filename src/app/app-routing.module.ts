@@ -9,6 +9,7 @@ import { RaidPlannerComponent } from './RaidPlanner/raidplanner';
 import { ArenaTeamsComponent } from './arenaTeams/arenaTeams';
 import { newCharSearchComponent } from './newCharSearch/newCharSearch';
 import { EventsComponent } from './events/events';
+import { ComparerComponent } from './comparer/comparer';
 
 const routes: Routes = [
   {
@@ -47,6 +48,10 @@ const routes: Routes = [
   {
     path: 'newCharSearch',
     component: newCharSearchComponent
+  }, 
+  {
+    path: 'comparer',
+    component: ComparerComponent
   },
   {
     path: 'events',

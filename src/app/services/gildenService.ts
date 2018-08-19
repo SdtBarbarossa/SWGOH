@@ -26,13 +26,22 @@ export class gildenService {
   http: HttpClient;
 
   //swgoh-help
-  apiHelpURL = 'https://api.swgoh.help';
+  apiHelpURL = 'https://apiv2.swgoh.help';
   jsonResponseSWGOHHelpGuild: any;
   jsonResponseSWGOHHelpUnits: any;
+  language = 'ENG_US';
 
   constructor(private settingsService: SettingsService, http: HttpClient, private lz: LZStringService) {
     this.settings = this.settingsService.getSettings();
     this.http = http;
+
+    if (navigator.language == "de-DE") {
+      this.language = 'GER_DE';
+    }
+    else {
+      this.language = 'ENG_US';
+    }
+
     this.getCharInfos();
     this.getShipInfos();
     this.getModStats();
@@ -52,6 +61,7 @@ export class gildenService {
   saveModStats(ModStats: any) {
     localStorage.midiModStats = JSON.stringify(ModStats);
     this.ModStats = ModStats;
+    console.log('ModStats', this.ModStats);
   }
 
   getModSets() {
@@ -62,6 +72,7 @@ export class gildenService {
   saveModSets(ModSets: any) {
     localStorage.midiModSets = JSON.stringify(ModSets);
     this.ModSets = ModSets;
+    console.log('ModSets', this.ModSets);
   }
 
   getCharInfos() {
@@ -149,7 +160,7 @@ export class gildenService {
       else
         this.syncstatus += 'Login at swgoh.help... \n\r';
 
-      this.http.post('https://api.swgoh.help/auth/signin/', user, { headers: headers })
+      this.http.post('https://apiv2.swgoh.help/auth/signin/', user, { headers: headers })
         .subscribe(data => {
           var response = data as loginResponse;
           this.token = response.access_token;
@@ -197,7 +208,7 @@ export class gildenService {
     }
     else {
 
-      this.http.post('https://api.swgoh.help/auth/signin/', user, { headers: headers })
+      this.http.post('https://apiv2.swgoh.help/auth/signin/', user, { headers: headers })
         .subscribe(data => {
           var response = data as loginResponse;
           this.token = response.access_token;
@@ -218,12 +229,18 @@ export class gildenService {
 
   loadEventData() {
 
+    var payload = {
+      language: this.language
+    };
+
     let header2 = new HttpHeaders();
     header2 = header2.append("Authorization", "Bearer " + this.token);
     header2.append('Access-Control-Allow-Headers', 'Authorization');
-    this.http.post('https://api.swgoh.help/swgoh/data/events', '', { headers: header2 })
+    this.http.post('https://apiv2.swgoh.help/swgoh/events', payload, { headers: header2 })
       .subscribe(data2 => {
+        console.log(data2);
         this.SWGOHEvents = data2 as SWGOHEvent[];
+        this.SWGOHEvents.sort(function (a, b) { return a.schedule[0].start - b.schedule[0].start; });
       }, Error => {
         alert(Error.message);
       });
@@ -242,10 +259,15 @@ export class gildenService {
       this.syncstatus += 'This can take several minutes... \n\r';
     }
 
+    var payload = {
+      allycode: this.settings.allycode,
+      language: this.language
+    };
+
     let header2 = new HttpHeaders();
     header2 = header2.append("Authorization", "Bearer " + this.token);
     header2.append('Access-Control-Allow-Headers', 'Authorization');
-    this.http.post('https://api.swgoh.help/swgoh/guild/' + this.settings.allycode, '', { headers: header2 })
+    this.http.post('https://apiv2.swgoh.help/swgoh/guild/', payload, { headers: header2 })
       .subscribe(data2 => {
         this.jsonResponseSWGOHHelpGuild = data2;
         this.saveSWGOHHelpResponse();
@@ -270,19 +292,29 @@ export class gildenService {
   {
     this.syncstatus += 'Hole Mod-Set-Infos... \n\r';
 
+    var Payload = {
+      "collection": "statModSetList",
+      "language": this.language,
+    };
+
     let header2 = new HttpHeaders();
     header2 = header2.append("Authorization", "Bearer " + this.token);
     header2.append('Access-Control-Allow-Headers', 'Authorization');
-    this.http.post('https://api.swgoh.help/swgoh/data/mod-sets', '', { headers: header2 })
+    this.http.post('https://apiv2.swgoh.help/swgoh/data/', Payload, { headers: header2 })
       .subscribe(data2 => {
         this.ModSets = data2;
         this.saveModSets(this.ModSets);
         this.syncstatus += 'Hole Mod-Stat-Infos... \n\r';
 
+        var Payload2 = {
+          "collection": "statModList",
+          "language": this.language,
+        };
+
         let header2 = new HttpHeaders();
         header2 = header2.append("Authorization", "Bearer " + this.token);
         header2.append('Access-Control-Allow-Headers', 'Authorization');
-        this.http.post('https://api.swgoh.help/swgoh/data/mod-stats', '', { headers: header2 })
+        this.http.post('https://apiv2.swgoh.help/swgoh/data/', Payload2, { headers: header2 })
           .subscribe(data2 => {
             this.ModStats = data2;
             this.saveModStats(this.ModStats);

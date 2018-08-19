@@ -1,0 +1,67 @@
+Pick a Charakter and two Member to Compare the Char
+<dx-select-box [dataSource]="GildenService.charInfos"
+               [value]="GildenService.charInfos[0]"
+               [searchEnabled]="true"
+               (onValueChanged)="onValueChanged(charSelectBox, MemberSelectBoxA, MemberSelectBoxB)"
+               displayExpr="name" #charSelectBox>
+</dx-select-box>
+
+<div style="width:100%">
+  <dx-select-box [dataSource]="GildenService.gildenInfos.roster"
+                 [value]="GildenService.gildenInfos.roster[0]"
+                 [searchEnabled]="true"
+                 displayExpr="name"
+                 (onValueChanged)="onValueChanged(charSelectBox, MemberSelectBoxA, MemberSelectBoxB)"
+                 style="width:50%; float:left" #MemberSelectBoxA>
+  </dx-select-box>
+
+  <dx-select-box [dataSource]="GildenService.gildenInfos.roster"
+                 [value]="GildenService.gildenInfos.roster[0]"
+                 [searchEnabled]="true"
+                 displayExpr="name"
+                 (onValueChanged)="onValueChanged(charSelectBox, MemberSelectBoxA, MemberSelectBoxB)"
+                 style="width:50%; float:left" #MemberSelectBoxB>
+  </dx-select-box>
+</div>
+
+<div *ngIf="charCompletedA && charCompletedB" style="width:100%">
+
+  <table style="width:100%">
+    <tr>
+      <th style="width:33%">
+        {{charSelectBox.value.name}} from {{MemberSelectBoxA.value.name}}
+      </th>
+      <th style="width:33%">
+        Compare
+      </th>
+      <th style="width:33%">
+        {{charSelectBox.value.name}} from {{MemberSelectBoxB.value.name}}
+      </th>
+    </tr>
+    <tr>
+      <td>
+        CharABild
+      </td>
+      <td></td>
+      <td>
+        CharBBild
+      </td>
+    </tr>
+    <tr *ngFor="let keyvalue of charCompletedA.total | mapToIterable" >
+        <td>
+          {{charCompletedA.total[keyvalue.key]}}
+        </td>
+        <td>
+          {{keyvalue.key | language}}
+        </td>
+        <td>
+          {{charCompletedB.total[keyvalue.key]}}
+        </td>
+    <tr>
+      <td>Eventuell Mods Char A</td>
+      <td></td>
+      <td>Eventuell Mods Char B</td>
+    </tr>
+  </table>
+
+</div>

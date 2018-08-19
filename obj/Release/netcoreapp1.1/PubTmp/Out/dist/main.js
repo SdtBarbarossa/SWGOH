@@ -912,12 +912,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _RaidPlanner_raidplanner__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./RaidPlanner/raidplanner */ "./src/app/RaidPlanner/raidplanner.ts");
 /* harmony import */ var _arenaTeams_arenaTeams__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./arenaTeams/arenaTeams */ "./src/app/arenaTeams/arenaTeams.ts");
 /* harmony import */ var _newCharSearch_newCharSearch__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./newCharSearch/newCharSearch */ "./src/app/newCharSearch/newCharSearch.ts");
+/* harmony import */ var _events_events__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./events/events */ "./src/app/events/events.ts");
+/* harmony import */ var _comparer_comparer__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./comparer/comparer */ "./src/app/comparer/comparer.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -967,6 +971,14 @@ var routes = [
         component: _newCharSearch_newCharSearch__WEBPACK_IMPORTED_MODULE_9__["newCharSearchComponent"]
     },
     {
+        path: 'comparer',
+        component: _comparer_comparer__WEBPACK_IMPORTED_MODULE_11__["ComparerComponent"]
+    },
+    {
+        path: 'events',
+        component: _events_events__WEBPACK_IMPORTED_MODULE_10__["EventsComponent"]
+    },
+    {
         path: '**',
         redirectTo: 'home'
     }
@@ -1005,7 +1017,7 @@ module.exports = "ul {\r\n  list-style-type: none;\r\n  margin: 0;\r\n  padding:
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"mySidenav\" class=\"sidenav\">\r\n  <a href=\"javascript:void(0)\" class=\"closebtn\" (click)=\"closeNav()\">&times;</a>\r\n  <a routerLink=\"/home\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Home' | language}}</a>\r\n  <a routerLink=\"/newCharSearch\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Charsearch' | language}}</a>\r\n  <a routerLink=\"/squadsearch\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Squadsearch' | language}}</a>\r\n  <a routerLink=\"/platoontool\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'TB-Platoon' | language}}</a>\r\n  <a routerLink=\"/raidplanner\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Raid-Planner' | language}}</a>\r\n  <a routerLink=\"/arenateams\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'ArenaTeams' | language}}</a>\r\n  <a routerLink=\"/settings\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Settings' | language}}</a>\r\n</div>\r\n\r\n<!-- Use any element to open the sidenav -->\r\n<div>\r\n  <ul>\r\n    <li>\r\n      <a href=\"javascript:void(0)\" (click)=\"openNav()\">&#9776;</a>\r\n    </li>\r\n    <li style=\"float:right\"><a routerLink=\"/settings\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Settings' | language}}</a></li>\r\n  </ul>\r\n  <div style=\"height:40px;\">\r\n\r\n  </div>\r\n  <div>\r\n    <router-outlet></router-outlet>\r\n  </div>\r\n\r\n  </div>\r\n"
+module.exports = "<div id=\"mySidenav\" class=\"sidenav\">\r\n  <a href=\"javascript:void(0)\" class=\"closebtn\" (click)=\"closeNav()\">&times;</a>\r\n  <a routerLink=\"/home\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Home' | language}}</a>\r\n  <a routerLink=\"/newCharSearch\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Charsearch' | language}}</a>\r\n  <a routerLink=\"/squadsearch\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Squadsearch' | language}}</a>\r\n  <a routerLink=\"/platoontool\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'TB-Platoon' | language}}</a>\r\n  <a routerLink=\"/raidplanner\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Raid-Planner' | language}}</a>\r\n  <a routerLink=\"/arenateams\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'ArenaTeams' | language}}</a>\r\n  <a routerLink=\"/events\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Events' | language}}</a>\r\n  <a routerLink=\"/comparer\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Comparer' | language}}</a>\r\n  <a routerLink=\"/settings\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Settings' | language}}</a>\r\n</div>\r\n\r\n<!-- Use any element to open the sidenav -->\r\n<div>\r\n  <ul>\r\n    <li>\r\n      <a href=\"javascript:void(0)\" (click)=\"openNav()\">&#9776;</a>\r\n    </li>\r\n    <li style=\"float:right\"><a routerLink=\"/settings\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Settings' | language}}</a></li>\r\n  </ul>\r\n  <div style=\"height:40px;\">\r\n\r\n  </div>\r\n  <div>\r\n    <router-outlet></router-outlet>\r\n  </div>\r\n\r\n  </div>\r\n"
 
 /***/ }),
 
@@ -1109,12 +1121,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pipes_columntype_pipe__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./pipes/columntype.pipe */ "./src/app/pipes/columntype.pipe.ts");
 /* harmony import */ var _pipes_columnfixed_pipe__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./pipes/columnfixed.pipe */ "./src/app/pipes/columnfixed.pipe.ts");
 /* harmony import */ var _pipes_language_language_pipe__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./pipes/language/language.pipe */ "./src/app/pipes/language/language.pipe.ts");
+/* harmony import */ var _events_events__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./events/events */ "./src/app/events/events.ts");
+/* harmony import */ var _pipes_events_eventShow_pipe__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./pipes/events/eventShow.pipe */ "./src/app/pipes/events/eventShow.pipe.ts");
+/* harmony import */ var _comparer_comparer__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./comparer/comparer */ "./src/app/comparer/comparer.ts");
+/* harmony import */ var _pipes_MapToIterable_pipe__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./pipes/MapToIterable.pipe */ "./src/app/pipes/MapToIterable.pipe.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
+
+
 
 
 
@@ -1163,6 +1183,8 @@ var AppModule = /** @class */ (function () {
                 _RaidPlanner_raidplanner__WEBPACK_IMPORTED_MODULE_15__["RaidPlannerComponent"],
                 _arenaTeams_arenaTeams__WEBPACK_IMPORTED_MODULE_18__["ArenaTeamsComponent"],
                 _newCharSearch_newCharSearch__WEBPACK_IMPORTED_MODULE_27__["newCharSearchComponent"],
+                _events_events__WEBPACK_IMPORTED_MODULE_33__["EventsComponent"],
+                _comparer_comparer__WEBPACK_IMPORTED_MODULE_35__["ComparerComponent"],
                 //Pipes here
                 _pipes_charpipe_gearLink_pipe__WEBPACK_IMPORTED_MODULE_19__["gearLinkPipe"],
                 _pipes_charpipe_charName_pipe__WEBPACK_IMPORTED_MODULE_20__["CharNamePipe"],
@@ -1176,6 +1198,8 @@ var AppModule = /** @class */ (function () {
                 _pipes_columntype_pipe__WEBPACK_IMPORTED_MODULE_30__["ColumnTypePipe"],
                 _pipes_columnfixed_pipe__WEBPACK_IMPORTED_MODULE_31__["ColumnFixedPipe"],
                 _pipes_language_language_pipe__WEBPACK_IMPORTED_MODULE_32__["LanguagePipe"],
+                _pipes_events_eventShow_pipe__WEBPACK_IMPORTED_MODULE_34__["EventShowPipe"],
+                _pipes_MapToIterable_pipe__WEBPACK_IMPORTED_MODULE_36__["MapToIterable"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -1188,7 +1212,8 @@ var AppModule = /** @class */ (function () {
                 ngx_select_dropdown__WEBPACK_IMPORTED_MODULE_16__["SelectDropDownModule"],
                 ng_lz_string__WEBPACK_IMPORTED_MODULE_17__["LZStringModule"],
                 devextreme_angular__WEBPACK_IMPORTED_MODULE_28__["DxDataGridModule"],
-                devextreme_angular__WEBPACK_IMPORTED_MODULE_28__["DxTextAreaModule"]
+                devextreme_angular__WEBPACK_IMPORTED_MODULE_28__["DxTextAreaModule"],
+                devextreme_angular__WEBPACK_IMPORTED_MODULE_28__["DxSelectBoxModule"]
             ],
             providers: [_services_settingsService__WEBPACK_IMPORTED_MODULE_10__["SettingsService"], _services_gildenService__WEBPACK_IMPORTED_MODULE_11__["gildenService"], _angular_common_http__WEBPACK_IMPORTED_MODULE_12__["HttpClient"], ng_lz_string__WEBPACK_IMPORTED_MODULE_17__["LZStringService"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
@@ -1377,6 +1402,314 @@ var CharSearchComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/comparer/comparer.css":
+/*!***************************************!*\
+  !*** ./src/app/comparer/comparer.css ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "input[type=text] {\r\n  width: 100%;\r\n  padding: 12px 20px;\r\n  margin: 8px 0;\r\n  box-sizing: border-box;\r\n}\r\n\r\n\r\n#raidplannerTable tr:nth-child(even) {\r\n  background-color: #f2f2f2;\r\n}\r\n\r\n\r\n#raidplannerTable tr:hover {\r\n  background-color: #ddd;\r\n}\r\n\r\n\r\n#raidplannerTable th {\r\n  padding-top: 12px;\r\n  padding-bottom: 12px;\r\n  text-align: left;\r\n  background-color: #4CAF50;\r\n  color: white;\r\n}\r\n\r\n\r\n.parentOfImages {\r\n  position: relative;\r\n  top: 0;\r\n  left: 0;\r\n  width: 55px;\r\n  height: 80px;\r\n}\r\n\r\n\r\n.sterne {\r\n  position: absolute;\r\n  transform: scale(0.6, 0.6);\r\n  -ms-transform: scale(0.6, 0.6);\r\n  -webkit-transform: scale(0.6, 0.6);\r\n  z-index: 2;\r\n}\r\n\r\n\r\n.stern1 {\r\n  top: 25px;\r\n  left: -6px;\r\n}\r\n\r\n\r\n.stern2 {\r\n  top: 15px;\r\n  left: 6px;\r\n}\r\n\r\n\r\n.stern3 {\r\n  top: 8px;\r\n  left: 17px;\r\n}\r\n\r\n\r\n.stern4 {\r\n  top: 8px;\r\n  left: 30px;\r\n}\r\n\r\n\r\n.stern5 {\r\n  top: 8px;\r\n  left: 44px;\r\n}\r\n\r\n\r\n.stern6 {\r\n  top: 15px;\r\n  left: 57px;\r\n}\r\n\r\n\r\n.stern7 {\r\n  top: 25px;\r\n  left: 67px;\r\n}\r\n\r\n\r\n.maincharFieldset{\r\n  position:relative;\r\n  float:left;\r\n}\r\n\r\n\r\n.gearImage {\r\n  position: absolute;\r\n  top: 10px;\r\n  left: 0px;\r\n  z-index: 0;\r\n  transform: scale(0.7, 0.7);\r\n  -ms-transform: scale(0.7, 0.7);\r\n  -webkit-transform: scale(0.7, 0.7);\r\n}\r\n\r\n\r\n.charImage {\r\n  z-index: 0;\r\n  position: absolute;\r\n  top: -13px;\r\n  left: -24px;\r\n  border-radius: 50%;\r\n  transform: scale(0.4, 0.4);\r\n  -ms-transform: scale(0.4, 0.4);\r\n  -webkit-transform: scale(0.4, 0.4);\r\n}\r\n\r\n\r\n.char-level {\r\n  color: #fff;\r\n  background-color: #264257;\r\n  border: 2px solid #fff;\r\n  text-align: center;\r\n  border-radius: 100%/130% 130% 15px 15px;\r\n  position: absolute;\r\n  top: 55px;\r\n  left: 40px;\r\n  z-index: 2;\r\n  width: 15px;\r\n  padding: 0 5px;\r\n  font-size: x-small;\r\n}\r\n\r\n\r\n.char-gear-level {\r\n  color: #fff;\r\n  background-color: #006600;\r\n  border: 2px solid #fff;\r\n  text-align: center;\r\n  border-radius: 100%/130% 130% 15px 15px;\r\n  position: absolute;\r\n  left: 25px;\r\n  top: 65px;\r\n  z-index: 3;\r\n  width: 15px;\r\n  padding: 0 5px;\r\n  font-size: x-small;\r\n}\r\n\r\n\r\n.divForChar {\r\n  width: 58px;\r\n  height: 90px;\r\n  display: inline-block;\r\n  left: -20px;\r\n  position: relative;\r\n}\r\n\r\n\r\n.progress1 {\r\n  background-color: #bcd6ff;\r\n  border: 0;\r\n  position: absolute;\r\n  top: 72px;\r\n  left: 13px;\r\n  height: 18px;\r\n  width: 55px;\r\n}\r\n\r\n\r\n.progressText {\r\n  position: absolute;\r\n  top: 72px;\r\n  left: 23px;\r\n}\r\n\r\n\r\nselect {\r\n  padding: 10px 10px;\r\n  border: none;\r\n  border-radius: 4px;\r\n  background-color: #f1f1f1;\r\n}\r\n\r\n\r\nbutton {\r\n  background-color: #2196F3;\r\n  border: none;\r\n  color: white;\r\n  /*padding: 16px 32px;*/\r\n  text-decoration: none;\r\n  /*margin: 4px 2px;*/\r\n  cursor: pointer;\r\n}\r\n\r\n\r\n/* The Modal (background) */\r\n\r\n\r\n.modal {\r\n  display: none; /* Hidden by default */\r\n  position: fixed; /* Stay in place */\r\n  z-index: 11; /* Sit on top */\r\n  padding-top: 50px; /* Location of the box */\r\n  left: 0;\r\n  top: 0;\r\n  width: 100%; /* Full width */\r\n  height: 100%; /* Full height */\r\n  overflow: auto; /* Enable scroll if needed */\r\n  background-color: rgb(0,0,0); /* Fallback color */\r\n  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */\r\n}\r\n\r\n\r\n/* Modal Content */\r\n\r\n\r\n.modal-content {\r\n  position: relative;\r\n  background-color: #fefefe;\r\n  margin: auto;\r\n  padding: 0;\r\n  border: 1px solid #888;\r\n  width: 95%;\r\n  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);\r\n  -webkit-animation-name: animatetop;\r\n  -webkit-animation-duration: 0.4s;\r\n  animation-name: animatetop;\r\n  animation-duration: 0.4s\r\n}\r\n\r\n\r\n/* Add Animation */\r\n\r\n\r\n@-webkit-keyframes animatetop {\r\n  from {\r\n    top: -300px;\r\n    opacity: 0\r\n  }\r\n\r\n  to {\r\n    top: 0;\r\n    opacity: 1\r\n  }\r\n}\r\n\r\n\r\n@keyframes animatetop {\r\n  from {\r\n    top: -300px;\r\n    opacity: 0\r\n  }\r\n\r\n  to {\r\n    top: 0;\r\n    opacity: 1\r\n  }\r\n}\r\n\r\n\r\n/* The Close Button */\r\n\r\n\r\n.close {\r\n  color: white;\r\n  float: right;\r\n  font-size: 28px;\r\n  font-weight: bold;\r\n}\r\n\r\n\r\n.close:hover,\r\n  .close:focus {\r\n    color: #000;\r\n    text-decoration: none;\r\n    cursor: pointer;\r\n  }\r\n\r\n\r\n.modal-header {\r\n  padding: 2px 16px;\r\n  background-color: #2196F3;\r\n  color: white;\r\n}\r\n\r\n\r\n.modal-body {\r\n  padding: 2px 16px;\r\n}\r\n\r\n\r\nprogress {\r\n  background-color: #f3f3f3;\r\n  border: 0;\r\n  top: 80px;\r\n  position: absolute;\r\n  height: 18px;\r\n  border-radius: 9px;\r\n}\r\n\r\n\r\n.selectedImg {\r\n  position: absolute;\r\n  top: -304px;\r\n  left: -350px;\r\n  transform: scale(0.1, 0.1);\r\n  -ms-transform: scale(0.1, 0.1);\r\n  -webkit-transform: scale(0.1, 0.1);\r\n  z-index: 3;\r\n}\r\n\r\n\r\n.zeta1 {\r\n  position: absolute;\r\n  top: 15px;\r\n  left: 65px;\r\n  transform: scale(0.6, 0.6);\r\n  -ms-transform: scale(0.6, 0.6);\r\n  -webkit-transform: scale(0.6, 0.6);\r\n  z-index: 3;\r\n}\r\n\r\n\r\n.zeta2 {\r\n  position: absolute;\r\n  top: 35px;\r\n  left: 65px;\r\n  transform: scale(0.6, 0.6);\r\n  -ms-transform: scale(0.6, 0.6);\r\n  -webkit-transform: scale(0.6, 0.6);\r\n  z-index: 3;\r\n}\r\n\r\n\r\n.zeta3 {\r\n  position: absolute;\r\n  top: 55px;\r\n  left: 65px;\r\n  transform: scale(0.6, 0.6);\r\n  -ms-transform: scale(0.6, 0.6);\r\n  -webkit-transform: scale(0.6, 0.6);\r\n  z-index: 3;\r\n}\r\n\r\n"
+
+/***/ }),
+
+/***/ "./src/app/comparer/comparer.html":
+/*!****************************************!*\
+  !*** ./src/app/comparer/comparer.html ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "Pick a Charakter and two Member to Compare the Char\r\n<dx-select-box [dataSource]=\"GildenService.charInfos\"\r\n               [value]=\"GildenService.charInfos[0]\"\r\n               [searchEnabled]=\"true\"\r\n               (onValueChanged)=\"onValueChanged(charSelectBox, MemberSelectBoxA, MemberSelectBoxB)\"\r\n               displayExpr=\"name\" #charSelectBox>\r\n</dx-select-box>\r\n\r\n<div style=\"width:100%\">\r\n  <dx-select-box [dataSource]=\"GildenService.gildenInfos.roster\"\r\n                 [value]=\"GildenService.gildenInfos.roster[0]\"\r\n                 [searchEnabled]=\"true\"\r\n                 displayExpr=\"name\"\r\n                 (onValueChanged)=\"onValueChanged(charSelectBox, MemberSelectBoxA, MemberSelectBoxB)\"\r\n                 style=\"width:50%; float:left\" #MemberSelectBoxA>\r\n  </dx-select-box>\r\n\r\n  <dx-select-box [dataSource]=\"GildenService.gildenInfos.roster\"\r\n                 [value]=\"GildenService.gildenInfos.roster[0]\"\r\n                 [searchEnabled]=\"true\"\r\n                 displayExpr=\"name\"\r\n                 (onValueChanged)=\"onValueChanged(charSelectBox, MemberSelectBoxA, MemberSelectBoxB)\"\r\n                 style=\"width:50%; float:left\" #MemberSelectBoxB>\r\n  </dx-select-box>\r\n</div>\r\n\r\n<div *ngIf=\"charCompletedA && charCompletedB\" style=\"width:100%\">\r\n\r\n  <table style=\"width:100%\">\r\n    <tr>\r\n      <th style=\"width:33%\">\r\n        {{charSelectBox.value.name}} from {{MemberSelectBoxA.value.name}}\r\n      </th>\r\n      <th style=\"width:33%\">\r\n        Compare\r\n      </th>\r\n      <th style=\"width:33%\">\r\n        {{charSelectBox.value.name}} from {{MemberSelectBoxB.value.name}}\r\n      </th>\r\n    </tr>\r\n    <tr>\r\n      <td>\r\n        CharABild\r\n      </td>\r\n      <td></td>\r\n      <td>\r\n        CharBBild\r\n      </td>\r\n    </tr>\r\n    <tr *ngFor=\"let keyvalue of charCompletedA.total | mapToIterable\" >\r\n        <td>\r\n          {{charCompletedA.total[keyvalue.key]}}\r\n        </td>\r\n        <td>\r\n          {{keyvalue.key | language}}\r\n        </td>\r\n        <td>\r\n          {{charCompletedB.total[keyvalue.key]}}\r\n        </td>\r\n    <tr>\r\n      <td>Eventuell Mods Char A</td>\r\n      <td></td>\r\n      <td>Eventuell Mods Char B</td>\r\n    </tr>\r\n  </table>\r\n\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/comparer/comparer.ts":
+/*!**************************************!*\
+  !*** ./src/app/comparer/comparer.ts ***!
+  \**************************************/
+/*! exports provided: ComparerComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ComparerComponent", function() { return ComparerComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var _services_gildenService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/gildenService */ "./src/app/services/gildenService.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/esm5/http.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var ComparerComponent = /** @class */ (function () {
+    function ComparerComponent(http, GildenService) {
+        this.http = http;
+        this.GildenService = GildenService;
+        this.urlToBaseApi = "https://crinolo-swgoh.glitch.me/baseStats/api/";
+    }
+    ComparerComponent.prototype.onValueChanged = function (charSelectBox, MemberSelectBoxA, MemberSelectBoxB) {
+        if (MemberSelectBoxA.value != null && MemberSelectBoxB.value != null && charSelectBox.value != null && MemberSelectBoxA.value.name != MemberSelectBoxB.value.name) {
+            var charA = this.GildenService.getCharByNameAndMemberExact(charSelectBox.value.name, MemberSelectBoxA.value);
+            var charB = this.GildenService.getCharByNameAndMemberExact(charSelectBox.value.name, MemberSelectBoxB.value);
+            if (charA != null)
+                this.loadChar("A", charA);
+            if (charB != null)
+                this.loadChar("B", charB);
+        }
+    };
+    ComparerComponent.prototype.loadChar = function (AorB, char) {
+        var _this = this;
+        var params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpParams"]();
+        params = params.append('stars', char.rarity.toString());
+        params = params.append('level', char.level.toString());
+        params = params.append('gearLevel', char.gear.toString());
+        var equippmentAdded = "";
+        for (var i = 0; i < char.equipped.length; i++) {
+            equippmentAdded += char.equipped[i].equipmentId;
+            if (i + 1 < char.equipped.length)
+                equippmentAdded += ",";
+        }
+        if (equippmentAdded != "")
+            params = params.append('gear', equippmentAdded);
+        this.http.get(this.urlToBaseApi + char.defId, { params: params })
+            .subscribe(function (data) {
+            if (AorB == "A") {
+                _this.charCompletedA = data;
+                console.log(_this.charCompletedA);
+                _this.calculateTotalValues("A", char);
+            }
+            else {
+                _this.charCompletedB = data;
+                console.log(_this.charCompletedB);
+                _this.calculateTotalValues("B", char);
+            }
+        });
+    };
+    ComparerComponent.prototype.calculateTotalValues = function (AorB, char) {
+        var charData = null;
+        if (AorB == "A") {
+            charData = this.charCompletedA;
+        }
+        else {
+            charData = this.charCompletedB;
+        }
+        var modValuesTotal = {};
+        var modSetsTotal = {};
+        for (var i = 0; i < char.mods.length; i++) {
+            var primaryType = this.getModStatName(char.mods[i].primaryBonusType);
+            var primaryBonusValue = this.getModStatValue(char.mods[i].primaryBonusValue, this.getModStatName(char.mods[i].primaryBonusType));
+            var secondaryType_1 = this.getModStatName(char.mods[i].secondaryType_1);
+            var secondaryType_2 = this.getModStatName(char.mods[i].secondaryType_2);
+            var secondaryType_3 = this.getModStatName(char.mods[i].secondaryType_3);
+            var secondaryType_4 = this.getModStatName(char.mods[i].secondaryType_4);
+            var secondaryValue_1 = this.getModStatValue(char.mods[i].secondaryValue_1, this.getModStatName(char.mods[i].secondaryType_1));
+            var secondaryValue_2 = this.getModStatValue(char.mods[i].secondaryValue_2, this.getModStatName(char.mods[i].secondaryType_2));
+            var secondaryValue_3 = this.getModStatValue(char.mods[i].secondaryValue_3, this.getModStatName(char.mods[i].secondaryType_3));
+            var secondaryValue_4 = this.getModStatValue(char.mods[i].secondaryValue_4, this.getModStatName(char.mods[i].secondaryType_4));
+            if (modValuesTotal[primaryType] == null)
+                modValuesTotal[primaryType] = 0;
+            if (modValuesTotal[secondaryType_1] == null)
+                modValuesTotal[secondaryType_1] = 0;
+            if (modValuesTotal[secondaryType_2] == null)
+                modValuesTotal[secondaryType_2] = 0;
+            if (modValuesTotal[secondaryType_3] == null)
+                modValuesTotal[secondaryType_3] = 0;
+            if (modValuesTotal[secondaryType_4] == null)
+                modValuesTotal[secondaryType_4] = 0;
+            modValuesTotal[primaryType] += primaryBonusValue;
+            modValuesTotal[secondaryType_1] += secondaryValue_1;
+            modValuesTotal[secondaryType_2] += secondaryValue_2;
+            modValuesTotal[secondaryType_3] += secondaryValue_3;
+            modValuesTotal[secondaryType_4] += secondaryValue_4;
+            if (modSetsTotal[char.mods[i].setId] == null) {
+                modSetsTotal[char.mods[i].setId] = 1;
+            }
+            else {
+                modSetsTotal[char.mods[i].setId] += 1;
+            }
+        }
+        console.log(modValuesTotal);
+        for (var key in modSetsTotal) {
+            var ModSetNow = this.GildenService.ModSets[key];
+            if (ModSetNow != null) {
+                if (ModSetNow.count <= modSetsTotal[key]) {
+                    if (charData.total[ModSetNow.name] != null) {
+                        console.log(charData.total[ModSetNow.name]);
+                        charData.total[ModSetNow.name] = Number(charData.total[ModSetNow.name]) + ((((Number(ModSetNow.bonus.statValueDecimal)) / 100) * 2) / 100) * Number(charData.base[ModSetNow.name]);
+                        console.log(charData.total[ModSetNow.name]);
+                    }
+                    else {
+                        console.log("cant calculate modset ", ModSetNow);
+                    }
+                }
+            }
+        }
+        for (var key in modValuesTotal) {
+            var value = modValuesTotal[key];
+            if (key == 'None')
+                continue;
+            if (key.indexOf('%') < 0) {
+                if (charData.total[key] != null) {
+                    charData.total[key] += value;
+                }
+                else {
+                    switch (key) {
+                        case "Critical Chance":
+                            charData.total["Physical Critical %"] = (Number(charData.total["Physical Critical %"].replace("%", "")) + value).toFixed(2) + "%";
+                            charData.total["Special Critical %"] = (Number(charData.total["Special Critical %"].replace("%", "")) + value).toFixed(2) + "%";
+                            break;
+                        case "Critical Damage":
+                            charData.total["Physical Critical Rating"] += value;
+                            charData.total["Special Critical Rating"] += value;
+                            break;
+                        default:
+                            console.log("Konnte nicht berechnen : ", key, value.toString());
+                            break;
+                    }
+                }
+            }
+            else {
+                var keyWithoutPercent = key.substr(0, key.length - 2);
+                if (charData.total[keyWithoutPercent] != null) {
+                    charData.total[keyWithoutPercent] += (charData.base[keyWithoutPercent] * (value / 100));
+                }
+                else {
+                    console.log("Konnte nicht berechnen : ", key, value.toString());
+                }
+            }
+        }
+    };
+    ComparerComponent.prototype.getModStatName = function (value) {
+        var ModStatsNow = this.GildenService.ModStats[value];
+        if (ModStatsNow != null) {
+            return ModStatsNow;
+        }
+        return value.toString();
+    };
+    ComparerComponent.prototype.getModStatValue = function (value, modStatName) {
+        switch (modStatName) {
+            case "Speed":
+                return (value / 100000000);
+            case "Potency":
+                return (value / 1000000);
+            case "Health":
+                return (value / 100000000);
+            case "Offense %":
+                return (value / 1000000);
+            case "Critical Chance":
+                return (value / 1000000);
+            case "Health %":
+                return (value / 1000000);
+            case "Defense %":
+                return (value / 1000000);
+            case "Protection %":
+                return (value / 1000000);
+            case "Critical Damage":
+                return (value / 1000000);
+            case "Offense":
+                return (value / 100000000);
+            case "Protection":
+                return (value / 100000000);
+            case "Tenacity":
+                return (value / 1000000);
+            case "Defense":
+                return (value / 100000000);
+            case "Critical Avoidance":
+                return (value / 10000000);
+            case "Accuracy":
+                return (value / 1000000);
+            default:
+                return value;
+        }
+    };
+    ComparerComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'comparer',
+            template: __webpack_require__(/*! ./comparer.html */ "./src/app/comparer/comparer.html"),
+            styles: [__webpack_require__(/*! ./comparer.css */ "./src/app/comparer/comparer.css")]
+        }),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"], _services_gildenService__WEBPACK_IMPORTED_MODULE_1__["gildenService"]])
+    ], ComparerComponent);
+    return ComparerComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/events/events.css":
+/*!***********************************!*\
+  !*** ./src/app/events/events.css ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "input[type=text] {\r\n  width: 100%;\r\n  padding: 12px 20px;\r\n  margin: 8px 0;\r\n  box-sizing: border-box;\r\n}\r\n\r\n\r\n#raidplannerTable tr:nth-child(even) {\r\n  background-color: #f2f2f2;\r\n}\r\n\r\n\r\n#raidplannerTable tr:hover {\r\n  background-color: #ddd;\r\n}\r\n\r\n\r\n#raidplannerTable th {\r\n  padding-top: 12px;\r\n  padding-bottom: 12px;\r\n  text-align: left;\r\n  background-color: #4CAF50;\r\n  color: white;\r\n}\r\n\r\n\r\n.parentOfImages {\r\n  position: relative;\r\n  top: 0;\r\n  left: 0;\r\n  width: 55px;\r\n  height: 80px;\r\n}\r\n\r\n\r\n.sterne {\r\n  position: absolute;\r\n  transform: scale(0.6, 0.6);\r\n  -ms-transform: scale(0.6, 0.6);\r\n  -webkit-transform: scale(0.6, 0.6);\r\n  z-index: 2;\r\n}\r\n\r\n\r\n.stern1 {\r\n  top: 25px;\r\n  left: -6px;\r\n}\r\n\r\n\r\n.stern2 {\r\n  top: 15px;\r\n  left: 6px;\r\n}\r\n\r\n\r\n.stern3 {\r\n  top: 8px;\r\n  left: 17px;\r\n}\r\n\r\n\r\n.stern4 {\r\n  top: 8px;\r\n  left: 30px;\r\n}\r\n\r\n\r\n.stern5 {\r\n  top: 8px;\r\n  left: 44px;\r\n}\r\n\r\n\r\n.stern6 {\r\n  top: 15px;\r\n  left: 57px;\r\n}\r\n\r\n\r\n.stern7 {\r\n  top: 25px;\r\n  left: 67px;\r\n}\r\n\r\n\r\n.maincharFieldset{\r\n  position:relative;\r\n  float:left;\r\n}\r\n\r\n\r\n.gearImage {\r\n  position: absolute;\r\n  top: 10px;\r\n  left: 0px;\r\n  z-index: 0;\r\n  transform: scale(0.7, 0.7);\r\n  -ms-transform: scale(0.7, 0.7);\r\n  -webkit-transform: scale(0.7, 0.7);\r\n}\r\n\r\n\r\n.charImage {\r\n  z-index: 0;\r\n  position: absolute;\r\n  top: -13px;\r\n  left: -24px;\r\n  border-radius: 50%;\r\n  transform: scale(0.4, 0.4);\r\n  -ms-transform: scale(0.4, 0.4);\r\n  -webkit-transform: scale(0.4, 0.4);\r\n}\r\n\r\n\r\n.char-level {\r\n  color: #fff;\r\n  background-color: #264257;\r\n  border: 2px solid #fff;\r\n  text-align: center;\r\n  border-radius: 100%/130% 130% 15px 15px;\r\n  position: absolute;\r\n  top: 55px;\r\n  left: 40px;\r\n  z-index: 2;\r\n  width: 15px;\r\n  padding: 0 5px;\r\n  font-size: x-small;\r\n}\r\n\r\n\r\n.char-gear-level {\r\n  color: #fff;\r\n  background-color: #006600;\r\n  border: 2px solid #fff;\r\n  text-align: center;\r\n  border-radius: 100%/130% 130% 15px 15px;\r\n  position: absolute;\r\n  left: 25px;\r\n  top: 65px;\r\n  z-index: 3;\r\n  width: 15px;\r\n  padding: 0 5px;\r\n  font-size: x-small;\r\n}\r\n\r\n\r\n.divForChar {\r\n  width: 58px;\r\n  height: 90px;\r\n  display: inline-block;\r\n  left: -20px;\r\n  position: relative;\r\n}\r\n\r\n\r\n.progress1 {\r\n  background-color: #bcd6ff;\r\n  border: 0;\r\n  position: absolute;\r\n  top: 72px;\r\n  left: 13px;\r\n  height: 18px;\r\n  width: 55px;\r\n}\r\n\r\n\r\n.progressText {\r\n  position: absolute;\r\n  top: 72px;\r\n  left: 23px;\r\n}\r\n\r\n\r\nselect {\r\n  padding: 10px 10px;\r\n  border: none;\r\n  border-radius: 4px;\r\n  background-color: #f1f1f1;\r\n}\r\n\r\n\r\nbutton {\r\n  background-color: #2196F3;\r\n  border: none;\r\n  color: white;\r\n  /*padding: 16px 32px;*/\r\n  text-decoration: none;\r\n  /*margin: 4px 2px;*/\r\n  cursor: pointer;\r\n}\r\n\r\n\r\n/* The Modal (background) */\r\n\r\n\r\n.modal {\r\n  display: none; /* Hidden by default */\r\n  position: fixed; /* Stay in place */\r\n  z-index: 11; /* Sit on top */\r\n  padding-top: 50px; /* Location of the box */\r\n  left: 0;\r\n  top: 0;\r\n  width: 100%; /* Full width */\r\n  height: 100%; /* Full height */\r\n  overflow: auto; /* Enable scroll if needed */\r\n  background-color: rgb(0,0,0); /* Fallback color */\r\n  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */\r\n}\r\n\r\n\r\n/* Modal Content */\r\n\r\n\r\n.modal-content {\r\n  position: relative;\r\n  background-color: #fefefe;\r\n  margin: auto;\r\n  padding: 0;\r\n  border: 1px solid #888;\r\n  width: 95%;\r\n  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);\r\n  -webkit-animation-name: animatetop;\r\n  -webkit-animation-duration: 0.4s;\r\n  animation-name: animatetop;\r\n  animation-duration: 0.4s\r\n}\r\n\r\n\r\n/* Add Animation */\r\n\r\n\r\n@-webkit-keyframes animatetop {\r\n  from {\r\n    top: -300px;\r\n    opacity: 0\r\n  }\r\n\r\n  to {\r\n    top: 0;\r\n    opacity: 1\r\n  }\r\n}\r\n\r\n\r\n@keyframes animatetop {\r\n  from {\r\n    top: -300px;\r\n    opacity: 0\r\n  }\r\n\r\n  to {\r\n    top: 0;\r\n    opacity: 1\r\n  }\r\n}\r\n\r\n\r\n/* The Close Button */\r\n\r\n\r\n.close {\r\n  color: white;\r\n  float: right;\r\n  font-size: 28px;\r\n  font-weight: bold;\r\n}\r\n\r\n\r\n.close:hover,\r\n  .close:focus {\r\n    color: #000;\r\n    text-decoration: none;\r\n    cursor: pointer;\r\n  }\r\n\r\n\r\n.modal-header {\r\n  padding: 2px 16px;\r\n  background-color: #2196F3;\r\n  color: white;\r\n}\r\n\r\n\r\n.modal-body {\r\n  padding: 2px 16px;\r\n}\r\n\r\n\r\nprogress {\r\n  background-color: #f3f3f3;\r\n  border: 0;\r\n  top: 80px;\r\n  position: absolute;\r\n  height: 18px;\r\n  border-radius: 9px;\r\n}\r\n\r\n\r\n.selectedImg {\r\n  position: absolute;\r\n  top: -304px;\r\n  left: -350px;\r\n  transform: scale(0.1, 0.1);\r\n  -ms-transform: scale(0.1, 0.1);\r\n  -webkit-transform: scale(0.1, 0.1);\r\n  z-index: 3;\r\n}\r\n\r\n\r\n.zeta1 {\r\n  position: absolute;\r\n  top: 15px;\r\n  left: 65px;\r\n  transform: scale(0.6, 0.6);\r\n  -ms-transform: scale(0.6, 0.6);\r\n  -webkit-transform: scale(0.6, 0.6);\r\n  z-index: 3;\r\n}\r\n\r\n\r\n.zeta2 {\r\n  position: absolute;\r\n  top: 35px;\r\n  left: 65px;\r\n  transform: scale(0.6, 0.6);\r\n  -ms-transform: scale(0.6, 0.6);\r\n  -webkit-transform: scale(0.6, 0.6);\r\n  z-index: 3;\r\n}\r\n\r\n\r\n.zeta3 {\r\n  position: absolute;\r\n  top: 55px;\r\n  left: 65px;\r\n  transform: scale(0.6, 0.6);\r\n  -ms-transform: scale(0.6, 0.6);\r\n  -webkit-transform: scale(0.6, 0.6);\r\n  z-index: 3;\r\n}\r\n\r\n"
+
+/***/ }),
+
+/***/ "./src/app/events/events.html":
+/*!************************************!*\
+  !*** ./src/app/events/events.html ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div *ngIf=\"GildenService.SWGOHEvents\">\r\n  <div *ngFor=\"let event of GildenService.SWGOHEvents\">\r\n    <fieldset *ngIf=\"(event.id | eventShow)\" style=\"width:100%\">\r\n      <legend>\r\n        <span *ngIf=\"event.id == 'EVENT_TRAINING_DROID_SMUGGLING' || event.id == 'EVENT_CREDIT_HEIST' || event.type == 3\" style=\"color:#0000ff\">\r\n          {{event.name}}\r\n        </span>\r\n        <span *ngIf=\"event.id != 'EVENT_TRAINING_DROID_SMUGGLING' && event.id != 'EVENT_CREDIT_HEIST' && event.type != 3\">\r\n          {{event.name}}\r\n        </span>\r\n      </legend>\r\n        Desc: {{event.desc}} <br />\r\n        Start: {{event.schedule[0].start | date : 'dd.MM.yyyy HH:mm'}} <br />\r\n        End: {{event.schedule[0].end | date : 'dd.MM.yyyy HH:mm'}} <br />\r\n\r\n</fieldset>\r\n  </div>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/events/events.ts":
+/*!**********************************!*\
+  !*** ./src/app/events/events.ts ***!
+  \**********************************/
+/*! exports provided: EventsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EventsComponent", function() { return EventsComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var _services_gildenService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/gildenService */ "./src/app/services/gildenService.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var EventsComponent = /** @class */ (function () {
+    function EventsComponent(GildenService) {
+        this.GildenService = GildenService;
+        GildenService.loginEventToSWGOHHelp();
+    }
+    EventsComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'events',
+            template: __webpack_require__(/*! ./events.html */ "./src/app/events/events.html"),
+            styles: [__webpack_require__(/*! ./events.css */ "./src/app/events/events.css")]
+        }),
+        __metadata("design:paramtypes", [_services_gildenService__WEBPACK_IMPORTED_MODULE_1__["gildenService"]])
+    ], EventsComponent);
+    return EventsComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/home/home.css":
 /*!*******************************!*\
   !*** ./src/app/home/home.css ***!
@@ -1395,7 +1728,7 @@ module.exports = "tr:nth-child(even) {\r\n  background-color: #f2f2f2;\r\n}\r\n\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"text-align:center\">\r\n  <h3>\r\n    {{'WelcomeText' | language}}\r\n  </h3>\r\n\r\n  <table *ngIf=\"gildenService.gildenInfos.members>0 && !gildenService.isInSync\" style=\"width: 100%;\">\r\n    <tr>\r\n      <td>{{'AllDataText' | language}} <a href=\"http://swgoh.help\">swgoh.help</a> {{'AllPictureText' | language}} <a href=\"http://www.swgoh.gg\">www.swgoh.gg</a></td>\r\n    </tr>\r\n    <tr>\r\n      <td>{{'GuildName' | language}} = {{gildenService.gildenInfos.name}}</td>\r\n    </tr>\r\n    <tr>\r\n      <td>{{'GildenGP' | language}} = {{gildenService.gildenInfos.gp}}</td>\r\n    </tr>\r\n    <tr>\r\n      <td>{{'GildenDescription' | language}} = {{gildenService.gildenInfos.desc}}</td>\r\n    </tr>\r\n    <tr> </tr>\r\n    <tr> </tr>\r\n    <tr>\r\n      <td>{{'RaidsPlayed' | language}}:</td>\r\n    </tr>\r\n    <tr>\r\n      <td>Rancor = {{gildenService.gildenInfos.raid.rancor}}</td>\r\n    </tr>\r\n    <tr>\r\n      <td>AAT = {{gildenService.gildenInfos.raid.aat}}</td>\r\n    </tr>\r\n    <tr>\r\n      <td>STR = {{gildenService.gildenInfos.raid.sith_raid}}</td>\r\n    </tr>\r\n    <tr> </tr>\r\n    <tr> </tr>\r\n    <tr>\r\n      <td>{{'LastSync' | language}} = {{gildenService.gildenInfos.updated | date: \"dd.MM.yyyy HH:mm:ss\"}}</td>\r\n    </tr>\r\n  </table>\r\n\r\n  <div style=\"height:500px\">\r\n    <dx-text-area *ngIf=\"gildenService.isInSync\" style=\"height:100%\" [readOnly]=\"true\" [(value)]=\"gildenService.syncstatus\"></dx-text-area>\r\n  </div>\r\n  \r\n  <h3 *ngIf=\"settingsService.settings.allycode==''\">{{'EnterAllyCode' | language}}</h3>\r\n  <h3 *ngIf=\"gildenService.gildenInfos.members==0&&settingsService.settings.allycode!=''\">{{'PleaseSync' | language}}</h3>\r\n\r\n</div>\r\n\r\n<button (click)=\"syncApi()\" style=\"position: absolute; bottom: 10px; left: 0px;\">{{'Synchronise' | language}} ({{gildenService.isInSync}})</button>\r\n"
+module.exports = "<div style=\"text-align:center\">\r\n  <h3>\r\n    {{'WelcomeText' | language}}\r\n  </h3>\r\n\r\n  <table *ngIf=\"gildenService.gildenInfos.members>0 && !gildenService.isInSync\" style=\"width: 100%;\">\r\n    <tr>\r\n      <td>{{'AllDataText' | language}} <a href=\"http://swgoh.help\">swgoh.help</a> {{'AllPictureText' | language}} <a href=\"http://www.swgoh.gg\">www.swgoh.gg</a></td>\r\n    </tr>\r\n    <tr>\r\n      <td>{{'GuildName' | language}} = {{gildenService.gildenInfos.name}}</td>\r\n    </tr>\r\n    <tr>\r\n      <td>{{'GildenGP' | language}} = {{gildenService.gildenInfos.gp}}</td>\r\n    </tr>\r\n    <tr>\r\n      <td>{{'GildenDescription' | language}} = {{gildenService.gildenInfos.desc}}</td>\r\n    </tr>\r\n    <tr> </tr>\r\n    <tr> </tr>\r\n    <tr>\r\n      <td>{{'RaidsPlayed' | language}}:</td>\r\n    </tr>\r\n    <tr>\r\n      <td>Rancor = {{gildenService.gildenInfos.raid.rancor}}</td>\r\n    </tr>\r\n    <tr>\r\n      <td>AAT = {{gildenService.gildenInfos.raid.aat}}</td>\r\n    </tr>\r\n    <tr>\r\n      <td>STR = {{gildenService.gildenInfos.raid.sith_raid}}</td>\r\n    </tr>\r\n    <tr> </tr>\r\n    <tr> </tr>\r\n    <tr>\r\n      <td>{{'LastSync' | language}} = {{gildenService.gildenInfos.updated | date: \"dd.MM.yyyy HH:mm:ss\"}}</td>\r\n    </tr>\r\n  </table>\r\n\r\n <dx-text-area *ngIf=\"gildenService.isInSync\" [height]=\"windowNow.innerHeight-175\" [readOnly]=\"true\" [(value)]=\"gildenService.syncstatus\"></dx-text-area>\r\n\r\n  \r\n  <h3 *ngIf=\"settingsService.settings.allycode==''\">{{'EnterAllyCode' | language}}</h3>\r\n  <h3 *ngIf=\"gildenService.gildenInfos.members==0&&settingsService.settings.allycode!=''\">{{'PleaseSync' | language}}</h3>\r\n\r\n</div>\r\n\r\n<button (click)=\"syncApi()\" style=\"position: absolute; bottom: 10px; left: 0px;\">{{'Synchronise' | language}} ({{gildenService.isInSync}})</button>\r\n"
 
 /***/ }),
 
@@ -1430,6 +1763,7 @@ var HomeComponent = /** @class */ (function () {
         this.gildenService = gildenService;
         this.isSyncing = false;
         console.log(this.settingsService.settings);
+        this.windowNow = window;
         if (this.settingsService.settings.autoSyncNow == true) {
             this.settingsService.settings.autoSyncNow = false;
             this.settingsService.saveSettings(this.settingsService.settings);
@@ -1521,6 +1855,48 @@ var newCharSearchComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [_services_settingsService__WEBPACK_IMPORTED_MODULE_2__["SettingsService"], _services_gildenService__WEBPACK_IMPORTED_MODULE_1__["gildenService"]])
     ], newCharSearchComponent);
     return newCharSearchComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/pipes/MapToIterable.pipe.ts":
+/*!*********************************************!*\
+  !*** ./src/app/pipes/MapToIterable.pipe.ts ***!
+  \*********************************************/
+/*! exports provided: MapToIterable */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MapToIterable", function() { return MapToIterable; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var MapToIterable = /** @class */ (function () {
+    function MapToIterable() {
+    }
+    MapToIterable.prototype.transform = function (dict) {
+        var a = [];
+        for (var key in dict) {
+            if (dict.hasOwnProperty(key)) {
+                a.push({ key: key, val: dict[key] });
+            }
+        }
+        return a;
+    };
+    MapToIterable = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Pipe"])({
+            name: 'mapToIterable'
+        })
+    ], MapToIterable);
+    return MapToIterable;
 }());
 
 
@@ -1847,6 +2223,52 @@ var ColumnWidthPipe = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/pipes/events/eventShow.pipe.ts":
+/*!************************************************!*\
+  !*** ./src/app/pipes/events/eventShow.pipe.ts ***!
+  \************************************************/
+/*! exports provided: EventShowPipe */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EventShowPipe", function() { return EventShowPipe; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var _services_gildenService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/gildenService */ "./src/app/services/gildenService.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var EventShowPipe = /** @class */ (function () {
+    function EventShowPipe(GildenService) {
+        this.gildenservice = GildenService;
+    }
+    EventShowPipe.prototype.transform = function (value) {
+        if (value.indexOf('restrictedmodbattle_') != -1 || value.indexOf('shipevent_') != -1 || value.indexOf('challenge_') != -1) {
+            return false;
+        }
+        return true;
+    };
+    EventShowPipe = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Pipe"])({
+            name: 'eventShow'
+        }),
+        __metadata("design:paramtypes", [_services_gildenService__WEBPACK_IMPORTED_MODULE_1__["gildenService"]])
+    ], EventShowPipe);
+    return EventShowPipe;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/pipes/language/language.pipe.ts":
 /*!*************************************************!*\
   !*** ./src/app/pipes/language/language.pipe.ts ***!
@@ -1916,6 +2338,26 @@ var LanguagePipe = /** @class */ (function () {
             "Available": "Verfügbar",
             "Difference": "Differenz",
             "Stars Needed": "Erforderliche Sterne",
+            "Del": "Löschen",
+            "Add": "Hinzufügen",
+            "Confirm": "Bestätigen",
+            "AddSquad": "Ein Team Hinzufügen",
+            "Comparer": "Charvergleicher",
+            "Agility": "Geschicklichkeit",
+            "Armor": "Rüstung",
+            "Armor Penetration": "Rüstungsdurchdringung",
+            "Health Steal": "Lebensraub",
+            "Physical Critical Rating": "Physical Critical Rating",
+            "Physical Damage": "Physischer Schaden",
+            "Resistance": "Resistenz",
+            "Resistance Penetration": "Resistenzdurchdringung",
+            "Special Critical Rating": "Special Critical Rating",
+            "Special Damage": "Spezialschaden",
+            "Armor %": "Rüstung %",
+            "Resistance %": "Resistenz %",
+            "Physical Critical %": "Kritische Trefferchance (Pysisch)",
+            "Special Critical %": "Kritische Trefferchance (Special)",
+            "Tactics": "Taktik",
         };
         this.languageENG = {
             "Settings": "Settings",
@@ -1966,6 +2408,25 @@ var LanguagePipe = /** @class */ (function () {
             "Available": "Available",
             "Difference": "Difference",
             "Stars Needed": "Stars Needed",
+            "Del": "Del",
+            "Add": "Add",
+            "Confirm": "Confirm",
+            "AddSquad": "Add a Squad",
+            "Comparer": "Charcomparer",
+            "Agility": "Agility",
+            "Armor": "Armor",
+            "Armor Penetration": "Armor Penetration",
+            "Health Steal": "Health Steal",
+            "Physical Critical Rating": "Physical Critical Rating",
+            "Physical Damage": "Physical Damage",
+            "Resistance": "Resistance",
+            "Resistance Penetration": "Resistance Penetration",
+            "Special Critical Rating": "Special Critical Rating",
+            "Special Damage": "Special Damage",
+            "Armor %": "Armor %",
+            "Resistance %": "Resistance %",
+            "Physical Critical %": "Physical Critical %",
+            "Special Critical %": "Special Critical %",
         };
     }
     LanguagePipe.prototype.transform = function (value) {
@@ -2227,7 +2688,7 @@ var ModStatValuePipe = /** @class */ (function () {
 /*!*******************************************!*\
   !*** ./src/app/services/gildenService.ts ***!
   \*******************************************/
-/*! exports provided: gildenService, GildenInfos, Charakter, ArenaTeamHelper, CharFindHelper */
+/*! exports provided: gildenService, GildenInfos, Charakter, ArenaTeamHelper, CharFindHelper, Schedule, SWGOHEvent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2237,6 +2698,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Charakter", function() { return Charakter; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ArenaTeamHelper", function() { return ArenaTeamHelper; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CharFindHelper", function() { return CharFindHelper; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Schedule", function() { return Schedule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SWGOHEvent", function() { return SWGOHEvent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var _services_settingsService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/settingsService */ "./src/app/services/settingsService.ts");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/esm5/http.js");
@@ -2352,28 +2815,90 @@ var gildenService = /** @class */ (function () {
         headers = headers.append('Content-Type', 'application/x-www-form-urlencoded');
         headers.append('Content-Length', user.length.toString());
         if (this.token != null && this.token != "") {
-            this.syncstatus += 'Bereits eingeloggt... überspringe login \n\r';
+            if (navigator.language == "de-DE")
+                this.syncstatus += 'Bereits eingeloggt... überspringe login \n\r';
+            else
+                this.syncstatus += 'Already logged in.... skip login \n\r';
             this.loadGildenInfos();
         }
         else {
-            this.syncstatus += 'Logge ein bei swgoh.help... \n\r';
+            if (navigator.language == "de-DE")
+                this.syncstatus += 'Logge ein bei swgoh.help... \n\r';
+            else
+                this.syncstatus += 'Login at swgoh.help... \n\r';
             this.http.post('https://api.swgoh.help/auth/signin/', user, { headers: headers })
                 .subscribe(function (data) {
                 var response = data;
                 _this.token = response.access_token;
-                _this.syncstatus += 'Login erfolgreich! \n\r';
+                if (navigator.language == "de-DE")
+                    _this.syncstatus += 'Login erfolgreich! \n\r';
+                else
+                    _this.syncstatus += 'Login suceeded! \n\r';
                 _this.loadGildenInfos();
             }, function (Error) {
-                _this.syncstatus += 'Fehler beim Login... breche ab \n\r';
-                _this.syncstatus += Error.message;
-                _this.syncstatus += 'Ende der Synchronisation! \n\r';
+                if (navigator.language == "de-DE") {
+                    _this.syncstatus += 'Fehler beim Login... breche ab \n\r';
+                    _this.syncstatus += Error.message + '\n\r';
+                    _this.syncstatus += 'Ende der Synchronisation! \n\r';
+                }
+                else {
+                    _this.syncstatus += 'Error on Login... abort Sync \n\r';
+                    _this.syncstatus += Error.message + '\n\r';
+                    _this.syncstatus += 'End of Sync! \n\r';
+                }
             });
         }
     };
+    gildenService.prototype.loginEventToSWGOHHelp = function () {
+        var _this = this;
+        var user = "username=sdtbarbarossa";
+        user += "&password=ExsJfR!nzYB*7Mqr";
+        user += "&grant_type=password";
+        user += "&client_id=123";
+        user += "&client_secret=ABC";
+        var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]();
+        headers = headers.append('Content-Type', 'application/x-www-form-urlencoded');
+        headers.append('Content-Length', user.length.toString());
+        if (this.token != null && this.token != "") {
+            this.loadEventData();
+        }
+        else {
+            this.http.post('https://api.swgoh.help/auth/signin/', user, { headers: headers })
+                .subscribe(function (data) {
+                var response = data;
+                _this.token = response.access_token;
+                if (navigator.language == "de-DE")
+                    _this.syncstatus += 'Login erfolgreich! \n\r';
+                else
+                    _this.syncstatus += 'Login suceeded! \n\r';
+                _this.loadEventData();
+            }, function (Error) {
+                alert(Error.message);
+            });
+        }
+    };
+    gildenService.prototype.loadEventData = function () {
+        var _this = this;
+        var header2 = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]();
+        header2 = header2.append("Authorization", "Bearer " + this.token);
+        header2.append('Access-Control-Allow-Headers', 'Authorization');
+        this.http.post('https://api.swgoh.help/swgoh/data/events', '', { headers: header2 })
+            .subscribe(function (data2) {
+            _this.SWGOHEvents = data2;
+        }, function (Error) {
+            alert(Error.message);
+        });
+    };
     gildenService.prototype.loadGildenInfos = function () {
         var _this = this;
-        this.syncstatus += 'Lade Gildendaten für ' + this.settings.allycode + '... \n\r';
-        this.syncstatus += 'Dies kann bis zu 2 min dauern... \n\r';
+        if (navigator.language == "de-DE") {
+            this.syncstatus += 'Lade Gildendaten für ' + this.settings.allycode + '... \n\r';
+            this.syncstatus += 'Dies kann bis zu 2 min dauern... \n\r';
+        }
+        else {
+            this.syncstatus += 'Load Guilddata for ' + this.settings.allycode + '... \n\r';
+            this.syncstatus += 'This can take several minutes... \n\r';
+        }
         var header2 = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]();
         header2 = header2.append("Authorization", "Bearer " + this.token);
         header2.append('Access-Control-Allow-Headers', 'Authorization');
@@ -2383,9 +2908,16 @@ var gildenService = /** @class */ (function () {
             _this.saveSWGOHHelpResponse();
             _this.loadSWGOHHelpExtras();
         }, function (Error) {
-            _this.syncstatus += 'Fehler beim abrufen der Daten... breche ab \n\r';
-            _this.syncstatus += Error.message;
-            _this.syncstatus += 'Ende der Synchronisation! \n\r';
+            if (navigator.language == "de-DE") {
+                _this.syncstatus += 'Fehler beim abrufen der Daten... breche ab \n\r';
+                _this.syncstatus += Error.message + '\n\r';
+                _this.syncstatus += 'Ende der Synchronisation! \n\r';
+            }
+            else {
+                _this.syncstatus += 'Error on getting Guilddata...aborting... \n\r';
+                _this.syncstatus += Error.message + '\n\r';
+                _this.syncstatus += 'End of Sync! \n\r';
+            }
         });
     };
     gildenService.prototype.loadSWGOHHelpExtras = function () {
@@ -2410,12 +2942,12 @@ var gildenService = /** @class */ (function () {
                 _this.loadSWGOHggChars();
             }, function (Error) {
                 _this.syncstatus += 'Fehler beim abrufen der Daten... breche ab \n\r';
-                _this.syncstatus += Error.message;
+                _this.syncstatus += Error.message + '\n\r';
                 _this.syncstatus += 'Ende der Synchronisation! \n\r';
             });
         }, function (Error) {
             _this.syncstatus += 'Fehler beim abrufen der Daten... breche ab \n\r';
-            _this.syncstatus += Error.message;
+            _this.syncstatus += Error.message + '\n\r';
             _this.syncstatus += 'Ende der Synchronisation! \n\r';
         });
     };
@@ -2436,7 +2968,7 @@ var gildenService = /** @class */ (function () {
             }
             else {
                 _this.syncstatus += 'Fehler beim abrufen der Daten... breche ab \n\r';
-                _this.syncstatus += Error.message;
+                _this.syncstatus += Error.message + '\n\r';
                 _this.syncstatus += 'Ende der Synchronisation! \n\r';
             }
         });
@@ -2458,17 +2990,26 @@ var gildenService = /** @class */ (function () {
             }
             else {
                 _this.syncstatus += 'Fehler beim abrufen der Daten... breche ab \n\r';
-                _this.syncstatus += Error.message;
+                _this.syncstatus += Error.message + '\n\r';
                 _this.syncstatus += 'Ende der Synchronisation! \n\r';
             }
         });
     };
     gildenService.prototype.syncGildenInfos = function () {
-        this.syncstatus += 'Frage an bei swgoh.help \n\r';
+        if (navigator.language == "de-DE")
+            this.syncstatus = 'Frage an bei swgoh.help \n\r';
+        else
+            this.syncstatus = 'Request from swgoh.help \n\r';
         this.isInSync = true;
         if (!this.checkIfItsANumber(this.settings.allycode)) {
-            alert('AllyCode "' + this.settings.allycode + '" is either empty or in the wrong format. It must be a string with 9 numbers ( no - )');
-            this.syncstatus += 'aborted \n\r';
+            if (navigator.language == "de-DE") {
+                alert('Verbündetencode "' + this.settings.allycode + '" ist entweder leer oder im falschen Format. Es muss eine 9 stellige Zahl sein ( ohne - )');
+                this.syncstatus += 'abgebrochen \n\r';
+            }
+            else {
+                alert('AllyCode "' + this.settings.allycode + '" is either empty or in the wrong format. It must be a string with 9 numbers ( no - )');
+                this.syncstatus += 'aborted \n\r';
+            }
             return;
         }
         this.loginToSWGOHHelp();
@@ -2927,6 +3468,18 @@ var CharFindHelper = /** @class */ (function () {
     return CharFindHelper;
 }());
 
+var Schedule = /** @class */ (function () {
+    function Schedule() {
+    }
+    return Schedule;
+}());
+
+var SWGOHEvent = /** @class */ (function () {
+    function SWGOHEvent() {
+    }
+    return SWGOHEvent;
+}());
+
 
 
 /***/ }),
@@ -3084,7 +3637,7 @@ module.exports = "input[type=text] {\r\n  width: 100%;\r\n  padding: 12px 20px;\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"width:100%;\">\r\n  <div style=\"width:68%; display: inline-block;\">\r\n    <select style=\"width:100%;\" [(ngModel)]=\"selectedTeam\" (ngModelChange)=\"getSquadsFromGildenInfos()\">\r\n      <option *ngFor=\"let team of myTeams\" [ngValue]=\"team\">{{team.Name}}</option>\r\n    </select>\r\n  </div>\r\n  <div style=\"width: 30%; display: inline-block;\">\r\n<button (click)=\"deleteThisTeam()\" style=\"display: inline-block; position: relative; padding: 7px 5px; width: 30%;\">Del</button>\r\n<button (click)=\"openModal()\" style=\"display: inline-block; position: relative; padding: 7px 5px; width: 30%;\">Add</button>\r\n    </div>\r\n</div>\r\n\r\n<div *ngFor=\"let squad of squadsFromGildenInfos\" class=\"charNow\">\r\n  <fieldset style=\"height:80px\">\r\n    <legend>{{selectedTeam.Name}} of {{squad[0].Besitzer}}</legend>\r\n    <div style=\"height:80%; width:100%\">\r\n      <div *ngIf=\"squad[0]\" class=\"divForChar\">\r\n        <div class=\"parentOfImages\">\r\n\r\n          <img *ngIf=\"squad[0].Sterne>0\" src=\"/assets/picture/star.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[0].Sterne<1\" src=\"/assets/picture/nostar.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[0].Sterne>1\" src=\"/assets/picture/star.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[0].Sterne<2\" src=\"/assets/picture/nostar.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[0].Sterne>2\" src=\"/assets/picture/star.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[0].Sterne<3\" src=\"/assets/picture/nostar.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[0].Sterne>3\" src=\"/assets/picture/star.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[0].Sterne<4\" src=\"/assets/picture/nostar.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[0].Sterne>4\" src=\"/assets/picture/star.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[0].Sterne<5\" src=\"/assets/picture/nostar.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[0].Sterne>5\" src=\"/assets/picture/star.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[0].Sterne<6\" src=\"/assets/picture/nostar.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[0].Sterne>6\" src=\"/assets/picture/star.png\" class=\"star17\">\r\n          <img *ngIf=\"squad[0].Sterne<7\" src=\"/assets/picture/nostar.png\" class=\"star17\">\r\n\r\n          <img *ngIf=\"squad[0].Zetas>=1\" src=\"/assets/picture/zeta.png\" class=\"zeta1\">\r\n          <img *ngIf=\"squad[0].Zetas>=2\" src=\"/assets/picture/zeta.png\" class=\"zeta2\">\r\n          <img *ngIf=\"squad[0].Zetas>=3\" src=\"/assets/picture/zeta.png\" class=\"zeta3\">\r\n\r\n          <img class=\"charImage\" src=\"/assets/picture/{{squad[0].imageUrl}}\" alt=\"{{squad[0].Name}}\">\r\n          <img class=\"gearImage\" src=\"/assets/GearPNG/gear-icon-g{{squad[0].gearLevel}}.png\" alt=\"{{squad[0].Name}}\">\r\n          <span class=\"char-level\">{{squad[0].Level}}</span>\r\n          <span class=\"char-gear-level\">{{formatGearLevel(squad[0].gearLevel)}}</span>\r\n        </div>\r\n        \r\n      </div>\r\n\r\n      <div *ngIf=\"squad[1]\" class=\"divForChar\">\r\n        <div class=\"parentOfImages\">\r\n\r\n          <img *ngIf=\"squad[1].Sterne>0\" src=\"/assets/picture/star.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[1].Sterne<1\" src=\"/assets/picture/nostar.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[1].Sterne>1\" src=\"/assets/picture/star.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[1].Sterne<2\" src=\"/assets/picture/nostar.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[1].Sterne>2\" src=\"/assets/picture/star.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[1].Sterne<3\" src=\"/assets/picture/nostar.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[1].Sterne>3\" src=\"/assets/picture/star.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[1].Sterne<4\" src=\"/assets/picture/nostar.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[1].Sterne>4\" src=\"/assets/picture/star.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[1].Sterne<5\" src=\"/assets/picture/nostar.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[1].Sterne>5\" src=\"/assets/picture/star.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[1].Sterne<6\" src=\"/assets/picture/nostar.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[1].Sterne>6\" src=\"/assets/picture/star.png\" class=\"star17\">\r\n          <img *ngIf=\"squad[1].Sterne<7\" src=\"/assets/picture/nostar.png\" class=\"star17\">\r\n\r\n          <img *ngIf=\"squad[1].Zetas>=1\" src=\"/assets/picture/zeta.png\" class=\"zeta1\">\r\n          <img *ngIf=\"squad[1].Zetas>=2\" src=\"/assets/picture/zeta.png\" class=\"zeta2\">\r\n          <img *ngIf=\"squad[1].Zetas>=3\" src=\"/assets/picture/zeta.png\" class=\"zeta3\">\r\n\r\n          <img class=\"charImage\" src=\"/assets/picture/{{squad[1].imageUrl}}\" alt=\"{{squad[1].Name}}\">\r\n          <img class=\"gearImage\" src=\"/assets/GearPNG/gear-icon-g{{squad[1].gearLevel}}.png\" alt=\"{{squad[1].Name}}\">\r\n          <span class=\"char-level\">{{squad[1].Level}}</span>\r\n          <span class=\"char-gear-level\">{{formatGearLevel(squad[1].gearLevel)}}</span>\r\n        </div>\r\n        \r\n      </div>\r\n\r\n      <div *ngIf=\"squad[2]\" class=\"divForChar\">\r\n        <div class=\"parentOfImages\">\r\n\r\n          <img *ngIf=\"squad[2].Sterne>0\" src=\"/assets/picture/star.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[2].Sterne<1\" src=\"/assets/picture/nostar.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[2].Sterne>1\" src=\"/assets/picture/star.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[2].Sterne<2\" src=\"/assets/picture/nostar.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[2].Sterne>2\" src=\"/assets/picture/star.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[2].Sterne<3\" src=\"/assets/picture/nostar.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[2].Sterne>3\" src=\"/assets/picture/star.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[2].Sterne<4\" src=\"/assets/picture/nostar.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[2].Sterne>4\" src=\"/assets/picture/star.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[2].Sterne<5\" src=\"/assets/picture/nostar.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[2].Sterne>5\" src=\"/assets/picture/star.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[2].Sterne<6\" src=\"/assets/picture/nostar.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[2].Sterne>6\" src=\"/assets/picture/star.png\" class=\"star17\">\r\n          <img *ngIf=\"squad[2].Sterne<7\" src=\"/assets/picture/nostar.png\" class=\"star17\">\r\n\r\n          <img *ngIf=\"squad[2].Zetas>=1\" src=\"/assets/picture/zeta.png\" class=\"zeta1\">\r\n          <img *ngIf=\"squad[2].Zetas>=2\" src=\"/assets/picture/zeta.png\" class=\"zeta2\">\r\n          <img *ngIf=\"squad[2].Zetas>=3\" src=\"/assets/picture/zeta.png\" class=\"zeta3\">\r\n\r\n          <img class=\"charImage\" src=\"/assets/picture/{{squad[2].imageUrl}}\" alt=\"{{squad[2].Name}}\">\r\n          <img class=\"gearImage\" src=\"/assets/GearPNG/gear-icon-g{{squad[2].gearLevel}}.png\" alt=\"{{squad[2].Name}}\">\r\n          <span class=\"char-level\">{{squad[2].Level}}</span>\r\n          <span class=\"char-gear-level\">{{formatGearLevel(squad[2].gearLevel)}}</span>\r\n        </div>\r\n        \r\n      </div>\r\n\r\n      <div *ngIf=\"squad[3]\" class=\"divForChar\">\r\n        <div class=\"parentOfImages\">\r\n\r\n          <img *ngIf=\"squad[3].Sterne>0\" src=\"/assets/picture/star.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[3].Sterne<1\" src=\"/assets/picture/nostar.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[3].Sterne>1\" src=\"/assets/picture/star.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[3].Sterne<2\" src=\"/assets/picture/nostar.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[3].Sterne>2\" src=\"/assets/picture/star.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[3].Sterne<3\" src=\"/assets/picture/nostar.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[3].Sterne>3\" src=\"/assets/picture/star.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[3].Sterne<4\" src=\"/assets/picture/nostar.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[3].Sterne>4\" src=\"/assets/picture/star.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[3].Sterne<5\" src=\"/assets/picture/nostar.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[3].Sterne>5\" src=\"/assets/picture/star.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[3].Sterne<6\" src=\"/assets/picture/nostar.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[3].Sterne>6\" src=\"/assets/picture/star.png\" class=\"star17\">\r\n          <img *ngIf=\"squad[3].Sterne<7\" src=\"/assets/picture/nostar.png\" class=\"star17\">\r\n\r\n          <img *ngIf=\"squad[3].Zetas>=1\" src=\"/assets/picture/zeta.png\" class=\"zeta1\">\r\n          <img *ngIf=\"squad[3].Zetas>=2\" src=\"/assets/picture/zeta.png\" class=\"zeta2\">\r\n          <img *ngIf=\"squad[3].Zetas>=3\" src=\"/assets/picture/zeta.png\" class=\"zeta3\">\r\n\r\n          <img class=\"charImage\" src=\"/assets/picture/{{squad[3].imageUrl}}\" alt=\"{{squad[3].Name}}\">\r\n          <img class=\"gearImage\" src=\"/assets/GearPNG/gear-icon-g{{squad[3].gearLevel}}.png\" alt=\"{{squad[3].Name}}\">\r\n          <span class=\"char-level\">{{squad[3].Level}}</span>\r\n          <span class=\"char-gear-level\">{{formatGearLevel(squad[3].gearLevel)}}</span>\r\n        </div>\r\n        \r\n      </div>\r\n\r\n      <div *ngIf=\"squad[4]\" class=\"divForChar\">\r\n        <div class=\"parentOfImages\">\r\n\r\n          <img *ngIf=\"squad[4].Sterne>0\" src=\"/assets/picture/star.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[4].Sterne<1\" src=\"/assets/picture/nostar.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[4].Sterne>1\" src=\"/assets/picture/star.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[4].Sterne<2\" src=\"/assets/picture/nostar.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[4].Sterne>2\" src=\"/assets/picture/star.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[4].Sterne<3\" src=\"/assets/picture/nostar.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[4].Sterne>3\" src=\"/assets/picture/star.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[4].Sterne<4\" src=\"/assets/picture/nostar.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[4].Sterne>4\" src=\"/assets/picture/star.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[4].Sterne<5\" src=\"/assets/picture/nostar.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[4].Sterne>5\" src=\"/assets/picture/star.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[4].Sterne<6\" src=\"/assets/picture/nostar.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[4].Sterne>6\" src=\"/assets/picture/star.png\" class=\"star17\">\r\n          <img *ngIf=\"squad[4].Sterne<7\" src=\"/assets/picture/nostar.png\" class=\"star17\">\r\n\r\n          <img *ngIf=\"squad[4].Zetas>=1\" src=\"/assets/picture/zeta.png\" class=\"zeta1\">\r\n          <img *ngIf=\"squad[4].Zetas>=2\" src=\"/assets/picture/zeta.png\" class=\"zeta2\">\r\n          <img *ngIf=\"squad[4].Zetas>=3\" src=\"/assets/picture/zeta.png\" class=\"zeta3\">\r\n\r\n          <img class=\"charImage\" src=\"/assets/picture/{{squad[4].imageUrl}}\" alt=\"{{squad[4].Name}}\">\r\n          <img class=\"gearImage\" src=\"/assets/GearPNG/gear-icon-g{{squad[4].gearLevel}}.png\" alt=\"{{squad[4].Name}}\">\r\n          <span class=\"char-level\">{{squad[4].Level}}</span>\r\n          <span class=\"char-gear-level\">{{formatGearLevel(squad[4].gearLevel)}}</span>\r\n        </div>\r\n        \r\n      </div>\r\n\r\n    </div>\r\n  </fieldset>\r\n</div>\r\n\r\n\r\n\r\n<!-- The Modal -->\r\n<div id=\"myModal\" class=\"modal\">\r\n\r\n  <!-- Modal content -->\r\n  <div class=\"modal-content\">\r\n    <div class=\"modal-header\">\r\n      <span class=\"close\" (click)=\"closeModal()\">&times;</span>\r\n      <h2>Add a Squad</h2>\r\n    </div>\r\n    <div class=\"modal-body\">\r\n\r\n      <p>\r\n        <input type=\"text\" placeholder=\"Squadname ( e.g 'Phönix' or 'Brotini'  )\" [(ngModel)]=\"squadName\">\r\n      </p>\r\n      <p style=\"width:100%;\">\r\n        Leader :\r\n        <select *ngIf=\"!(settingsService.settings.useAutoComplete)\" [(ngModel)]=\"selectedLeader\">\r\n          <option *ngFor=\"let char of gildenService.charInfos\" [ngValue]=\"char.name\">{{char.name}}</option>\r\n        </select>\r\n\r\n        <ngx-select-dropdown *ngIf=\"(settingsService.settings.useAutoComplete)\"  [config]=\"autoCompleteConfig\" [options]=\"gildenService.charInfos\"\r\n                             [(value)]=\"selectedLeader\" [multiple]=\"false\">\r\n        </ngx-select-dropdown>\r\n      </p>\r\n      <p style=\"width:100%;\">\r\n        Char 2 :\r\n        <select *ngIf=\"!(settingsService.settings.useAutoComplete)\" [(ngModel)]=\"selectedChar2\">\r\n          <option *ngFor=\"let char of gildenService.charInfos\" [ngValue]=\"char.name\">{{char.name}}</option>\r\n        </select>\r\n\r\n        <ngx-select-dropdown *ngIf=\"(settingsService.settings.useAutoComplete)\" [config]=\"autoCompleteConfig\" [options]=\"gildenService.charInfos\"\r\n                             [(value)]=\"selectedChar2\" [multiple]=\"false\">\r\n        </ngx-select-dropdown>\r\n      </p>\r\n      <p style=\"width:100%;\">\r\n        Char 3 :\r\n        <select *ngIf=\"!(settingsService.settings.useAutoComplete)\" [(ngModel)]=\"selectedChar3\">\r\n          <option *ngFor=\"let char of gildenService.charInfos\" [ngValue]=\"char.name\">{{char.name}}</option>\r\n        </select>\r\n\r\n        <ngx-select-dropdown *ngIf=\"(settingsService.settings.useAutoComplete)\" [config]=\"autoCompleteConfig\" [options]=\"gildenService.charInfos\"\r\n                             [(value)]=\"selectedChar3\" [multiple]=\"false\">\r\n        </ngx-select-dropdown>\r\n      </p>\r\n      <p style=\"width:100%;\">\r\n        Char 4 :\r\n        <select *ngIf=\"!(settingsService.settings.useAutoComplete)\" [(ngModel)]=\"selectedChar4\">\r\n          <option *ngFor=\"let char of gildenService.charInfos\" [ngValue]=\"char.name\">{{char.name}}</option>\r\n        </select>\r\n\r\n        <ngx-select-dropdown *ngIf=\"(settingsService.settings.useAutoComplete)\" [config]=\"autoCompleteConfig\" [options]=\"gildenService.charInfos\"\r\n                             [(value)]=\"selectedChar4\" [multiple]=\"false\">\r\n        </ngx-select-dropdown>\r\n      </p>\r\n      <p style=\"width:100%;\">\r\n        Char 5 :\r\n        <select *ngIf=\"!(settingsService.settings.useAutoComplete)\" [(ngModel)]=\"selectedChar5\">\r\n          <option *ngFor=\"let char of gildenService.charInfos\" [ngValue]=\"char.name\">{{char.name}}</option>\r\n        </select>\r\n\r\n        <ngx-select-dropdown *ngIf=\"(settingsService.settings.useAutoComplete)\" [config]=\"autoCompleteConfig\" [options]=\"gildenService.charInfos\"\r\n                             [(value)]=\"selectedChar5\" [multiple]=\"false\">\r\n        </ngx-select-dropdown>\r\n      </p>\r\n\r\n      <button style=\"width: 100%\" (click)=\"addSquadToMyTeams()\">Confirm</button>\r\n\r\n    </div>\r\n  </div>\r\n\r\n</div>\r\n"
+module.exports = "<div style=\"width:100%;\">\r\n  <div style=\"width:68%; display: inline-block;\">\r\n    <select style=\"width:100%;\" [(ngModel)]=\"selectedTeam\" (ngModelChange)=\"getSquadsFromGildenInfos()\">\r\n      <option *ngFor=\"let team of myTeams\" [ngValue]=\"team\">{{team.Name}}</option>\r\n    </select>\r\n  </div>\r\n  <div style=\"width: 30%; display: inline-block;\">\r\n    <button (click)=\"deleteThisTeam()\" style=\"display: inline-block; position: relative; padding: 7px 5px; width: 30%;\">{{'Del'| language}}</button>\r\n    <button (click)=\"openModal()\" style=\"display: inline-block; position: relative; padding: 7px 5px; width: 30%;\">{{'Add'| language}}</button>\r\n    </div>\r\n</div>\r\n\r\n<div *ngFor=\"let squad of squadsFromGildenInfos\" class=\"charNow\">\r\n  <fieldset style=\"height:80px\">\r\n    <legend>{{selectedTeam.Name}} {{'of'| language}} {{squad[0].Besitzer}}</legend>\r\n    <div style=\"height:80%; width:100%\">\r\n      <div *ngIf=\"squad[0]\" class=\"divForChar\">\r\n        <div class=\"parentOfImages\">\r\n\r\n          <img *ngIf=\"squad[0].Sterne>0\" src=\"/assets/picture/star.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[0].Sterne<1\" src=\"/assets/picture/nostar.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[0].Sterne>1\" src=\"/assets/picture/star.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[0].Sterne<2\" src=\"/assets/picture/nostar.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[0].Sterne>2\" src=\"/assets/picture/star.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[0].Sterne<3\" src=\"/assets/picture/nostar.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[0].Sterne>3\" src=\"/assets/picture/star.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[0].Sterne<4\" src=\"/assets/picture/nostar.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[0].Sterne>4\" src=\"/assets/picture/star.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[0].Sterne<5\" src=\"/assets/picture/nostar.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[0].Sterne>5\" src=\"/assets/picture/star.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[0].Sterne<6\" src=\"/assets/picture/nostar.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[0].Sterne>6\" src=\"/assets/picture/star.png\" class=\"star17\">\r\n          <img *ngIf=\"squad[0].Sterne<7\" src=\"/assets/picture/nostar.png\" class=\"star17\">\r\n\r\n          <img *ngIf=\"squad[0].Zetas>=1\" src=\"/assets/picture/zeta.png\" class=\"zeta1\">\r\n          <img *ngIf=\"squad[0].Zetas>=2\" src=\"/assets/picture/zeta.png\" class=\"zeta2\">\r\n          <img *ngIf=\"squad[0].Zetas>=3\" src=\"/assets/picture/zeta.png\" class=\"zeta3\">\r\n\r\n          <img class=\"charImage\" src=\"/assets/picture/{{squad[0].imageUrl}}\" alt=\"{{squad[0].Name}}\">\r\n          <img class=\"gearImage\" src=\"/assets/GearPNG/gear-icon-g{{squad[0].gearLevel}}.png\" alt=\"{{squad[0].Name}}\">\r\n          <span class=\"char-level\">{{squad[0].Level}}</span>\r\n          <span class=\"char-gear-level\">{{formatGearLevel(squad[0].gearLevel)}}</span>\r\n        </div>\r\n        \r\n      </div>\r\n\r\n      <div *ngIf=\"squad[1]\" class=\"divForChar\">\r\n        <div class=\"parentOfImages\">\r\n\r\n          <img *ngIf=\"squad[1].Sterne>0\" src=\"/assets/picture/star.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[1].Sterne<1\" src=\"/assets/picture/nostar.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[1].Sterne>1\" src=\"/assets/picture/star.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[1].Sterne<2\" src=\"/assets/picture/nostar.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[1].Sterne>2\" src=\"/assets/picture/star.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[1].Sterne<3\" src=\"/assets/picture/nostar.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[1].Sterne>3\" src=\"/assets/picture/star.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[1].Sterne<4\" src=\"/assets/picture/nostar.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[1].Sterne>4\" src=\"/assets/picture/star.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[1].Sterne<5\" src=\"/assets/picture/nostar.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[1].Sterne>5\" src=\"/assets/picture/star.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[1].Sterne<6\" src=\"/assets/picture/nostar.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[1].Sterne>6\" src=\"/assets/picture/star.png\" class=\"star17\">\r\n          <img *ngIf=\"squad[1].Sterne<7\" src=\"/assets/picture/nostar.png\" class=\"star17\">\r\n\r\n          <img *ngIf=\"squad[1].Zetas>=1\" src=\"/assets/picture/zeta.png\" class=\"zeta1\">\r\n          <img *ngIf=\"squad[1].Zetas>=2\" src=\"/assets/picture/zeta.png\" class=\"zeta2\">\r\n          <img *ngIf=\"squad[1].Zetas>=3\" src=\"/assets/picture/zeta.png\" class=\"zeta3\">\r\n\r\n          <img class=\"charImage\" src=\"/assets/picture/{{squad[1].imageUrl}}\" alt=\"{{squad[1].Name}}\">\r\n          <img class=\"gearImage\" src=\"/assets/GearPNG/gear-icon-g{{squad[1].gearLevel}}.png\" alt=\"{{squad[1].Name}}\">\r\n          <span class=\"char-level\">{{squad[1].Level}}</span>\r\n          <span class=\"char-gear-level\">{{formatGearLevel(squad[1].gearLevel)}}</span>\r\n        </div>\r\n        \r\n      </div>\r\n\r\n      <div *ngIf=\"squad[2]\" class=\"divForChar\">\r\n        <div class=\"parentOfImages\">\r\n\r\n          <img *ngIf=\"squad[2].Sterne>0\" src=\"/assets/picture/star.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[2].Sterne<1\" src=\"/assets/picture/nostar.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[2].Sterne>1\" src=\"/assets/picture/star.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[2].Sterne<2\" src=\"/assets/picture/nostar.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[2].Sterne>2\" src=\"/assets/picture/star.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[2].Sterne<3\" src=\"/assets/picture/nostar.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[2].Sterne>3\" src=\"/assets/picture/star.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[2].Sterne<4\" src=\"/assets/picture/nostar.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[2].Sterne>4\" src=\"/assets/picture/star.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[2].Sterne<5\" src=\"/assets/picture/nostar.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[2].Sterne>5\" src=\"/assets/picture/star.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[2].Sterne<6\" src=\"/assets/picture/nostar.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[2].Sterne>6\" src=\"/assets/picture/star.png\" class=\"star17\">\r\n          <img *ngIf=\"squad[2].Sterne<7\" src=\"/assets/picture/nostar.png\" class=\"star17\">\r\n\r\n          <img *ngIf=\"squad[2].Zetas>=1\" src=\"/assets/picture/zeta.png\" class=\"zeta1\">\r\n          <img *ngIf=\"squad[2].Zetas>=2\" src=\"/assets/picture/zeta.png\" class=\"zeta2\">\r\n          <img *ngIf=\"squad[2].Zetas>=3\" src=\"/assets/picture/zeta.png\" class=\"zeta3\">\r\n\r\n          <img class=\"charImage\" src=\"/assets/picture/{{squad[2].imageUrl}}\" alt=\"{{squad[2].Name}}\">\r\n          <img class=\"gearImage\" src=\"/assets/GearPNG/gear-icon-g{{squad[2].gearLevel}}.png\" alt=\"{{squad[2].Name}}\">\r\n          <span class=\"char-level\">{{squad[2].Level}}</span>\r\n          <span class=\"char-gear-level\">{{formatGearLevel(squad[2].gearLevel)}}</span>\r\n        </div>\r\n        \r\n      </div>\r\n\r\n      <div *ngIf=\"squad[3]\" class=\"divForChar\">\r\n        <div class=\"parentOfImages\">\r\n\r\n          <img *ngIf=\"squad[3].Sterne>0\" src=\"/assets/picture/star.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[3].Sterne<1\" src=\"/assets/picture/nostar.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[3].Sterne>1\" src=\"/assets/picture/star.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[3].Sterne<2\" src=\"/assets/picture/nostar.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[3].Sterne>2\" src=\"/assets/picture/star.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[3].Sterne<3\" src=\"/assets/picture/nostar.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[3].Sterne>3\" src=\"/assets/picture/star.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[3].Sterne<4\" src=\"/assets/picture/nostar.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[3].Sterne>4\" src=\"/assets/picture/star.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[3].Sterne<5\" src=\"/assets/picture/nostar.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[3].Sterne>5\" src=\"/assets/picture/star.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[3].Sterne<6\" src=\"/assets/picture/nostar.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[3].Sterne>6\" src=\"/assets/picture/star.png\" class=\"star17\">\r\n          <img *ngIf=\"squad[3].Sterne<7\" src=\"/assets/picture/nostar.png\" class=\"star17\">\r\n\r\n          <img *ngIf=\"squad[3].Zetas>=1\" src=\"/assets/picture/zeta.png\" class=\"zeta1\">\r\n          <img *ngIf=\"squad[3].Zetas>=2\" src=\"/assets/picture/zeta.png\" class=\"zeta2\">\r\n          <img *ngIf=\"squad[3].Zetas>=3\" src=\"/assets/picture/zeta.png\" class=\"zeta3\">\r\n\r\n          <img class=\"charImage\" src=\"/assets/picture/{{squad[3].imageUrl}}\" alt=\"{{squad[3].Name}}\">\r\n          <img class=\"gearImage\" src=\"/assets/GearPNG/gear-icon-g{{squad[3].gearLevel}}.png\" alt=\"{{squad[3].Name}}\">\r\n          <span class=\"char-level\">{{squad[3].Level}}</span>\r\n          <span class=\"char-gear-level\">{{formatGearLevel(squad[3].gearLevel)}}</span>\r\n        </div>\r\n        \r\n      </div>\r\n\r\n      <div *ngIf=\"squad[4]\" class=\"divForChar\">\r\n        <div class=\"parentOfImages\">\r\n\r\n          <img *ngIf=\"squad[4].Sterne>0\" src=\"/assets/picture/star.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[4].Sterne<1\" src=\"/assets/picture/nostar.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[4].Sterne>1\" src=\"/assets/picture/star.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[4].Sterne<2\" src=\"/assets/picture/nostar.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[4].Sterne>2\" src=\"/assets/picture/star.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[4].Sterne<3\" src=\"/assets/picture/nostar.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[4].Sterne>3\" src=\"/assets/picture/star.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[4].Sterne<4\" src=\"/assets/picture/nostar.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[4].Sterne>4\" src=\"/assets/picture/star.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[4].Sterne<5\" src=\"/assets/picture/nostar.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[4].Sterne>5\" src=\"/assets/picture/star.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[4].Sterne<6\" src=\"/assets/picture/nostar.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[4].Sterne>6\" src=\"/assets/picture/star.png\" class=\"star17\">\r\n          <img *ngIf=\"squad[4].Sterne<7\" src=\"/assets/picture/nostar.png\" class=\"star17\">\r\n\r\n          <img *ngIf=\"squad[4].Zetas>=1\" src=\"/assets/picture/zeta.png\" class=\"zeta1\">\r\n          <img *ngIf=\"squad[4].Zetas>=2\" src=\"/assets/picture/zeta.png\" class=\"zeta2\">\r\n          <img *ngIf=\"squad[4].Zetas>=3\" src=\"/assets/picture/zeta.png\" class=\"zeta3\">\r\n\r\n          <img class=\"charImage\" src=\"/assets/picture/{{squad[4].imageUrl}}\" alt=\"{{squad[4].Name}}\">\r\n          <img class=\"gearImage\" src=\"/assets/GearPNG/gear-icon-g{{squad[4].gearLevel}}.png\" alt=\"{{squad[4].Name}}\">\r\n          <span class=\"char-level\">{{squad[4].Level}}</span>\r\n          <span class=\"char-gear-level\">{{formatGearLevel(squad[4].gearLevel)}}</span>\r\n        </div>\r\n        \r\n      </div>\r\n\r\n    </div>\r\n  </fieldset>\r\n</div>\r\n\r\n\r\n\r\n<!-- The Modal -->\r\n<div id=\"myModal\" class=\"modal\">\r\n\r\n  <!-- Modal content -->\r\n  <div class=\"modal-content\">\r\n    <div class=\"modal-header\">\r\n      <span class=\"close\" (click)=\"closeModal()\">&times;</span>\r\n      <h2>{{'AddSquad'| language}}</h2>\r\n    </div>\r\n    <div class=\"modal-body\">\r\n\r\n      <p>\r\n        <input type=\"text\" placeholder=\"Squadname ( e.g 'Phönix' or 'Brotini'  )\" [(ngModel)]=\"squadName\">\r\n      </p>\r\n      <p style=\"width:100%;\">\r\n        Leader :\r\n        <select *ngIf=\"!(settingsService.settings.useAutoComplete)\" [(ngModel)]=\"selectedLeader\">\r\n          <option *ngFor=\"let char of gildenService.charInfos\" [ngValue]=\"char.name\">{{char.name}}</option>\r\n        </select>\r\n\r\n        <ngx-select-dropdown *ngIf=\"(settingsService.settings.useAutoComplete)\"  [config]=\"autoCompleteConfig\" [options]=\"gildenService.charInfos\"\r\n                             [(value)]=\"selectedLeader\" [multiple]=\"false\">\r\n        </ngx-select-dropdown>\r\n      </p>\r\n      <p style=\"width:100%;\">\r\n        Char 2 :\r\n        <select *ngIf=\"!(settingsService.settings.useAutoComplete)\" [(ngModel)]=\"selectedChar2\">\r\n          <option *ngFor=\"let char of gildenService.charInfos\" [ngValue]=\"char.name\">{{char.name}}</option>\r\n        </select>\r\n\r\n        <ngx-select-dropdown *ngIf=\"(settingsService.settings.useAutoComplete)\" [config]=\"autoCompleteConfig\" [options]=\"gildenService.charInfos\"\r\n                             [(value)]=\"selectedChar2\" [multiple]=\"false\">\r\n        </ngx-select-dropdown>\r\n      </p>\r\n      <p style=\"width:100%;\">\r\n        Char 3 :\r\n        <select *ngIf=\"!(settingsService.settings.useAutoComplete)\" [(ngModel)]=\"selectedChar3\">\r\n          <option *ngFor=\"let char of gildenService.charInfos\" [ngValue]=\"char.name\">{{char.name}}</option>\r\n        </select>\r\n\r\n        <ngx-select-dropdown *ngIf=\"(settingsService.settings.useAutoComplete)\" [config]=\"autoCompleteConfig\" [options]=\"gildenService.charInfos\"\r\n                             [(value)]=\"selectedChar3\" [multiple]=\"false\">\r\n        </ngx-select-dropdown>\r\n      </p>\r\n      <p style=\"width:100%;\">\r\n        Char 4 :\r\n        <select *ngIf=\"!(settingsService.settings.useAutoComplete)\" [(ngModel)]=\"selectedChar4\">\r\n          <option *ngFor=\"let char of gildenService.charInfos\" [ngValue]=\"char.name\">{{char.name}}</option>\r\n        </select>\r\n\r\n        <ngx-select-dropdown *ngIf=\"(settingsService.settings.useAutoComplete)\" [config]=\"autoCompleteConfig\" [options]=\"gildenService.charInfos\"\r\n                             [(value)]=\"selectedChar4\" [multiple]=\"false\">\r\n        </ngx-select-dropdown>\r\n      </p>\r\n      <p style=\"width:100%;\">\r\n        Char 5 :\r\n        <select *ngIf=\"!(settingsService.settings.useAutoComplete)\" [(ngModel)]=\"selectedChar5\">\r\n          <option *ngFor=\"let char of gildenService.charInfos\" [ngValue]=\"char.name\">{{char.name}}</option>\r\n        </select>\r\n\r\n        <ngx-select-dropdown *ngIf=\"(settingsService.settings.useAutoComplete)\" [config]=\"autoCompleteConfig\" [options]=\"gildenService.charInfos\"\r\n                             [(value)]=\"selectedChar5\" [multiple]=\"false\">\r\n        </ngx-select-dropdown>\r\n      </p>\r\n\r\n      <button style=\"width: 100%\" (click)=\"addSquadToMyTeams()\">{{'Confirm'| language}}</button>\r\n\r\n    </div>\r\n  </div>\r\n\r\n</div>\r\n"
 
 /***/ }),
 

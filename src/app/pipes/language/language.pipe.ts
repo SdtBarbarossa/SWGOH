@@ -76,6 +76,22 @@ export class LanguagePipe implements PipeTransform {
     "Add": "Hinzufügen",
     "Confirm": "Bestätigen",
     "AddSquad": "Ein Team Hinzufügen",
+    "Comparer": "Charvergleicher",
+    "Agility": "Geschicklichkeit",
+    "Armor": "Rüstung",
+    "Armor Penetration": "Rüstungsdurchdringung",
+    "Health Steal": "Lebensraub",
+    "Physical Critical Rating": "Physical Critical Rating",
+    "Physical Damage": "Physischer Schaden",
+    "Resistance": "Resistenz",
+    "Resistance Penetration": "Resistenzdurchdringung",
+    "Special Critical Rating": "Special Critical Rating",
+    "Special Damage": "Spezialschaden",
+    "Armor %": "Rüstung %",
+    "Resistance %": "Resistenz %",
+    "Physical Critical %": "Kritische Trefferchance (Pysisch)",
+    "Special Critical %": "Kritische Trefferchance (Special)",
+    "Tactics": "Taktik",
   };
 
   public languageENG: { [id: string]: string; } = {
@@ -131,7 +147,21 @@ export class LanguagePipe implements PipeTransform {
     "Add": "Add",
     "Confirm": "Confirm",
     "AddSquad": "Add a Squad",
-
+    "Comparer": "Charcomparer",
+    "Agility": "Agility",
+    "Armor": "Armor",
+    "Armor Penetration": "Armor Penetration",
+    "Health Steal": "Health Steal",
+    "Physical Critical Rating": "Physical Critical Rating",
+    "Physical Damage": "Physical Damage",
+    "Resistance": "Resistance",
+    "Resistance Penetration": "Resistance Penetration",
+    "Special Critical Rating": "Special Critical Rating",
+    "Special Damage": "Special Damage",
+    "Armor %": "Armor %",
+    "Resistance %": "Resistance %",
+    "Physical Critical %": "Physical Critical %",
+    "Special Critical %": "Special Critical %",    
   };
 
 }
