@@ -12,7 +12,7 @@
 
 <div *ngFor="let squad of squadsFromGildenInfos" class="charNow">
   <fieldset style="height:80px">
-    <legend>{{selectedTeam.Name}} {{'of'| language}} {{squad[0].Besitzer}}</legend>
+    <legend>{{selectedTeam.Name}} {{'of'| language}} {{squad[0].Besitzer}} {{squad | squadpower}}</legend>
     <div style="height:80%; width:100%">
       <div *ngIf="squad[0]" class="divForChar">
         <div class="parentOfImages">
@@ -41,7 +41,7 @@
           <span class="char-level">{{squad[0].Level}}</span>
           <span class="char-gear-level">{{formatGearLevel(squad[0].gearLevel)}}</span>
         </div>
-        
+
       </div>
 
       <div *ngIf="squad[1]" class="divForChar">
@@ -71,7 +71,7 @@
           <span class="char-level">{{squad[1].Level}}</span>
           <span class="char-gear-level">{{formatGearLevel(squad[1].gearLevel)}}</span>
         </div>
-        
+
       </div>
 
       <div *ngIf="squad[2]" class="divForChar">
@@ -101,7 +101,7 @@
           <span class="char-level">{{squad[2].Level}}</span>
           <span class="char-gear-level">{{formatGearLevel(squad[2].gearLevel)}}</span>
         </div>
-        
+
       </div>
 
       <div *ngIf="squad[3]" class="divForChar">
@@ -131,7 +131,7 @@
           <span class="char-level">{{squad[3].Level}}</span>
           <span class="char-gear-level">{{formatGearLevel(squad[3].gearLevel)}}</span>
         </div>
-        
+
       </div>
 
       <div *ngIf="squad[4]" class="divForChar">
@@ -161,7 +161,7 @@
           <span class="char-level">{{squad[4].Level}}</span>
           <span class="char-gear-level">{{formatGearLevel(squad[4].gearLevel)}}</span>
         </div>
-        
+
       </div>
 
     </div>

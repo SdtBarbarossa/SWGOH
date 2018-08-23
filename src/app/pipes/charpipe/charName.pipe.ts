@@ -14,7 +14,7 @@ export class CharNamePipe implements PipeTransform {
 
   transform(value: Charakter): string {
 
-    var charInfoNow = this.gildenservice.charInfos.find(info => info.base_id == value.name);
+    var charInfoNow = this.gildenservice.charInfos.find(info => info.base_id == value.defId);
 
     if (charInfoNow != null)
       return charInfoNow.name;

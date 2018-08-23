@@ -1,0 +1,29 @@
+<div *ngFor="let team of AllFleetTeams;let i = index" class="charNow">
+  <fieldset>
+    <legend>{{team.besitzer}} {{'WithRank' | language}} {{team.rang}}</legend>
+    <fieldset *ngFor="let char of team.charaktere" class="maincharFieldset">
+      <legend>{{char.name}}</legend>
+      <div style="height:60px;">
+        <img *ngIf="char.rarity>0" src="/assets/picture/star.png" class="sterne stern1">
+        <img *ngIf="char.rarity<1" src="/assets/picture/nostar.png" class="sterne stern1">
+        <img *ngIf="char.rarity>1" src="/assets/picture/star.png" class="sterne stern2">
+        <img *ngIf="char.rarity<2" src="/assets/picture/nostar.png" class="sterne stern2">
+        <img *ngIf="char.rarity>2" src="/assets/picture/star.png" class="sterne stern3">
+        <img *ngIf="char.rarity<3" src="/assets/picture/nostar.png" class="sterne stern3">
+        <img *ngIf="char.rarity>3" src="/assets/picture/star.png" class="sterne stern4">
+        <img *ngIf="char.rarity<4" src="/assets/picture/nostar.png" class="sterne stern4">
+        <img *ngIf="char.rarity>4" src="/assets/picture/star.png" class="sterne stern5">
+        <img *ngIf="char.rarity<5" src="/assets/picture/nostar.png" class="sterne stern5">
+        <img *ngIf="char.rarity>5" src="/assets/picture/star.png" class="sterne stern6">
+        <img *ngIf="char.rarity<6" src="/assets/picture/nostar.png" class="sterne stern6">
+        <img *ngIf="char.rarity>6" src="/assets/picture/star.png" class="sterne stern7">
+        <img *ngIf="char.rarity<7" src="/assets/picture/nostar.png" class="sterne stern7">
+
+        <img class="charImage" [src]="char | fleetimagelink" [alt]="char.name">
+        <img class="gearImage" [src]="char | gearlink" [alt]="char.name">
+        <span class="char-gear-level">{{char.level}}</span>
+      </div>
+
+    </fieldset>
+  </fieldset>
+</div>

@@ -19,25 +19,12 @@
       <img *ngIf="char.charakter.rarity>6" src="/assets/picture/star.png" class="sterne stern7">
       <img *ngIf="char.charakter.rarity<7" src="/assets/picture/nostar.png" class="sterne stern7">
 
-      <img class="charImage" [src]="char.charakter | charimagelink" [alt]="char | charname">
-      <img class="gearImage" [src]="char.charakter | gearlink" [alt]="char | charname">
-      <span class="char-level">{{char.charakter.level}}</span>
-      <span class="char-gear-level">{{char.charakter | chargear}}</span>
+      <img class="charImage" [src]="char.charakter | fleetimagelink" [alt]="char.charakter.name">
+      <img class="gearImage" [src]="char.charakter | gearlink" [alt]="char.charakter.name">
+      <span class="char-gear-level">{{char.charakter.level}}</span>
     </div>
 
     <div>{{'Charpower' | language}}: {{char.charakter.gp}}</div>
 
-    <button (click)="showMods[i] = !showMods[i]">{{'Show/Hide'| language}}</button>
-
-    <div *ngIf="showMods[i]">
-      <fieldset *ngFor="let mod of char.charakter.mods" style="position:relative; float:left;">
-        <legend>{{(mod.setId | modsetname) | language}}-{{(mod.slot | modslotname) | language}} L:{{mod.level}} S:{{mod.pips}}</legend>
-        <div style="color:blue">{{(mod.primaryBonusType | modstatname) | language}}: {{mod.primaryBonusValue | modstatvalue : (mod.primaryBonusType | modstatname)}}</div>
-        <div>{{(mod.secondaryType_1 | modstatname) | language}}: {{mod.secondaryValue_1 | modstatvalue : (mod.secondaryType_1 | modstatname)}}</div>
-        <div>{{(mod.secondaryType_2 | modstatname) | language}}: {{mod.secondaryValue_2 | modstatvalue : (mod.secondaryType_2 | modstatname)}}</div>
-        <div>{{(mod.secondaryType_3 | modstatname) | language}}: {{mod.secondaryValue_3 | modstatvalue : (mod.secondaryType_3 | modstatname)}}</div>
-        <div>{{(mod.secondaryType_4 | modstatname) | language}}: {{mod.secondaryValue_4 | modstatvalue : (mod.secondaryType_4 | modstatname)}}</div>
-      </fieldset>
-    </div>
   </fieldset>
 </div>

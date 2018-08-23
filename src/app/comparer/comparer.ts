@@ -21,7 +21,7 @@ export class ComparerComponent {
 
   onValueChanged(charSelectBox, MemberSelectBoxA, MemberSelectBoxB)
   {
-
+    console.log('value changed');
     if (MemberSelectBoxA.value != null && MemberSelectBoxB.value != null && charSelectBox.value != null && MemberSelectBoxA.value.name != MemberSelectBoxB.value.name) {
 
       var charA = this.GildenService.getCharByNameAndMemberExact(charSelectBox.value.name, MemberSelectBoxA.value);
@@ -84,6 +84,8 @@ export class ComparerComponent {
 
     var charData = null;
 
+    console.log(AorB);
+
     if (AorB == "A") {
       charData = this.charCompletedA;
     }
@@ -97,17 +99,19 @@ export class ComparerComponent {
     var modSetsTotal: { [id: number]: number; } = {
     };
 
+    console.log("mods", char.mods);
+
     for (var i = 0; i < char.mods.length; i++) {
-      var primaryType = this.getModStatName(char.mods[i].primaryBonusType);
-      var primaryBonusValue = this.getModStatValue(char.mods[i].primaryBonusValue, this.getModStatName(char.mods[i].primaryBonusType));
-      var secondaryType_1 = this.getModStatName(char.mods[i].secondaryType_1);
-      var secondaryType_2 = this.getModStatName(char.mods[i].secondaryType_2);
-      var secondaryType_3 = this.getModStatName(char.mods[i].secondaryType_3);
-      var secondaryType_4 = this.getModStatName(char.mods[i].secondaryType_4);
-      var secondaryValue_1 = this.getModStatValue(char.mods[i].secondaryValue_1, this.getModStatName(char.mods[i].secondaryType_1));
-      var secondaryValue_2 = this.getModStatValue(char.mods[i].secondaryValue_2, this.getModStatName(char.mods[i].secondaryType_2));
-      var secondaryValue_3 = this.getModStatValue(char.mods[i].secondaryValue_3, this.getModStatName(char.mods[i].secondaryType_3));
-      var secondaryValue_4 = this.getModStatValue(char.mods[i].secondaryValue_4, this.getModStatName(char.mods[i].secondaryType_4));
+      var primaryType = char.mods[i].primaryBonusType;
+      var primaryBonusValue = Number(char.mods[i].primaryBonusValue.replace("%", "").replace("+", ""));
+      var secondaryType_1 = char.mods[i].secondaryType_1;
+      var secondaryType_2 = char.mods[i].secondaryType_2;
+      var secondaryType_3 = char.mods[i].secondaryType_3;
+      var secondaryType_4 = char.mods[i].secondaryType_4;
+      var secondaryValue_1 = Number(char.mods[i].secondaryValue_1.replace("%", "").replace("+", ""));
+      var secondaryValue_2 = Number(char.mods[i].secondaryValue_2.replace("%", "").replace("+", ""));;
+      var secondaryValue_3 = Number(char.mods[i].secondaryValue_3.replace("%", "").replace("+", ""));;
+      var secondaryValue_4 = Number(char.mods[i].secondaryValue_4.replace("%", "").replace("+", ""));;
       
       if (modValuesTotal[primaryType] == null)
         modValuesTotal[primaryType] = 0;
@@ -135,19 +139,20 @@ export class ComparerComponent {
 
     }
 
-    console.log(modValuesTotal);
+    console.log("modSetsTotal", modSetsTotal);
+    console.log("modValuesTotal", modValuesTotal);
 
     for (let key in modSetsTotal) {
-      var ModSetNow = this.GildenService.ModSets[key];
-
+      var ModSetNow = this.GildenService.ModSets.find(modset => modset.id == key);
+      
       if (ModSetNow != null) {
 
-        if (ModSetNow.count <= modSetsTotal[key]) {
-
-          if (charData.total[ModSetNow.name] != null) {
-            console.log(charData.total[ModSetNow.name]);
-            charData.total[ModSetNow.name] = Number(charData.total[ModSetNow.name]) + ((((Number(ModSetNow.bonus.statValueDecimal)) / 100) * 2) / 100) * Number(charData.base[ModSetNow.name]);
-            console.log(charData.total[ModSetNow.name]);
+        if (ModSetNow.setCount <= modSetsTotal[key]) {
+          
+          if (charData.total[this.mapKeyOfModStat(ModSetNow.name)] != null) {
+            console.log(charData.total[this.mapKeyOfModStat(ModSetNow.name)]);
+            charData.total[this.mapKeyOfModStat(ModSetNow.name)] = Number(charData.total[this.mapKeyOfModStat(ModSetNow.name)]) + ((((Number(ModSetNow.maxLevelBonus.stat.statValueDecimal)) / 100) * 2) / 100) * Number(charData.base[this.mapKeyOfModStat(ModSetNow.name)]);
+            console.log(charData.total[this.mapKeyOfModStat(ModSetNow.name)]);
           } else {
             console.log("cant calculate modset ", ModSetNow);
           }
@@ -160,6 +165,8 @@ export class ComparerComponent {
 
     for (let key in modValuesTotal) {
       let value = modValuesTotal[key];
+
+      key = this.mapKeyOfModStat(key);
 
       if (key == 'None')
         continue;
@@ -182,6 +189,10 @@ export class ComparerComponent {
               charData.total["Physical Critical Rating"] += value;
               charData.total["Special Critical Rating"] += value;
               break;
+            case "Offense":
+              charData.total["Physical Damage"] += value;
+              charData.total["Special Damage"] += value;
+              break;
             default:
               console.log("Konnte nicht berechnen : ", key, value.toString());
               break;
@@ -199,13 +210,82 @@ export class ComparerComponent {
         }
         else
         {
-          console.log("Konnte nicht berechnen : ", key, value.toString());
+
+          switch (keyWithoutPercent) {
+            case "Offense":
+              charData.total["Physical Damage"] = Number(charData.total["Physical Damage"]) + (charData.base["Physical Damage"] * (value / 100));
+              charData.total["Special Damage"] = Number(charData.total["Special Damage"]) + (charData.base["Special Damage"] * (value / 100));
+              break;
+            default:
+              console.log("Konnte nicht berechnen : ", key, value.toString());
+              break;
+          }
+
         }
 
       }
 
     }
     
+  }
+
+  mapKeyOfModStat(value: string) {
+
+    switch (value) {
+      case "UNITSTATOFFENSEPERCENTADDITIVE":
+        return "Offense %";
+      case "UNITSTATOFFENSE":
+        return "Offense";
+      case "UNITSTATACCURACY":
+        return "Accuracy";
+      case "UNITSTATSPEED":
+        return "Speed";
+      case "UNITSTATRESISTANCE":
+        return "Resistance";
+      case "UNITSTATMAXHEALTH":
+        return "Health";
+      case "UNITSTATMAXHEALTHPERCENTADDITIVE":
+        return "Health %";
+      case "UNITSTATDEFENSE":
+        return "Health";
+      case "UNITSTATMAXHEALTH":
+        return "Defense";
+      case "UNITSTATDEFENSEPERCENTADDITIVE":
+        return "Defense %";
+      case "UNITSTATCRITICALCHANCEPERCENTADDITIVE":
+        return "Critical Chance";
+      case "UNITSTATMAXSHIELDPERCENTADDITIVE":
+        return "Protection %";
+      case "UNITSTATCRITICALDAMAGE":
+        return "Critical Damage";
+      case "UNITSTATMAXSHIELD":
+        return "Protection";
+      case "UNITSTATEVASIONNEGATEPERCENTADDITIVE":
+        return "Evasion %";
+      case "UNITSTATCRITICALNEGATECHANCEPERCENTADDITIVE":
+        return "Critical Avoidance %";
+      case "STATMODSETBONUS_SETBONUSSTAT_RESISTANCE_NAME":
+        return "Critical";
+      case "UNITSTATCRITICALNEGATECHANCEPERCENTADDITIVE":
+        return "Resistance";
+      case "STATMODSETBONUS_SETBONUSSTAT_OFFENSEPERCENTADDITIVE_NAME":
+        return "Offense";
+      case "STATMODSETBONUS_SETBONUSSTAT_DEFENSEPERCENTADDITIVE_NAME":
+        return "Defense";
+      case "STATMODSETBONUS_SETBONUSSTAT_MAXHEALTHPERCENTADDITIVE_NAME":
+        return "Health";
+      case "STATMODSETBONUS_SETBONUSSTAT_ACCURACY_NAME":
+        return "Accuracy";
+      case "STATMODSETBONUS_SETBONUSSTAT_SPEEDPERCENTADDITIVE_NAME":
+        return "Speed";
+      case "STATMODSETBONUS_SETBONUSSTAT_CRITICALCHANCEPERCENTADDITIVE_NAME":
+        return "Critical Chance";
+      case "STATMODSETBONUS_SETBONUSSTAT_CRITICALDAMAGE_NAME":
+        return "Critical Damage";
+      default:
+        return value;
+    }
+
   }
 
   getModStatName(value: number): string {
@@ -219,7 +299,9 @@ export class ComparerComponent {
     return value.toString();
   }
 
-  getModStatValue(value: number, modStatName: string): number {
+  getModStatValue(valueAsString: string, modStatName: string): number {
+
+    var value = Number(valueAsString.replace("%", "").replace("+", ""));
 
     switch (modStatName) {
       case "Speed":

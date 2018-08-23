@@ -906,21 +906,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/esm5/router.js");
 /* harmony import */ var _home_home__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./home/home */ "./src/app/home/home.ts");
 /* harmony import */ var _settings_setting__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./settings/setting */ "./src/app/settings/setting.ts");
-/* harmony import */ var _charSearch_charsearch__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./charSearch/charsearch */ "./src/app/charSearch/charsearch.ts");
-/* harmony import */ var _squadSearch_squadsearch__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./squadSearch/squadsearch */ "./src/app/squadSearch/squadsearch.ts");
-/* harmony import */ var _TBPlatoons_platoontool__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./TBPlatoons/platoontool */ "./src/app/TBPlatoons/platoontool.ts");
-/* harmony import */ var _RaidPlanner_raidplanner__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./RaidPlanner/raidplanner */ "./src/app/RaidPlanner/raidplanner.ts");
-/* harmony import */ var _arenaTeams_arenaTeams__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./arenaTeams/arenaTeams */ "./src/app/arenaTeams/arenaTeams.ts");
-/* harmony import */ var _newCharSearch_newCharSearch__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./newCharSearch/newCharSearch */ "./src/app/newCharSearch/newCharSearch.ts");
-/* harmony import */ var _events_events__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./events/events */ "./src/app/events/events.ts");
-/* harmony import */ var _comparer_comparer__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./comparer/comparer */ "./src/app/comparer/comparer.ts");
+/* harmony import */ var _squadSearch_squadsearch__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./squadSearch/squadsearch */ "./src/app/squadSearch/squadsearch.ts");
+/* harmony import */ var _TBPlatoons_platoontool__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./TBPlatoons/platoontool */ "./src/app/TBPlatoons/platoontool.ts");
+/* harmony import */ var _RaidPlanner_raidplanner__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./RaidPlanner/raidplanner */ "./src/app/RaidPlanner/raidplanner.ts");
+/* harmony import */ var _arenaTeams_arenaTeams__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./arenaTeams/arenaTeams */ "./src/app/arenaTeams/arenaTeams.ts");
+/* harmony import */ var _newCharSearch_newCharSearch__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./newCharSearch/newCharSearch */ "./src/app/newCharSearch/newCharSearch.ts");
+/* harmony import */ var _events_events__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./events/events */ "./src/app/events/events.ts");
+/* harmony import */ var _comparer_comparer__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./comparer/comparer */ "./src/app/comparer/comparer.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
 
 
 
@@ -947,36 +945,32 @@ var routes = [
         component: _settings_setting__WEBPACK_IMPORTED_MODULE_3__["SettingComponent"]
     },
     {
-        path: 'charsearch',
-        component: _charSearch_charsearch__WEBPACK_IMPORTED_MODULE_4__["CharSearchComponent"]
-    },
-    {
         path: 'squadsearch',
-        component: _squadSearch_squadsearch__WEBPACK_IMPORTED_MODULE_5__["SquadSearchComponent"]
+        component: _squadSearch_squadsearch__WEBPACK_IMPORTED_MODULE_4__["SquadSearchComponent"]
     },
     {
         path: 'platoontool',
-        component: _TBPlatoons_platoontool__WEBPACK_IMPORTED_MODULE_6__["TBPlatoonComponent"]
+        component: _TBPlatoons_platoontool__WEBPACK_IMPORTED_MODULE_5__["TBPlatoonComponent"]
     },
     {
         path: 'raidplanner',
-        component: _RaidPlanner_raidplanner__WEBPACK_IMPORTED_MODULE_7__["RaidPlannerComponent"]
+        component: _RaidPlanner_raidplanner__WEBPACK_IMPORTED_MODULE_6__["RaidPlannerComponent"]
     },
     {
         path: 'arenateams',
-        component: _arenaTeams_arenaTeams__WEBPACK_IMPORTED_MODULE_8__["ArenaTeamsComponent"]
+        component: _arenaTeams_arenaTeams__WEBPACK_IMPORTED_MODULE_7__["ArenaTeamsComponent"]
     },
     {
         path: 'newCharSearch',
-        component: _newCharSearch_newCharSearch__WEBPACK_IMPORTED_MODULE_9__["newCharSearchComponent"]
+        component: _newCharSearch_newCharSearch__WEBPACK_IMPORTED_MODULE_8__["newCharSearchComponent"]
     },
     {
         path: 'comparer',
-        component: _comparer_comparer__WEBPACK_IMPORTED_MODULE_11__["ComparerComponent"]
+        component: _comparer_comparer__WEBPACK_IMPORTED_MODULE_10__["ComparerComponent"]
     },
     {
         path: 'events',
-        component: _events_events__WEBPACK_IMPORTED_MODULE_10__["EventsComponent"]
+        component: _events_events__WEBPACK_IMPORTED_MODULE_9__["EventsComponent"]
     },
     {
         path: '**',
@@ -1094,37 +1088,37 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../environments/environment */ "./src/environments/environment.ts");
 /* harmony import */ var _home_home__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./home/home */ "./src/app/home/home.ts");
 /* harmony import */ var _settings_setting__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./settings/setting */ "./src/app/settings/setting.ts");
-/* harmony import */ var _charSearch_charsearch__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./charSearch/charsearch */ "./src/app/charSearch/charsearch.ts");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/esm5/forms.js");
-/* harmony import */ var _services_settingsService__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./services/settingsService */ "./src/app/services/settingsService.ts");
-/* harmony import */ var _services_gildenService__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./services/gildenService */ "./src/app/services/gildenService.ts");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/esm5/http.js");
-/* harmony import */ var _squadSearch_squadsearch__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./squadSearch/squadsearch */ "./src/app/squadSearch/squadsearch.ts");
-/* harmony import */ var _TBPlatoons_platoontool__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./TBPlatoons/platoontool */ "./src/app/TBPlatoons/platoontool.ts");
-/* harmony import */ var _RaidPlanner_raidplanner__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./RaidPlanner/raidplanner */ "./src/app/RaidPlanner/raidplanner.ts");
-/* harmony import */ var ngx_select_dropdown__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ngx-select-dropdown */ "./node_modules/ngx-select-dropdown/dist/index.js");
-/* harmony import */ var ng_lz_string__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ng-lz-string */ "./node_modules/ng-lz-string/ng-lz-string.umd.js");
-/* harmony import */ var ng_lz_string__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(ng_lz_string__WEBPACK_IMPORTED_MODULE_17__);
-/* harmony import */ var _arenaTeams_arenaTeams__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./arenaTeams/arenaTeams */ "./src/app/arenaTeams/arenaTeams.ts");
-/* harmony import */ var _pipes_charpipe_gearLink_pipe__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./pipes/charpipe/gearLink.pipe */ "./src/app/pipes/charpipe/gearLink.pipe.ts");
-/* harmony import */ var _pipes_charpipe_charName_pipe__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./pipes/charpipe/charName.pipe */ "./src/app/pipes/charpipe/charName.pipe.ts");
-/* harmony import */ var _pipes_charpipe_charLink_pipe__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./pipes/charpipe/charLink.pipe */ "./src/app/pipes/charpipe/charLink.pipe.ts");
-/* harmony import */ var _pipes_charpipe_charGear_pipe__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./pipes/charpipe/charGear.pipe */ "./src/app/pipes/charpipe/charGear.pipe.ts");
-/* harmony import */ var _pipes_modpipes_ModSetName_pipe__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./pipes/modpipes/ModSetName.pipe */ "./src/app/pipes/modpipes/ModSetName.pipe.ts");
-/* harmony import */ var _pipes_modpipes_ModStatName_pipe__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./pipes/modpipes/ModStatName.pipe */ "./src/app/pipes/modpipes/ModStatName.pipe.ts");
-/* harmony import */ var _pipes_modpipes_ModStatValue_pipe__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./pipes/modpipes/ModStatValue.pipe */ "./src/app/pipes/modpipes/ModStatValue.pipe.ts");
-/* harmony import */ var _pipes_modpipes_ModSlotName_pipe__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./pipes/modpipes/ModSlotName.pipe */ "./src/app/pipes/modpipes/ModSlotName.pipe.ts");
-/* harmony import */ var _newCharSearch_newCharSearch__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./newCharSearch/newCharSearch */ "./src/app/newCharSearch/newCharSearch.ts");
-/* harmony import */ var devextreme_angular__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! devextreme-angular */ "./node_modules/devextreme-angular/index.js");
-/* harmony import */ var devextreme_angular__WEBPACK_IMPORTED_MODULE_28___default = /*#__PURE__*/__webpack_require__.n(devextreme_angular__WEBPACK_IMPORTED_MODULE_28__);
-/* harmony import */ var _pipes_columnwidth_pipe__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./pipes/columnwidth.pipe */ "./src/app/pipes/columnwidth.pipe.ts");
-/* harmony import */ var _pipes_columntype_pipe__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./pipes/columntype.pipe */ "./src/app/pipes/columntype.pipe.ts");
-/* harmony import */ var _pipes_columnfixed_pipe__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./pipes/columnfixed.pipe */ "./src/app/pipes/columnfixed.pipe.ts");
-/* harmony import */ var _pipes_language_language_pipe__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./pipes/language/language.pipe */ "./src/app/pipes/language/language.pipe.ts");
-/* harmony import */ var _events_events__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./events/events */ "./src/app/events/events.ts");
-/* harmony import */ var _pipes_events_eventShow_pipe__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./pipes/events/eventShow.pipe */ "./src/app/pipes/events/eventShow.pipe.ts");
-/* harmony import */ var _comparer_comparer__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./comparer/comparer */ "./src/app/comparer/comparer.ts");
-/* harmony import */ var _pipes_MapToIterable_pipe__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./pipes/MapToIterable.pipe */ "./src/app/pipes/MapToIterable.pipe.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/esm5/forms.js");
+/* harmony import */ var _services_settingsService__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./services/settingsService */ "./src/app/services/settingsService.ts");
+/* harmony import */ var _services_gildenService__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./services/gildenService */ "./src/app/services/gildenService.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/esm5/http.js");
+/* harmony import */ var _squadSearch_squadsearch__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./squadSearch/squadsearch */ "./src/app/squadSearch/squadsearch.ts");
+/* harmony import */ var _TBPlatoons_platoontool__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./TBPlatoons/platoontool */ "./src/app/TBPlatoons/platoontool.ts");
+/* harmony import */ var _RaidPlanner_raidplanner__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./RaidPlanner/raidplanner */ "./src/app/RaidPlanner/raidplanner.ts");
+/* harmony import */ var ngx_select_dropdown__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ngx-select-dropdown */ "./node_modules/ngx-select-dropdown/dist/index.js");
+/* harmony import */ var ng_lz_string__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ng-lz-string */ "./node_modules/ng-lz-string/ng-lz-string.umd.js");
+/* harmony import */ var ng_lz_string__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(ng_lz_string__WEBPACK_IMPORTED_MODULE_16__);
+/* harmony import */ var _arenaTeams_arenaTeams__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./arenaTeams/arenaTeams */ "./src/app/arenaTeams/arenaTeams.ts");
+/* harmony import */ var _pipes_charpipe_gearLink_pipe__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./pipes/charpipe/gearLink.pipe */ "./src/app/pipes/charpipe/gearLink.pipe.ts");
+/* harmony import */ var _pipes_charpipe_charName_pipe__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./pipes/charpipe/charName.pipe */ "./src/app/pipes/charpipe/charName.pipe.ts");
+/* harmony import */ var _pipes_charpipe_charLink_pipe__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./pipes/charpipe/charLink.pipe */ "./src/app/pipes/charpipe/charLink.pipe.ts");
+/* harmony import */ var _pipes_charpipe_charGear_pipe__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./pipes/charpipe/charGear.pipe */ "./src/app/pipes/charpipe/charGear.pipe.ts");
+/* harmony import */ var _pipes_modpipes_ModSetName_pipe__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./pipes/modpipes/ModSetName.pipe */ "./src/app/pipes/modpipes/ModSetName.pipe.ts");
+/* harmony import */ var _pipes_modpipes_ModStatName_pipe__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./pipes/modpipes/ModStatName.pipe */ "./src/app/pipes/modpipes/ModStatName.pipe.ts");
+/* harmony import */ var _pipes_modpipes_ModStatValue_pipe__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./pipes/modpipes/ModStatValue.pipe */ "./src/app/pipes/modpipes/ModStatValue.pipe.ts");
+/* harmony import */ var _pipes_modpipes_ModSlotName_pipe__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./pipes/modpipes/ModSlotName.pipe */ "./src/app/pipes/modpipes/ModSlotName.pipe.ts");
+/* harmony import */ var _newCharSearch_newCharSearch__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./newCharSearch/newCharSearch */ "./src/app/newCharSearch/newCharSearch.ts");
+/* harmony import */ var devextreme_angular__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! devextreme-angular */ "./node_modules/devextreme-angular/index.js");
+/* harmony import */ var devextreme_angular__WEBPACK_IMPORTED_MODULE_27___default = /*#__PURE__*/__webpack_require__.n(devextreme_angular__WEBPACK_IMPORTED_MODULE_27__);
+/* harmony import */ var _pipes_columnwidth_pipe__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./pipes/columnwidth.pipe */ "./src/app/pipes/columnwidth.pipe.ts");
+/* harmony import */ var _pipes_columntype_pipe__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./pipes/columntype.pipe */ "./src/app/pipes/columntype.pipe.ts");
+/* harmony import */ var _pipes_columnfixed_pipe__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./pipes/columnfixed.pipe */ "./src/app/pipes/columnfixed.pipe.ts");
+/* harmony import */ var _pipes_language_language_pipe__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./pipes/language/language.pipe */ "./src/app/pipes/language/language.pipe.ts");
+/* harmony import */ var _events_events__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./events/events */ "./src/app/events/events.ts");
+/* harmony import */ var _pipes_events_eventShow_pipe__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./pipes/events/eventShow.pipe */ "./src/app/pipes/events/eventShow.pipe.ts");
+/* harmony import */ var _comparer_comparer__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./comparer/comparer */ "./src/app/comparer/comparer.ts");
+/* harmony import */ var _pipes_MapToIterable_pipe__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./pipes/MapToIterable.pipe */ "./src/app/pipes/MapToIterable.pipe.ts");
+/* harmony import */ var _pipes_charpipe_squadPower_pipe__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./pipes/charpipe/squadPower.pipe */ "./src/app/pipes/charpipe/squadPower.pipe.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1177,45 +1171,45 @@ var AppModule = /** @class */ (function () {
                 _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"],
                 _home_home__WEBPACK_IMPORTED_MODULE_6__["HomeComponent"],
                 _settings_setting__WEBPACK_IMPORTED_MODULE_7__["SettingComponent"],
-                _charSearch_charsearch__WEBPACK_IMPORTED_MODULE_8__["CharSearchComponent"],
-                _squadSearch_squadsearch__WEBPACK_IMPORTED_MODULE_13__["SquadSearchComponent"],
-                _TBPlatoons_platoontool__WEBPACK_IMPORTED_MODULE_14__["TBPlatoonComponent"],
-                _RaidPlanner_raidplanner__WEBPACK_IMPORTED_MODULE_15__["RaidPlannerComponent"],
-                _arenaTeams_arenaTeams__WEBPACK_IMPORTED_MODULE_18__["ArenaTeamsComponent"],
-                _newCharSearch_newCharSearch__WEBPACK_IMPORTED_MODULE_27__["newCharSearchComponent"],
-                _events_events__WEBPACK_IMPORTED_MODULE_33__["EventsComponent"],
-                _comparer_comparer__WEBPACK_IMPORTED_MODULE_35__["ComparerComponent"],
+                _squadSearch_squadsearch__WEBPACK_IMPORTED_MODULE_12__["SquadSearchComponent"],
+                _TBPlatoons_platoontool__WEBPACK_IMPORTED_MODULE_13__["TBPlatoonComponent"],
+                _RaidPlanner_raidplanner__WEBPACK_IMPORTED_MODULE_14__["RaidPlannerComponent"],
+                _arenaTeams_arenaTeams__WEBPACK_IMPORTED_MODULE_17__["ArenaTeamsComponent"],
+                _newCharSearch_newCharSearch__WEBPACK_IMPORTED_MODULE_26__["newCharSearchComponent"],
+                _events_events__WEBPACK_IMPORTED_MODULE_32__["EventsComponent"],
+                _comparer_comparer__WEBPACK_IMPORTED_MODULE_34__["ComparerComponent"],
                 //Pipes here
-                _pipes_charpipe_gearLink_pipe__WEBPACK_IMPORTED_MODULE_19__["gearLinkPipe"],
-                _pipes_charpipe_charName_pipe__WEBPACK_IMPORTED_MODULE_20__["CharNamePipe"],
-                _pipes_charpipe_charLink_pipe__WEBPACK_IMPORTED_MODULE_21__["CharImageLinkPipe"],
-                _pipes_charpipe_charGear_pipe__WEBPACK_IMPORTED_MODULE_22__["CharGearPipe"],
-                _pipes_modpipes_ModSetName_pipe__WEBPACK_IMPORTED_MODULE_23__["ModSetNamePipe"],
-                _pipes_modpipes_ModStatName_pipe__WEBPACK_IMPORTED_MODULE_24__["ModStatNamePipe"],
-                _pipes_modpipes_ModStatValue_pipe__WEBPACK_IMPORTED_MODULE_25__["ModStatValuePipe"],
-                _pipes_modpipes_ModSlotName_pipe__WEBPACK_IMPORTED_MODULE_26__["ModSlotNamePipe"],
-                _pipes_columnwidth_pipe__WEBPACK_IMPORTED_MODULE_29__["ColumnWidthPipe"],
-                _pipes_columntype_pipe__WEBPACK_IMPORTED_MODULE_30__["ColumnTypePipe"],
-                _pipes_columnfixed_pipe__WEBPACK_IMPORTED_MODULE_31__["ColumnFixedPipe"],
-                _pipes_language_language_pipe__WEBPACK_IMPORTED_MODULE_32__["LanguagePipe"],
-                _pipes_events_eventShow_pipe__WEBPACK_IMPORTED_MODULE_34__["EventShowPipe"],
-                _pipes_MapToIterable_pipe__WEBPACK_IMPORTED_MODULE_36__["MapToIterable"]
+                _pipes_charpipe_gearLink_pipe__WEBPACK_IMPORTED_MODULE_18__["gearLinkPipe"],
+                _pipes_charpipe_charName_pipe__WEBPACK_IMPORTED_MODULE_19__["CharNamePipe"],
+                _pipes_charpipe_charLink_pipe__WEBPACK_IMPORTED_MODULE_20__["CharImageLinkPipe"],
+                _pipes_charpipe_charGear_pipe__WEBPACK_IMPORTED_MODULE_21__["CharGearPipe"],
+                _pipes_modpipes_ModSetName_pipe__WEBPACK_IMPORTED_MODULE_22__["ModSetNamePipe"],
+                _pipes_modpipes_ModStatName_pipe__WEBPACK_IMPORTED_MODULE_23__["ModStatNamePipe"],
+                _pipes_modpipes_ModStatValue_pipe__WEBPACK_IMPORTED_MODULE_24__["ModStatValuePipe"],
+                _pipes_modpipes_ModSlotName_pipe__WEBPACK_IMPORTED_MODULE_25__["ModSlotNamePipe"],
+                _pipes_columnwidth_pipe__WEBPACK_IMPORTED_MODULE_28__["ColumnWidthPipe"],
+                _pipes_columntype_pipe__WEBPACK_IMPORTED_MODULE_29__["ColumnTypePipe"],
+                _pipes_columnfixed_pipe__WEBPACK_IMPORTED_MODULE_30__["ColumnFixedPipe"],
+                _pipes_language_language_pipe__WEBPACK_IMPORTED_MODULE_31__["LanguagePipe"],
+                _pipes_events_eventShow_pipe__WEBPACK_IMPORTED_MODULE_33__["EventShowPipe"],
+                _pipes_charpipe_squadPower_pipe__WEBPACK_IMPORTED_MODULE_36__["SquadPowerPipe"],
+                _pipes_MapToIterable_pipe__WEBPACK_IMPORTED_MODULE_35__["MapToIterable"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
                 _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"],
                 _angular_service_worker__WEBPACK_IMPORTED_MODULE_3__["ServiceWorkerModule"].register('/ngsw-worker.js', { enabled: _environments_environment__WEBPACK_IMPORTED_MODULE_5__["environment"].production }),
-                _angular_forms__WEBPACK_IMPORTED_MODULE_9__["FormsModule"],
-                _angular_forms__WEBPACK_IMPORTED_MODULE_9__["ReactiveFormsModule"],
-                _angular_common_http__WEBPACK_IMPORTED_MODULE_12__["HttpClientModule"],
-                _angular_common_http__WEBPACK_IMPORTED_MODULE_12__["HttpClientJsonpModule"],
-                ngx_select_dropdown__WEBPACK_IMPORTED_MODULE_16__["SelectDropDownModule"],
-                ng_lz_string__WEBPACK_IMPORTED_MODULE_17__["LZStringModule"],
-                devextreme_angular__WEBPACK_IMPORTED_MODULE_28__["DxDataGridModule"],
-                devextreme_angular__WEBPACK_IMPORTED_MODULE_28__["DxTextAreaModule"],
-                devextreme_angular__WEBPACK_IMPORTED_MODULE_28__["DxSelectBoxModule"]
+                _angular_forms__WEBPACK_IMPORTED_MODULE_8__["FormsModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_8__["ReactiveFormsModule"],
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_11__["HttpClientModule"],
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_11__["HttpClientJsonpModule"],
+                ngx_select_dropdown__WEBPACK_IMPORTED_MODULE_15__["SelectDropDownModule"],
+                ng_lz_string__WEBPACK_IMPORTED_MODULE_16__["LZStringModule"],
+                devextreme_angular__WEBPACK_IMPORTED_MODULE_27__["DxDataGridModule"],
+                devextreme_angular__WEBPACK_IMPORTED_MODULE_27__["DxTextAreaModule"],
+                devextreme_angular__WEBPACK_IMPORTED_MODULE_27__["DxSelectBoxModule"]
             ],
-            providers: [_services_settingsService__WEBPACK_IMPORTED_MODULE_10__["SettingsService"], _services_gildenService__WEBPACK_IMPORTED_MODULE_11__["gildenService"], _angular_common_http__WEBPACK_IMPORTED_MODULE_12__["HttpClient"], ng_lz_string__WEBPACK_IMPORTED_MODULE_17__["LZStringService"]],
+            providers: [_services_settingsService__WEBPACK_IMPORTED_MODULE_9__["SettingsService"], _services_gildenService__WEBPACK_IMPORTED_MODULE_10__["gildenService"], _angular_common_http__WEBPACK_IMPORTED_MODULE_11__["HttpClient"], ng_lz_string__WEBPACK_IMPORTED_MODULE_16__["LZStringService"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
         })
     ], AppModule);
@@ -1296,112 +1290,6 @@ var ArenaTeamsComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/charSearch/charsearch.css":
-/*!*******************************************!*\
-  !*** ./src/app/charSearch/charsearch.css ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "input[type=text] {\r\n  width: 100%;\r\n  padding: 12px 20px;\r\n  margin: 8px 0;\r\n  box-sizing: border-box;\r\n}\r\n\r\n.parentOfImages {\r\n  position: relative;\r\n  top: -25px;\r\n  left: 0;\r\n}\r\n\r\n.charImage {\r\n  position: absolute;\r\n  z-index: -1;\r\n  top: 0px;\r\n  border-radius: 50%;\r\n  transform: scale(0.7, 0.7);\r\n  -ms-transform: scale(0.7, 0.7);\r\n  -webkit-transform: scale(0.7, 0.7);\r\n}\r\n\r\n.gearImage {\r\n  position: absolute;\r\n  top: 25px;\r\n  left: 25px;\r\n  z-index: 0;\r\n  transform: scale(1.2, 1.2);\r\n  -ms-transform: scale(1.2, 1.2);\r\n  -webkit-transform: scale(1.2, 1.2);\r\n}\r\n\r\n.zeta1 {\r\n  position: absolute;\r\n  top: 15px;\r\n  left: 120px;\r\n  transform: scale(0.6, 0.6);\r\n  -ms-transform: scale(0.6, 0.6);\r\n  -webkit-transform: scale(0.6, 0.6);\r\n  z-index: 3;\r\n}\r\n\r\n.zeta2 {\r\n  position: absolute;\r\n  top: 35px;\r\n  left: 120px;\r\n  transform: scale(0.6, 0.6);\r\n  -ms-transform: scale(0.6, 0.6);\r\n  -webkit-transform: scale(0.6, 0.6);\r\n  z-index: 3;\r\n}\r\n\r\n.zeta3 {\r\n  position: absolute;\r\n  top: 55px;\r\n  left: 120px;\r\n  transform: scale(0.6, 0.6);\r\n  -ms-transform: scale(0.6, 0.6);\r\n  -webkit-transform: scale(0.6, 0.6);\r\n  z-index: 3;\r\n}\r\n\r\n.char-level {\r\n  color: #fff;\r\n  background-color: #264257;\r\n  border: 2px solid #fff;\r\n  text-align: center;\r\n  border-radius: 100%/130% 130% 15px 15px;\r\n  position: absolute;\r\n  left: 70px;\r\n  top: 78px;\r\n  z-index: 3;\r\n  width: 30px;\r\n  padding: 0 5px;\r\n}\r\n\r\n.char-gear-level {\r\n  color: #fff;\r\n  background-color: #006600;\r\n  border: 2px solid #fff;\r\n  text-align: center;\r\n  border-radius: 100%/130% 130% 15px 15px;\r\n  position: absolute;\r\n  left: 43px;\r\n  top: 90px;\r\n  z-index: 3;\r\n  width: 30px;\r\n  padding: 0 5px;\r\n}\r\n\r\nprogress {\r\n  background-color: #f3f3f3;\r\n  border: 0;\r\n  top: 115px;\r\n  position: absolute;\r\n  height: 18px;\r\n  border-radius: 9px;\r\n}\r\n"
-
-/***/ }),
-
-/***/ "./src/app/charSearch/charsearch.html":
-/*!********************************************!*\
-  !*** ./src/app/charSearch/charsearch.html ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<input type=\"text\" placeholder=\"{{'CharNamePlaceHolder'| language}}\" [(ngModel)]=\"charToSearch\" (ngModelChange)=\"getCharsFromGildenInfos()\">\r\n\r\n<div *ngFor=\"let char of charsFromGildenInfos\" class=\"charNow\">\r\n  <fieldset style=\"height: 115px;\">\r\n    <legend>{{char.Name}} {{'of'| language}} {{char.Besitzer}}</legend>\r\n    <br />\r\n    <div class=\"parentOfImages\">\r\n      <img *ngIf=\"char.Sterne>0\" src=\"/assets/picture/star.png\">\r\n      <img *ngIf=\"char.Sterne<1\" src=\"/assets/picture/nostar.png\">\r\n      <img *ngIf=\"char.Sterne>1\" src=\"/assets/picture/star.png\">\r\n      <img *ngIf=\"char.Sterne<2\" src=\"/assets/picture/nostar.png\">\r\n      <img *ngIf=\"char.Sterne>2\" src=\"/assets/picture/star.png\">\r\n      <img *ngIf=\"char.Sterne<3\" src=\"/assets/picture/nostar.png\">\r\n      <img *ngIf=\"char.Sterne>3\" src=\"/assets/picture/star.png\">\r\n      <img *ngIf=\"char.Sterne<4\" src=\"/assets/picture/nostar.png\">\r\n      <img *ngIf=\"char.Sterne>4\" src=\"/assets/picture/star.png\">\r\n      <img *ngIf=\"char.Sterne<5\" src=\"/assets/picture/nostar.png\">\r\n      <img *ngIf=\"char.Sterne>5\" src=\"/assets/picture/star.png\">\r\n      <img *ngIf=\"char.Sterne<6\" src=\"/assets/picture/nostar.png\">\r\n      <img *ngIf=\"char.Sterne>6\" src=\"/assets/picture/star.png\">\r\n      <img *ngIf=\"char.Sterne<7\" src=\"/assets/picture/nostar.png\">\r\n\r\n      <img *ngIf=\"char.Zetas>=1\" src=\"/assets/picture/zeta.png\" class=\"zeta1\">\r\n      <img *ngIf=\"char.Zetas>=2\" src=\"/assets/picture/zeta.png\" class=\"zeta2\">\r\n      <img *ngIf=\"char.Zetas>=3\" src=\"/assets/picture/zeta.png\" class=\"zeta3\">\r\n\r\n      <div class=\"parentOfImages\">\r\n        <img class=\"charImage\" src=\"/assets/picture/{{char.imageUrl}}\" alt=\"{{char.Name}}\">\r\n        <img class=\"gearImage\" src=\"/assets/GearPNG/gear-icon-g{{char.gearLevel}}.png\" alt=\"{{char.Name}}\">\r\n        <span class=\"char-level\">{{char.Level}}</span>\r\n        <span class=\"char-gear-level\">{{formatGearLevel(char.gearLevel)}}</span>\r\n      </div>\r\n      </div>\r\n      </fieldset>\r\n</div>\r\n"
-
-/***/ }),
-
-/***/ "./src/app/charSearch/charsearch.ts":
-/*!******************************************!*\
-  !*** ./src/app/charSearch/charsearch.ts ***!
-  \******************************************/
-/*! exports provided: CharSearchComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CharSearchComponent", function() { return CharSearchComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var _services_gildenService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/gildenService */ "./src/app/services/gildenService.ts");
-/* harmony import */ var _services_settingsService__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/settingsService */ "./src/app/services/settingsService.ts");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var CharSearchComponent = /** @class */ (function () {
-    function CharSearchComponent(settingsService, gildenService) {
-        this.settingsService = settingsService;
-        this.gildenService = gildenService;
-        this.charToSearch = "";
-    }
-    CharSearchComponent.prototype.getCharsFromGildenInfos = function () {
-        this.charsFromGildenInfos = this.gildenService.findMappedCharByName(this.charToSearch);
-    };
-    CharSearchComponent.prototype.roundNumber = function (number) {
-        return Math.round(number);
-    };
-    CharSearchComponent.prototype.formatGearLevel = function (level) {
-        switch (level) {
-            case 0:
-                return '0';
-            case 1:
-                return 'I';
-            case 2:
-                return 'II';
-            case 3:
-                return 'III';
-            case 4:
-                return 'IV';
-            case 5:
-                return 'V';
-            case 6:
-                return 'VI';
-            case 7:
-                return 'VII';
-            case 8:
-                return 'VIII';
-            case 9:
-                return 'IX';
-            case 10:
-                return 'X';
-            case 11:
-                return 'XI';
-            case 12:
-                return 'XII';
-            default:
-                return 'Unknown';
-        }
-    };
-    CharSearchComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'charsearch',
-            template: __webpack_require__(/*! ./charsearch.html */ "./src/app/charSearch/charsearch.html"),
-            styles: [__webpack_require__(/*! ./charsearch.css */ "./src/app/charSearch/charsearch.css")]
-        }),
-        __metadata("design:paramtypes", [_services_settingsService__WEBPACK_IMPORTED_MODULE_2__["SettingsService"], _services_gildenService__WEBPACK_IMPORTED_MODULE_1__["gildenService"]])
-    ], CharSearchComponent);
-    return CharSearchComponent;
-}());
-
-
-
-/***/ }),
-
 /***/ "./src/app/comparer/comparer.css":
 /*!***************************************!*\
   !*** ./src/app/comparer/comparer.css ***!
@@ -1456,6 +1344,7 @@ var ComparerComponent = /** @class */ (function () {
         this.urlToBaseApi = "https://crinolo-swgoh.glitch.me/baseStats/api/";
     }
     ComparerComponent.prototype.onValueChanged = function (charSelectBox, MemberSelectBoxA, MemberSelectBoxB) {
+        console.log('value changed');
         if (MemberSelectBoxA.value != null && MemberSelectBoxB.value != null && charSelectBox.value != null && MemberSelectBoxA.value.name != MemberSelectBoxB.value.name) {
             var charA = this.GildenService.getCharByNameAndMemberExact(charSelectBox.value.name, MemberSelectBoxA.value);
             var charB = this.GildenService.getCharByNameAndMemberExact(charSelectBox.value.name, MemberSelectBoxB.value);
@@ -1495,6 +1384,7 @@ var ComparerComponent = /** @class */ (function () {
     };
     ComparerComponent.prototype.calculateTotalValues = function (AorB, char) {
         var charData = null;
+        console.log(AorB);
         if (AorB == "A") {
             charData = this.charCompletedA;
         }
@@ -1503,17 +1393,21 @@ var ComparerComponent = /** @class */ (function () {
         }
         var modValuesTotal = {};
         var modSetsTotal = {};
+        console.log("mods", char.mods);
         for (var i = 0; i < char.mods.length; i++) {
-            var primaryType = this.getModStatName(char.mods[i].primaryBonusType);
-            var primaryBonusValue = this.getModStatValue(char.mods[i].primaryBonusValue, this.getModStatName(char.mods[i].primaryBonusType));
-            var secondaryType_1 = this.getModStatName(char.mods[i].secondaryType_1);
-            var secondaryType_2 = this.getModStatName(char.mods[i].secondaryType_2);
-            var secondaryType_3 = this.getModStatName(char.mods[i].secondaryType_3);
-            var secondaryType_4 = this.getModStatName(char.mods[i].secondaryType_4);
-            var secondaryValue_1 = this.getModStatValue(char.mods[i].secondaryValue_1, this.getModStatName(char.mods[i].secondaryType_1));
-            var secondaryValue_2 = this.getModStatValue(char.mods[i].secondaryValue_2, this.getModStatName(char.mods[i].secondaryType_2));
-            var secondaryValue_3 = this.getModStatValue(char.mods[i].secondaryValue_3, this.getModStatName(char.mods[i].secondaryType_3));
-            var secondaryValue_4 = this.getModStatValue(char.mods[i].secondaryValue_4, this.getModStatName(char.mods[i].secondaryType_4));
+            var primaryType = char.mods[i].primaryBonusType;
+            var primaryBonusValue = Number(char.mods[i].primaryBonusValue.replace("%", "").replace("+", ""));
+            var secondaryType_1 = char.mods[i].secondaryType_1;
+            var secondaryType_2 = char.mods[i].secondaryType_2;
+            var secondaryType_3 = char.mods[i].secondaryType_3;
+            var secondaryType_4 = char.mods[i].secondaryType_4;
+            var secondaryValue_1 = Number(char.mods[i].secondaryValue_1.replace("%", "").replace("+", ""));
+            var secondaryValue_2 = Number(char.mods[i].secondaryValue_2.replace("%", "").replace("+", ""));
+            ;
+            var secondaryValue_3 = Number(char.mods[i].secondaryValue_3.replace("%", "").replace("+", ""));
+            ;
+            var secondaryValue_4 = Number(char.mods[i].secondaryValue_4.replace("%", "").replace("+", ""));
+            ;
             if (modValuesTotal[primaryType] == null)
                 modValuesTotal[primaryType] = 0;
             if (modValuesTotal[secondaryType_1] == null)
@@ -1536,24 +1430,30 @@ var ComparerComponent = /** @class */ (function () {
                 modSetsTotal[char.mods[i].setId] += 1;
             }
         }
-        console.log(modValuesTotal);
-        for (var key in modSetsTotal) {
-            var ModSetNow = this.GildenService.ModSets[key];
+        console.log("modSetsTotal", modSetsTotal);
+        console.log("modValuesTotal", modValuesTotal);
+        var _loop_1 = function (key) {
+            ModSetNow = this_1.GildenService.ModSets.find(function (modset) { return modset.id == key; });
             if (ModSetNow != null) {
-                if (ModSetNow.count <= modSetsTotal[key]) {
-                    if (charData.total[ModSetNow.name] != null) {
-                        console.log(charData.total[ModSetNow.name]);
-                        charData.total[ModSetNow.name] = Number(charData.total[ModSetNow.name]) + ((((Number(ModSetNow.bonus.statValueDecimal)) / 100) * 2) / 100) * Number(charData.base[ModSetNow.name]);
-                        console.log(charData.total[ModSetNow.name]);
+                if (ModSetNow.setCount <= modSetsTotal[key]) {
+                    if (charData.total[this_1.mapKeyOfModStat(ModSetNow.name)] != null) {
+                        console.log(charData.total[this_1.mapKeyOfModStat(ModSetNow.name)]);
+                        charData.total[this_1.mapKeyOfModStat(ModSetNow.name)] = Number(charData.total[this_1.mapKeyOfModStat(ModSetNow.name)]) + ((((Number(ModSetNow.maxLevelBonus.stat.statValueDecimal)) / 100) * 2) / 100) * Number(charData.base[this_1.mapKeyOfModStat(ModSetNow.name)]);
+                        console.log(charData.total[this_1.mapKeyOfModStat(ModSetNow.name)]);
                     }
                     else {
                         console.log("cant calculate modset ", ModSetNow);
                     }
                 }
             }
+        };
+        var this_1 = this, ModSetNow;
+        for (var key in modSetsTotal) {
+            _loop_1(key);
         }
         for (var key in modValuesTotal) {
             var value = modValuesTotal[key];
+            key = this.mapKeyOfModStat(key);
             if (key == 'None')
                 continue;
             if (key.indexOf('%') < 0) {
@@ -1570,6 +1470,10 @@ var ComparerComponent = /** @class */ (function () {
                             charData.total["Physical Critical Rating"] += value;
                             charData.total["Special Critical Rating"] += value;
                             break;
+                        case "Offense":
+                            charData.total["Physical Damage"] += value;
+                            charData.total["Special Damage"] += value;
+                            break;
                         default:
                             console.log("Konnte nicht berechnen : ", key, value.toString());
                             break;
@@ -1582,9 +1486,73 @@ var ComparerComponent = /** @class */ (function () {
                     charData.total[keyWithoutPercent] += (charData.base[keyWithoutPercent] * (value / 100));
                 }
                 else {
-                    console.log("Konnte nicht berechnen : ", key, value.toString());
+                    switch (keyWithoutPercent) {
+                        case "Offense":
+                            charData.total["Physical Damage"] = Number(charData.total["Physical Damage"]) + (charData.base["Physical Damage"] * (value / 100));
+                            charData.total["Special Damage"] = Number(charData.total["Special Damage"]) + (charData.base["Special Damage"] * (value / 100));
+                            break;
+                        default:
+                            console.log("Konnte nicht berechnen : ", key, value.toString());
+                            break;
+                    }
                 }
             }
+        }
+    };
+    ComparerComponent.prototype.mapKeyOfModStat = function (value) {
+        switch (value) {
+            case "UNITSTATOFFENSEPERCENTADDITIVE":
+                return "Offense %";
+            case "UNITSTATOFFENSE":
+                return "Offense";
+            case "UNITSTATACCURACY":
+                return "Accuracy";
+            case "UNITSTATSPEED":
+                return "Speed";
+            case "UNITSTATRESISTANCE":
+                return "Resistance";
+            case "UNITSTATMAXHEALTH":
+                return "Health";
+            case "UNITSTATMAXHEALTHPERCENTADDITIVE":
+                return "Health %";
+            case "UNITSTATDEFENSE":
+                return "Health";
+            case "UNITSTATMAXHEALTH":
+                return "Defense";
+            case "UNITSTATDEFENSEPERCENTADDITIVE":
+                return "Defense %";
+            case "UNITSTATCRITICALCHANCEPERCENTADDITIVE":
+                return "Critical Chance";
+            case "UNITSTATMAXSHIELDPERCENTADDITIVE":
+                return "Protection %";
+            case "UNITSTATCRITICALDAMAGE":
+                return "Critical Damage";
+            case "UNITSTATMAXSHIELD":
+                return "Protection";
+            case "UNITSTATEVASIONNEGATEPERCENTADDITIVE":
+                return "Evasion %";
+            case "UNITSTATCRITICALNEGATECHANCEPERCENTADDITIVE":
+                return "Critical Avoidance %";
+            case "STATMODSETBONUS_SETBONUSSTAT_RESISTANCE_NAME":
+                return "Critical";
+            case "UNITSTATCRITICALNEGATECHANCEPERCENTADDITIVE":
+                return "Resistance";
+            case "STATMODSETBONUS_SETBONUSSTAT_OFFENSEPERCENTADDITIVE_NAME":
+                return "Offense";
+            case "STATMODSETBONUS_SETBONUSSTAT_DEFENSEPERCENTADDITIVE_NAME":
+                return "Defense";
+            case "STATMODSETBONUS_SETBONUSSTAT_MAXHEALTHPERCENTADDITIVE_NAME":
+                return "Health";
+            case "STATMODSETBONUS_SETBONUSSTAT_ACCURACY_NAME":
+                return "Accuracy";
+            case "STATMODSETBONUS_SETBONUSSTAT_SPEEDPERCENTADDITIVE_NAME":
+                return "Speed";
+            case "STATMODSETBONUS_SETBONUSSTAT_CRITICALCHANCEPERCENTADDITIVE_NAME":
+                return "Critical Chance";
+            case "STATMODSETBONUS_SETBONUSSTAT_CRITICALDAMAGE_NAME":
+                return "Critical Damage";
+            default:
+                return value;
         }
     };
     ComparerComponent.prototype.getModStatName = function (value) {
@@ -1594,7 +1562,8 @@ var ComparerComponent = /** @class */ (function () {
         }
         return value.toString();
     };
-    ComparerComponent.prototype.getModStatValue = function (value, modStatName) {
+    ComparerComponent.prototype.getModStatValue = function (valueAsString, modStatName) {
+        var value = Number(valueAsString.replace("%", "").replace("+", ""));
         switch (modStatName) {
             case "Speed":
                 return (value / 100000000);
@@ -1663,7 +1632,7 @@ module.exports = "input[type=text] {\r\n  width: 100%;\r\n  padding: 12px 20px;\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"GildenService.SWGOHEvents\">\r\n  <div *ngFor=\"let event of GildenService.SWGOHEvents\">\r\n    <fieldset *ngIf=\"(event.id | eventShow)\" style=\"width:100%\">\r\n      <legend>\r\n        <span *ngIf=\"event.id == 'EVENT_TRAINING_DROID_SMUGGLING' || event.id == 'EVENT_CREDIT_HEIST' || event.type == 3\" style=\"color:#0000ff\">\r\n          {{event.name}}\r\n        </span>\r\n        <span *ngIf=\"event.id != 'EVENT_TRAINING_DROID_SMUGGLING' && event.id != 'EVENT_CREDIT_HEIST' && event.type != 3\">\r\n          {{event.name}}\r\n        </span>\r\n      </legend>\r\n        Desc: {{event.desc}} <br />\r\n        Start: {{event.schedule[0].start | date : 'dd.MM.yyyy HH:mm'}} <br />\r\n        End: {{event.schedule[0].end | date : 'dd.MM.yyyy HH:mm'}} <br />\r\n\r\n</fieldset>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div *ngIf=\"GildenService.SWGOHEvents\">\r\n  <div *ngFor=\"let event of GildenService.SWGOHEvents\">\r\n    <fieldset *ngIf=\"(event.id | eventShow)\" style=\"width:100%\">\r\n      <legend>\r\n        <span *ngIf=\"event.id == 'EVENT_TRAINING_DROID_SMUGGLING' || event.id == 'EVENT_CREDIT_HEIST_GETAWAY_V2' || event.id == 'EVENT_GALACTIC_BOUNTY_01' || event.type == 3\" style=\"color:#0000ff\">\r\n          {{event.name}}\r\n        </span>\r\n        <span *ngIf=\"event.id != 'EVENT_TRAINING_DROID_SMUGGLING' && event.id != 'EVENT_CREDIT_HEIST_GETAWAY_V2' && event.id != 'EVENT_GALACTIC_BOUNTY_01' && event.type != 3\">\r\n          {{event.name}}\r\n        </span>\r\n      </legend>\r\n        Desc: {{event.desc}} <br />\r\n        Start: {{event.schedule[0].start | date : 'dd.MM.yyyy HH:mm'}} <br />\r\n        End: {{event.schedule[0].end | date : 'dd.MM.yyyy HH:mm'}} <br />\r\n\r\n</fieldset>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1807,7 +1776,7 @@ module.exports = "input[type=text] {\r\n  width: 100%;\r\n  padding: 12px 20px;\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<input type=\"text\" placeholder=\"{{'CharNamePlaceHolder'| language}}\" [(ngModel)]=\"charToSearch\" (ngModelChange)=\"searchCharaktere()\">\r\n\r\n<div *ngIf=\"charaktere\">\r\n  <fieldset *ngFor=\"let char of charaktere;let i = index\" class=\"maincharFieldset\">\r\n    <legend>{{char.besitzer}}</legend>\r\n    <div style=\"height:60px;\">\r\n      <img *ngIf=\"char.charakter.rarity>0\" src=\"/assets/picture/star.png\" class=\"sterne stern1\">\r\n      <img *ngIf=\"char.charakter.rarity<1\" src=\"/assets/picture/nostar.png\" class=\"sterne stern1\">\r\n      <img *ngIf=\"char.charakter.rarity>1\" src=\"/assets/picture/star.png\" class=\"sterne stern2\">\r\n      <img *ngIf=\"char.charakter.rarity<2\" src=\"/assets/picture/nostar.png\" class=\"sterne stern2\">\r\n      <img *ngIf=\"char.charakter.rarity>2\" src=\"/assets/picture/star.png\" class=\"sterne stern3\">\r\n      <img *ngIf=\"char.charakter.rarity<3\" src=\"/assets/picture/nostar.png\" class=\"sterne stern3\">\r\n      <img *ngIf=\"char.charakter.rarity>3\" src=\"/assets/picture/star.png\" class=\"sterne stern4\">\r\n      <img *ngIf=\"char.charakter.rarity<4\" src=\"/assets/picture/nostar.png\" class=\"sterne stern4\">\r\n      <img *ngIf=\"char.charakter.rarity>4\" src=\"/assets/picture/star.png\" class=\"sterne stern5\">\r\n      <img *ngIf=\"char.charakter.rarity<5\" src=\"/assets/picture/nostar.png\" class=\"sterne stern5\">\r\n      <img *ngIf=\"char.charakter.rarity>5\" src=\"/assets/picture/star.png\" class=\"sterne stern6\">\r\n      <img *ngIf=\"char.charakter.rarity<6\" src=\"/assets/picture/nostar.png\" class=\"sterne stern6\">\r\n      <img *ngIf=\"char.charakter.rarity>6\" src=\"/assets/picture/star.png\" class=\"sterne stern7\">\r\n      <img *ngIf=\"char.charakter.rarity<7\" src=\"/assets/picture/nostar.png\" class=\"sterne stern7\">\r\n\r\n      <img class=\"charImage\" [src]=\"char.charakter | charimagelink\" [alt]=\"char | charname\">\r\n      <img class=\"gearImage\" [src]=\"char.charakter | gearlink\" [alt]=\"char | charname\">\r\n      <span class=\"char-level\">{{char.charakter.level}}</span>\r\n      <span class=\"char-gear-level\">{{char.charakter | chargear}}</span>\r\n    </div>\r\n\r\n    <button (click)=\"showMods[i] = !showMods[i]\">{{'Show/Hide'| language}}</button>\r\n\r\n    <div *ngIf=\"showMods[i]\">\r\n      <fieldset *ngFor=\"let mod of char.charakter.mods\" style=\"position:relative; float:left;\">\r\n        <legend>{{(mod.setId | modsetname) | language}}-{{(mod.slot | modslotname) | language}} L:{{mod.level}} S:{{mod.pips}}</legend>\r\n        <div style=\"color:blue\">{{(mod.primaryBonusType | modstatname) | language}}: {{mod.primaryBonusValue | modstatvalue : (mod.primaryBonusType | modstatname)}}</div>\r\n        <div>{{(mod.secondaryType_1 | modstatname) | language}}: {{mod.secondaryValue_1 | modstatvalue : (mod.secondaryType_1 | modstatname)}}</div>\r\n        <div>{{(mod.secondaryType_2 | modstatname) | language}}: {{mod.secondaryValue_2 | modstatvalue : (mod.secondaryType_2 | modstatname)}}</div>\r\n        <div>{{(mod.secondaryType_3 | modstatname) | language}}: {{mod.secondaryValue_3 | modstatvalue : (mod.secondaryType_3 | modstatname)}}</div>\r\n        <div>{{(mod.secondaryType_4 | modstatname) | language}}: {{mod.secondaryValue_4 | modstatvalue : (mod.secondaryType_4 | modstatname)}}</div>\r\n      </fieldset>\r\n    </div>\r\n  </fieldset>\r\n</div>\r\n"
+module.exports = "<input type=\"text\" placeholder=\"{{'CharNamePlaceHolder'| language}}\" [(ngModel)]=\"charToSearch\" (ngModelChange)=\"searchCharaktere()\">\r\n\r\n<div *ngIf=\"charaktere\">\r\n  <fieldset *ngFor=\"let char of charaktere;let i = index\" class=\"maincharFieldset\">\r\n    <legend>{{char.besitzer}}</legend>\r\n    <div style=\"height:60px;\">\r\n      <img *ngIf=\"char.charakter.rarity>0\" src=\"/assets/picture/star.png\" class=\"sterne stern1\">\r\n      <img *ngIf=\"char.charakter.rarity<1\" src=\"/assets/picture/nostar.png\" class=\"sterne stern1\">\r\n      <img *ngIf=\"char.charakter.rarity>1\" src=\"/assets/picture/star.png\" class=\"sterne stern2\">\r\n      <img *ngIf=\"char.charakter.rarity<2\" src=\"/assets/picture/nostar.png\" class=\"sterne stern2\">\r\n      <img *ngIf=\"char.charakter.rarity>2\" src=\"/assets/picture/star.png\" class=\"sterne stern3\">\r\n      <img *ngIf=\"char.charakter.rarity<3\" src=\"/assets/picture/nostar.png\" class=\"sterne stern3\">\r\n      <img *ngIf=\"char.charakter.rarity>3\" src=\"/assets/picture/star.png\" class=\"sterne stern4\">\r\n      <img *ngIf=\"char.charakter.rarity<4\" src=\"/assets/picture/nostar.png\" class=\"sterne stern4\">\r\n      <img *ngIf=\"char.charakter.rarity>4\" src=\"/assets/picture/star.png\" class=\"sterne stern5\">\r\n      <img *ngIf=\"char.charakter.rarity<5\" src=\"/assets/picture/nostar.png\" class=\"sterne stern5\">\r\n      <img *ngIf=\"char.charakter.rarity>5\" src=\"/assets/picture/star.png\" class=\"sterne stern6\">\r\n      <img *ngIf=\"char.charakter.rarity<6\" src=\"/assets/picture/nostar.png\" class=\"sterne stern6\">\r\n      <img *ngIf=\"char.charakter.rarity>6\" src=\"/assets/picture/star.png\" class=\"sterne stern7\">\r\n      <img *ngIf=\"char.charakter.rarity<7\" src=\"/assets/picture/nostar.png\" class=\"sterne stern7\">\r\n\r\n      <img class=\"charImage\" [src]=\"char.charakter | charimagelink\" [alt]=\"char | charname\">\r\n      <img class=\"gearImage\" [src]=\"char.charakter | gearlink\" [alt]=\"char | charname\">\r\n      <span class=\"char-level\">{{char.charakter.level}}</span>\r\n      <span class=\"char-gear-level\">{{char.charakter | chargear}}</span>\r\n    </div>\r\n\r\n    <div>{{'Charpower' | language}}: {{char.charakter.gp}}</div>\r\n\r\n    <button (click)=\"showMods[i] = !showMods[i]\">{{'Show/Hide'| language}}</button>\r\n\r\n    <div *ngIf=\"showMods[i]\">\r\n      <fieldset *ngFor=\"let mod of char.charakter.mods\" style=\"position:relative; float:left;\">\r\n        <legend>{{(mod.setId | modsetname) | language}}-{{(mod.slot | modslotname) | language}} L:{{mod.level}} S:{{mod.pips}}</legend>\r\n        <div style=\"color:blue\">{{(mod.primaryBonusType | modstatname) | language}}: {{mod.primaryBonusValue | modstatvalue : (mod.primaryBonusType | modstatname)}}</div>\r\n        <div>{{(mod.secondaryType_1 | modstatname) | language}}: {{mod.secondaryValue_1 | modstatvalue : (mod.secondaryType_1 | modstatname)}}</div>\r\n        <div>{{(mod.secondaryType_2 | modstatname) | language}}: {{mod.secondaryValue_2 | modstatvalue : (mod.secondaryType_2 | modstatname)}}</div>\r\n        <div>{{(mod.secondaryType_3 | modstatname) | language}}: {{mod.secondaryValue_3 | modstatvalue : (mod.secondaryType_3 | modstatname)}}</div>\r\n        <div>{{(mod.secondaryType_4 | modstatname) | language}}: {{mod.secondaryValue_4 | modstatvalue : (mod.secondaryType_4 | modstatname)}}</div>\r\n      </fieldset>\r\n    </div>\r\n  </fieldset>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -2003,7 +1972,7 @@ var CharImageLinkPipe = /** @class */ (function () {
         this.gildenservice = GildenService;
     }
     CharImageLinkPipe.prototype.transform = function (value) {
-        var charInfoNow = this.gildenservice.charInfos.find(function (info) { return info.base_id == value.name; });
+        var charInfoNow = this.gildenservice.charInfos.find(function (info) { return info.base_id == value.defId; });
         if (charInfoNow != null) {
             if (charInfoNow.image.indexOf('/tex.') > 0) {
                 return "/assets/picture/" + charInfoNow.image.substr(charInfoNow.image.indexOf('/tex.') + 5, (charInfoNow.image.length - charInfoNow.image.indexOf('/tex.')) - 5);
@@ -2052,7 +2021,7 @@ var CharNamePipe = /** @class */ (function () {
         this.gildenservice = GildenService;
     }
     CharNamePipe.prototype.transform = function (value) {
-        var charInfoNow = this.gildenservice.charInfos.find(function (info) { return info.base_id == value.name; });
+        var charInfoNow = this.gildenservice.charInfos.find(function (info) { return info.base_id == value.defId; });
         if (charInfoNow != null)
             return charInfoNow.name;
         return "name";
@@ -2100,6 +2069,49 @@ var gearLinkPipe = /** @class */ (function () {
         })
     ], gearLinkPipe);
     return gearLinkPipe;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/pipes/charpipe/squadPower.pipe.ts":
+/*!***************************************************!*\
+  !*** ./src/app/pipes/charpipe/squadPower.pipe.ts ***!
+  \***************************************************/
+/*! exports provided: SquadPowerPipe */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SquadPowerPipe", function() { return SquadPowerPipe; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var SquadPowerPipe = /** @class */ (function () {
+    function SquadPowerPipe() {
+    }
+    SquadPowerPipe.prototype.transform = function (value) {
+        var tempPower = 0;
+        for (var i = 0; i < value.length; i++)
+            tempPower += value[i].Power;
+        return tempPower;
+    };
+    SquadPowerPipe = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Pipe"])({
+            name: 'squadpower'
+        }),
+        __metadata("design:paramtypes", [])
+    ], SquadPowerPipe);
+    return SquadPowerPipe;
 }());
 
 
@@ -2358,6 +2370,30 @@ var LanguagePipe = /** @class */ (function () {
             "Physical Critical %": "Kritische Trefferchance (Pysisch)",
             "Special Critical %": "Kritische Trefferchance (Special)",
             "Tactics": "Taktik",
+            "Charpower": "Stärke",
+            "STATMODSETBONUS_SETBONUSSTAT_RESISTANCE_NAME": "Zähigkeit",
+            "STATMODSETBONUS_SETBONUSSTAT_MAXHEALTHPERCENTADDITIVE_NAME": "Gesundheit",
+            "STATMODSETBONUS_SETBONUSSTAT_OFFENSEPERCENTADDITIVE_NAME": "Angriff",
+            "STATMODSETBONUS_SETBONUSSTAT_DEFENSEPERCENTADDITIVE_NAME": "Verteidigung",
+            "STATMODSETBONUS_SETBONUSSTAT_ACCURACY_NAME": "Genauigkeit",
+            "STATMODSETBONUS_SETBONUSSTAT_SPEEDPERCENTADDITIVE_NAME": "Tempo",
+            "STATMODSETBONUS_SETBONUSSTAT_CRITICALCHANCEPERCENTADDITIVE_NAME": "Krit. Chance",
+            "STATMODSETBONUS_SETBONUSSTAT_CRITICALDAMAGE_NAME": "Krit. Schaden",
+            "UNITSTATOFFENSEPERCENTADDITIVE": "Angriff %",
+            "UNITSTATOFFENSE": "Angriff",
+            "UNITSTATACCURACY": "Genauigkeit",
+            "UNITSTATSPEED": "Tempo",
+            "UNITSTATRESISTANCE": "Zähigkeit",
+            "UNITSTATMAXHEALTH": "Gesundheit",
+            "UNITSTATMAXHEALTHPERCENTADDITIVE": "Gesundheit %",
+            "UNITSTATDEFENSE": "Verteidigung",
+            "UNITSTATDEFENSEPERCENTADDITIVE": "Verteidigung %",
+            "UNITSTATCRITICALCHANCEPERCENTADDITIVE": "Krit. Chance",
+            "UNITSTATMAXSHIELDPERCENTADDITIVE": "Schutz %",
+            "UNITSTATCRITICALDAMAGE": "Krit. Schaden",
+            "UNITSTATMAXSHIELD": "Schutz",
+            "UNITSTATEVASIONNEGATEPERCENTADDITIVE": "Ausweichen %",
+            "UNITSTATCRITICALNEGATECHANCEPERCENTADDITIVE": "Krit. Ausweichen %",
         };
         this.languageENG = {
             "Settings": "Settings",
@@ -2427,6 +2463,30 @@ var LanguagePipe = /** @class */ (function () {
             "Resistance %": "Resistance %",
             "Physical Critical %": "Physical Critical %",
             "Special Critical %": "Special Critical %",
+            "Charpower": "Power",
+            "STATMODSETBONUS_SETBONUSSTAT_RESISTANCE_NAME": "Resistance",
+            "STATMODSETBONUS_SETBONUSSTAT_OFFENSEPERCENTADDITIVE_NAME": "Offense",
+            "STATMODSETBONUS_SETBONUSSTAT_DEFENSEPERCENTADDITIVE_NAME": "Defense",
+            "STATMODSETBONUS_SETBONUSSTAT_MAXHEALTHPERCENTADDITIVE_NAME": "Health",
+            "STATMODSETBONUS_SETBONUSSTAT_ACCURACY_NAME": "Accuracy",
+            "STATMODSETBONUS_SETBONUSSTAT_SPEEDPERCENTADDITIVE_NAME": "Speed",
+            "STATMODSETBONUS_SETBONUSSTAT_CRITICALCHANCEPERCENTADDITIVE_NAME": "Critical Chance",
+            "STATMODSETBONUS_SETBONUSSTAT_CRITICALDAMAGE_NAME": "Critical Damage",
+            "UNITSTATOFFENSEPERCENTADDITIVE": "Offense %",
+            "UNITSTATOFFENSE": "Offense",
+            "UNITSTATACCURACY": "Accuracy",
+            "UNITSTATSPEED": "Speed",
+            "UNITSTATRESISTANCE": "Resistance",
+            "UNITSTATMAXHEALTH": "Health",
+            "UNITSTATMAXHEALTHPERCENTADDITIVE": "Health %",
+            "UNITSTATDEFENSE": "Defense",
+            "UNITSTATDEFENSEPERCENTADDITIVE": "Defense %",
+            "UNITSTATCRITICALCHANCEPERCENTADDITIVE": "Critical Chance",
+            "UNITSTATMAXSHIELDPERCENTADDITIVE": "Protection %",
+            "UNITSTATCRITICALDAMAGE": "Critical Damage",
+            "UNITSTATMAXSHIELD": "Protection",
+            "UNITSTATEVASIONNEGATEPERCENTADDITIVE": "Evasion %",
+            "UNITSTATCRITICALNEGATECHANCEPERCENTADDITIVE": "Critical Avoidance %",
         };
     }
     LanguagePipe.prototype.transform = function (value) {
@@ -2484,7 +2544,7 @@ var ModSetNamePipe = /** @class */ (function () {
         this.gildenservice = GildenService;
     }
     ModSetNamePipe.prototype.transform = function (value) {
-        var ModSetNow = this.gildenservice.ModSets[value];
+        var ModSetNow = this.gildenservice.ModSets.find(function (modset) { return modset.id == value.toString(); });
         if (ModSetNow != null) {
             return ModSetNow.name;
         }
@@ -2591,7 +2651,7 @@ var ModStatNamePipe = /** @class */ (function () {
     ModStatNamePipe.prototype.transform = function (value) {
         var ModStatsNow = this.gildenservice.ModStats[value];
         if (ModStatsNow != null) {
-            return ModStatsNow;
+            return ModStatsNow.name;
         }
         return value.toString();
     };
@@ -2688,7 +2748,7 @@ var ModStatValuePipe = /** @class */ (function () {
 /*!*******************************************!*\
   !*** ./src/app/services/gildenService.ts ***!
   \*******************************************/
-/*! exports provided: gildenService, GildenInfos, Charakter, ArenaTeamHelper, CharFindHelper, Schedule, SWGOHEvent */
+/*! exports provided: gildenService, GildenInfos, Charakter, MappedCharakter, ArenaTeamHelper, CharFindHelper, Schedule, SWGOHEvent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2696,6 +2756,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "gildenService", function() { return gildenService; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GildenInfos", function() { return GildenInfos; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Charakter", function() { return Charakter; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MappedCharakter", function() { return MappedCharakter; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ArenaTeamHelper", function() { return ArenaTeamHelper; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CharFindHelper", function() { return CharFindHelper; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Schedule", function() { return Schedule; });
@@ -2729,9 +2790,16 @@ var gildenService = /** @class */ (function () {
         this.isInSync = false;
         this.token = '';
         //swgoh-help
-        this.apiHelpURL = 'https://api.swgoh.help';
+        this.apiHelpURL = 'https://apiv2.swgoh.help';
+        this.language = 'ENG_US';
         this.settings = this.settingsService.getSettings();
         this.http = http;
+        if (navigator.language == "de-DE") {
+            this.language = 'GER_DE';
+        }
+        else {
+            this.language = 'ENG_US';
+        }
         this.getCharInfos();
         this.getShipInfos();
         this.getModStats();
@@ -2749,6 +2817,7 @@ var gildenService = /** @class */ (function () {
     gildenService.prototype.saveModStats = function (ModStats) {
         localStorage.midiModStats = JSON.stringify(ModStats);
         this.ModStats = ModStats;
+        console.log('ModStats', this.ModStats);
     };
     gildenService.prototype.getModSets = function () {
         if (localStorage.midiModSets != null)
@@ -2757,6 +2826,7 @@ var gildenService = /** @class */ (function () {
     gildenService.prototype.saveModSets = function (ModSets) {
         localStorage.midiModSets = JSON.stringify(ModSets);
         this.ModSets = ModSets;
+        console.log('ModSets', this.ModSets);
     };
     gildenService.prototype.getCharInfos = function () {
         if (localStorage.midiCharInfos != null)
@@ -2784,13 +2854,24 @@ var gildenService = /** @class */ (function () {
         }
     };
     gildenService.prototype.saveSWGOHHelpResponse = function () {
-        var answerAsJSON = JSON.stringify(this.jsonResponseSWGOHHelpGuild);
+        var guildInfoNow = new GildenInfos();
+        guildInfoNow.bannerColor = this.jsonResponseSWGOHHelpGuild.bannerColor;
+        guildInfoNow.bannerLogo = this.jsonResponseSWGOHHelpGuild.bannerLogo;
+        guildInfoNow.desc = this.jsonResponseSWGOHHelpGuild.desc;
+        guildInfoNow.members = this.jsonResponseSWGOHHelpGuild.members;
+        guildInfoNow.message = this.jsonResponseSWGOHHelpGuild.message;
+        guildInfoNow.name = this.jsonResponseSWGOHHelpGuild.name;
+        guildInfoNow.raid = this.jsonResponseSWGOHHelpGuild.raid;
+        guildInfoNow.required = this.jsonResponseSWGOHHelpGuild.required;
+        guildInfoNow.updated = this.jsonResponseSWGOHHelpGuild.updated;
+        guildInfoNow.roster = this.jsonResponseSWGOHHelpGuildRosters;
+        var answerAsJSON = JSON.stringify(guildInfoNow);
         console.log('Full Size: ' + answerAsJSON.length);
         var compressed = this.lz.compress(answerAsJSON);
         console.log('Compressed Size: ' + compressed.length);
         localStorage.swgohHelpGilde = compressed;
         this.syncstatus += 'Gildeninfos Saved \n\r';
-        this.gildenInfos = this.jsonResponseSWGOHHelpGuild;
+        this.gildenInfos = guildInfoNow;
         console.log(this.gildenInfos);
     };
     gildenService.prototype.checkIfItsANumber = function (number) {
@@ -2826,7 +2907,7 @@ var gildenService = /** @class */ (function () {
                 this.syncstatus += 'Logge ein bei swgoh.help... \n\r';
             else
                 this.syncstatus += 'Login at swgoh.help... \n\r';
-            this.http.post('https://api.swgoh.help/auth/signin/', user, { headers: headers })
+            this.http.post('https://apiv2.swgoh.help/auth/signin/', user, { headers: headers })
                 .subscribe(function (data) {
                 var response = data;
                 _this.token = response.access_token;
@@ -2849,6 +2930,36 @@ var gildenService = /** @class */ (function () {
             });
         }
     };
+    gildenService.prototype.loginToSWGOHHelpForCharStats = function (charname, member, isA) {
+        var _this = this;
+        var user = "username=sdtbarbarossa";
+        user += "&password=ExsJfR!nzYB*7Mqr";
+        user += "&grant_type=password";
+        user += "&client_id=123";
+        user += "&client_secret=ABC";
+        var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]();
+        headers = headers.append('Content-Type', 'application/x-www-form-urlencoded');
+        headers.append('Content-Length', user.length.toString());
+        if (this.token != null && this.token != "") {
+            this.loadCharStats(charname, member, isA);
+        }
+        else {
+            this.http.post('https://apiv2.swgoh.help/auth/signin/', user, { headers: headers })
+                .subscribe(function (data) {
+                var response = data;
+                _this.token = response.access_token;
+                if (navigator.language == "de-DE")
+                    _this.syncstatus += 'Login erfolgreich! \n\r';
+                else
+                    _this.syncstatus += 'Login suceeded! \n\r';
+                _this.loadCharStats(charname, member, isA);
+            }, function (Error) {
+                alert(Error.message);
+            });
+        }
+    };
+    gildenService.prototype.loadCharStats = function (charname, member, isA) {
+    };
     gildenService.prototype.loginEventToSWGOHHelp = function () {
         var _this = this;
         var user = "username=sdtbarbarossa";
@@ -2863,7 +2974,7 @@ var gildenService = /** @class */ (function () {
             this.loadEventData();
         }
         else {
-            this.http.post('https://api.swgoh.help/auth/signin/', user, { headers: headers })
+            this.http.post('https://apiv2.swgoh.help/auth/signin/', user, { headers: headers })
                 .subscribe(function (data) {
                 var response = data;
                 _this.token = response.access_token;
@@ -2879,12 +2990,17 @@ var gildenService = /** @class */ (function () {
     };
     gildenService.prototype.loadEventData = function () {
         var _this = this;
+        var payload = {
+            language: this.language
+        };
         var header2 = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]();
         header2 = header2.append("Authorization", "Bearer " + this.token);
         header2.append('Access-Control-Allow-Headers', 'Authorization');
-        this.http.post('https://api.swgoh.help/swgoh/data/events', '', { headers: header2 })
+        this.http.post('https://apiv2.swgoh.help/swgoh/events', payload, { headers: header2 })
             .subscribe(function (data2) {
+            console.log(data2);
             _this.SWGOHEvents = data2;
+            _this.SWGOHEvents.sort(function (a, b) { return a.schedule[0].start - b.schedule[0].start; });
         }, function (Error) {
             alert(Error.message);
         });
@@ -2899,14 +3015,41 @@ var gildenService = /** @class */ (function () {
             this.syncstatus += 'Load Guilddata for ' + this.settings.allycode + '... \n\r';
             this.syncstatus += 'This can take several minutes... \n\r';
         }
+        var payload = {
+            allycode: this.settings.allycode,
+            language: this.language
+        };
         var header2 = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]();
         header2 = header2.append("Authorization", "Bearer " + this.token);
         header2.append('Access-Control-Allow-Headers', 'Authorization');
-        this.http.post('https://api.swgoh.help/swgoh/guild/' + this.settings.allycode, '', { headers: header2 })
+        this.http.post('https://apiv2.swgoh.help/swgoh/guild/', payload, { headers: header2 })
             .subscribe(function (data2) {
             _this.jsonResponseSWGOHHelpGuild = data2;
-            _this.saveSWGOHHelpResponse();
-            _this.loadSWGOHHelpExtras();
+            var allycodes = new Array();
+            for (var i = 0; i < _this.jsonResponseSWGOHHelpGuild.roster.length; i++) {
+                allycodes.push(_this.jsonResponseSWGOHHelpGuild.roster[i].allyCode);
+            }
+            var payload2 = {
+                allycode: allycodes,
+                language: _this.language
+            };
+            _this.http.post('https://apiv2.swgoh.help/swgoh/player/', payload2, { headers: header2 })
+                .subscribe(function (data3) {
+                _this.jsonResponseSWGOHHelpGuildRosters = data3;
+                _this.saveSWGOHHelpResponse();
+                _this.loadSWGOHHelpExtras();
+            }, function (Error) {
+                if (navigator.language == "de-DE") {
+                    _this.syncstatus += 'Fehler beim abrufen der Daten... breche ab \n\r';
+                    _this.syncstatus += Error.message + '\n\r';
+                    _this.syncstatus += 'Ende der Synchronisation! \n\r';
+                }
+                else {
+                    _this.syncstatus += 'Error on getting Guilddata...aborting... \n\r';
+                    _this.syncstatus += Error.message + '\n\r';
+                    _this.syncstatus += 'End of Sync! \n\r';
+                }
+            });
         }, function (Error) {
             if (navigator.language == "de-DE") {
                 _this.syncstatus += 'Fehler beim abrufen der Daten... breche ab \n\r';
@@ -2923,18 +3066,26 @@ var gildenService = /** @class */ (function () {
     gildenService.prototype.loadSWGOHHelpExtras = function () {
         var _this = this;
         this.syncstatus += 'Hole Mod-Set-Infos... \n\r';
+        var Payload = {
+            "collection": "statModSetList",
+            "language": this.language,
+        };
         var header2 = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]();
         header2 = header2.append("Authorization", "Bearer " + this.token);
         header2.append('Access-Control-Allow-Headers', 'Authorization');
-        this.http.post('https://api.swgoh.help/swgoh/data/mod-sets', '', { headers: header2 })
+        this.http.post('https://apiv2.swgoh.help/swgoh/data/', Payload, { headers: header2 })
             .subscribe(function (data2) {
             _this.ModSets = data2;
             _this.saveModSets(_this.ModSets);
             _this.syncstatus += 'Hole Mod-Stat-Infos... \n\r';
+            var Payload2 = {
+                "collection": "statModList",
+                "language": _this.language,
+            };
             var header2 = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]();
             header2 = header2.append("Authorization", "Bearer " + _this.token);
             header2.append('Access-Control-Allow-Headers', 'Authorization');
-            _this.http.post('https://api.swgoh.help/swgoh/data/mod-stats', '', { headers: header2 })
+            _this.http.post('https://apiv2.swgoh.help/swgoh/data/', Payload2, { headers: header2 })
                 .subscribe(function (data2) {
                 _this.ModStats = data2;
                 _this.saveModStats(_this.ModStats);
@@ -3016,29 +3167,24 @@ var gildenService = /** @class */ (function () {
     };
     gildenService.prototype.getAllCharsByName = function (name) {
         var charsFound = new Array();
-        //MapCharName To IDName
-        var idName = this.charInfos.filter(function (info) { return info.name.toLowerCase().indexOf(name.toLowerCase()) >= 0; });
-        if (idName == null || idName.length == 0)
-            return null;
         for (var i = 0; i < this.gildenInfos.roster.length; i++) {
-            for (var z = 0; z < idName.length; z++) {
-                var foundChars = this.gildenInfos.roster[i].roster.filter(function (char) { return (idName[z].base_id.toLowerCase() == char.name.toLowerCase()); });
-                if (foundChars == null || foundChars.length == 0) {
-                }
-                else {
-                    for (var x = 0; x < foundChars.length; x++) {
-                        if (foundChars[x] == null || foundChars[x] == undefined) {
-                        }
-                        else {
-                            var charHelperNow = new CharFindHelper();
-                            charHelperNow.besitzer = this.gildenInfos.roster[i].name;
-                            charHelperNow.charakter = foundChars[x];
-                            charsFound.push(charHelperNow);
-                        }
+            var foundChars = this.gildenInfos.roster[i].roster.filter(function (char) { return (char.name.toLowerCase().indexOf(name.toLowerCase()) > -1) && char.type != "SHIP"; });
+            if (foundChars == null || foundChars.length == 0) {
+            }
+            else {
+                for (var x = 0; x < foundChars.length; x++) {
+                    if (foundChars[x] == null || foundChars[x] == undefined) {
+                    }
+                    else {
+                        var charHelperNow = new CharFindHelper();
+                        charHelperNow.besitzer = this.gildenInfos.roster[i].name;
+                        charHelperNow.charakter = foundChars[x];
+                        charsFound.push(charHelperNow);
                     }
                 }
             }
         }
+        charsFound.sort(function (a, b) { return b.charakter.gp - a.charakter.gp; });
         return charsFound;
     };
     gildenService.prototype.getAllCharArenaTeams = function () {
@@ -3112,15 +3258,11 @@ var gildenService = /** @class */ (function () {
     gildenService.prototype.compareSquads = function (a, b) {
         var tempSumA = 0;
         for (var i = 0; i < a.length; i++) {
-            tempSumA += a[i].gearLevel;
-            tempSumA += a[i].Zetas * 4;
-            tempSumA += a[i].Sterne;
+            tempSumA += a[i].Power;
         }
         var tempSumB = 0;
         for (var i = 0; i < b.length; i++) {
-            tempSumB += b[i].gearLevel;
-            tempSumB += b[i].Zetas * 4;
-            tempSumB += b[i].Sterne;
+            tempSumB += b[i].Power;
         }
         if (tempSumA > tempSumB)
             return -1;
@@ -3236,7 +3378,7 @@ var gildenService = /** @class */ (function () {
         if (idName != null)
             name = idName.base_id;
         for (var i = 0; i < member.roster.length; i++) {
-            if (member.roster[i].name.toLowerCase() == name.toLowerCase()) {
+            if (member.roster[i].defId.toLowerCase() == name.toLowerCase()) {
                 return member.roster[i];
             }
         }
@@ -3252,10 +3394,10 @@ var gildenService = /** @class */ (function () {
         }
         else
             mappedChar.Name = newchar.name;
-        mappedChar.Power = newchar.xp;
+        mappedChar.Power = newchar.gp;
         mappedChar.Sterne = newchar.rarity;
         if (this.charInfos != null) {
-            var charInfoNow = this.charInfos.find(function (info) { return info.base_id == newchar.name; });
+            var charInfoNow = this.charInfos.find(function (info) { return info.base_id == newchar.defId; });
             if (charInfoNow != null) {
                 mappedChar.MaxPower = charInfoNow.power;
                 mappedChar.charUrl = charInfoNow.url;
@@ -3281,7 +3423,7 @@ var gildenService = /** @class */ (function () {
         if (idName != null)
             name = idName.base_id;
         for (var i = 0; i < member.roster.length; i++) {
-            if (member.roster[i].name.toLowerCase() == name.toLowerCase()) {
+            if (member.roster[i].defId.toLowerCase() == name.toLowerCase()) {
                 return this.mappChar(member.roster[i], member.name, idName.name);
             }
         }
@@ -3385,6 +3527,7 @@ var Charakter = /** @class */ (function () {
         this.defId = "";
         this.equipped = new Array();
         this.gear = 0;
+        this.gp = 0;
         this.id = "";
         this.level = 0;
         this.mods = new Array();
@@ -3402,6 +3545,7 @@ var MappedCharakter = /** @class */ (function () {
     }
     return MappedCharakter;
 }());
+
 var Gear = /** @class */ (function () {
     function Gear() {
         this.equipmentId = "";
@@ -3414,16 +3558,16 @@ var Mod = /** @class */ (function () {
         this.id = "";
         this.level = 0;
         this.pips = 0;
-        this.primaryBonusType = 0;
-        this.primaryBonusValue = 0;
-        this.secondaryType_1 = 0;
-        this.secondaryType_2 = 0;
-        this.secondaryType_3 = 0;
-        this.secondaryType_4 = 0;
-        this.secondaryValue_1 = 0;
-        this.secondaryValue_2 = 0;
-        this.secondaryValue_3 = 0;
-        this.secondaryValue_4 = 0;
+        this.primaryBonusType = "";
+        this.primaryBonusValue = "";
+        this.secondaryType_1 = "";
+        this.secondaryType_2 = "";
+        this.secondaryType_3 = "";
+        this.secondaryType_4 = "";
+        this.secondaryValue_1 = "";
+        this.secondaryValue_2 = "";
+        this.secondaryValue_3 = "";
+        this.secondaryValue_4 = "";
         this.set = 0;
         this.setId = 0;
         this.slot = 0;
@@ -3637,7 +3781,7 @@ module.exports = "input[type=text] {\r\n  width: 100%;\r\n  padding: 12px 20px;\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"width:100%;\">\r\n  <div style=\"width:68%; display: inline-block;\">\r\n    <select style=\"width:100%;\" [(ngModel)]=\"selectedTeam\" (ngModelChange)=\"getSquadsFromGildenInfos()\">\r\n      <option *ngFor=\"let team of myTeams\" [ngValue]=\"team\">{{team.Name}}</option>\r\n    </select>\r\n  </div>\r\n  <div style=\"width: 30%; display: inline-block;\">\r\n    <button (click)=\"deleteThisTeam()\" style=\"display: inline-block; position: relative; padding: 7px 5px; width: 30%;\">{{'Del'| language}}</button>\r\n    <button (click)=\"openModal()\" style=\"display: inline-block; position: relative; padding: 7px 5px; width: 30%;\">{{'Add'| language}}</button>\r\n    </div>\r\n</div>\r\n\r\n<div *ngFor=\"let squad of squadsFromGildenInfos\" class=\"charNow\">\r\n  <fieldset style=\"height:80px\">\r\n    <legend>{{selectedTeam.Name}} {{'of'| language}} {{squad[0].Besitzer}}</legend>\r\n    <div style=\"height:80%; width:100%\">\r\n      <div *ngIf=\"squad[0]\" class=\"divForChar\">\r\n        <div class=\"parentOfImages\">\r\n\r\n          <img *ngIf=\"squad[0].Sterne>0\" src=\"/assets/picture/star.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[0].Sterne<1\" src=\"/assets/picture/nostar.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[0].Sterne>1\" src=\"/assets/picture/star.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[0].Sterne<2\" src=\"/assets/picture/nostar.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[0].Sterne>2\" src=\"/assets/picture/star.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[0].Sterne<3\" src=\"/assets/picture/nostar.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[0].Sterne>3\" src=\"/assets/picture/star.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[0].Sterne<4\" src=\"/assets/picture/nostar.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[0].Sterne>4\" src=\"/assets/picture/star.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[0].Sterne<5\" src=\"/assets/picture/nostar.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[0].Sterne>5\" src=\"/assets/picture/star.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[0].Sterne<6\" src=\"/assets/picture/nostar.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[0].Sterne>6\" src=\"/assets/picture/star.png\" class=\"star17\">\r\n          <img *ngIf=\"squad[0].Sterne<7\" src=\"/assets/picture/nostar.png\" class=\"star17\">\r\n\r\n          <img *ngIf=\"squad[0].Zetas>=1\" src=\"/assets/picture/zeta.png\" class=\"zeta1\">\r\n          <img *ngIf=\"squad[0].Zetas>=2\" src=\"/assets/picture/zeta.png\" class=\"zeta2\">\r\n          <img *ngIf=\"squad[0].Zetas>=3\" src=\"/assets/picture/zeta.png\" class=\"zeta3\">\r\n\r\n          <img class=\"charImage\" src=\"/assets/picture/{{squad[0].imageUrl}}\" alt=\"{{squad[0].Name}}\">\r\n          <img class=\"gearImage\" src=\"/assets/GearPNG/gear-icon-g{{squad[0].gearLevel}}.png\" alt=\"{{squad[0].Name}}\">\r\n          <span class=\"char-level\">{{squad[0].Level}}</span>\r\n          <span class=\"char-gear-level\">{{formatGearLevel(squad[0].gearLevel)}}</span>\r\n        </div>\r\n        \r\n      </div>\r\n\r\n      <div *ngIf=\"squad[1]\" class=\"divForChar\">\r\n        <div class=\"parentOfImages\">\r\n\r\n          <img *ngIf=\"squad[1].Sterne>0\" src=\"/assets/picture/star.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[1].Sterne<1\" src=\"/assets/picture/nostar.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[1].Sterne>1\" src=\"/assets/picture/star.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[1].Sterne<2\" src=\"/assets/picture/nostar.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[1].Sterne>2\" src=\"/assets/picture/star.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[1].Sterne<3\" src=\"/assets/picture/nostar.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[1].Sterne>3\" src=\"/assets/picture/star.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[1].Sterne<4\" src=\"/assets/picture/nostar.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[1].Sterne>4\" src=\"/assets/picture/star.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[1].Sterne<5\" src=\"/assets/picture/nostar.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[1].Sterne>5\" src=\"/assets/picture/star.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[1].Sterne<6\" src=\"/assets/picture/nostar.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[1].Sterne>6\" src=\"/assets/picture/star.png\" class=\"star17\">\r\n          <img *ngIf=\"squad[1].Sterne<7\" src=\"/assets/picture/nostar.png\" class=\"star17\">\r\n\r\n          <img *ngIf=\"squad[1].Zetas>=1\" src=\"/assets/picture/zeta.png\" class=\"zeta1\">\r\n          <img *ngIf=\"squad[1].Zetas>=2\" src=\"/assets/picture/zeta.png\" class=\"zeta2\">\r\n          <img *ngIf=\"squad[1].Zetas>=3\" src=\"/assets/picture/zeta.png\" class=\"zeta3\">\r\n\r\n          <img class=\"charImage\" src=\"/assets/picture/{{squad[1].imageUrl}}\" alt=\"{{squad[1].Name}}\">\r\n          <img class=\"gearImage\" src=\"/assets/GearPNG/gear-icon-g{{squad[1].gearLevel}}.png\" alt=\"{{squad[1].Name}}\">\r\n          <span class=\"char-level\">{{squad[1].Level}}</span>\r\n          <span class=\"char-gear-level\">{{formatGearLevel(squad[1].gearLevel)}}</span>\r\n        </div>\r\n        \r\n      </div>\r\n\r\n      <div *ngIf=\"squad[2]\" class=\"divForChar\">\r\n        <div class=\"parentOfImages\">\r\n\r\n          <img *ngIf=\"squad[2].Sterne>0\" src=\"/assets/picture/star.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[2].Sterne<1\" src=\"/assets/picture/nostar.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[2].Sterne>1\" src=\"/assets/picture/star.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[2].Sterne<2\" src=\"/assets/picture/nostar.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[2].Sterne>2\" src=\"/assets/picture/star.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[2].Sterne<3\" src=\"/assets/picture/nostar.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[2].Sterne>3\" src=\"/assets/picture/star.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[2].Sterne<4\" src=\"/assets/picture/nostar.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[2].Sterne>4\" src=\"/assets/picture/star.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[2].Sterne<5\" src=\"/assets/picture/nostar.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[2].Sterne>5\" src=\"/assets/picture/star.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[2].Sterne<6\" src=\"/assets/picture/nostar.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[2].Sterne>6\" src=\"/assets/picture/star.png\" class=\"star17\">\r\n          <img *ngIf=\"squad[2].Sterne<7\" src=\"/assets/picture/nostar.png\" class=\"star17\">\r\n\r\n          <img *ngIf=\"squad[2].Zetas>=1\" src=\"/assets/picture/zeta.png\" class=\"zeta1\">\r\n          <img *ngIf=\"squad[2].Zetas>=2\" src=\"/assets/picture/zeta.png\" class=\"zeta2\">\r\n          <img *ngIf=\"squad[2].Zetas>=3\" src=\"/assets/picture/zeta.png\" class=\"zeta3\">\r\n\r\n          <img class=\"charImage\" src=\"/assets/picture/{{squad[2].imageUrl}}\" alt=\"{{squad[2].Name}}\">\r\n          <img class=\"gearImage\" src=\"/assets/GearPNG/gear-icon-g{{squad[2].gearLevel}}.png\" alt=\"{{squad[2].Name}}\">\r\n          <span class=\"char-level\">{{squad[2].Level}}</span>\r\n          <span class=\"char-gear-level\">{{formatGearLevel(squad[2].gearLevel)}}</span>\r\n        </div>\r\n        \r\n      </div>\r\n\r\n      <div *ngIf=\"squad[3]\" class=\"divForChar\">\r\n        <div class=\"parentOfImages\">\r\n\r\n          <img *ngIf=\"squad[3].Sterne>0\" src=\"/assets/picture/star.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[3].Sterne<1\" src=\"/assets/picture/nostar.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[3].Sterne>1\" src=\"/assets/picture/star.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[3].Sterne<2\" src=\"/assets/picture/nostar.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[3].Sterne>2\" src=\"/assets/picture/star.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[3].Sterne<3\" src=\"/assets/picture/nostar.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[3].Sterne>3\" src=\"/assets/picture/star.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[3].Sterne<4\" src=\"/assets/picture/nostar.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[3].Sterne>4\" src=\"/assets/picture/star.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[3].Sterne<5\" src=\"/assets/picture/nostar.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[3].Sterne>5\" src=\"/assets/picture/star.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[3].Sterne<6\" src=\"/assets/picture/nostar.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[3].Sterne>6\" src=\"/assets/picture/star.png\" class=\"star17\">\r\n          <img *ngIf=\"squad[3].Sterne<7\" src=\"/assets/picture/nostar.png\" class=\"star17\">\r\n\r\n          <img *ngIf=\"squad[3].Zetas>=1\" src=\"/assets/picture/zeta.png\" class=\"zeta1\">\r\n          <img *ngIf=\"squad[3].Zetas>=2\" src=\"/assets/picture/zeta.png\" class=\"zeta2\">\r\n          <img *ngIf=\"squad[3].Zetas>=3\" src=\"/assets/picture/zeta.png\" class=\"zeta3\">\r\n\r\n          <img class=\"charImage\" src=\"/assets/picture/{{squad[3].imageUrl}}\" alt=\"{{squad[3].Name}}\">\r\n          <img class=\"gearImage\" src=\"/assets/GearPNG/gear-icon-g{{squad[3].gearLevel}}.png\" alt=\"{{squad[3].Name}}\">\r\n          <span class=\"char-level\">{{squad[3].Level}}</span>\r\n          <span class=\"char-gear-level\">{{formatGearLevel(squad[3].gearLevel)}}</span>\r\n        </div>\r\n        \r\n      </div>\r\n\r\n      <div *ngIf=\"squad[4]\" class=\"divForChar\">\r\n        <div class=\"parentOfImages\">\r\n\r\n          <img *ngIf=\"squad[4].Sterne>0\" src=\"/assets/picture/star.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[4].Sterne<1\" src=\"/assets/picture/nostar.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[4].Sterne>1\" src=\"/assets/picture/star.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[4].Sterne<2\" src=\"/assets/picture/nostar.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[4].Sterne>2\" src=\"/assets/picture/star.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[4].Sterne<3\" src=\"/assets/picture/nostar.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[4].Sterne>3\" src=\"/assets/picture/star.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[4].Sterne<4\" src=\"/assets/picture/nostar.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[4].Sterne>4\" src=\"/assets/picture/star.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[4].Sterne<5\" src=\"/assets/picture/nostar.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[4].Sterne>5\" src=\"/assets/picture/star.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[4].Sterne<6\" src=\"/assets/picture/nostar.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[4].Sterne>6\" src=\"/assets/picture/star.png\" class=\"star17\">\r\n          <img *ngIf=\"squad[4].Sterne<7\" src=\"/assets/picture/nostar.png\" class=\"star17\">\r\n\r\n          <img *ngIf=\"squad[4].Zetas>=1\" src=\"/assets/picture/zeta.png\" class=\"zeta1\">\r\n          <img *ngIf=\"squad[4].Zetas>=2\" src=\"/assets/picture/zeta.png\" class=\"zeta2\">\r\n          <img *ngIf=\"squad[4].Zetas>=3\" src=\"/assets/picture/zeta.png\" class=\"zeta3\">\r\n\r\n          <img class=\"charImage\" src=\"/assets/picture/{{squad[4].imageUrl}}\" alt=\"{{squad[4].Name}}\">\r\n          <img class=\"gearImage\" src=\"/assets/GearPNG/gear-icon-g{{squad[4].gearLevel}}.png\" alt=\"{{squad[4].Name}}\">\r\n          <span class=\"char-level\">{{squad[4].Level}}</span>\r\n          <span class=\"char-gear-level\">{{formatGearLevel(squad[4].gearLevel)}}</span>\r\n        </div>\r\n        \r\n      </div>\r\n\r\n    </div>\r\n  </fieldset>\r\n</div>\r\n\r\n\r\n\r\n<!-- The Modal -->\r\n<div id=\"myModal\" class=\"modal\">\r\n\r\n  <!-- Modal content -->\r\n  <div class=\"modal-content\">\r\n    <div class=\"modal-header\">\r\n      <span class=\"close\" (click)=\"closeModal()\">&times;</span>\r\n      <h2>{{'AddSquad'| language}}</h2>\r\n    </div>\r\n    <div class=\"modal-body\">\r\n\r\n      <p>\r\n        <input type=\"text\" placeholder=\"Squadname ( e.g 'Phönix' or 'Brotini'  )\" [(ngModel)]=\"squadName\">\r\n      </p>\r\n      <p style=\"width:100%;\">\r\n        Leader :\r\n        <select *ngIf=\"!(settingsService.settings.useAutoComplete)\" [(ngModel)]=\"selectedLeader\">\r\n          <option *ngFor=\"let char of gildenService.charInfos\" [ngValue]=\"char.name\">{{char.name}}</option>\r\n        </select>\r\n\r\n        <ngx-select-dropdown *ngIf=\"(settingsService.settings.useAutoComplete)\"  [config]=\"autoCompleteConfig\" [options]=\"gildenService.charInfos\"\r\n                             [(value)]=\"selectedLeader\" [multiple]=\"false\">\r\n        </ngx-select-dropdown>\r\n      </p>\r\n      <p style=\"width:100%;\">\r\n        Char 2 :\r\n        <select *ngIf=\"!(settingsService.settings.useAutoComplete)\" [(ngModel)]=\"selectedChar2\">\r\n          <option *ngFor=\"let char of gildenService.charInfos\" [ngValue]=\"char.name\">{{char.name}}</option>\r\n        </select>\r\n\r\n        <ngx-select-dropdown *ngIf=\"(settingsService.settings.useAutoComplete)\" [config]=\"autoCompleteConfig\" [options]=\"gildenService.charInfos\"\r\n                             [(value)]=\"selectedChar2\" [multiple]=\"false\">\r\n        </ngx-select-dropdown>\r\n      </p>\r\n      <p style=\"width:100%;\">\r\n        Char 3 :\r\n        <select *ngIf=\"!(settingsService.settings.useAutoComplete)\" [(ngModel)]=\"selectedChar3\">\r\n          <option *ngFor=\"let char of gildenService.charInfos\" [ngValue]=\"char.name\">{{char.name}}</option>\r\n        </select>\r\n\r\n        <ngx-select-dropdown *ngIf=\"(settingsService.settings.useAutoComplete)\" [config]=\"autoCompleteConfig\" [options]=\"gildenService.charInfos\"\r\n                             [(value)]=\"selectedChar3\" [multiple]=\"false\">\r\n        </ngx-select-dropdown>\r\n      </p>\r\n      <p style=\"width:100%;\">\r\n        Char 4 :\r\n        <select *ngIf=\"!(settingsService.settings.useAutoComplete)\" [(ngModel)]=\"selectedChar4\">\r\n          <option *ngFor=\"let char of gildenService.charInfos\" [ngValue]=\"char.name\">{{char.name}}</option>\r\n        </select>\r\n\r\n        <ngx-select-dropdown *ngIf=\"(settingsService.settings.useAutoComplete)\" [config]=\"autoCompleteConfig\" [options]=\"gildenService.charInfos\"\r\n                             [(value)]=\"selectedChar4\" [multiple]=\"false\">\r\n        </ngx-select-dropdown>\r\n      </p>\r\n      <p style=\"width:100%;\">\r\n        Char 5 :\r\n        <select *ngIf=\"!(settingsService.settings.useAutoComplete)\" [(ngModel)]=\"selectedChar5\">\r\n          <option *ngFor=\"let char of gildenService.charInfos\" [ngValue]=\"char.name\">{{char.name}}</option>\r\n        </select>\r\n\r\n        <ngx-select-dropdown *ngIf=\"(settingsService.settings.useAutoComplete)\" [config]=\"autoCompleteConfig\" [options]=\"gildenService.charInfos\"\r\n                             [(value)]=\"selectedChar5\" [multiple]=\"false\">\r\n        </ngx-select-dropdown>\r\n      </p>\r\n\r\n      <button style=\"width: 100%\" (click)=\"addSquadToMyTeams()\">{{'Confirm'| language}}</button>\r\n\r\n    </div>\r\n  </div>\r\n\r\n</div>\r\n"
+module.exports = "<div style=\"width:100%;\">\r\n  <div style=\"width:68%; display: inline-block;\">\r\n    <select style=\"width:100%;\" [(ngModel)]=\"selectedTeam\" (ngModelChange)=\"getSquadsFromGildenInfos()\">\r\n      <option *ngFor=\"let team of myTeams\" [ngValue]=\"team\">{{team.Name}}</option>\r\n    </select>\r\n  </div>\r\n  <div style=\"width: 30%; display: inline-block;\">\r\n    <button (click)=\"deleteThisTeam()\" style=\"display: inline-block; position: relative; padding: 7px 5px; width: 30%;\">{{'Del'| language}}</button>\r\n    <button (click)=\"openModal()\" style=\"display: inline-block; position: relative; padding: 7px 5px; width: 30%;\">{{'Add'| language}}</button>\r\n    </div>\r\n</div>\r\n\r\n<div *ngFor=\"let squad of squadsFromGildenInfos\" class=\"charNow\">\r\n  <fieldset style=\"height:80px\">\r\n    <legend>{{selectedTeam.Name}} {{'of'| language}} {{squad[0].Besitzer}} {{squad | squadpower}}</legend>\r\n    <div style=\"height:80%; width:100%\">\r\n      <div *ngIf=\"squad[0]\" class=\"divForChar\">\r\n        <div class=\"parentOfImages\">\r\n\r\n          <img *ngIf=\"squad[0].Sterne>0\" src=\"/assets/picture/star.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[0].Sterne<1\" src=\"/assets/picture/nostar.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[0].Sterne>1\" src=\"/assets/picture/star.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[0].Sterne<2\" src=\"/assets/picture/nostar.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[0].Sterne>2\" src=\"/assets/picture/star.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[0].Sterne<3\" src=\"/assets/picture/nostar.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[0].Sterne>3\" src=\"/assets/picture/star.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[0].Sterne<4\" src=\"/assets/picture/nostar.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[0].Sterne>4\" src=\"/assets/picture/star.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[0].Sterne<5\" src=\"/assets/picture/nostar.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[0].Sterne>5\" src=\"/assets/picture/star.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[0].Sterne<6\" src=\"/assets/picture/nostar.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[0].Sterne>6\" src=\"/assets/picture/star.png\" class=\"star17\">\r\n          <img *ngIf=\"squad[0].Sterne<7\" src=\"/assets/picture/nostar.png\" class=\"star17\">\r\n\r\n          <img *ngIf=\"squad[0].Zetas>=1\" src=\"/assets/picture/zeta.png\" class=\"zeta1\">\r\n          <img *ngIf=\"squad[0].Zetas>=2\" src=\"/assets/picture/zeta.png\" class=\"zeta2\">\r\n          <img *ngIf=\"squad[0].Zetas>=3\" src=\"/assets/picture/zeta.png\" class=\"zeta3\">\r\n\r\n          <img class=\"charImage\" src=\"/assets/picture/{{squad[0].imageUrl}}\" alt=\"{{squad[0].Name}}\">\r\n          <img class=\"gearImage\" src=\"/assets/GearPNG/gear-icon-g{{squad[0].gearLevel}}.png\" alt=\"{{squad[0].Name}}\">\r\n          <span class=\"char-level\">{{squad[0].Level}}</span>\r\n          <span class=\"char-gear-level\">{{formatGearLevel(squad[0].gearLevel)}}</span>\r\n        </div>\r\n\r\n      </div>\r\n\r\n      <div *ngIf=\"squad[1]\" class=\"divForChar\">\r\n        <div class=\"parentOfImages\">\r\n\r\n          <img *ngIf=\"squad[1].Sterne>0\" src=\"/assets/picture/star.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[1].Sterne<1\" src=\"/assets/picture/nostar.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[1].Sterne>1\" src=\"/assets/picture/star.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[1].Sterne<2\" src=\"/assets/picture/nostar.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[1].Sterne>2\" src=\"/assets/picture/star.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[1].Sterne<3\" src=\"/assets/picture/nostar.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[1].Sterne>3\" src=\"/assets/picture/star.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[1].Sterne<4\" src=\"/assets/picture/nostar.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[1].Sterne>4\" src=\"/assets/picture/star.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[1].Sterne<5\" src=\"/assets/picture/nostar.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[1].Sterne>5\" src=\"/assets/picture/star.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[1].Sterne<6\" src=\"/assets/picture/nostar.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[1].Sterne>6\" src=\"/assets/picture/star.png\" class=\"star17\">\r\n          <img *ngIf=\"squad[1].Sterne<7\" src=\"/assets/picture/nostar.png\" class=\"star17\">\r\n\r\n          <img *ngIf=\"squad[1].Zetas>=1\" src=\"/assets/picture/zeta.png\" class=\"zeta1\">\r\n          <img *ngIf=\"squad[1].Zetas>=2\" src=\"/assets/picture/zeta.png\" class=\"zeta2\">\r\n          <img *ngIf=\"squad[1].Zetas>=3\" src=\"/assets/picture/zeta.png\" class=\"zeta3\">\r\n\r\n          <img class=\"charImage\" src=\"/assets/picture/{{squad[1].imageUrl}}\" alt=\"{{squad[1].Name}}\">\r\n          <img class=\"gearImage\" src=\"/assets/GearPNG/gear-icon-g{{squad[1].gearLevel}}.png\" alt=\"{{squad[1].Name}}\">\r\n          <span class=\"char-level\">{{squad[1].Level}}</span>\r\n          <span class=\"char-gear-level\">{{formatGearLevel(squad[1].gearLevel)}}</span>\r\n        </div>\r\n\r\n      </div>\r\n\r\n      <div *ngIf=\"squad[2]\" class=\"divForChar\">\r\n        <div class=\"parentOfImages\">\r\n\r\n          <img *ngIf=\"squad[2].Sterne>0\" src=\"/assets/picture/star.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[2].Sterne<1\" src=\"/assets/picture/nostar.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[2].Sterne>1\" src=\"/assets/picture/star.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[2].Sterne<2\" src=\"/assets/picture/nostar.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[2].Sterne>2\" src=\"/assets/picture/star.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[2].Sterne<3\" src=\"/assets/picture/nostar.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[2].Sterne>3\" src=\"/assets/picture/star.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[2].Sterne<4\" src=\"/assets/picture/nostar.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[2].Sterne>4\" src=\"/assets/picture/star.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[2].Sterne<5\" src=\"/assets/picture/nostar.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[2].Sterne>5\" src=\"/assets/picture/star.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[2].Sterne<6\" src=\"/assets/picture/nostar.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[2].Sterne>6\" src=\"/assets/picture/star.png\" class=\"star17\">\r\n          <img *ngIf=\"squad[2].Sterne<7\" src=\"/assets/picture/nostar.png\" class=\"star17\">\r\n\r\n          <img *ngIf=\"squad[2].Zetas>=1\" src=\"/assets/picture/zeta.png\" class=\"zeta1\">\r\n          <img *ngIf=\"squad[2].Zetas>=2\" src=\"/assets/picture/zeta.png\" class=\"zeta2\">\r\n          <img *ngIf=\"squad[2].Zetas>=3\" src=\"/assets/picture/zeta.png\" class=\"zeta3\">\r\n\r\n          <img class=\"charImage\" src=\"/assets/picture/{{squad[2].imageUrl}}\" alt=\"{{squad[2].Name}}\">\r\n          <img class=\"gearImage\" src=\"/assets/GearPNG/gear-icon-g{{squad[2].gearLevel}}.png\" alt=\"{{squad[2].Name}}\">\r\n          <span class=\"char-level\">{{squad[2].Level}}</span>\r\n          <span class=\"char-gear-level\">{{formatGearLevel(squad[2].gearLevel)}}</span>\r\n        </div>\r\n\r\n      </div>\r\n\r\n      <div *ngIf=\"squad[3]\" class=\"divForChar\">\r\n        <div class=\"parentOfImages\">\r\n\r\n          <img *ngIf=\"squad[3].Sterne>0\" src=\"/assets/picture/star.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[3].Sterne<1\" src=\"/assets/picture/nostar.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[3].Sterne>1\" src=\"/assets/picture/star.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[3].Sterne<2\" src=\"/assets/picture/nostar.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[3].Sterne>2\" src=\"/assets/picture/star.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[3].Sterne<3\" src=\"/assets/picture/nostar.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[3].Sterne>3\" src=\"/assets/picture/star.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[3].Sterne<4\" src=\"/assets/picture/nostar.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[3].Sterne>4\" src=\"/assets/picture/star.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[3].Sterne<5\" src=\"/assets/picture/nostar.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[3].Sterne>5\" src=\"/assets/picture/star.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[3].Sterne<6\" src=\"/assets/picture/nostar.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[3].Sterne>6\" src=\"/assets/picture/star.png\" class=\"star17\">\r\n          <img *ngIf=\"squad[3].Sterne<7\" src=\"/assets/picture/nostar.png\" class=\"star17\">\r\n\r\n          <img *ngIf=\"squad[3].Zetas>=1\" src=\"/assets/picture/zeta.png\" class=\"zeta1\">\r\n          <img *ngIf=\"squad[3].Zetas>=2\" src=\"/assets/picture/zeta.png\" class=\"zeta2\">\r\n          <img *ngIf=\"squad[3].Zetas>=3\" src=\"/assets/picture/zeta.png\" class=\"zeta3\">\r\n\r\n          <img class=\"charImage\" src=\"/assets/picture/{{squad[3].imageUrl}}\" alt=\"{{squad[3].Name}}\">\r\n          <img class=\"gearImage\" src=\"/assets/GearPNG/gear-icon-g{{squad[3].gearLevel}}.png\" alt=\"{{squad[3].Name}}\">\r\n          <span class=\"char-level\">{{squad[3].Level}}</span>\r\n          <span class=\"char-gear-level\">{{formatGearLevel(squad[3].gearLevel)}}</span>\r\n        </div>\r\n\r\n      </div>\r\n\r\n      <div *ngIf=\"squad[4]\" class=\"divForChar\">\r\n        <div class=\"parentOfImages\">\r\n\r\n          <img *ngIf=\"squad[4].Sterne>0\" src=\"/assets/picture/star.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[4].Sterne<1\" src=\"/assets/picture/nostar.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[4].Sterne>1\" src=\"/assets/picture/star.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[4].Sterne<2\" src=\"/assets/picture/nostar.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[4].Sterne>2\" src=\"/assets/picture/star.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[4].Sterne<3\" src=\"/assets/picture/nostar.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[4].Sterne>3\" src=\"/assets/picture/star.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[4].Sterne<4\" src=\"/assets/picture/nostar.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[4].Sterne>4\" src=\"/assets/picture/star.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[4].Sterne<5\" src=\"/assets/picture/nostar.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[4].Sterne>5\" src=\"/assets/picture/star.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[4].Sterne<6\" src=\"/assets/picture/nostar.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[4].Sterne>6\" src=\"/assets/picture/star.png\" class=\"star17\">\r\n          <img *ngIf=\"squad[4].Sterne<7\" src=\"/assets/picture/nostar.png\" class=\"star17\">\r\n\r\n          <img *ngIf=\"squad[4].Zetas>=1\" src=\"/assets/picture/zeta.png\" class=\"zeta1\">\r\n          <img *ngIf=\"squad[4].Zetas>=2\" src=\"/assets/picture/zeta.png\" class=\"zeta2\">\r\n          <img *ngIf=\"squad[4].Zetas>=3\" src=\"/assets/picture/zeta.png\" class=\"zeta3\">\r\n\r\n          <img class=\"charImage\" src=\"/assets/picture/{{squad[4].imageUrl}}\" alt=\"{{squad[4].Name}}\">\r\n          <img class=\"gearImage\" src=\"/assets/GearPNG/gear-icon-g{{squad[4].gearLevel}}.png\" alt=\"{{squad[4].Name}}\">\r\n          <span class=\"char-level\">{{squad[4].Level}}</span>\r\n          <span class=\"char-gear-level\">{{formatGearLevel(squad[4].gearLevel)}}</span>\r\n        </div>\r\n\r\n      </div>\r\n\r\n    </div>\r\n  </fieldset>\r\n</div>\r\n\r\n\r\n\r\n<!-- The Modal -->\r\n<div id=\"myModal\" class=\"modal\">\r\n\r\n  <!-- Modal content -->\r\n  <div class=\"modal-content\">\r\n    <div class=\"modal-header\">\r\n      <span class=\"close\" (click)=\"closeModal()\">&times;</span>\r\n      <h2>{{'AddSquad'| language}}</h2>\r\n    </div>\r\n    <div class=\"modal-body\">\r\n\r\n      <p>\r\n        <input type=\"text\" placeholder=\"Squadname ( e.g 'Phönix' or 'Brotini'  )\" [(ngModel)]=\"squadName\">\r\n      </p>\r\n      <p style=\"width:100%;\">\r\n        Leader :\r\n        <select *ngIf=\"!(settingsService.settings.useAutoComplete)\" [(ngModel)]=\"selectedLeader\">\r\n          <option *ngFor=\"let char of gildenService.charInfos\" [ngValue]=\"char.name\">{{char.name}}</option>\r\n        </select>\r\n\r\n        <ngx-select-dropdown *ngIf=\"(settingsService.settings.useAutoComplete)\"  [config]=\"autoCompleteConfig\" [options]=\"gildenService.charInfos\"\r\n                             [(value)]=\"selectedLeader\" [multiple]=\"false\">\r\n        </ngx-select-dropdown>\r\n      </p>\r\n      <p style=\"width:100%;\">\r\n        Char 2 :\r\n        <select *ngIf=\"!(settingsService.settings.useAutoComplete)\" [(ngModel)]=\"selectedChar2\">\r\n          <option *ngFor=\"let char of gildenService.charInfos\" [ngValue]=\"char.name\">{{char.name}}</option>\r\n        </select>\r\n\r\n        <ngx-select-dropdown *ngIf=\"(settingsService.settings.useAutoComplete)\" [config]=\"autoCompleteConfig\" [options]=\"gildenService.charInfos\"\r\n                             [(value)]=\"selectedChar2\" [multiple]=\"false\">\r\n        </ngx-select-dropdown>\r\n      </p>\r\n      <p style=\"width:100%;\">\r\n        Char 3 :\r\n        <select *ngIf=\"!(settingsService.settings.useAutoComplete)\" [(ngModel)]=\"selectedChar3\">\r\n          <option *ngFor=\"let char of gildenService.charInfos\" [ngValue]=\"char.name\">{{char.name}}</option>\r\n        </select>\r\n\r\n        <ngx-select-dropdown *ngIf=\"(settingsService.settings.useAutoComplete)\" [config]=\"autoCompleteConfig\" [options]=\"gildenService.charInfos\"\r\n                             [(value)]=\"selectedChar3\" [multiple]=\"false\">\r\n        </ngx-select-dropdown>\r\n      </p>\r\n      <p style=\"width:100%;\">\r\n        Char 4 :\r\n        <select *ngIf=\"!(settingsService.settings.useAutoComplete)\" [(ngModel)]=\"selectedChar4\">\r\n          <option *ngFor=\"let char of gildenService.charInfos\" [ngValue]=\"char.name\">{{char.name}}</option>\r\n        </select>\r\n\r\n        <ngx-select-dropdown *ngIf=\"(settingsService.settings.useAutoComplete)\" [config]=\"autoCompleteConfig\" [options]=\"gildenService.charInfos\"\r\n                             [(value)]=\"selectedChar4\" [multiple]=\"false\">\r\n        </ngx-select-dropdown>\r\n      </p>\r\n      <p style=\"width:100%;\">\r\n        Char 5 :\r\n        <select *ngIf=\"!(settingsService.settings.useAutoComplete)\" [(ngModel)]=\"selectedChar5\">\r\n          <option *ngFor=\"let char of gildenService.charInfos\" [ngValue]=\"char.name\">{{char.name}}</option>\r\n        </select>\r\n\r\n        <ngx-select-dropdown *ngIf=\"(settingsService.settings.useAutoComplete)\" [config]=\"autoCompleteConfig\" [options]=\"gildenService.charInfos\"\r\n                             [(value)]=\"selectedChar5\" [multiple]=\"false\">\r\n        </ngx-select-dropdown>\r\n      </p>\r\n\r\n      <button style=\"width: 100%\" (click)=\"addSquadToMyTeams()\">{{'Confirm'| language}}</button>\r\n\r\n    </div>\r\n  </div>\r\n\r\n</div>\r\n"
 
 /***/ }),
 

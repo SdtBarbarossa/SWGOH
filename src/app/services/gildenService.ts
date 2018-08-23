@@ -28,8 +28,13 @@ export class gildenService {
   //swgoh-help
   apiHelpURL = 'https://apiv2.swgoh.help';
   jsonResponseSWGOHHelpGuild: any;
+  jsonResponseSWGOHHelpGuildRosters: any;
   jsonResponseSWGOHHelpUnits: any;
   language = 'ENG_US';
+
+  //charStats
+  charStatsA: any;
+  charStatsB: any;
 
   constructor(private settingsService: SettingsService, http: HttpClient, private lz: LZStringService) {
     this.settings = this.settingsService.getSettings();
@@ -106,13 +111,25 @@ export class gildenService {
   }
 
   saveSWGOHHelpResponse() {
-    var answerAsJSON = JSON.stringify(this.jsonResponseSWGOHHelpGuild);
+    var guildInfoNow = new GildenInfos();
+    guildInfoNow.bannerColor = this.jsonResponseSWGOHHelpGuild.bannerColor;
+    guildInfoNow.bannerLogo = this.jsonResponseSWGOHHelpGuild.bannerLogo;
+    guildInfoNow.desc = this.jsonResponseSWGOHHelpGuild.desc;
+    guildInfoNow.members = this.jsonResponseSWGOHHelpGuild.members;
+    guildInfoNow.message = this.jsonResponseSWGOHHelpGuild.message;
+    guildInfoNow.name = this.jsonResponseSWGOHHelpGuild.name;
+    guildInfoNow.raid = this.jsonResponseSWGOHHelpGuild.raid;
+    guildInfoNow.required = this.jsonResponseSWGOHHelpGuild.required;
+    guildInfoNow.updated = this.jsonResponseSWGOHHelpGuild.updated;
+    guildInfoNow.roster = this.jsonResponseSWGOHHelpGuildRosters;
+
+    var answerAsJSON = JSON.stringify(guildInfoNow);
     console.log('Full Size: ' + answerAsJSON.length);
     var compressed = this.lz.compress(answerAsJSON);
     console.log('Compressed Size: ' + compressed.length);
     localStorage.swgohHelpGilde = compressed;
     this.syncstatus += 'Gildeninfos Saved \n\r';
-    this.gildenInfos = this.jsonResponseSWGOHHelpGuild;
+    this.gildenInfos = guildInfoNow;
     console.log(this.gildenInfos);
   }
 
@@ -188,6 +205,47 @@ export class gildenService {
         });
     }
     
+  }
+
+  loginToSWGOHHelpForCharStats(charname: string, member: Member, isA: boolean) {
+
+    var user = "username=sdtbarbarossa";
+    user += "&password=ExsJfR!nzYB*7Mqr";
+    user += "&grant_type=password";
+    user += "&client_id=123";
+    user += "&client_secret=ABC";
+
+    let headers = new HttpHeaders();
+    headers = headers.append('Content-Type', 'application/x-www-form-urlencoded');
+    headers.append('Content-Length', user.length.toString());
+
+    if (this.token != null && this.token != "") {
+
+      this.loadCharStats(charname, member, isA);
+    }
+    else {
+
+      this.http.post('https://apiv2.swgoh.help/auth/signin/', user, { headers: headers })
+        .subscribe(data => {
+          var response = data as loginResponse;
+          this.token = response.access_token;
+
+          if (navigator.language == "de-DE")
+            this.syncstatus += 'Login erfolgreich! \n\r';
+          else
+            this.syncstatus += 'Login suceeded! \n\r';
+
+          this.loadCharStats(charname, member, isA);
+
+        }, Error => {
+          alert(Error.message);
+        });
+    }
+
+  }
+
+  loadCharStats(charname: string, member: Member, isA: boolean) {
+
   }
 
   loginEventToSWGOHHelp() {
@@ -269,9 +327,39 @@ export class gildenService {
     header2.append('Access-Control-Allow-Headers', 'Authorization');
     this.http.post('https://apiv2.swgoh.help/swgoh/guild/', payload, { headers: header2 })
       .subscribe(data2 => {
+
         this.jsonResponseSWGOHHelpGuild = data2;
-        this.saveSWGOHHelpResponse();
-        this.loadSWGOHHelpExtras();
+
+        var allycodes = new Array();
+
+        for (var i = 0; i < this.jsonResponseSWGOHHelpGuild.roster.length; i++) {
+          allycodes.push(this.jsonResponseSWGOHHelpGuild.roster[i].allyCode);
+        }
+
+        var payload2 = {
+          allycode: allycodes,
+          language: this.language
+        };
+
+        this.http.post('https://apiv2.swgoh.help/swgoh/player/', payload2, { headers: header2 })
+          .subscribe(data3 => {
+
+            this.jsonResponseSWGOHHelpGuildRosters = data3;
+            this.saveSWGOHHelpResponse();
+            this.loadSWGOHHelpExtras();
+
+          }, Error => {
+            if (navigator.language == "de-DE") {
+              this.syncstatus += 'Fehler beim abrufen der Daten... breche ab \n\r';
+              this.syncstatus += Error.message + '\n\r';
+              this.syncstatus += 'Ende der Synchronisation! \n\r';
+            }
+            else {
+              this.syncstatus += 'Error on getting Guilddata...aborting... \n\r';
+              this.syncstatus += Error.message + '\n\r';
+              this.syncstatus += 'End of Sync! \n\r';
+            }
+          });
 
       }, Error => {
         if (navigator.language == "de-DE") {
@@ -414,16 +502,9 @@ export class gildenService {
 
     var charsFound = new Array();
 
-    //MapCharName To IDName
-    var idName = this.charInfos.filter(info => info.name.toLowerCase().indexOf(name.toLowerCase()) >= 0);
-    
-    if (idName == null || idName.length == 0)
-      return null;
-
     for (var i = 0; i < this.gildenInfos.roster.length; i++) {
-      for (var z = 0; z < idName.length; z++) {
-
-      var foundChars = this.gildenInfos.roster[i].roster.filter(char => (idName[z].base_id.toLowerCase() == char.name.toLowerCase()) );
+      
+      var foundChars = this.gildenInfos.roster[i].roster.filter(char => (char.name.toLowerCase().indexOf(name.toLowerCase()) > -1) && char.type != "SHIP");
 
       if (foundChars == null || foundChars.length == 0)
       {
@@ -446,12 +527,51 @@ export class gildenService {
 
         }
       }
-        
+
+    }
+
+    charsFound.sort(function (a, b) { return b.charakter.gp - a.charakter.gp });
+
+    return charsFound;
+
+  }
+
+  getAllShipsByName(name: string) {
+
+    var shipsFound = new Array();
+
+    for (var i = 0; i < this.gildenInfos.roster.length; i++) {
+
+      if (name == "ALL") {
+        var foundShips = this.gildenInfos.roster[i].roster.filter(char => char.type == "SHIP");
+      } else {
+        var foundShips = this.gildenInfos.roster[i].roster.filter(char => (char.name.toLowerCase().indexOf(name.toLowerCase()) > -1) && char.type == "SHIP");
+      }
+
+      if (foundShips == null || foundShips.length == 0) {
+
+      }
+      else {
+        for (var x = 0; x < foundShips.length; x++) {
+
+          if (foundShips[x] == null || foundShips[x] == undefined) {
+
+          }
+          else {
+            var charHelperNow = new CharFindHelper();
+            charHelperNow.besitzer = this.gildenInfos.roster[i].name;
+            charHelperNow.charakter = foundShips[x];
+            shipsFound.push(charHelperNow);
+          }
+
+        }
       }
 
     }
 
-    return charsFound;
+    shipsFound.sort(function (a, b) { return b.charakter.gp - a.charakter.gp });
+
+    return shipsFound;
 
   }
 
@@ -463,6 +583,30 @@ export class gildenService {
       arenaTeamNow.besitzer = this.gildenInfos.roster[i].name;
 
       var teamNow = this.gildenInfos.roster[i].arena.char;
+      arenaTeamNow.rang = teamNow.rank;
+
+      for (var x = 0; x < teamNow.squad.length; x++) {
+
+        var charNow = this.gildenInfos.roster[i].roster.find(char => char.name == teamNow.squad[x].name);
+
+        if (charNow != null)
+          arenaTeamNow.charaktere.push(charNow);
+      }
+
+      allTeams.push(arenaTeamNow);
+
+    }
+    return allTeams as ArenaTeamHelper[];
+  }
+
+  getAllFleetArenaTeams() {
+    var allTeams = new Array();
+
+    for (var i = 0; i < this.gildenInfos.roster.length; i++) {
+      var arenaTeamNow = new ArenaTeamHelper();
+      arenaTeamNow.besitzer = this.gildenInfos.roster[i].name;
+
+      var teamNow = this.gildenInfos.roster[i].arena.ship;
       arenaTeamNow.rang = teamNow.rank;
 
       for (var x = 0; x < teamNow.squad.length; x++) {
@@ -557,15 +701,11 @@ export class gildenService {
     
     var tempSumA = 0;
     for (var i = 0; i < a.length; i++) {
-      tempSumA += a[i].gearLevel;
-      tempSumA += a[i].Zetas*4;
-      tempSumA += a[i].Sterne;
+      tempSumA += a[i].Power;
     }
     var tempSumB = 0;
     for (var i = 0; i < b.length; i++) {
-      tempSumB += b[i].gearLevel;
-      tempSumB += b[i].Zetas*4;
-      tempSumB += b[i].Sterne;
+      tempSumB += b[i].Power;
     }
     
     if (tempSumA > tempSumB)
@@ -725,7 +865,7 @@ export class gildenService {
       name = idName.base_id;
 
     for (var i = 0; i < member.roster.length; i++) {
-      if (member.roster[i].name.toLowerCase() == name.toLowerCase()) {
+      if (member.roster[i].defId.toLowerCase() == name.toLowerCase()) {
         return member.roster[i];
       }
     }
@@ -745,12 +885,12 @@ export class gildenService {
     else
       mappedChar.Name = newchar.name;
 
-    mappedChar.Power = newchar.xp;
+    mappedChar.Power = newchar.gp;
     mappedChar.Sterne = newchar.rarity;
 
     if (this.charInfos != null) {
 
-      var charInfoNow = this.charInfos.find(info => info.base_id == newchar.name);
+      var charInfoNow = this.charInfos.find(info => info.base_id == newchar.defId);
 
       if (charInfoNow != null) {
         mappedChar.MaxPower = charInfoNow.power;
@@ -786,7 +926,7 @@ export class gildenService {
       name = idName.base_id;
 
     for (var i = 0; i < member.roster.length; i++) {
-      if (member.roster[i].name.toLowerCase() == name.toLowerCase()) {
+      if (member.roster[i].defId.toLowerCase() == name.toLowerCase()) {
         return this.mappChar(member.roster[i], member.name, idName.name);
       }
     }
@@ -880,6 +1020,7 @@ export class Charakter {
   defId: string = "";
   equipped: Gear[] = new Array();
   gear: number = 0;
+  gp: number = 0;
   id: string = "";
   level: number = 0;
   mods: Mod[] = new Array();
@@ -890,7 +1031,7 @@ export class Charakter {
   xp: number = 0;
 }
 
-class MappedCharakter {
+export class MappedCharakter {
   Name: string;
   Besitzer: string;
   Power: number;
@@ -912,16 +1053,16 @@ class Mod {
   id: string = "";
   level: number = 0;
   pips: number = 0;
-  primaryBonusType: number = 0;
-  primaryBonusValue: number = 0;
-  secondaryType_1: number = 0;
-  secondaryType_2: number = 0;
-  secondaryType_3: number = 0;
-  secondaryType_4: number = 0;
-  secondaryValue_1: number = 0;
-  secondaryValue_2: number = 0;
-  secondaryValue_3: number = 0;
-  secondaryValue_4: number = 0;
+  primaryBonusType: string = "";
+  primaryBonusValue: string = "";
+  secondaryType_1: string = "";
+  secondaryType_2: string = "";
+  secondaryType_3: string = "";
+  secondaryType_4: string = "";
+  secondaryValue_1: string = "";
+  secondaryValue_2: string = "";
+  secondaryValue_3: string = "";
+  secondaryValue_4: string = "";
   set: number = 0;
   setId: number = 0;
   slot: number = 0;

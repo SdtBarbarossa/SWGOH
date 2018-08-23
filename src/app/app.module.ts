@@ -7,7 +7,6 @@ import { environment } from '../environments/environment';
 
 import { HomeComponent } from './home/home';
 import { SettingComponent } from './settings/setting';
-import { CharSearchComponent } from './charSearch/charsearch';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SettingsService } from './services/settingsService';
 import { gildenService } from './services/gildenService';
@@ -36,13 +35,16 @@ import { EventsComponent } from './events/events';
 import { EventShowPipe } from './pipes/events/eventShow.pipe';
 import { ComparerComponent } from './comparer/comparer';
 import { MapToIterable } from './pipes/MapToIterable.pipe';
+import { SquadPowerPipe } from './pipes/charpipe/squadPower.pipe';
+import { FleetTeamsComponent } from './fleetTeams/fleetTeams';
+import { FleetImageLinkPipe } from './pipes/charpipe/fleetlink.pipe';
+import { ShipSearchComponent } from './shipSearch/shipSearch';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     SettingComponent,
-    CharSearchComponent,
     SquadSearchComponent,
     TBPlatoonComponent,
     RaidPlannerComponent,
@@ -50,6 +52,8 @@ import { MapToIterable } from './pipes/MapToIterable.pipe';
     newCharSearchComponent,
     EventsComponent,
     ComparerComponent,
+    FleetTeamsComponent,
+    ShipSearchComponent,
 
     //Pipes here
 
@@ -66,7 +70,9 @@ import { MapToIterable } from './pipes/MapToIterable.pipe';
     ColumnFixedPipe,
     LanguagePipe,
     EventShowPipe,
-    MapToIterable
+    SquadPowerPipe,
+    MapToIterable,
+    FleetImageLinkPipe
 
   ],
   imports: [

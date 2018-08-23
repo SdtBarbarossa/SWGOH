@@ -8,15 +8,17 @@
 
   <ItemGroup>
     <None Remove="src\app\arenaTeams\arenaTeams.ts" />
-    <None Remove="src\app\charSearch\charsearch.ts" />
     <None Remove="src\app\comparer\comparer.ts" />
     <None Remove="src\app\events\events.ts" />
+    <None Remove="src\app\fleetTeams\fleetTeams.ts" />
     <None Remove="src\app\home\home.ts" />
     <None Remove="src\app\newCharSearch\newCharSearch.ts" />
     <None Remove="src\app\pipes\charpipe\charGear.pipe.ts" />
     <None Remove="src\app\pipes\charpipe\charLink.pipe.ts" />
     <None Remove="src\app\pipes\charpipe\charName.pipe.ts" />
+    <None Remove="src\app\pipes\charpipe\fleetlink.pipe.ts" />
     <None Remove="src\app\pipes\charpipe\gearLink.pipe.ts" />
+    <None Remove="src\app\pipes\charpipe\squadPower.pipe.ts" />
     <None Remove="src\app\pipes\columnfixed.pipe.ts" />
     <None Remove="src\app\pipes\columntype.pipe.ts" />
     <None Remove="src\app\pipes\columnwidth.pipe.ts" />
@@ -31,6 +33,7 @@
     <None Remove="src\app\services\gildenService.ts" />
     <None Remove="src\app\services\settingsService.ts" />
     <None Remove="src\app\settings\setting.ts" />
+    <None Remove="src\app\shipSearch\shipSearch.ts" />
     <None Remove="src\app\TBPlatoons\platoontool.ts" />
     <None Remove="src\app\squadSearch\squadsearch.ts" />
   </ItemGroup>
@@ -46,12 +49,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="src\app\fleetTeams\fleetTeams.ts" />
     <TypeScriptCompile Include="src\app\comparer\comparer.ts" />
     <TypeScriptCompile Include="src\app\events\events.ts" />
+    <TypeScriptCompile Include="src\app\shipSearch\shipSearch.ts" />
     <TypeScriptCompile Include="src\app\newCharSearch\newCharSearch.ts" />
-    <TypeScriptCompile Include="src\app\charSearch\charsearch.ts" />
     <TypeScriptCompile Include="src\app\home\home.ts" />
     <TypeScriptCompile Include="src\app\arenaTeams\arenaTeams.ts" />
+    <TypeScriptCompile Include="src\app\pipes\charpipe\fleetlink.pipe.ts" />
+    <TypeScriptCompile Include="src\app\pipes\charpipe\squadPower.pipe.ts" />
     <TypeScriptCompile Include="src\app\pipes\charpipe\charLink.pipe.ts" />
     <TypeScriptCompile Include="src\app\pipes\charpipe\charGear.pipe.ts" />
     <TypeScriptCompile Include="src\app\pipes\charpipe\charName.pipe.ts" />
