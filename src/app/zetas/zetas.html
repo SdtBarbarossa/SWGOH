@@ -1,0 +1,35 @@
+<div *ngIf="!allZetas">Lädt...</div>
+
+<dx-data-grid *ngIf="allZetas"
+              [dataSource]="allZetas"
+              [allowColumnReordering]="true"
+              [showBorders]="true"
+              [allowColumnResizing]="true"
+              [columnMinWidth]="50"
+              [columnAutoWidth]="true">
+
+  <dxo-filter-row [visible]="true"></dxo-filter-row>
+  <dxo-scrolling mode="infinite"></dxo-scrolling>
+
+  <dxo-column-chooser [enabled]="true"
+                      mode="dragAndDrop">
+  </dxo-column-chooser>
+
+  <dxi-column dataField="CharName" caption="Charname" [dataType]="string" cellTemplate="SkillnameTemplate"></dxi-column>
+  <dxi-column dataField="skillName" caption="Skillname" [dataType]="string" cellTemplate="SkillnameTemplate"></dxi-column>
+  <dxi-column dataField="anzahl" caption="Anzahl Zetas" [dataType]="number" sortOrder="desc" cellTemplate="SkillnameTemplate"></dxi-column>
+  <dxi-column dataField="Membernames" caption="Membernames" [visible]="false" cellTemplate="MembernamesTemplate"></dxi-column>
+
+  <div *dxTemplate="let data of 'MembernamesTemplate'">
+    <span *ngFor="let membername of data.value">{{membername}}, </span>
+  </div>
+
+  <div *dxTemplate="let data of 'SkillnameTemplate'">
+    <div [tooltip]="data | skillmembernames" trigger="click" hide-delay="5000" hide-delay-mobile="5000" width="100%">{{data.value}}</div>
+  </div>
+
+  <div *dxTemplate="let data of 'SkillnameTemplate'">
+    <div [tooltip]="data | skillmembernames" trigger="click" hide-delay="5000" hide-delay-mobile="5000" width="100%">{{data.value}}</div>
+  </div>
+
+</dx-data-grid>

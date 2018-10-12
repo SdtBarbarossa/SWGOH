@@ -36,8 +36,8 @@
           <img *ngIf="squad[0].Zetas>=2" src="/assets/picture/zeta.png" class="zeta2">
           <img *ngIf="squad[0].Zetas>=3" src="/assets/picture/zeta.png" class="zeta3">
 
-          <img class="charImage" src="/assets/picture/{{squad[0].imageUrl}}" alt="{{squad[0].Name}}">
-          <img class="gearImage" src="/assets/GearPNG/gear-icon-g{{squad[0].gearLevel}}.png" alt="{{squad[0].Name}}">
+          <img class="charImage" src="/assets/picture/{{squad[0].imageUrl}}" alt="{{squad[0].nameKey}}">
+          <img class="gearImage" src="/assets/GearPNG/gear-icon-g{{squad[0].gearLevel}}.png" alt="{{squad[0].nameKey}}">
           <span class="char-level">{{squad[0].Level}}</span>
           <span class="char-gear-level">{{formatGearLevel(squad[0].gearLevel)}}</span>
         </div>
@@ -66,8 +66,8 @@
           <img *ngIf="squad[1].Zetas>=2" src="/assets/picture/zeta.png" class="zeta2">
           <img *ngIf="squad[1].Zetas>=3" src="/assets/picture/zeta.png" class="zeta3">
 
-          <img class="charImage" src="/assets/picture/{{squad[1].imageUrl}}" alt="{{squad[1].Name}}">
-          <img class="gearImage" src="/assets/GearPNG/gear-icon-g{{squad[1].gearLevel}}.png" alt="{{squad[1].Name}}">
+          <img class="charImage" src="/assets/picture/{{squad[1].imageUrl}}" alt="{{squad[1].nameKey}}">
+          <img class="gearImage" src="/assets/GearPNG/gear-icon-g{{squad[1].gearLevel}}.png" alt="{{squad[1].nameKey}}">
           <span class="char-level">{{squad[1].Level}}</span>
           <span class="char-gear-level">{{formatGearLevel(squad[1].gearLevel)}}</span>
         </div>
@@ -96,8 +96,8 @@
           <img *ngIf="squad[2].Zetas>=2" src="/assets/picture/zeta.png" class="zeta2">
           <img *ngIf="squad[2].Zetas>=3" src="/assets/picture/zeta.png" class="zeta3">
 
-          <img class="charImage" src="/assets/picture/{{squad[2].imageUrl}}" alt="{{squad[2].Name}}">
-          <img class="gearImage" src="/assets/GearPNG/gear-icon-g{{squad[2].gearLevel}}.png" alt="{{squad[2].Name}}">
+          <img class="charImage" src="/assets/picture/{{squad[2].imageUrl}}" alt="{{squad[2].nameKey}}">
+          <img class="gearImage" src="/assets/GearPNG/gear-icon-g{{squad[2].gearLevel}}.png" alt="{{squad[2].nameKey}}">
           <span class="char-level">{{squad[2].Level}}</span>
           <span class="char-gear-level">{{formatGearLevel(squad[2].gearLevel)}}</span>
         </div>
@@ -126,8 +126,8 @@
           <img *ngIf="squad[3].Zetas>=2" src="/assets/picture/zeta.png" class="zeta2">
           <img *ngIf="squad[3].Zetas>=3" src="/assets/picture/zeta.png" class="zeta3">
 
-          <img class="charImage" src="/assets/picture/{{squad[3].imageUrl}}" alt="{{squad[3].Name}}">
-          <img class="gearImage" src="/assets/GearPNG/gear-icon-g{{squad[3].gearLevel}}.png" alt="{{squad[3].Name}}">
+          <img class="charImage" src="/assets/picture/{{squad[3].imageUrl}}" alt="{{squad[3].nameKey}}">
+          <img class="gearImage" src="/assets/GearPNG/gear-icon-g{{squad[3].gearLevel}}.png" alt="{{squad[3].nameKey}}">
           <span class="char-level">{{squad[3].Level}}</span>
           <span class="char-gear-level">{{formatGearLevel(squad[3].gearLevel)}}</span>
         </div>
@@ -156,8 +156,8 @@
           <img *ngIf="squad[4].Zetas>=2" src="/assets/picture/zeta.png" class="zeta2">
           <img *ngIf="squad[4].Zetas>=3" src="/assets/picture/zeta.png" class="zeta3">
 
-          <img class="charImage" src="/assets/picture/{{squad[4].imageUrl}}" alt="{{squad[4].Name}}">
-          <img class="gearImage" src="/assets/GearPNG/gear-icon-g{{squad[4].gearLevel}}.png" alt="{{squad[4].Name}}">
+          <img class="charImage" src="/assets/picture/{{squad[4].imageUrl}}" alt="{{squad[4].nameKey}}">
+          <img class="gearImage" src="/assets/GearPNG/gear-icon-g{{squad[4].gearLevel}}.png" alt="{{squad[4].nameKey}}">
           <span class="char-level">{{squad[4].Level}}</span>
           <span class="char-gear-level">{{formatGearLevel(squad[4].gearLevel)}}</span>
         </div>
@@ -187,7 +187,7 @@
       <p style="width:100%;">
         Leader :
         <select *ngIf="!(settingsService.settings.useAutoComplete)" [(ngModel)]="selectedLeader">
-          <option *ngFor="let char of gildenService.charInfos" [ngValue]="char.name">{{char.name}}</option>
+          <option *ngFor="let char of gildenService.charInfos" [ngValue]="char.nameKey">{{char.nameKey}}</option>
         </select>
 
         <ngx-select-dropdown *ngIf="(settingsService.settings.useAutoComplete)"  [config]="autoCompleteConfig" [options]="gildenService.charInfos"
@@ -197,7 +197,7 @@
       <p style="width:100%;">
         Char 2 :
         <select *ngIf="!(settingsService.settings.useAutoComplete)" [(ngModel)]="selectedChar2">
-          <option *ngFor="let char of gildenService.charInfos" [ngValue]="char.name">{{char.name}}</option>
+          <option *ngFor="let char of gildenService.charInfos" [ngValue]="char.nameKey">{{char.nameKey}}</option>
         </select>
 
         <ngx-select-dropdown *ngIf="(settingsService.settings.useAutoComplete)" [config]="autoCompleteConfig" [options]="gildenService.charInfos"
@@ -207,7 +207,7 @@
       <p style="width:100%;">
         Char 3 :
         <select *ngIf="!(settingsService.settings.useAutoComplete)" [(ngModel)]="selectedChar3">
-          <option *ngFor="let char of gildenService.charInfos" [ngValue]="char.name">{{char.name}}</option>
+          <option *ngFor="let char of gildenService.charInfos" [ngValue]="char.nameKey">{{char.nameKey}}</option>
         </select>
 
         <ngx-select-dropdown *ngIf="(settingsService.settings.useAutoComplete)" [config]="autoCompleteConfig" [options]="gildenService.charInfos"
@@ -217,7 +217,7 @@
       <p style="width:100%;">
         Char 4 :
         <select *ngIf="!(settingsService.settings.useAutoComplete)" [(ngModel)]="selectedChar4">
-          <option *ngFor="let char of gildenService.charInfos" [ngValue]="char.name">{{char.name}}</option>
+          <option *ngFor="let char of gildenService.charInfos" [ngValue]="char.nameKey">{{char.nameKey}}</option>
         </select>
 
         <ngx-select-dropdown *ngIf="(settingsService.settings.useAutoComplete)" [config]="autoCompleteConfig" [options]="gildenService.charInfos"

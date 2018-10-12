@@ -12,6 +12,7 @@
     <None Remove="src\app\events\events.ts" />
     <None Remove="src\app\fleetTeams\fleetTeams.ts" />
     <None Remove="src\app\home\home.ts" />
+    <None Remove="src\app\MemberTracking\membertracking.ts" />
     <None Remove="src\app\newCharSearch\newCharSearch.ts" />
     <None Remove="src\app\pipes\charpipe\charGear.pipe.ts" />
     <None Remove="src\app\pipes\charpipe\charLink.pipe.ts" />
@@ -22,6 +23,7 @@
     <None Remove="src\app\pipes\columnfixed.pipe.ts" />
     <None Remove="src\app\pipes\columntype.pipe.ts" />
     <None Remove="src\app\pipes\columnwidth.pipe.ts" />
+    <None Remove="src\app\pipes\events\eventName.pipe.ts" />
     <None Remove="src\app\pipes\events\eventShow.pipe.ts" />
     <None Remove="src\app\pipes\language\language.pipe.ts" />
     <None Remove="src\app\pipes\MapToIterable.pipe.ts" />
@@ -29,6 +31,8 @@
     <None Remove="src\app\pipes\modpipes\ModSlotName.pipe.ts" />
     <None Remove="src\app\pipes\modpipes\ModStatName.pipe.ts" />
     <None Remove="src\app\pipes\modpipes\ModStatValue.pipe.ts" />
+    <None Remove="src\app\pipes\SkillMemberNames.pipe.ts" />
+    <None Remove="src\app\pipes\squadToString.pipe.ts" />
     <None Remove="src\app\RaidPlanner\raidplanner.ts" />
     <None Remove="src\app\services\gildenService.ts" />
     <None Remove="src\app\services\settingsService.ts" />
@@ -36,6 +40,7 @@
     <None Remove="src\app\shipSearch\shipSearch.ts" />
     <None Remove="src\app\TBPlatoons\platoontool.ts" />
     <None Remove="src\app\squadSearch\squadsearch.ts" />
+    <None Remove="src\app\zetas\zetas.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -49,9 +54,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="src\app\pipes\SkillMemberNames.pipe.ts" />
+    <TypeScriptCompile Include="src\app\zetas\zetas.ts" />
     <TypeScriptCompile Include="src\app\fleetTeams\fleetTeams.ts" />
     <TypeScriptCompile Include="src\app\comparer\comparer.ts" />
     <TypeScriptCompile Include="src\app\events\events.ts" />
+    <TypeScriptCompile Include="src\app\MemberTracking\membertracking.ts" />
+    <TypeScriptCompile Include="src\app\pipes\events\eventName.pipe.ts" />
+    <TypeScriptCompile Include="src\app\pipes\squadToString.pipe.ts" />
     <TypeScriptCompile Include="src\app\shipSearch\shipSearch.ts" />
     <TypeScriptCompile Include="src\app\newCharSearch\newCharSearch.ts" />
     <TypeScriptCompile Include="src\app\home\home.ts" />

@@ -26,7 +26,7 @@ import { ModStatNamePipe } from './pipes/modpipes/ModStatName.pipe';
 import { ModStatValuePipe } from './pipes/modpipes/ModStatValue.pipe';
 import { ModSlotNamePipe } from './pipes/modpipes/ModSlotName.pipe';
 import { newCharSearchComponent } from './newCharSearch/newCharSearch';
-import { DxDataGridModule, DxTextAreaModule, DxSelectBoxModule } from 'devextreme-angular';
+import { DxDataGridModule, DxTextAreaModule, DxSelectBoxModule, DxTooltipModule } from 'devextreme-angular';
 import { ColumnWidthPipe } from './pipes/columnwidth.pipe';
 import { ColumnTypePipe } from './pipes/columntype.pipe';
 import { ColumnFixedPipe } from './pipes/columnfixed.pipe';
@@ -39,6 +39,12 @@ import { SquadPowerPipe } from './pipes/charpipe/squadPower.pipe';
 import { FleetTeamsComponent } from './fleetTeams/fleetTeams';
 import { FleetImageLinkPipe } from './pipes/charpipe/fleetlink.pipe';
 import { ShipSearchComponent } from './shipSearch/shipSearch';
+import { MemberTrackingComponent } from './MemberTracking/membertracking';
+import { TooltipModule } from 'ng2-tooltip-directive';
+import { SquadToStringPipe } from './pipes/squadToString.pipe';
+import { EventNamePipe } from './pipes/events/eventName.pipe';
+import { ZetasComponent } from './zetas/zetas';
+import { SkillMemberNames } from './pipes/SkillMemberNames.pipe';
 
 @NgModule({
   declarations: [
@@ -54,6 +60,8 @@ import { ShipSearchComponent } from './shipSearch/shipSearch';
     ComparerComponent,
     FleetTeamsComponent,
     ShipSearchComponent,
+    MemberTrackingComponent,
+    ZetasComponent,
 
     //Pipes here
 
@@ -72,7 +80,10 @@ import { ShipSearchComponent } from './shipSearch/shipSearch';
     EventShowPipe,
     SquadPowerPipe,
     MapToIterable,
-    FleetImageLinkPipe
+    FleetImageLinkPipe,
+    SquadToStringPipe,
+    EventNamePipe,
+    SkillMemberNames
 
   ],
   imports: [
@@ -87,7 +98,9 @@ import { ShipSearchComponent } from './shipSearch/shipSearch';
     LZStringModule,
     DxDataGridModule,
     DxTextAreaModule,
-    DxSelectBoxModule 
+    DxSelectBoxModule,
+    DxTooltipModule,
+    TooltipModule
   ],
   providers: [SettingsService, gildenService, HttpClient, LZStringService ],
   bootstrap: [AppComponent]

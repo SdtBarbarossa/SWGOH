@@ -7,8 +7,7 @@ import { forEach } from '@angular/router/src/utils/collection';
 
 @Injectable()
 export class gildenService {
-
-  settings: Settings = new Settings();
+  
   gildenInfos: GildenInfos = new GildenInfos();
   gildenInfosTemp: GildenInfos = new GildenInfos();
   charInfos: any;
@@ -26,7 +25,7 @@ export class gildenService {
   http: HttpClient;
 
   //swgoh-help
-  apiHelpURL = 'https://apiv2.swgoh.help';
+  apiHelpURL = 'https://api.swgoh.help';
   jsonResponseSWGOHHelpGuild: any;
   jsonResponseSWGOHHelpGuildRosters: any;
   jsonResponseSWGOHHelpUnits: any;
@@ -37,10 +36,9 @@ export class gildenService {
   charStatsB: any;
 
   constructor(private settingsService: SettingsService, http: HttpClient, private lz: LZStringService) {
-    this.settings = this.settingsService.getSettings();
     this.http = http;
 
-    if (navigator.language == "de-DE") {
+    if (navigator.language == "de-DE" || navigator.language == "de") {
       this.language = 'GER_DE';
     }
     else {
@@ -55,9 +53,8 @@ export class gildenService {
     console.log(this.charInfos);
     console.log(this.shipInfos);
     console.log(this.ModStats);
-    console.log(this.ModSets);
   }
-
+  
   getModStats() {
     if (localStorage.midiModStats != null)
       this.ModStats = JSON.parse(localStorage.midiModStats);
@@ -102,11 +99,21 @@ export class gildenService {
 
   getSWGOHHelpResponse() {
     if (localStorage.swgohHelpGilde != null) {
-      this.gildenInfos = JSON.parse(this.lz.decompress(localStorage.swgohHelpGilde));
-      this.gildenInfos.roster = this.gildenInfos.roster.sort(function (a, b) {
-        return b.gpFull - a.gpFull;
-      })
-      console.log(this.gildenInfos);
+
+      var decompressed = this.lz.decompress(localStorage.swgohHelpGilde);
+
+      if ((decompressed as string).startsWith("{"))
+      {
+        this.gildenInfos = JSON.parse(decompressed);
+
+        if (this.gildenInfos != null && this.gildenInfos.roster[0].stats != undefined) {
+          this.gildenInfos.roster = this.gildenInfos.roster.sort(function (a, b) {
+            return b.stats.find(stat => stat.index == 2).value - a.stats.find(stat => stat.index == 2).value;
+          });
+        }
+        console.log(this.gildenInfos);
+      }
+        
     }
   }
 
@@ -121,6 +128,7 @@ export class gildenService {
     guildInfoNow.raid = this.jsonResponseSWGOHHelpGuild.raid;
     guildInfoNow.required = this.jsonResponseSWGOHHelpGuild.required;
     guildInfoNow.updated = this.jsonResponseSWGOHHelpGuild.updated;
+    guildInfoNow.gp = this.jsonResponseSWGOHHelpGuild.gp;
     guildInfoNow.roster = this.jsonResponseSWGOHHelpGuildRosters;
 
     var answerAsJSON = JSON.stringify(guildInfoNow);
@@ -153,7 +161,8 @@ export class gildenService {
   loginToSWGOHHelp() {
 
     var user = "username=sdtbarbarossa";
-    user += "&password=ExsJfR!nzYB*7Mqr";
+    //user += "&password=ExsJfR!nzYB*7Mqr";
+    user += "&password=1234midi";
     user += "&grant_type=password";
     user += "&client_id=123";
     user += "&client_secret=ABC";
@@ -168,7 +177,13 @@ export class gildenService {
       else
         this.syncstatus += 'Already logged in.... skip login \n\r';
 
-      this.loadGildenInfos();
+      if (this.settingsService.settings.loadSync == true) {
+        this.loadGildenInfos();
+      }
+      else {
+        this.loadGildenInfosAsync();
+      }
+
     }
     else
     {
@@ -177,7 +192,7 @@ export class gildenService {
       else
         this.syncstatus += 'Login at swgoh.help... \n\r';
 
-      this.http.post('https://apiv2.swgoh.help/auth/signin/', user, { headers: headers })
+      this.http.post('https://api.swgoh.help/auth/signin/', user, { headers: headers })
         .subscribe(data => {
           var response = data as loginResponse;
           this.token = response.access_token;
@@ -187,7 +202,12 @@ export class gildenService {
           else
             this.syncstatus += 'Login suceeded! \n\r';
 
-          this.loadGildenInfos();
+          if (this.settingsService.settings.loadSync == true) {
+            this.loadGildenInfos();
+          }
+          else {
+            this.loadGildenInfosAsync();
+          }
 
         }, Error => {
           if (navigator.language == "de-DE") {
@@ -210,7 +230,8 @@ export class gildenService {
   loginToSWGOHHelpForCharStats(charname: string, member: Member, isA: boolean) {
 
     var user = "username=sdtbarbarossa";
-    user += "&password=ExsJfR!nzYB*7Mqr";
+    //user += "&password=ExsJfR!nzYB*7Mqr";
+    user += "&password=1234midi";
     user += "&grant_type=password";
     user += "&client_id=123";
     user += "&client_secret=ABC";
@@ -225,7 +246,7 @@ export class gildenService {
     }
     else {
 
-      this.http.post('https://apiv2.swgoh.help/auth/signin/', user, { headers: headers })
+      this.http.post('https://api.swgoh.help/auth/signin/', user, { headers: headers })
         .subscribe(data => {
           var response = data as loginResponse;
           this.token = response.access_token;
@@ -251,7 +272,8 @@ export class gildenService {
   loginEventToSWGOHHelp() {
 
     var user = "username=sdtbarbarossa";
-    user += "&password=ExsJfR!nzYB*7Mqr";
+    //user += "&password=ExsJfR!nzYB*7Mqr";
+    user += "&password=1234midi";
     user += "&grant_type=password";
     user += "&client_id=123";
     user += "&client_secret=ABC";
@@ -266,7 +288,7 @@ export class gildenService {
     }
     else {
 
-      this.http.post('https://apiv2.swgoh.help/auth/signin/', user, { headers: headers })
+      this.http.post('https://api.swgoh.help/auth/signin/', user, { headers: headers })
         .subscribe(data => {
           var response = data as loginResponse;
           this.token = response.access_token;
@@ -294,11 +316,12 @@ export class gildenService {
     let header2 = new HttpHeaders();
     header2 = header2.append("Authorization", "Bearer " + this.token);
     header2.append('Access-Control-Allow-Headers', 'Authorization');
-    this.http.post('https://apiv2.swgoh.help/swgoh/events', payload, { headers: header2 })
+    this.http.post('https://api.swgoh.help/swgoh/events', payload, { headers: header2 })
       .subscribe(data2 => {
         console.log(data2);
-        this.SWGOHEvents = data2 as SWGOHEvent[];
-        this.SWGOHEvents.sort(function (a, b) { return a.schedule[0].start - b.schedule[0].start; });
+        this.SWGOHEvents = data2[0].events as SWGOHEvent[];
+        this.SWGOHEvents.sort(function (a, b) {
+          return a.instanceList[0].startTime - b.instanceList[0].startTime; });
       }, Error => {
         alert(Error.message);
       });
@@ -308,27 +331,34 @@ export class gildenService {
   loadGildenInfos() {
 
     if (navigator.language == "de-DE") {
-      this.syncstatus += 'Lade Gildendaten für ' + this.settings.allycode + '... \n\r';
-      this.syncstatus += 'Dies kann bis zu 2 min dauern... \n\r';
+      this.syncstatus += 'Lade Gildendaten für ' + this.settingsService.settings.allycode + '... \n\r';
     }
     else
     {
-      this.syncstatus += 'Load Guilddata for ' + this.settings.allycode + '... \n\r';
-      this.syncstatus += 'This can take several minutes... \n\r';
+      this.syncstatus += 'Load Guilddata for ' + this.settingsService.settings.allycode + '... \n\r';
     }
 
     var payload = {
-      allycode: this.settings.allycode,
+      allycode: this.settingsService.settings.allycode,
       language: this.language
     };
 
     let header2 = new HttpHeaders();
     header2 = header2.append("Authorization", "Bearer " + this.token);
     header2.append('Access-Control-Allow-Headers', 'Authorization');
-    this.http.post('https://apiv2.swgoh.help/swgoh/guild/', payload, { headers: header2 })
+    this.http.post('https://api.swgoh.help/swgoh/guild/', payload, { headers: header2 })
       .subscribe(data2 => {
 
-        this.jsonResponseSWGOHHelpGuild = data2;
+        this.jsonResponseSWGOHHelpGuild = data2[0];
+
+        if (navigator.language == "de-DE") {
+          this.syncstatus += 'Gilde "' + this.jsonResponseSWGOHHelpGuild.name + '" gefunden. \n\rLade Spielerinfos... \n\r';
+          this.syncstatus += 'Dies kann bis zu 2 min dauern... \n\r';
+        }
+        else {
+          this.syncstatus += 'Guild "' + this.jsonResponseSWGOHHelpGuild.name + '" found. \n\rLoad Playerinfos... \n\r';
+          this.syncstatus += 'This can take several minutes... \n\r';
+        }
 
         var allycodes = new Array();
 
@@ -341,7 +371,8 @@ export class gildenService {
           language: this.language
         };
 
-        this.http.post('https://apiv2.swgoh.help/swgoh/player/', payload2, { headers: header2 })
+        this.http.post('https://api.swgoh.help/swgoh/player/', payload2, { headers: header2 })
+          .timeout(1000*60*10)
           .subscribe(data3 => {
 
             this.jsonResponseSWGOHHelpGuildRosters = data3;
@@ -376,6 +407,89 @@ export class gildenService {
     
   }
 
+  async loadGildenInfosAsync() {
+
+    if (navigator.language == "de-DE") {
+      this.syncstatus += 'Lade Gildendaten für ' + this.settingsService.settings.allycode + '... \n\r';
+    }
+    else {
+      this.syncstatus += 'Load Guilddata for ' + this.settingsService.settings.allycode + '... \n\r';
+    }
+
+    var payload = {
+      allycode: this.settingsService.settings.allycode,
+      language: this.language
+    };
+
+    let header2 = new HttpHeaders();
+    header2 = header2.append("Authorization", "Bearer " + this.token);
+    header2.append('Access-Control-Allow-Headers', 'Authorization');
+    this.http.post('https://api.swgoh.help/swgoh/guild/', payload, { headers: header2 })
+      .subscribe(async data2 => {
+
+        this.jsonResponseSWGOHHelpGuild = data2[0];
+
+        if (navigator.language == "de-DE") {
+          this.syncstatus += 'Gilde "' + this.jsonResponseSWGOHHelpGuild.name + '" gefunden. Lade Spielerinfos... \n\r';
+          this.syncstatus += 'Dies kann bis zu 2 min dauern... \n\r';
+        }
+        else {
+          this.syncstatus += 'Guild "' + this.jsonResponseSWGOHHelpGuild.name + '" found.Load Playerinfos... \n\r';
+          this.syncstatus += 'This can take several minutes... \n\r';
+        }
+
+        var allycodes = new Array();
+
+        var guildRosters = new Array();
+
+        for (var i = 0; i < this.jsonResponseSWGOHHelpGuild.roster.length; i++) {
+
+          var payload2 = {
+            allycode: this.jsonResponseSWGOHHelpGuild.roster[i].allyCode,
+            language: this.language
+          };
+
+          if (navigator.language == "de-DE") {
+            this.syncstatus += 'Lade Daten für: "' + this.jsonResponseSWGOHHelpGuild.roster[i].name + '" \n\r';
+          }
+          else {
+            this.syncstatus += 'Updating data for: "' + this.jsonResponseSWGOHHelpGuild.roster[i].name + '" \n\r';
+          }
+
+          let result = await this.http.post('https://api.swgoh.help/swgoh/player/', payload2, { headers: header2 })
+            .timeout(1000 * 60 * 5).toPromise();
+
+          guildRosters.push(result[0]);
+
+          if (navigator.language == "de-DE") {
+            this.syncstatus += 'Erfolgreich geupdated: "' + (result as Member[])[0].name + '" \n\r';
+          }
+          else {
+            this.syncstatus += 'Done with updating: "' + (result as Member[])[0].name + '" \n\r';
+          }
+
+        }
+
+        this.jsonResponseSWGOHHelpGuildRosters = guildRosters;
+        this.saveSWGOHHelpResponse();
+        this.loadSWGOHHelpExtras();
+
+
+      }, Error => {
+        if (navigator.language == "de-DE") {
+          this.syncstatus += 'Fehler beim abrufen der Daten... breche ab \n\r';
+          this.syncstatus += Error.message + '\n\r';
+          this.syncstatus += 'Ende der Synchronisation! \n\r';
+        }
+        else {
+          this.syncstatus += 'Error on getting Guilddata...aborting... \n\r';
+          this.syncstatus += Error.message + '\n\r';
+          this.syncstatus += 'End of Sync! \n\r';
+        }
+      });
+
+  }
+
   loadSWGOHHelpExtras()
   {
     this.syncstatus += 'Hole Mod-Set-Infos... \n\r';
@@ -388,7 +502,7 @@ export class gildenService {
     let header2 = new HttpHeaders();
     header2 = header2.append("Authorization", "Bearer " + this.token);
     header2.append('Access-Control-Allow-Headers', 'Authorization');
-    this.http.post('https://apiv2.swgoh.help/swgoh/data/', Payload, { headers: header2 })
+    this.http.post('https://api.swgoh.help/swgoh/data/', Payload, { headers: header2 })
       .subscribe(data2 => {
         this.ModSets = data2;
         this.saveModSets(this.ModSets);
@@ -402,12 +516,12 @@ export class gildenService {
         let header2 = new HttpHeaders();
         header2 = header2.append("Authorization", "Bearer " + this.token);
         header2.append('Access-Control-Allow-Headers', 'Authorization');
-        this.http.post('https://apiv2.swgoh.help/swgoh/data/', Payload2, { headers: header2 })
+        this.http.post('https://api.swgoh.help/swgoh/data/', Payload2, { headers: header2 })
           .subscribe(data2 => {
             this.ModStats = data2;
             this.saveModStats(this.ModStats);
             this.syncstatus += 'Mod-Stat-Infos erfolgreich... \n\r';
-            this.loadSWGOHggChars();
+            this.loadSWGOHggChars();            
           }, Error => {
             this.syncstatus += 'Fehler beim abrufen der Daten... breche ab \n\r';
             this.syncstatus += Error.message + '\n\r';
@@ -480,14 +594,14 @@ export class gildenService {
 
     this.isInSync = true;
     
-    if (!this.checkIfItsANumber(this.settings.allycode)) {
+    if (!this.checkIfItsANumber(this.settingsService.settings.allycode)) {
       if (navigator.language == "de-DE") {
-        alert('Verbündetencode "' + this.settings.allycode + '" ist entweder leer oder im falschen Format. Es muss eine 9 stellige Zahl sein ( ohne - )');
+        alert('Verbündetencode "' + this.settingsService.settings.allycode + '" ist entweder leer oder im falschen Format. Es muss eine 9 stellige Zahl sein ( ohne - )');
         this.syncstatus += 'abgebrochen \n\r';
       }
       else
       {
-        alert('AllyCode "' + this.settings.allycode + '" is either empty or in the wrong format. It must be a string with 9 numbers ( no - )');
+        alert('AllyCode "' + this.settingsService.settings.allycode + '" is either empty or in the wrong format. It must be a string with 9 numbers ( no - )');
         this.syncstatus += 'aborted \n\r';
       }
 
@@ -504,7 +618,7 @@ export class gildenService {
 
     for (var i = 0; i < this.gildenInfos.roster.length; i++) {
       
-      var foundChars = this.gildenInfos.roster[i].roster.filter(char => (char.name.toLowerCase().indexOf(name.toLowerCase()) > -1) && char.type != "SHIP");
+      var foundChars = this.gildenInfos.roster[i].roster.filter(char => (char.nameKey.toLowerCase().indexOf(name.toLowerCase()) > -1) && char.combatType != 2);
 
       if (foundChars == null || foundChars.length == 0)
       {
@@ -543,9 +657,9 @@ export class gildenService {
     for (var i = 0; i < this.gildenInfos.roster.length; i++) {
 
       if (name == "ALL") {
-        var foundShips = this.gildenInfos.roster[i].roster.filter(char => char.type == "SHIP");
+        var foundShips = this.gildenInfos.roster[i].roster.filter(char => char.combatType == 2);
       } else {
-        var foundShips = this.gildenInfos.roster[i].roster.filter(char => (char.name.toLowerCase().indexOf(name.toLowerCase()) > -1) && char.type == "SHIP");
+        var foundShips = this.gildenInfos.roster[i].roster.filter(char => (char.nameKey.toLowerCase().indexOf(name.toLowerCase()) > -1) && char.combatType == 2);
       }
 
       if (foundShips == null || foundShips.length == 0) {
@@ -587,7 +701,7 @@ export class gildenService {
 
       for (var x = 0; x < teamNow.squad.length; x++) {
 
-        var charNow = this.gildenInfos.roster[i].roster.find(char => char.name == teamNow.squad[x].name);
+        var charNow = this.gildenInfos.roster[i].roster.find(char => char.defId == teamNow.squad[x].defId);
 
         if (charNow != null)
           arenaTeamNow.charaktere.push(charNow);
@@ -611,7 +725,7 @@ export class gildenService {
 
       for (var x = 0; x < teamNow.squad.length; x++) {
 
-        var charNow = this.gildenInfos.roster[i].roster.find(char => char.name == teamNow.squad[x].name);
+        var charNow = this.gildenInfos.roster[i].roster.find(char => char.defId == teamNow.squad[x].defId);
 
         if (charNow != null)
           arenaTeamNow.charaktere.push(charNow);
@@ -643,7 +757,7 @@ export class gildenService {
     for (var i = 0; i < this.gildenInfos.roster.length; i++) {
       if (this.gildenInfos.roster[i].name == memberName) {
         for (var x = 0; x < this.gildenInfos.roster[i].roster.length; x++) {
-          if (this.gildenInfos.roster[i].roster[x].name == charName) {
+          if (this.gildenInfos.roster[i].roster[x].nameKey == charName) {
             return this.gildenInfos.roster[i].roster[x];
           }
         }
@@ -824,12 +938,12 @@ export class gildenService {
 
 
     for (var i = 0; i < member.roster.length; i++) {
-      if (member.roster[i].name.toLowerCase().includes(name.toLowerCase())) {
+      if (member.roster[i].nameKey.toLowerCase().includes(name.toLowerCase())) {
         
         if (idName != null)
           var mappedChar = this.mappChar(member.roster[i], member.name, idName.name);
         else
-          var mappedChar = this.mappChar(member.roster[i], member.name, member.roster[i].name);
+          var mappedChar = this.mappChar(member.roster[i], member.name, member.roster[i].nameKey);
         return mappedChar;
       }
     }
@@ -844,7 +958,7 @@ export class gildenService {
     }
 
     for (var i = 0; i < member.roster.length; i++) {
-      if (member.roster[i].name.toLowerCase().includes(name.toLowerCase())) {
+      if (member.roster[i].nameKey.toLowerCase().includes(name.toLowerCase())) {
         return member.roster[i];
       }
     }
@@ -883,7 +997,7 @@ export class gildenService {
       mappedChar.Name = oldName;
     }
     else
-      mappedChar.Name = newchar.name;
+      mappedChar.Name = newchar.nameKey;
 
     mappedChar.Power = newchar.gp;
     mappedChar.Sterne = newchar.rarity;
@@ -949,12 +1063,12 @@ export class gildenService {
     }
     
     for (var i = 0; i < member.roster.length; i++) {
-      if (member.roster[i].name.toLowerCase() == name.toLowerCase()) {
+      if (member.roster[i].defId.toLowerCase() == name.toLowerCase()) {
         if (idName != null) {
           return this.mappChar(member.roster[i], member.name, idName.name);
         }
         else {
-          return this.mappChar(member.roster[i], member.name, member.roster[i].name);
+          return this.mappChar(member.roster[i], member.name, member.roster[i].nameKey);
         }
       }
     }
@@ -989,14 +1103,18 @@ class Raid {
 class Member {
   allyCode: number = 0;
   arena: Arena = new Arena();
-  gpChar: number = 0;
-  gpFull: number = 0;
-  gpShip: number = 0;
   guildName: string = "";
   level: number = 0;
   name: string = "";
   roster: Charakter[] = new Array();
+  stats: MemberStats[] = new Array();
   updated: Date = new Date();
+}
+
+class MemberStats{
+  index: number = 0;
+  name: string = "";
+  value: number = 0;
 }
 
 class Arena {
@@ -1009,9 +1127,9 @@ class ArenaHelper {
   squad: ArenaChar[] = new Array();
 }
 
-class ArenaChar {
+export class ArenaChar {
   id: string = "";
-  name: string = "";
+  defId: string = "";
   type: number = 0;
 }
 
@@ -1024,10 +1142,10 @@ export class Charakter {
   id: string = "";
   level: number = 0;
   mods: Mod[] = new Array();
-  name: string = "";
+  nameKey: string = "";
   rarity: number = 0;
   skills: Skill[] = new Array();
-  type: string = "";
+  combatType: number = 0;
   xp: number = 0;
 }
 
@@ -1053,29 +1171,32 @@ class Mod {
   id: string = "";
   level: number = 0;
   pips: number = 0;
-  primaryBonusType: string = "";
-  primaryBonusValue: string = "";
-  secondaryType_1: string = "";
-  secondaryType_2: string = "";
-  secondaryType_3: string = "";
-  secondaryType_4: string = "";
-  secondaryValue_1: string = "";
-  secondaryValue_2: string = "";
-  secondaryValue_3: string = "";
-  secondaryValue_4: string = "";
+  primaryStat: ModPrimaryStat = new ModPrimaryStat();
+  secondaryStat: ModSecondaryStat[] = new Array();
   set: number = 0;
-  setId: number = 0;
+  tier: number = 0;
   slot: number = 0;
 }
 
-class Skill {
+export class ModPrimaryStat {
+  unitStat: number = 0;
+  value: number = 0;
+}
+
+export class ModSecondaryStat {
+  roll: number = 0;
+  unitStat: number = 0;
+  value: number = 0;
+}
+
+export class Skill {
   id: string = "";
   isZeta: boolean = false;
-  name: string = "";
+  nameKey: string = "";
   tier: number = 0;
 }
 
-class squad {
+export class squad {
 
   Name: string = 'SquadName';
   Charaktere: string[] = new Array();
@@ -1100,19 +1221,21 @@ export class CharFindHelper {
 }
 
 export class Schedule {
-  start: number;
-  end: number;
-  show: number;
-  hide: number;
+  startTime: number;
+  endTime: number;
+  displayStartTime: number;
+  displayEndTime: number;
+  rewardTime: number;
+  
 }
 
 export class SWGOHEvent {
   id: string;
   priority: number;
-  name: string;
-  summary: string;
-  desc: string;
+  nameKey: string;
+  summaryKey: string;
+  descKey: string;
   type: number;
   status: number;
-  schedule: Schedule[];
+  instanceList: Schedule[];
 }

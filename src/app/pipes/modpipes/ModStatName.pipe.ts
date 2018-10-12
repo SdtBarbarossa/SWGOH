@@ -17,7 +17,7 @@ export class ModStatNamePipe implements PipeTransform {
     var ModStatsNow = this.gildenservice.ModStats[value];
 
     if (ModStatsNow != null) {
-      return ModStatsNow.name;
+      return ModStatsNow.nameKey;
     }
 
     return value.toString();

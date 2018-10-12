@@ -23,6 +23,73 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 
 /***/ }),
 
+/***/ "./src/app/MemberTracking/membertracking.css":
+/*!***************************************************!*\
+  !*** ./src/app/MemberTracking/membertracking.css ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "input[type=text] {\r\n  width: 100%;\r\n  padding: 12px 20px;\r\n  margin: 8px 0;\r\n  box-sizing: border-box;\r\n}\r\n\r\n\r\n#raidplannerTable tr:nth-child(even) {\r\n  background-color: #f2f2f2;\r\n}\r\n\r\n\r\n#raidplannerTable tr:hover {\r\n  background-color: #ddd;\r\n}\r\n\r\n\r\n#raidplannerTable th {\r\n  padding-top: 12px;\r\n  padding-bottom: 12px;\r\n  text-align: left;\r\n  background-color: #4CAF50;\r\n  color: white;\r\n}\r\n\r\n\r\n.parentOfImages {\r\n  position: relative;\r\n  top: 0;\r\n  left: 0;\r\n  width: 55px;\r\n  height: 80px;\r\n}\r\n\r\n\r\n.charImage {\r\n  z-index: 0;\r\n  position: absolute;\r\n  top: -25px;\r\n  left: -25px;\r\n  border-radius: 50%;\r\n  transform: scale(0.4, 0.4);\r\n  -ms-transform: scale(0.4, 0.4);\r\n  -webkit-transform: scale(0.4, 0.4);\r\n}\r\n\r\n\r\n.star11 {\r\n  position: absolute;\r\n  top: 7px;\r\n  left: 6px;\r\n  transform: scale(0.6, 0.6);\r\n  -ms-transform: scale(0.6, 0.6);\r\n  -webkit-transform: scale(0.6, 0.6);\r\n  z-index: 2;\r\n}\r\n\r\n\r\n.star12 {\r\n  position: absolute;\r\n  top: 0px;\r\n  left: 13px;\r\n  transform: scale(0.6, 0.6);\r\n  -ms-transform: scale(0.6, 0.6);\r\n  -webkit-transform: scale(0.6, 0.6);\r\n  z-index: 2;\r\n}\r\n\r\n\r\n.star13 {\r\n  position: absolute;\r\n  top: -3px;\r\n  left: 21px;\r\n  transform: scale(0.6, 0.6);\r\n  -ms-transform: scale(0.6, 0.6);\r\n  -webkit-transform: scale(0.6, 0.6);\r\n  z-index: 2;\r\n}\r\n\r\n\r\n.star14 {\r\n  position: absolute;\r\n  top: -5px;\r\n  left: 30px;\r\n  transform: scale(0.6, 0.6);\r\n  -ms-transform: scale(0.6, 0.6);\r\n  -webkit-transform: scale(0.6, 0.6);\r\n  z-index: 2;\r\n}\r\n\r\n\r\n.star15 {\r\n  position: absolute;\r\n  top: -3px;\r\n  left: 39px;\r\n  transform: scale(0.6, 0.6);\r\n  -ms-transform: scale(0.6, 0.6);\r\n  -webkit-transform: scale(0.6, 0.6);\r\n  z-index: 2;\r\n}\r\n\r\n\r\n.star16 {\r\n  position: absolute;\r\n  top: 0px;\r\n  left: 48px;\r\n  transform: scale(0.6, 0.6);\r\n  -ms-transform: scale(0.6, 0.6);\r\n  -webkit-transform: scale(0.6, 0.6);\r\n  z-index: 2;\r\n}\r\n\r\n\r\n.star17 {\r\n  position: absolute;\r\n  top: 7px;\r\n  left: 55px;\r\n  transform: scale(0.6, 0.6);\r\n  -ms-transform: scale(0.6, 0.6);\r\n  -webkit-transform: scale(0.6, 0.6);\r\n  z-index: 2;\r\n}\r\n\r\n\r\n.gearImage {\r\n  position: absolute;\r\n  top: -0px;\r\n  left: -0px;\r\n  z-index: 0;\r\n  transform: scale(0.7, 0.7);\r\n  -ms-transform: scale(0.7, 0.7);\r\n  -webkit-transform: scale(0.7, 0.7);\r\n}\r\n\r\n\r\n.char-level {\r\n  color: #fff;\r\n  background-color: #264257;\r\n  border: 2px solid #fff;\r\n  text-align: center;\r\n  border-radius: 100%/130% 130% 15px 15px;\r\n  position: absolute;\r\n  top: 45px;\r\n  left: 40px;\r\n  z-index: 2;\r\n  width: 15px;\r\n  padding: 0 5px;\r\n  font-size: x-small;\r\n}\r\n\r\n\r\n.char-gear-level {\r\n  color: #fff;\r\n  background-color: #006600;\r\n  border: 2px solid #fff;\r\n  text-align: center;\r\n  border-radius: 100%/130% 130% 15px 15px;\r\n  position: absolute;\r\n  left: 25px;\r\n  top: 55px;\r\n  z-index: 3;\r\n  width: 15px;\r\n  padding: 0 5px;\r\n  font-size: x-small;\r\n}\r\n\r\n\r\n.divForChar {\r\n  width: 58px;\r\n  height: 90px;\r\n  display: inline-block;\r\n  left: -20px;\r\n  position: relative;\r\n}\r\n\r\n\r\n.progress1 {\r\n  background-color: #bcd6ff;\r\n  border: 0;\r\n  position: absolute;\r\n  top: 72px;\r\n  left: 13px;\r\n  height: 18px;\r\n  width: 55px;\r\n}\r\n\r\n\r\n.progressText {\r\n  position: absolute;\r\n  top: 72px;\r\n  left: 23px;\r\n}\r\n\r\n\r\nselect {\r\n  padding: 10px 10px;\r\n  border: none;\r\n  border-radius: 4px;\r\n  background-color: #f1f1f1;\r\n}\r\n\r\n\r\nbutton {\r\n  background-color: #2196F3;\r\n  border: none;\r\n  color: white;\r\n  padding: 16px 32px;\r\n  text-decoration: none;\r\n  /*margin: 4px 2px;*/\r\n  cursor: pointer;\r\n}\r\n\r\n\r\n/* The Modal (background) */\r\n\r\n\r\n.modal {\r\n  display: none; /* Hidden by default */\r\n  position: fixed; /* Stay in place */\r\n  z-index: 11; /* Sit on top */\r\n  padding-top: 50px; /* Location of the box */\r\n  left: 0;\r\n  top: 0;\r\n  width: 100%; /* Full width */\r\n  height: 100%; /* Full height */\r\n  overflow: auto; /* Enable scroll if needed */\r\n  background-color: rgb(0,0,0); /* Fallback color */\r\n  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */\r\n}\r\n\r\n\r\n/* Modal Content */\r\n\r\n\r\n.modal-content {\r\n  position: relative;\r\n  background-color: #fefefe;\r\n  margin: auto;\r\n  padding: 0;\r\n  border: 1px solid #888;\r\n  width: 95%;\r\n  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);\r\n  -webkit-animation-name: animatetop;\r\n  -webkit-animation-duration: 0.4s;\r\n  animation-name: animatetop;\r\n  animation-duration: 0.4s\r\n}\r\n\r\n\r\n/* Add Animation */\r\n\r\n\r\n@-webkit-keyframes animatetop {\r\n  from {\r\n    top: -300px;\r\n    opacity: 0\r\n  }\r\n\r\n  to {\r\n    top: 0;\r\n    opacity: 1\r\n  }\r\n}\r\n\r\n\r\n@keyframes animatetop {\r\n  from {\r\n    top: -300px;\r\n    opacity: 0\r\n  }\r\n\r\n  to {\r\n    top: 0;\r\n    opacity: 1\r\n  }\r\n}\r\n\r\n\r\n/* The Close Button */\r\n\r\n\r\n.close {\r\n  color: white;\r\n  float: right;\r\n  font-size: 28px;\r\n  font-weight: bold;\r\n}\r\n\r\n\r\n.close:hover,\r\n  .close:focus {\r\n    color: #000;\r\n    text-decoration: none;\r\n    cursor: pointer;\r\n  }\r\n\r\n\r\n.modal-header {\r\n  padding: 2px 16px;\r\n  background-color: #2196F3;\r\n  color: white;\r\n}\r\n\r\n\r\n.modal-body {\r\n  padding: 2px 16px;\r\n}\r\n\r\n\r\nprogress {\r\n  background-color: #f3f3f3;\r\n  border: 0;\r\n  top: 80px;\r\n  position: absolute;\r\n  height: 18px;\r\n  border-radius: 9px;\r\n}\r\n\r\n\r\n.selectedImg {\r\n  position: absolute;\r\n  top: -304px;\r\n  left: -350px;\r\n  transform: scale(0.1, 0.1);\r\n  -ms-transform: scale(0.1, 0.1);\r\n  -webkit-transform: scale(0.1, 0.1);\r\n  z-index: 3;\r\n}\r\n\r\n\r\n.zeta1 {\r\n  position: absolute;\r\n  top: 15px;\r\n  left: 65px;\r\n  transform: scale(0.6, 0.6);\r\n  -ms-transform: scale(0.6, 0.6);\r\n  -webkit-transform: scale(0.6, 0.6);\r\n  z-index: 3;\r\n}\r\n\r\n\r\n.zeta2 {\r\n  position: absolute;\r\n  top: 35px;\r\n  left: 65px;\r\n  transform: scale(0.6, 0.6);\r\n  -ms-transform: scale(0.6, 0.6);\r\n  -webkit-transform: scale(0.6, 0.6);\r\n  z-index: 3;\r\n}\r\n\r\n\r\n.zeta3 {\r\n  position: absolute;\r\n  top: 55px;\r\n  left: 65px;\r\n  transform: scale(0.6, 0.6);\r\n  -ms-transform: scale(0.6, 0.6);\r\n  -webkit-transform: scale(0.6, 0.6);\r\n  z-index: 3;\r\n}\r\n\r\n"
+
+/***/ }),
+
+/***/ "./src/app/MemberTracking/membertracking.html":
+/*!****************************************************!*\
+  !*** ./src/app/MemberTracking/membertracking.html ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div *ngIf=\"!gildenService.gildenInfos.roster\">Lädt Memberinfos...</div>\r\n\r\n<dx-data-grid *ngIf=\"gildenService.gildenInfos.roster\"\r\n              [dataSource]=\"gildenService.gildenInfos.roster\"\r\n              [allowColumnReordering]=\"true\"\r\n              [showBorders]=\"true\"\r\n              [allowColumnResizing]=\"true\"\r\n              [columnMinWidth]=\"50\"\r\n              [columnAutoWidth]=\"true\">\r\n\r\n  <dxo-filter-row [visible]=\"true\"></dxo-filter-row>\r\n  <dxo-scrolling mode=\"infinite\"></dxo-scrolling>\r\n  <dxo-state-storing [enabled]=\"true\" type=\"localStorage\" storageKey=\"membergridstorage\"></dxo-state-storing>\r\n\r\n  <dxo-column-chooser [enabled]=\"true\"\r\n                      mode=\"dragAndDrop\">\r\n  </dxo-column-chooser>\r\n\r\n  <dxi-column dataField=\"name\" caption=\"Member\" [dataType]=\"string\" [fixed]=\"true\"></dxi-column>\r\n  <dxi-column dataField=\"arena.char.rank\" caption=\"Chararena\" [dataType]=\"number\" cellTemplate=\"squadCharRankTemplate\"></dxi-column>\r\n  <dxi-column dataField=\"arena.ship.rank\" caption=\"Fleetarena\" [dataType]=\"number\" cellTemplate=\"squadShipRankTemplate\"></dxi-column>\r\n  <dxi-column dataField=\"stats[0].value\" caption=\"GP\" [dataType]=\"number\"></dxi-column>\r\n  <dxi-column dataField=\"stats[1].value\" caption=\"Char-GP\" [dataType]=\"number\"></dxi-column>\r\n  <dxi-column dataField=\"stats[2].value\" caption=\"Ship-GP\" [dataType]=\"number\"></dxi-column>\r\n  <dxi-column dataField=\"level\" caption=\"Level\" [dataType]=\"number\"></dxi-column>\r\n  <dxi-column dataField=\"arena.char.squad\" caption=\"CharSquad\" [visible]=\"false\" cellTemplate=\"squadTemplate\"></dxi-column>\r\n  <dxi-column dataField=\"arena.ship.squad\" caption=\"ShipSquad\" [visible]=\"false\" cellTemplate=\"squadTemplate\"></dxi-column>\r\n  <dxi-column dataField=\"allyCode\" caption=\"Allycode\" [dataType]=\"number\"></dxi-column>\r\n  <dxi-column dataField=\"stats[6].value\" caption=\"PVE-Hardnodes won\" [visible]=\"false\" [dataType]=\"number\"></dxi-column>\r\n  <dxi-column dataField=\"stats[3].value\" caption=\"PVP-Ships won\" [visible]=\"false\" [dataType]=\"number\"></dxi-column>\r\n  <dxi-column dataField=\"stats[9].value\" caption=\"Gildentoken\" [visible]=\"false\" [dataType]=\"number\"></dxi-column>\r\n  <dxi-column dataField=\"stats[4].value\" caption=\"PVP-Arena won\" [visible]=\"false\" [dataType]=\"number\"></dxi-column>\r\n  <dxi-column dataField=\"stats[5].value\" caption=\"PvE-Battles won\" [visible]=\"false\" [dataType]=\"number\"></dxi-column>\r\n  <dxi-column dataField=\"stats[7].value\" caption=\"Galactic Battles Won\" [visible]=\"false\" [dataType]=\"number\"></dxi-column>\r\n  <dxi-column dataField=\"stats[10].value\" caption=\"Gildenspenden total\" [visible]=\"false\" [dataType]=\"number\"></dxi-column>\r\n  <dxi-column dataField=\"stats[8].value\" caption=\"Raids won\" [visible]=\"false\" [dataType]=\"number\"></dxi-column>\r\n\r\n  <div *dxTemplate=\"let data of 'squadTemplate'\">\r\n    <span *ngFor=\"let char of data.value\">{{char.nameKey}}, </span>\r\n  </div>\r\n\r\n  <div *dxTemplate=\"let data of 'squadCharRankTemplate'\">\r\n    <div [tooltip]=\"data.row.data.arena.char.squad | squadtostring\" trigger=\"click\" hide-delay=\"5000\" hide-delay-mobile=\"5000\" width=\"100%\">{{data.value}}</div>\r\n  </div>\r\n\r\n  <div *dxTemplate=\"let data of 'squadShipRankTemplate'\">\r\n\r\n    <div [tooltip]=\"data.row.data.arena.ship.squad | squadtostring\" trigger=\"click\" hide-delay=\"5000\" hide-delay-mobile=\"5000\" width=\"100%\">{{data.value}}</div>\r\n\r\n  </div>\r\n\r\n</dx-data-grid>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/MemberTracking/membertracking.ts":
+/*!**************************************************!*\
+  !*** ./src/app/MemberTracking/membertracking.ts ***!
+  \**************************************************/
+/*! exports provided: MemberTrackingComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MemberTrackingComponent", function() { return MemberTrackingComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var _services_gildenService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/gildenService */ "./src/app/services/gildenService.ts");
+/* harmony import */ var _services_settingsService__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/settingsService */ "./src/app/services/settingsService.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var MemberTrackingComponent = /** @class */ (function () {
+    function MemberTrackingComponent(settingsService, gildenService) {
+        this.settingsService = settingsService;
+        this.gildenService = gildenService;
+    }
+    MemberTrackingComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'membertracking',
+            template: __webpack_require__(/*! ./membertracking.html */ "./src/app/MemberTracking/membertracking.html"),
+            styles: [__webpack_require__(/*! ./membertracking.css */ "./src/app/MemberTracking/membertracking.css")]
+        }),
+        __metadata("design:paramtypes", [_services_settingsService__WEBPACK_IMPORTED_MODULE_2__["SettingsService"], _services_gildenService__WEBPACK_IMPORTED_MODULE_1__["gildenService"]])
+    ], MemberTrackingComponent);
+    return MemberTrackingComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/RaidPlanner/raidplanner.css":
 /*!*********************************************!*\
   !*** ./src/app/RaidPlanner/raidplanner.css ***!
@@ -41,7 +108,7 @@ module.exports = "input[type=text] {\r\n  width: 100%;\r\n  padding: 12px 20px;\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"!raidDataSource\">Lädt Raidplan...</div>\r\n\r\n<dx-data-grid *ngIf=\"raidDataSource\"\r\n              [dataSource]=\"raidDataSource\"\r\n              [allowColumnReordering]=\"true\"\r\n              [showBorders]=\"true\"\r\n              (onCellPrepared)=\"colorizeCell($event)\">\r\n\r\n  <dxo-filter-row [visible]=\"true\"></dxo-filter-row>\r\n  <dxo-scrolling mode=\"infinite\"></dxo-scrolling>\r\n  <dxo-state-storing [enabled]=\"true\" type=\"localStorage\" storageKey=\"gridstorage\"></dxo-state-storing>\r\n\r\n  <dxo-column-chooser [enabled]=\"true\"\r\n                      mode=\"dragAndDrop\">\r\n  </dxo-column-chooser>\r\n\r\n  <dxi-column *ngFor=\"let columnNow of columns; let i = index\" dataField=\"{{i}}\" [caption]=\"columnNow\" [width]=\"i | columnwidth\" [dataType]=\"i | columntype\" [fixed]=\"i | columnfixed\"></dxi-column>\r\n\r\n</dx-data-grid>\r\n"
+module.exports = "<div *ngIf=\"!raidDataSource\">Lädt Raidplan...</div>\r\n\r\n<div *ngIf=\"raidDataSource\" style=\"width:100%;\">\r\n  <button (click)=\"openModal()\" style=\"display: inline-block; position: relative; padding: 7px 5px; width: 100%;\">{{'Configuration'| language}}</button>\r\n</div>\r\n\r\n<dx-data-grid *ngIf=\"raidDataSource\"\r\n              [dataSource]=\"raidDataSource\"\r\n              [allowColumnReordering]=\"true\"\r\n              [showBorders]=\"true\"\r\n              (onCellPrepared)=\"colorizeCell($event)\">\r\n\r\n  <dxo-filter-row [visible]=\"true\"></dxo-filter-row>\r\n  <dxo-scrolling mode=\"infinite\"></dxo-scrolling>\r\n  <dxo-state-storing [enabled]=\"true\" type=\"localStorage\" storageKey=\"gridstorage\"></dxo-state-storing>\r\n\r\n  <dxo-column-chooser [enabled]=\"true\"\r\n                      mode=\"dragAndDrop\">\r\n  </dxo-column-chooser>\r\n\r\n  <dxi-column *ngFor=\"let columnNow of columns; let i = index\" dataField=\"{{i}}\" [caption]=\"columnNow\" [width]=\"i | columnwidth\" [dataType]=\"i | columntype\" [fixed]=\"i | columnfixed\"></dxi-column>\r\n\r\n</dx-data-grid>\r\n\r\n<!-- The Modal -->\r\n<div id=\"myModal\" class=\"modal\">\r\n\r\n  <!-- Modal content -->\r\n  <div class=\"modal-content\">\r\n    <div class=\"modal-header\">\r\n      <span class=\"close\" (click)=\"closeModal()\">&times;</span>\r\n      <h2>{{'Configuration'| language}}</h2>\r\n    </div>\r\n    <div class=\"modal-body\">\r\n\r\n      <div style=\"width:100%;\">\r\n\r\n        <div style=\"width:68%; display: inline-block;\">\r\n          <select style=\"width:100%;\" [(ngModel)]=\"selectedSquad\">\r\n            <option *ngFor=\"let squad of squads\" [ngValue]=\"squad\">{{squad.Name}}</option>\r\n          </select>\r\n        </div>\r\n        <div style=\"width: 30%; display: inline-block;\">\r\n          <button (click)=\"deleteThisSquad()\" style=\"display: inline-block; position: relative; padding: 7px 5px; width: 30%;\">{{'Del'| language}}</button>\r\n          <button (click)=\"addNewSquad()\" style=\"display: inline-block; position: relative; padding: 7px 5px; width: 30%;\">{{'Add'| language}}</button>\r\n        </div>\r\n\r\n        <div>Squadname: <input style=\"width:100px\" [(ngModel)]=\"selectedSquad.Name\"/> </div>\r\n        <div *ngFor=\"let char of selectedSquad.Charaktere; let i = index\">\r\n          Charakter :\r\n          <select style=\"width:150px\" [(ngModel)]=\"selectedSquad.Charaktere[i]\">\r\n            <option *ngFor=\"let char of gildenService.charInfos\" [ngValue]=\"char.name\">{{char.name}}</option>\r\n          </select>\r\n\r\n          Zetasneeded: <input type=\"number\" style=\"width:30px\" [(ngModel)]=\"selectedSquad.Zetas[i]\" />\r\n        </div>\r\n\r\n      </div>\r\n\r\n    </div>\r\n  </div>\r\n\r\n</div>\r\n"
 
 /***/ }),
 
@@ -75,166 +142,182 @@ var RaidPlannerComponent = /** @class */ (function () {
         this.settingsService = settingsService;
         this.gildenService = gildenService;
         this.dmgP4 = 100;
+        this.squads = null;
         this.columns = new Array();
-        this.squads = new Array();
-        var jtr = new squad();
-        jtr.Name = "JTR P1";
-        jtr.Charaktere.push("Rey (Jedi Training)");
-        jtr.Charaktere.push("BB-8");
-        jtr.Charaktere.push("R2-D2");
-        jtr.Charaktere.push("Resistance Trooper");
-        jtr.Charaktere.push("Rey (Scavenger)");
-        jtr.Zetas.push(1);
-        jtr.Zetas.push(1);
-        jtr.Zetas.push(1);
-        jtr.Zetas.push(0);
-        jtr.Zetas.push(0);
-        this.squads.push(jtr);
-        var jedi = new squad();
-        jedi.Name = "Jedi P1";
-        jedi.Charaktere.push("Grand Master Yoda");
-        jedi.Charaktere.push("Hermit Yoda");
-        jedi.Charaktere.push("Ezra Bridger");
-        jedi.Charaktere.push("Aayla Secura");
-        jedi.Charaktere.push("Visas Marr");
-        jedi.Zetas.push(1);
-        jedi.Zetas.push(1);
-        jedi.Zetas.push(1);
-        jedi.Zetas.push(0);
-        jedi.Zetas.push(0);
-        this.squads.push(jedi);
-        var trooper = new squad();
-        trooper.Name = "Truppler P2";
-        trooper.Charaktere.push("General Veers");
-        trooper.Charaktere.push("Grand Admiral Thrawn");
-        trooper.Charaktere.push("Colonel Starck");
-        trooper.Charaktere.push("Shoretrooper");
-        trooper.Charaktere.push("Snowtrooper");
-        trooper.Zetas.push(1);
-        trooper.Zetas.push(0);
-        trooper.Zetas.push(0);
-        trooper.Zetas.push(0);
-        trooper.Zetas.push(0);
-        this.squads.push(trooper);
-        var ewoks = new squad();
-        ewoks.Name = "Ewoks P2";
-        ewoks.Charaktere.push("Chief Chirpa");
-        ewoks.Charaktere.push("Wicket");
-        ewoks.Charaktere.push("Logray");
-        ewoks.Charaktere.push("Ewok Scout");
-        ewoks.Charaktere.push("Ewok Elder");
-        ewoks.Zetas.push(1);
-        ewoks.Zetas.push(1);
-        ewoks.Zetas.push(1);
-        ewoks.Zetas.push(0);
-        ewoks.Zetas.push(0);
-        this.squads.push(ewoks);
-        var halunken = new squad();
-        halunken.Name = "Halunken P2";
-        halunken.Charaktere.push("Bossk");
-        halunken.Charaktere.push("Greedo");
-        halunken.Charaktere.push("Boba Fett");
-        halunken.Charaktere.push("IG-88");
-        halunken.Charaktere.push("Dengar");
-        halunken.Zetas.push(2);
-        halunken.Zetas.push(1);
-        halunken.Zetas.push(1);
-        halunken.Zetas.push(1);
-        halunken.Zetas.push(1);
-        this.squads.push(halunken);
-        var leia = new squad();
-        leia.Name = "Leia P2";
-        leia.Charaktere.push("Admiral Ackbar");
-        leia.Charaktere.push("Princess Leia");
-        leia.Charaktere.push("General Kenobi");
-        leia.Charaktere.push("Barriss Offee");
-        leia.Charaktere.push("Stormtrooper Han");
-        leia.Zetas.push(0);
-        leia.Zetas.push(0);
-        leia.Zetas.push(0);
-        leia.Zetas.push(1);
-        leia.Zetas.push(0);
-        this.squads.push(leia);
-        var impP2 = new squad();
-        impP2.Name = "Imp Darth P2";
-        impP2.Charaktere.push("Emperor Palpatine");
-        impP2.Charaktere.push("Darth Vader");
-        impP2.Charaktere.push("Darth Sion");
-        impP2.Charaktere.push("Darth Nihilus");
-        impP2.Charaktere.push("Sith Trooper");
-        impP2.Zetas.push(1);
-        impP2.Zetas.push(0);
-        impP2.Zetas.push(0);
-        impP2.Zetas.push(0);
-        impP2.Zetas.push(0);
-        this.squads.push(impP2);
-        var phoenix = new squad();
-        phoenix.Name = "Phoenix P2";
-        phoenix.Charaktere.push("Hera Syndulla");
-        phoenix.Charaktere.push("Sabine Wren");
-        phoenix.Charaktere.push("Ezra Bridger");
-        phoenix.Charaktere.push("Garazeb \"Zeb\" Orrelios");
-        phoenix.Charaktere.push("Kanan Jarrus");
-        phoenix.Zetas.push(1);
-        phoenix.Zetas.push(1);
-        phoenix.Zetas.push(1);
-        phoenix.Zetas.push(1);
-        phoenix.Zetas.push(1);
-        this.squads.push(phoenix);
-        var chexMix1 = new squad();
-        chexMix1.Name = "ChexMix (orig) P3";
-        chexMix1.Charaktere.push("Commander Luke Skywalker");
-        chexMix1.Charaktere.push("Han Solo");
-        chexMix1.Charaktere.push("Pao");
-        chexMix1.Charaktere.push("Chirrut Îmwe");
-        chexMix1.Charaktere.push("Death Trooper");
-        chexMix1.Zetas.push(2);
-        chexMix1.Zetas.push(1);
-        chexMix1.Zetas.push(0);
-        chexMix1.Zetas.push(0);
-        chexMix1.Zetas.push(0);
-        this.squads.push(chexMix1);
-        var chexMix2 = new squad();
-        chexMix2.Name = "ChexMix (Greedo) P3";
-        chexMix2.Charaktere.push("Boba Fett");
-        chexMix2.Charaktere.push("Greedo");
-        chexMix2.Charaktere.push("Pao");
-        chexMix2.Charaktere.push("Chirrut Îmwe");
-        chexMix2.Charaktere.push("Death Trooper");
-        chexMix2.Zetas.push(0);
-        chexMix2.Zetas.push(0);
-        chexMix2.Zetas.push(0);
-        chexMix2.Zetas.push(0);
-        chexMix2.Zetas.push(0);
-        this.squads.push(chexMix2);
-        var nsP4 = new squad();
-        nsP4.Name = "NS P4";
-        nsP4.Charaktere.push("Asajj Ventress");
-        nsP4.Charaktere.push("Mother Talzin");
-        nsP4.Charaktere.push("Talia");
-        nsP4.Charaktere.push("Nightsister Zombie");
-        nsP4.Charaktere.push("Old Daka");
-        nsP4.Zetas.push(2);
-        nsP4.Zetas.push(1);
-        nsP4.Zetas.push(0);
-        nsP4.Zetas.push(0);
-        nsP4.Zetas.push(0);
-        this.squads.push(nsP4);
-        var firstOrder = new squad();
-        firstOrder.Name = "FO P4";
-        firstOrder.Charaktere.push("Kylo Ren (Unmasked)");
-        firstOrder.Charaktere.push("First Order Executioner");
-        firstOrder.Charaktere.push("First Order SF TIE Pilot");
-        firstOrder.Charaktere.push("First Order Stormtrooper");
-        firstOrder.Charaktere.push("First Order Officer");
-        firstOrder.Zetas.push(0);
-        firstOrder.Zetas.push(0);
-        firstOrder.Zetas.push(0);
-        firstOrder.Zetas.push(0);
-        firstOrder.Zetas.push(0);
-        this.squads.push(firstOrder);
+        this.getRaidPlannerTeams();
+        if (this.squads == null) {
+            this.squads = new Array();
+            var jtr = new squad();
+            jtr.Name = "JTR P1";
+            jtr.Charaktere.push("Rey (Jedi Training)");
+            jtr.Charaktere.push("BB-8");
+            jtr.Charaktere.push("R2-D2");
+            jtr.Charaktere.push("Resistance Trooper");
+            jtr.Charaktere.push("Rey (Scavenger)");
+            jtr.Zetas.push(1);
+            jtr.Zetas.push(1);
+            jtr.Zetas.push(1);
+            jtr.Zetas.push(0);
+            jtr.Zetas.push(0);
+            this.squads.push(jtr);
+            var jedi = new squad();
+            jedi.Name = "Jedi P1";
+            jedi.Charaktere.push("Grand Master Yoda");
+            jedi.Charaktere.push("Hermit Yoda");
+            jedi.Charaktere.push("Ezra Bridger");
+            jedi.Charaktere.push("Aayla Secura");
+            jedi.Charaktere.push("Visas Marr");
+            jedi.Zetas.push(1);
+            jedi.Zetas.push(1);
+            jedi.Zetas.push(1);
+            jedi.Zetas.push(0);
+            jedi.Zetas.push(0);
+            this.squads.push(jedi);
+            var trooper = new squad();
+            trooper.Name = "Truppler P2";
+            trooper.Charaktere.push("General Veers");
+            trooper.Charaktere.push("Grand Admiral Thrawn");
+            trooper.Charaktere.push("Colonel Starck");
+            trooper.Charaktere.push("Shoretrooper");
+            trooper.Charaktere.push("Snowtrooper");
+            trooper.Zetas.push(1);
+            trooper.Zetas.push(0);
+            trooper.Zetas.push(0);
+            trooper.Zetas.push(0);
+            trooper.Zetas.push(0);
+            this.squads.push(trooper);
+            var ewoks = new squad();
+            ewoks.Name = "Ewoks P2";
+            ewoks.Charaktere.push("Chief Chirpa");
+            ewoks.Charaktere.push("Wicket");
+            ewoks.Charaktere.push("Logray");
+            ewoks.Charaktere.push("Ewok Scout");
+            ewoks.Charaktere.push("Ewok Elder");
+            ewoks.Zetas.push(1);
+            ewoks.Zetas.push(1);
+            ewoks.Zetas.push(1);
+            ewoks.Zetas.push(0);
+            ewoks.Zetas.push(0);
+            this.squads.push(ewoks);
+            var halunken = new squad();
+            halunken.Name = "Halunken P2";
+            halunken.Charaktere.push("Bossk");
+            halunken.Charaktere.push("Greedo");
+            halunken.Charaktere.push("Boba Fett");
+            halunken.Charaktere.push("IG-88");
+            halunken.Charaktere.push("Dengar");
+            halunken.Zetas.push(2);
+            halunken.Zetas.push(1);
+            halunken.Zetas.push(1);
+            halunken.Zetas.push(1);
+            halunken.Zetas.push(1);
+            this.squads.push(halunken);
+            var leia = new squad();
+            leia.Name = "Leia P2";
+            leia.Charaktere.push("Admiral Ackbar");
+            leia.Charaktere.push("Princess Leia");
+            leia.Charaktere.push("General Kenobi");
+            leia.Charaktere.push("Barriss Offee");
+            leia.Charaktere.push("Stormtrooper Han");
+            leia.Zetas.push(0);
+            leia.Zetas.push(0);
+            leia.Zetas.push(0);
+            leia.Zetas.push(1);
+            leia.Zetas.push(0);
+            this.squads.push(leia);
+            var impP2 = new squad();
+            impP2.Name = "Imp Darth P2";
+            impP2.Charaktere.push("Emperor Palpatine");
+            impP2.Charaktere.push("Darth Vader");
+            impP2.Charaktere.push("Darth Sion");
+            impP2.Charaktere.push("Darth Nihilus");
+            impP2.Charaktere.push("Sith Trooper");
+            impP2.Zetas.push(1);
+            impP2.Zetas.push(0);
+            impP2.Zetas.push(0);
+            impP2.Zetas.push(0);
+            impP2.Zetas.push(0);
+            this.squads.push(impP2);
+            var phoenix = new squad();
+            phoenix.Name = "Phoenix P2";
+            phoenix.Charaktere.push("Hera Syndulla");
+            phoenix.Charaktere.push("Sabine Wren");
+            phoenix.Charaktere.push("Ezra Bridger");
+            phoenix.Charaktere.push("Garazeb \"Zeb\" Orrelios");
+            phoenix.Charaktere.push("Kanan Jarrus");
+            phoenix.Zetas.push(1);
+            phoenix.Zetas.push(1);
+            phoenix.Zetas.push(1);
+            phoenix.Zetas.push(1);
+            phoenix.Zetas.push(1);
+            this.squads.push(phoenix);
+            var chexMix1 = new squad();
+            chexMix1.Name = "ChexMix (orig) P3";
+            chexMix1.Charaktere.push("Commander Luke Skywalker");
+            chexMix1.Charaktere.push("Han Solo");
+            chexMix1.Charaktere.push("Pao");
+            chexMix1.Charaktere.push("Chirrut Îmwe");
+            chexMix1.Charaktere.push("Death Trooper");
+            chexMix1.Zetas.push(2);
+            chexMix1.Zetas.push(1);
+            chexMix1.Zetas.push(0);
+            chexMix1.Zetas.push(0);
+            chexMix1.Zetas.push(0);
+            this.squads.push(chexMix1);
+            var chexMix2 = new squad();
+            chexMix2.Name = "ChexMix (Greedo) P3";
+            chexMix2.Charaktere.push("Boba Fett");
+            chexMix2.Charaktere.push("Greedo");
+            chexMix2.Charaktere.push("Pao");
+            chexMix2.Charaktere.push("Chirrut Îmwe");
+            chexMix2.Charaktere.push("Death Trooper");
+            chexMix2.Zetas.push(0);
+            chexMix2.Zetas.push(0);
+            chexMix2.Zetas.push(0);
+            chexMix2.Zetas.push(0);
+            chexMix2.Zetas.push(0);
+            this.squads.push(chexMix2);
+            var nsP4 = new squad();
+            nsP4.Name = "NS P4";
+            nsP4.Charaktere.push("Asajj Ventress");
+            nsP4.Charaktere.push("Mother Talzin");
+            nsP4.Charaktere.push("Talia");
+            nsP4.Charaktere.push("Nightsister Zombie");
+            nsP4.Charaktere.push("Old Daka");
+            nsP4.Zetas.push(2);
+            nsP4.Zetas.push(1);
+            nsP4.Zetas.push(0);
+            nsP4.Zetas.push(0);
+            nsP4.Zetas.push(0);
+            this.squads.push(nsP4);
+            var firstOrder = new squad();
+            firstOrder.Name = "FO P4";
+            firstOrder.Charaktere.push("Kylo Ren (Unmasked)");
+            firstOrder.Charaktere.push("First Order Executioner");
+            firstOrder.Charaktere.push("First Order SF TIE Pilot");
+            firstOrder.Charaktere.push("First Order Stormtrooper");
+            firstOrder.Charaktere.push("First Order Officer");
+            firstOrder.Zetas.push(0);
+            firstOrder.Zetas.push(0);
+            firstOrder.Zetas.push(0);
+            firstOrder.Zetas.push(0);
+            firstOrder.Zetas.push(0);
+            this.squads.push(firstOrder);
+            this.saveRaidPlannerTeams(this.squads);
+        }
+        this.selectedSquad = this.squads[0];
         this.loadGridDatasource();
     }
+    RaidPlannerComponent.prototype.getRaidPlannerTeams = function () {
+        if (localStorage.midiSquads != null)
+            this.squads = JSON.parse(localStorage.midiSquads);
+        console.log('squads', this.squads);
+    };
+    RaidPlannerComponent.prototype.saveRaidPlannerTeams = function (squads) {
+        localStorage.midiSquads = JSON.stringify(squads);
+        this.squads = squads;
+        console.log('squads', this.squads);
+    };
     RaidPlannerComponent.prototype.onToolbarPreparing = function (e) {
         e.toolbarOptions.items.unshift({
             location: 'before',
@@ -256,6 +339,44 @@ var RaidPlannerComponent = /** @class */ (function () {
                 value: 'CustomerStoreState',
             }
         });
+    };
+    RaidPlannerComponent.prototype.deleteThisSquad = function () {
+        var index = this.squads.indexOf(this.selectedSquad);
+        if (index > -1) {
+            this.squads.splice(index, 1);
+        }
+        this.selectedSquad = this.squads[this.squads.length - 1];
+        this.saveRaidPlannerTeams(this.squads);
+    };
+    RaidPlannerComponent.prototype.addNewSquad = function () {
+        var template = new squad();
+        template.Name = "New Squad";
+        template.Charaktere.push("BB-8");
+        template.Charaktere.push("BB-8");
+        template.Charaktere.push("BB-8");
+        template.Charaktere.push("BB-8");
+        template.Charaktere.push("BB-8");
+        template.Zetas.push(0);
+        template.Zetas.push(0);
+        template.Zetas.push(0);
+        template.Zetas.push(0);
+        template.Zetas.push(0);
+        this.squads.push(template);
+        this.selectedSquad = this.squads[this.squads.length - 1];
+        this.saveRaidPlannerTeams(this.squads);
+    };
+    // When the user clicks the button, open the modal 
+    RaidPlannerComponent.prototype.openModal = function () {
+        // Get the modal
+        var modal = document.getElementById('myModal');
+        modal.style.display = "block";
+    };
+    // When the user clicks on <span> (x), close the modal
+    RaidPlannerComponent.prototype.closeModal = function () {
+        var modal = document.getElementById('myModal');
+        modal.style.display = "none";
+        this.loadGridDatasource();
+        this.saveRaidPlannerTeams(this.squads);
     };
     RaidPlannerComponent.prototype.loadGridDatasource = function () {
         var dataSourceTemp = new Array();
@@ -423,7 +544,7 @@ module.exports = "input[type=text] {\r\n  width: 100%;\r\n  padding: 12px 20px;\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"width:100%;\">\r\n\r\n  <select style=\"width:100%;\" [(ngModel)]=\"ActualPhase\" (ngModelChange)=\"loadTable()\">\r\n    <option [ngValue]=\"DSTB1\">DS-TB-Phase 1</option>\r\n    <option [ngValue]=\"DSTB2\">DS-TB-Phase 2</option>\r\n    <option [ngValue]=\"DSTB3\">DS-TB-Phase 3</option>\r\n    <option [ngValue]=\"LSTB1\">LS-TB-Phase 1</option>\r\n    <option [ngValue]=\"LSTB2\">LS-TB-Phase 2</option>\r\n    <option [ngValue]=\"LSTB3\">LS-TB-Phase 3</option>\r\n    <option [ngValue]=\"AllChars1\">All Chars - 1 Star</option>\r\n    <option [ngValue]=\"AllChars2\">All Chars - 2 Star</option>\r\n    <option [ngValue]=\"AllChars3\">All Chars - 3 Star</option>\r\n    <option [ngValue]=\"AllChars4\">All Chars - 4 Star</option>\r\n    <option [ngValue]=\"AllChars5\">All Chars - 5 Star</option>\r\n    <option [ngValue]=\"AllChars6\">All Chars - 6 Star</option>\r\n    <option [ngValue]=\"AllChars7\">All Chars - 7 Star</option>\r\n  </select>\r\n\r\n  <table id=\"platoons\" style=\"width:100%\">\r\n    <tr>\r\n      <th>{{'Charname'| language}}</th>\r\n      <th>{{'Needed'| language}}</th>\r\n      <th>{{'Available'| language}}</th>\r\n      <th>{{'Difference'| language}}</th>\r\n      <th>{{'Stars Needed'| language}}</th>\r\n    </tr>\r\n    <tr *ngFor=\"let neededChar of ActualPhase\">\r\n      <td ><a (click)=\"showMembersWhoHave(neededChar)\" href=\"javascript:void();\">{{neededChar.name}}</a></td>\r\n      <td>{{neededChar.benoetigt}}</td>\r\n\r\n      <td *ngIf=\"neededChar.benoetigt > neededChar.gildenbesitz\" style=\"background:red\">{{neededChar.gildenbesitz}}</td>\r\n      <td *ngIf=\"(neededChar.benoetigt == neededChar.gildenbesitz)\" style=\"background:orange\">{{neededChar.gildenbesitz}}</td>\r\n      <td *ngIf=\"(neededChar.benoetigt < neededChar.gildenbesitz) && !(neededChar.benoetigt*2 <= neededChar.gildenbesitz)\" style=\"background:yellow\">{{neededChar.gildenbesitz}}</td>\r\n      <td *ngIf=\"neededChar.benoetigt*2 <= neededChar.gildenbesitz\" style=\"background:green\">{{neededChar.gildenbesitz}}</td>\r\n      <td>{{neededChar.differenz}}</td>\r\n      <td>{{neededChar.sterne}}</td>\r\n    </tr>\r\n  </table>\r\n\r\n</div>\r\n"
+module.exports = "<div style=\"width:100%;\">\r\n\r\n  <select style=\"width:100%;\" [(ngModel)]=\"ActualPhase\" (ngModelChange)=\"loadTable()\">\r\n    <option [ngValue]=\"DSTB1\">DS-TB-Phase 1</option>\r\n    <option [ngValue]=\"DSTB2\">DS-TB-Phase 2</option>\r\n    <option [ngValue]=\"DSTB3\">DS-TB-Phase 3</option>\r\n    <option [ngValue]=\"LSTB1\">LS-TB-Phase 1</option>\r\n    <option [ngValue]=\"LSTB2\">LS-TB-Phase 2</option>\r\n    <option [ngValue]=\"LSTB3\">LS-TB-Phase 3</option>\r\n    <option [ngValue]=\"AllChars1\">All Chars - 1 Star</option>\r\n    <option [ngValue]=\"AllChars2\">All Chars - 2 Star</option>\r\n    <option [ngValue]=\"AllChars3\">All Chars - 3 Star</option>\r\n    <option [ngValue]=\"AllChars4\">All Chars - 4 Star</option>\r\n    <option [ngValue]=\"AllChars5\">All Chars - 5 Star</option>\r\n    <option [ngValue]=\"AllChars6\">All Chars - 6 Star</option>\r\n    <option [ngValue]=\"AllChars7\">All Chars - 7 Star</option>\r\n    <option [ngValue]=\"AllShips1\">All Ships - 1 Star</option>\r\n    <option [ngValue]=\"AllShips2\">All Ships - 2 Star</option>\r\n    <option [ngValue]=\"AllShips3\">All Ships - 3 Star</option>\r\n    <option [ngValue]=\"AllShips4\">All Ships - 4 Star</option>\r\n    <option [ngValue]=\"AllShips5\">All Ships - 5 Star</option>\r\n    <option [ngValue]=\"AllShips6\">All Ships - 6 Star</option>\r\n    <option [ngValue]=\"AllShips7\">All Ships - 7 Star</option>\r\n  </select>\r\n\r\n  <table id=\"platoons\" style=\"width:100%\">\r\n    <tr>\r\n      <th>{{'Charname'| language}}</th>\r\n      <th>{{'Needed'| language}}</th>\r\n      <th>{{'Available'| language}}</th>\r\n      <th>{{'Difference'| language}}</th>\r\n      <th>{{'Stars Needed'| language}}</th>\r\n    </tr>\r\n    <tr *ngFor=\"let neededChar of ActualPhase\">\r\n      <td ><a (click)=\"showMembersWhoHave(neededChar)\" href=\"javascript:void();\">{{neededChar.name}}</a></td>\r\n      <td>{{neededChar.benoetigt}}</td>\r\n\r\n      <td *ngIf=\"neededChar.benoetigt > neededChar.gildenbesitz\" style=\"background:red\">{{neededChar.gildenbesitz}}</td>\r\n      <td *ngIf=\"(neededChar.benoetigt == neededChar.gildenbesitz)\" style=\"background:orange\">{{neededChar.gildenbesitz}}</td>\r\n      <td *ngIf=\"(neededChar.benoetigt < neededChar.gildenbesitz) && !(neededChar.benoetigt*2 <= neededChar.gildenbesitz)\" style=\"background:yellow\">{{neededChar.gildenbesitz}}</td>\r\n      <td *ngIf=\"neededChar.benoetigt*2 <= neededChar.gildenbesitz\" style=\"background:green\">{{neededChar.gildenbesitz}}</td>\r\n      <td>{{neededChar.differenz}}</td>\r\n      <td>{{neededChar.sterne}}</td>\r\n    </tr>\r\n  </table>\r\n\r\n</div>\r\n"
 
 /***/ }),
 
@@ -465,6 +586,13 @@ var TBPlatoonComponent = /** @class */ (function () {
         this.AllChars5 = new Array();
         this.AllChars6 = new Array();
         this.AllChars7 = new Array();
+        this.AllShips1 = new Array();
+        this.AllShips2 = new Array();
+        this.AllShips3 = new Array();
+        this.AllShips4 = new Array();
+        this.AllShips5 = new Array();
+        this.AllShips6 = new Array();
+        this.AllShips7 = new Array();
         this.DSTB1 = new Array();
         this.DSTB2 = new Array();
         this.DSTB3 = new Array();
@@ -479,6 +607,15 @@ var TBPlatoonComponent = /** @class */ (function () {
             this.AllChars5.push(new neededChar(gildenService.charInfos[x].name, 10, 5, false));
             this.AllChars6.push(new neededChar(gildenService.charInfos[x].name, 10, 6, false));
             this.AllChars7.push(new neededChar(gildenService.charInfos[x].name, 10, 7, false));
+        }
+        for (var x = 0; x < gildenService.shipInfos.length; x++) {
+            this.AllShips1.push(new neededChar(gildenService.shipInfos[x].name, 10, 1, true));
+            this.AllShips2.push(new neededChar(gildenService.shipInfos[x].name, 10, 2, true));
+            this.AllShips3.push(new neededChar(gildenService.shipInfos[x].name, 10, 3, true));
+            this.AllShips4.push(new neededChar(gildenService.shipInfos[x].name, 10, 4, true));
+            this.AllShips5.push(new neededChar(gildenService.shipInfos[x].name, 10, 5, true));
+            this.AllShips6.push(new neededChar(gildenService.shipInfos[x].name, 10, 6, true));
+            this.AllShips7.push(new neededChar(gildenService.shipInfos[x].name, 10, 7, true));
         }
         this.DSTB1.push(new neededChar("TIE Fighter Pilot", 11, 2, false));
         this.DSTB1.push(new neededChar("Royal Guard", 11, 2, false));
@@ -840,6 +977,9 @@ var TBPlatoonComponent = /** @class */ (function () {
                     this.ActualPhase[i].gildenbesitz = gildencount.length;
                     this.ActualPhase[i].differenz = (this.ActualPhase[i].benoetigt - gildencount.length);
                 }
+                else {
+                    console.log("Gildencount for " + this.ActualPhase[i].name + " is null");
+                }
             }
         }
         this.ActualPhase.sort(this.compareNeeded);
@@ -913,12 +1053,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _newCharSearch_newCharSearch__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./newCharSearch/newCharSearch */ "./src/app/newCharSearch/newCharSearch.ts");
 /* harmony import */ var _events_events__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./events/events */ "./src/app/events/events.ts");
 /* harmony import */ var _comparer_comparer__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./comparer/comparer */ "./src/app/comparer/comparer.ts");
+/* harmony import */ var _fleetTeams_fleetTeams__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./fleetTeams/fleetTeams */ "./src/app/fleetTeams/fleetTeams.ts");
+/* harmony import */ var _shipSearch_shipSearch__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./shipSearch/shipSearch */ "./src/app/shipSearch/shipSearch.ts");
+/* harmony import */ var _MemberTracking_membertracking__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./MemberTracking/membertracking */ "./src/app/MemberTracking/membertracking.ts");
+/* harmony import */ var _zetas_zetas__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./zetas/zetas */ "./src/app/zetas/zetas.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
+
+
 
 
 
@@ -973,6 +1121,22 @@ var routes = [
         component: _events_events__WEBPACK_IMPORTED_MODULE_9__["EventsComponent"]
     },
     {
+        path: 'fleetarena',
+        component: _fleetTeams_fleetTeams__WEBPACK_IMPORTED_MODULE_11__["FleetTeamsComponent"]
+    },
+    {
+        path: 'shipsearch',
+        component: _shipSearch_shipSearch__WEBPACK_IMPORTED_MODULE_12__["ShipSearchComponent"]
+    },
+    {
+        path: 'membertracking',
+        component: _MemberTracking_membertracking__WEBPACK_IMPORTED_MODULE_13__["MemberTrackingComponent"]
+    },
+    {
+        path: 'zetas',
+        component: _zetas_zetas__WEBPACK_IMPORTED_MODULE_14__["ZetasComponent"]
+    },
+    {
         path: '**',
         redirectTo: 'home'
     }
@@ -1011,7 +1175,7 @@ module.exports = "ul {\r\n  list-style-type: none;\r\n  margin: 0;\r\n  padding:
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"mySidenav\" class=\"sidenav\">\r\n  <a href=\"javascript:void(0)\" class=\"closebtn\" (click)=\"closeNav()\">&times;</a>\r\n  <a routerLink=\"/home\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Home' | language}}</a>\r\n  <a routerLink=\"/newCharSearch\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Charsearch' | language}}</a>\r\n  <a routerLink=\"/squadsearch\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Squadsearch' | language}}</a>\r\n  <a routerLink=\"/platoontool\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'TB-Platoon' | language}}</a>\r\n  <a routerLink=\"/raidplanner\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Raid-Planner' | language}}</a>\r\n  <a routerLink=\"/arenateams\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'ArenaTeams' | language}}</a>\r\n  <a routerLink=\"/events\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Events' | language}}</a>\r\n  <a routerLink=\"/comparer\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Comparer' | language}}</a>\r\n  <a routerLink=\"/settings\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Settings' | language}}</a>\r\n</div>\r\n\r\n<!-- Use any element to open the sidenav -->\r\n<div>\r\n  <ul>\r\n    <li>\r\n      <a href=\"javascript:void(0)\" (click)=\"openNav()\">&#9776;</a>\r\n    </li>\r\n    <li style=\"float:right\"><a routerLink=\"/settings\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Settings' | language}}</a></li>\r\n  </ul>\r\n  <div style=\"height:40px;\">\r\n\r\n  </div>\r\n  <div>\r\n    <router-outlet></router-outlet>\r\n  </div>\r\n\r\n  </div>\r\n"
+module.exports = "<div id=\"mySidenav\" class=\"sidenav\">\r\n  <a href=\"javascript:void(0)\" class=\"closebtn\" (click)=\"closeNav()\">&times;</a>\r\n  <a routerLink=\"/home\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Home' | language}}</a>\r\n  <a routerLink=\"/newCharSearch\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Charsearch' | language}}</a>\r\n  <a routerLink=\"/shipsearch\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Shipsearch' | language}}</a>\r\n  <a routerLink=\"/squadsearch\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Squadsearch' | language}}</a>\r\n  <a routerLink=\"/platoontool\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'TB-Platoon' | language}}</a>\r\n  <a routerLink=\"/raidplanner\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Raid-Planner' | language}}</a>\r\n  <a routerLink=\"/arenateams\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'ArenaTeams' | language}}</a>\r\n  <a routerLink=\"/fleetarena\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Fleetarena' | language}}</a>\r\n  <a routerLink=\"/membertracking\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Membertracking' | language}}</a>\r\n  <a routerLink=\"/events\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Events' | language}}</a>\r\n  <a routerLink=\"/zetas\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Zetas' | language}}</a>\r\n  <a routerLink=\"/comparer\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Comparer' | language}}</a>\r\n  <a routerLink=\"/settings\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Settings' | language}}</a>\r\n</div>\r\n\r\n<!-- Use any element to open the sidenav -->\r\n<div>\r\n  <ul>\r\n    <li>\r\n      <a href=\"javascript:void(0)\" (click)=\"openNav()\">&#9776;</a>\r\n    </li>\r\n    <li style=\"float:right\"><a routerLink=\"/settings\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Settings' | language}}</a></li>\r\n  </ul>\r\n  <div style=\"height:40px;\">\r\n\r\n  </div>\r\n  <div>\r\n    <router-outlet></router-outlet>\r\n  </div>\r\n\r\n  </div>\r\n"
 
 /***/ }),
 
@@ -1119,12 +1283,30 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _comparer_comparer__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./comparer/comparer */ "./src/app/comparer/comparer.ts");
 /* harmony import */ var _pipes_MapToIterable_pipe__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./pipes/MapToIterable.pipe */ "./src/app/pipes/MapToIterable.pipe.ts");
 /* harmony import */ var _pipes_charpipe_squadPower_pipe__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./pipes/charpipe/squadPower.pipe */ "./src/app/pipes/charpipe/squadPower.pipe.ts");
+/* harmony import */ var _fleetTeams_fleetTeams__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./fleetTeams/fleetTeams */ "./src/app/fleetTeams/fleetTeams.ts");
+/* harmony import */ var _pipes_charpipe_fleetlink_pipe__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./pipes/charpipe/fleetlink.pipe */ "./src/app/pipes/charpipe/fleetlink.pipe.ts");
+/* harmony import */ var _shipSearch_shipSearch__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./shipSearch/shipSearch */ "./src/app/shipSearch/shipSearch.ts");
+/* harmony import */ var _MemberTracking_membertracking__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./MemberTracking/membertracking */ "./src/app/MemberTracking/membertracking.ts");
+/* harmony import */ var ng2_tooltip_directive__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ng2-tooltip-directive */ "./node_modules/ng2-tooltip-directive/fesm5/ng2-tooltip-directive.js");
+/* harmony import */ var _pipes_squadToString_pipe__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./pipes/squadToString.pipe */ "./src/app/pipes/squadToString.pipe.ts");
+/* harmony import */ var _pipes_events_eventName_pipe__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./pipes/events/eventName.pipe */ "./src/app/pipes/events/eventName.pipe.ts");
+/* harmony import */ var _zetas_zetas__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./zetas/zetas */ "./src/app/zetas/zetas.ts");
+/* harmony import */ var _pipes_SkillMemberNames_pipe__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! ./pipes/SkillMemberNames.pipe */ "./src/app/pipes/SkillMemberNames.pipe.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1178,6 +1360,10 @@ var AppModule = /** @class */ (function () {
                 _newCharSearch_newCharSearch__WEBPACK_IMPORTED_MODULE_26__["newCharSearchComponent"],
                 _events_events__WEBPACK_IMPORTED_MODULE_32__["EventsComponent"],
                 _comparer_comparer__WEBPACK_IMPORTED_MODULE_34__["ComparerComponent"],
+                _fleetTeams_fleetTeams__WEBPACK_IMPORTED_MODULE_37__["FleetTeamsComponent"],
+                _shipSearch_shipSearch__WEBPACK_IMPORTED_MODULE_39__["ShipSearchComponent"],
+                _MemberTracking_membertracking__WEBPACK_IMPORTED_MODULE_40__["MemberTrackingComponent"],
+                _zetas_zetas__WEBPACK_IMPORTED_MODULE_44__["ZetasComponent"],
                 //Pipes here
                 _pipes_charpipe_gearLink_pipe__WEBPACK_IMPORTED_MODULE_18__["gearLinkPipe"],
                 _pipes_charpipe_charName_pipe__WEBPACK_IMPORTED_MODULE_19__["CharNamePipe"],
@@ -1193,7 +1379,11 @@ var AppModule = /** @class */ (function () {
                 _pipes_language_language_pipe__WEBPACK_IMPORTED_MODULE_31__["LanguagePipe"],
                 _pipes_events_eventShow_pipe__WEBPACK_IMPORTED_MODULE_33__["EventShowPipe"],
                 _pipes_charpipe_squadPower_pipe__WEBPACK_IMPORTED_MODULE_36__["SquadPowerPipe"],
-                _pipes_MapToIterable_pipe__WEBPACK_IMPORTED_MODULE_35__["MapToIterable"]
+                _pipes_MapToIterable_pipe__WEBPACK_IMPORTED_MODULE_35__["MapToIterable"],
+                _pipes_charpipe_fleetlink_pipe__WEBPACK_IMPORTED_MODULE_38__["FleetImageLinkPipe"],
+                _pipes_squadToString_pipe__WEBPACK_IMPORTED_MODULE_42__["SquadToStringPipe"],
+                _pipes_events_eventName_pipe__WEBPACK_IMPORTED_MODULE_43__["EventNamePipe"],
+                _pipes_SkillMemberNames_pipe__WEBPACK_IMPORTED_MODULE_45__["SkillMemberNames"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -1207,7 +1397,9 @@ var AppModule = /** @class */ (function () {
                 ng_lz_string__WEBPACK_IMPORTED_MODULE_16__["LZStringModule"],
                 devextreme_angular__WEBPACK_IMPORTED_MODULE_27__["DxDataGridModule"],
                 devextreme_angular__WEBPACK_IMPORTED_MODULE_27__["DxTextAreaModule"],
-                devextreme_angular__WEBPACK_IMPORTED_MODULE_27__["DxSelectBoxModule"]
+                devextreme_angular__WEBPACK_IMPORTED_MODULE_27__["DxSelectBoxModule"],
+                devextreme_angular__WEBPACK_IMPORTED_MODULE_27__["DxTooltipModule"],
+                ng2_tooltip_directive__WEBPACK_IMPORTED_MODULE_41__["TooltipModule"]
             ],
             providers: [_services_settingsService__WEBPACK_IMPORTED_MODULE_9__["SettingsService"], _services_gildenService__WEBPACK_IMPORTED_MODULE_10__["gildenService"], _angular_common_http__WEBPACK_IMPORTED_MODULE_11__["HttpClient"], ng_lz_string__WEBPACK_IMPORTED_MODULE_16__["LZStringService"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
@@ -1238,7 +1430,7 @@ module.exports = "input[type=text] {\r\n  width: 100%;\r\n  padding: 12px 20px;\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngFor=\"let team of AllCharTeams;let i = index\" class=\"charNow\">\r\n  <fieldset>\r\n    <legend>{{team.besitzer}} {{'WithRank' | language}} {{team.rang}}</legend>\r\n    <fieldset *ngFor=\"let char of team.charaktere\" class=\"maincharFieldset\">\r\n      <legend>{{char | charname}}</legend>\r\n      <div style=\"height:60px;\">\r\n        <img *ngIf=\"char.rarity>0\" src=\"/assets/picture/star.png\" class=\"sterne stern1\">\r\n        <img *ngIf=\"char.rarity<1\" src=\"/assets/picture/nostar.png\" class=\"sterne stern1\">\r\n        <img *ngIf=\"char.rarity>1\" src=\"/assets/picture/star.png\" class=\"sterne stern2\">\r\n        <img *ngIf=\"char.rarity<2\" src=\"/assets/picture/nostar.png\" class=\"sterne stern2\">\r\n        <img *ngIf=\"char.rarity>2\" src=\"/assets/picture/star.png\" class=\"sterne stern3\">\r\n        <img *ngIf=\"char.rarity<3\" src=\"/assets/picture/nostar.png\" class=\"sterne stern3\">\r\n        <img *ngIf=\"char.rarity>3\" src=\"/assets/picture/star.png\" class=\"sterne stern4\">\r\n        <img *ngIf=\"char.rarity<4\" src=\"/assets/picture/nostar.png\" class=\"sterne stern4\">\r\n        <img *ngIf=\"char.rarity>4\" src=\"/assets/picture/star.png\" class=\"sterne stern5\">\r\n        <img *ngIf=\"char.rarity<5\" src=\"/assets/picture/nostar.png\" class=\"sterne stern5\">\r\n        <img *ngIf=\"char.rarity>5\" src=\"/assets/picture/star.png\" class=\"sterne stern6\">\r\n        <img *ngIf=\"char.rarity<6\" src=\"/assets/picture/nostar.png\" class=\"sterne stern6\">\r\n        <img *ngIf=\"char.rarity>6\" src=\"/assets/picture/star.png\" class=\"sterne stern7\">\r\n        <img *ngIf=\"char.rarity<7\" src=\"/assets/picture/nostar.png\" class=\"sterne stern7\">\r\n\r\n        <img class=\"charImage\" [src]=\"char | charimagelink\" [alt]=\"char | charname\">\r\n        <img class=\"gearImage\" [src]=\"char | gearlink\" [alt]=\"char | charname\">\r\n        <span class=\"char-level\">{{char.level}}</span>\r\n        <span class=\"char-gear-level\">{{char | chargear}}</span>\r\n      </div>\r\n\r\n      <button (click)=\"showMods[i] = !showMods[i]\">{{'Show/Hide'| language}}</button>\r\n\r\n      <div *ngIf=\"showMods[i]\">\r\n        <fieldset *ngFor=\"let mod of char.mods\" style=\"position:relative; float:left;\">\r\n          <legend>{{(mod.setId | modsetname) | language}}-{{(mod.slot | modslotname) | language}} L:{{mod.level}} S:{{mod.pips}}</legend>\r\n          <div style=\"color:blue\">{{(mod.primaryBonusType | modstatname) | language}}: {{mod.primaryBonusValue | modstatvalue : (mod.primaryBonusType | modstatname)}}</div>\r\n          <div>{{(mod.secondaryType_1 | modstatname) | language}}: {{mod.secondaryValue_1 | modstatvalue : (mod.secondaryType_1 | modstatname)}}</div>\r\n          <div>{{(mod.secondaryType_2 | modstatname) | language}}: {{mod.secondaryValue_2 | modstatvalue : (mod.secondaryType_2 | modstatname)}}</div>\r\n          <div>{{(mod.secondaryType_3 | modstatname) | language}}: {{mod.secondaryValue_3 | modstatvalue : (mod.secondaryType_3 | modstatname)}}</div>\r\n          <div>{{(mod.secondaryType_4 | modstatname) | language}}: {{mod.secondaryValue_4 | modstatvalue : (mod.secondaryType_4 | modstatname)}}</div>\r\n        </fieldset>\r\n        </div>\r\n    </fieldset>\r\n  </fieldset>\r\n</div>\r\n"
+module.exports = "<div *ngFor=\"let team of AllCharTeams;let i = index\" class=\"charNow\">\r\n  <fieldset>\r\n    <legend>{{team.besitzer}} {{'WithRank' | language}} {{team.rang}}</legend>\r\n    <fieldset *ngFor=\"let char of team.charaktere\" class=\"maincharFieldset\">\r\n      <legend>{{char.nameKey}}</legend>\r\n      <div>\r\n        <div style=\"height:60px;width:70px;display:inline-block\">\r\n          <img *ngIf=\"char.rarity>0\" src=\"/assets/picture/star.png\" class=\"sterne stern1\">\r\n          <img *ngIf=\"char.rarity<1\" src=\"/assets/picture/nostar.png\" class=\"sterne stern1\">\r\n          <img *ngIf=\"char.rarity>1\" src=\"/assets/picture/star.png\" class=\"sterne stern2\">\r\n          <img *ngIf=\"char.rarity<2\" src=\"/assets/picture/nostar.png\" class=\"sterne stern2\">\r\n          <img *ngIf=\"char.rarity>2\" src=\"/assets/picture/star.png\" class=\"sterne stern3\">\r\n          <img *ngIf=\"char.rarity<3\" src=\"/assets/picture/nostar.png\" class=\"sterne stern3\">\r\n          <img *ngIf=\"char.rarity>3\" src=\"/assets/picture/star.png\" class=\"sterne stern4\">\r\n          <img *ngIf=\"char.rarity<4\" src=\"/assets/picture/nostar.png\" class=\"sterne stern4\">\r\n          <img *ngIf=\"char.rarity>4\" src=\"/assets/picture/star.png\" class=\"sterne stern5\">\r\n          <img *ngIf=\"char.rarity<5\" src=\"/assets/picture/nostar.png\" class=\"sterne stern5\">\r\n          <img *ngIf=\"char.rarity>5\" src=\"/assets/picture/star.png\" class=\"sterne stern6\">\r\n          <img *ngIf=\"char.rarity<6\" src=\"/assets/picture/nostar.png\" class=\"sterne stern6\">\r\n          <img *ngIf=\"char.rarity>6\" src=\"/assets/picture/star.png\" class=\"sterne stern7\">\r\n          <img *ngIf=\"char.rarity<7\" src=\"/assets/picture/nostar.png\" class=\"sterne stern7\">\r\n\r\n          <img class=\"charImage\" [src]=\"char | charimagelink\" [alt]=\"char.nameKey\">\r\n          <img class=\"gearImage\" [src]=\"char | gearlink\" [alt]=\"char.nameKey\">\r\n          <span class=\"char-level\">{{char.level}}</span>\r\n          <span class=\"char-gear-level\">{{char | chargear}}</span>\r\n        </div>\r\n\r\n        <div style=\"display:inline-block\">\r\n          <div *ngFor=\"let skill of char.skills\">\r\n            <span *ngIf=\"skill.isZeta == true && skill.tier == 8\">Zeta: {{skill.nameKey}}</span>\r\n          </div>\r\n        </div>\r\n      </div>\r\n\r\n      <button (click)=\"showMods[i] = !showMods[i]\">{{'Show/Hide'| language}}</button>\r\n\r\n      <div *ngIf=\"showMods[i]\">\r\n        <fieldset *ngFor=\"let mod of char.mods\" style=\"position:relative; float:left;\">\r\n          <legend>{{(mod.set | modsetname) | language}}-{{(mod.slot | modslotname) | language}} L:{{mod.level}} S:{{mod.pips}}</legend>\r\n          <div style=\"color:blue\">{{(mod.primaryStat.unitStat | modstatname) | language}}: {{mod.primaryStat.value | modstatvalue : (mod.primaryStat.unitStat | modstatname)}}</div>\r\n          <div *ngFor=\"let stat of mod.secondaryStat\">{{(stat.unitStat | modstatname) | language}}: {{stat.value | modstatvalue : (stat.unitStat | modstatname)}}</div>\r\n        </fieldset>\r\n      </div>\r\n\r\n    </fieldset>\r\n  </fieldset>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1308,7 +1500,7 @@ module.exports = "input[type=text] {\r\n  width: 100%;\r\n  padding: 12px 20px;\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "Pick a Charakter and two Member to Compare the Char\r\n<dx-select-box [dataSource]=\"GildenService.charInfos\"\r\n               [value]=\"GildenService.charInfos[0]\"\r\n               [searchEnabled]=\"true\"\r\n               (onValueChanged)=\"onValueChanged(charSelectBox, MemberSelectBoxA, MemberSelectBoxB)\"\r\n               displayExpr=\"name\" #charSelectBox>\r\n</dx-select-box>\r\n\r\n<div style=\"width:100%\">\r\n  <dx-select-box [dataSource]=\"GildenService.gildenInfos.roster\"\r\n                 [value]=\"GildenService.gildenInfos.roster[0]\"\r\n                 [searchEnabled]=\"true\"\r\n                 displayExpr=\"name\"\r\n                 (onValueChanged)=\"onValueChanged(charSelectBox, MemberSelectBoxA, MemberSelectBoxB)\"\r\n                 style=\"width:50%; float:left\" #MemberSelectBoxA>\r\n  </dx-select-box>\r\n\r\n  <dx-select-box [dataSource]=\"GildenService.gildenInfos.roster\"\r\n                 [value]=\"GildenService.gildenInfos.roster[0]\"\r\n                 [searchEnabled]=\"true\"\r\n                 displayExpr=\"name\"\r\n                 (onValueChanged)=\"onValueChanged(charSelectBox, MemberSelectBoxA, MemberSelectBoxB)\"\r\n                 style=\"width:50%; float:left\" #MemberSelectBoxB>\r\n  </dx-select-box>\r\n</div>\r\n\r\n<div *ngIf=\"charCompletedA && charCompletedB\" style=\"width:100%\">\r\n\r\n  <table style=\"width:100%\">\r\n    <tr>\r\n      <th style=\"width:33%\">\r\n        {{charSelectBox.value.name}} from {{MemberSelectBoxA.value.name}}\r\n      </th>\r\n      <th style=\"width:33%\">\r\n        Compare\r\n      </th>\r\n      <th style=\"width:33%\">\r\n        {{charSelectBox.value.name}} from {{MemberSelectBoxB.value.name}}\r\n      </th>\r\n    </tr>\r\n    <tr>\r\n      <td>\r\n        CharABild\r\n      </td>\r\n      <td></td>\r\n      <td>\r\n        CharBBild\r\n      </td>\r\n    </tr>\r\n    <tr *ngFor=\"let keyvalue of charCompletedA.total | mapToIterable\" >\r\n        <td>\r\n          {{charCompletedA.total[keyvalue.key]}}\r\n        </td>\r\n        <td>\r\n          {{keyvalue.key | language}}\r\n        </td>\r\n        <td>\r\n          {{charCompletedB.total[keyvalue.key]}}\r\n        </td>\r\n    <tr>\r\n      <td>Eventuell Mods Char A</td>\r\n      <td></td>\r\n      <td>Eventuell Mods Char B</td>\r\n    </tr>\r\n  </table>\r\n\r\n</div>\r\n"
+module.exports = "Pick a Charakter and two Member to Compare the Char\r\n<dx-select-box [dataSource]=\"GildenService.charInfos\"\r\n               [value]=\"GildenService.charInfos[0]\"\r\n               [searchEnabled]=\"true\"\r\n               (onValueChanged)=\"onValueChanged(charSelectBox, MemberSelectBoxA, MemberSelectBoxB)\"\r\n               displayExpr=\"name\" #charSelectBox>\r\n</dx-select-box>\r\n\r\n<div style=\"width:100%\">\r\n  <dx-select-box [dataSource]=\"GildenService.gildenInfos.roster\"\r\n                 [value]=\"GildenService.gildenInfos.roster[0]\"\r\n                 [searchEnabled]=\"true\"\r\n                 displayExpr=\"name\"\r\n                 (onValueChanged)=\"onValueChanged(charSelectBox, MemberSelectBoxA, MemberSelectBoxB)\"\r\n                 style=\"width:50%; float:left\" #MemberSelectBoxA>\r\n  </dx-select-box>\r\n\r\n  <dx-select-box [dataSource]=\"GildenService.gildenInfos.roster\"\r\n                 [value]=\"GildenService.gildenInfos.roster[0]\"\r\n                 [searchEnabled]=\"true\"\r\n                 displayExpr=\"name\"\r\n                 (onValueChanged)=\"onValueChanged(charSelectBox, MemberSelectBoxA, MemberSelectBoxB)\"\r\n                 style=\"width:50%; float:left\" #MemberSelectBoxB>\r\n  </dx-select-box>\r\n</div>\r\n\r\n<div *ngIf=\"charCompletedA && charCompletedB\" style=\"width:100%\">\r\n\r\n  <table style=\"width:100%\">\r\n    <tr>\r\n      <th style=\"width:33%\">\r\n        {{charSelectBox.value.nameKey}} from {{MemberSelectBoxA.value.nameKey}}\r\n      </th>\r\n      <th style=\"width:33%\">\r\n        Compare\r\n      </th>\r\n      <th style=\"width:33%\">\r\n        {{charSelectBox.value.nameKey}} from {{MemberSelectBoxB.value.nameKey}}\r\n      </th>\r\n    </tr>\r\n    <tr>\r\n      <td>\r\n        CharABild\r\n      </td>\r\n      <td></td>\r\n      <td>\r\n        CharBBild\r\n      </td>\r\n    </tr>\r\n    <tr *ngFor=\"let keyvalue of charCompletedA.total | mapToIterable\" >\r\n        <td>\r\n          {{charCompletedA.total[keyvalue.key]}}\r\n        </td>\r\n        <td>\r\n          {{keyvalue.key | language}}\r\n        </td>\r\n        <td>\r\n          {{charCompletedB.total[keyvalue.key]}}\r\n        </td>\r\n    <tr>\r\n      <td>Eventuell Mods Char A</td>\r\n      <td></td>\r\n      <td>Eventuell Mods Char B</td>\r\n    </tr>\r\n  </table>\r\n\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1345,9 +1537,9 @@ var ComparerComponent = /** @class */ (function () {
     }
     ComparerComponent.prototype.onValueChanged = function (charSelectBox, MemberSelectBoxA, MemberSelectBoxB) {
         console.log('value changed');
-        if (MemberSelectBoxA.value != null && MemberSelectBoxB.value != null && charSelectBox.value != null && MemberSelectBoxA.value.name != MemberSelectBoxB.value.name) {
-            var charA = this.GildenService.getCharByNameAndMemberExact(charSelectBox.value.name, MemberSelectBoxA.value);
-            var charB = this.GildenService.getCharByNameAndMemberExact(charSelectBox.value.name, MemberSelectBoxB.value);
+        if (MemberSelectBoxA.value != null && MemberSelectBoxB.value != null && charSelectBox.value != null && MemberSelectBoxA.value.nameKey != MemberSelectBoxB.value.nameKey) {
+            var charA = this.GildenService.getCharByNameAndMemberExact(charSelectBox.value.nameKey, MemberSelectBoxA.value);
+            var charB = this.GildenService.getCharByNameAndMemberExact(charSelectBox.value.nameKey, MemberSelectBoxB.value);
             if (charA != null)
                 this.loadChar("A", charA);
             if (charB != null)
@@ -1395,18 +1587,18 @@ var ComparerComponent = /** @class */ (function () {
         var modSetsTotal = {};
         console.log("mods", char.mods);
         for (var i = 0; i < char.mods.length; i++) {
-            var primaryType = char.mods[i].primaryBonusType;
-            var primaryBonusValue = Number(char.mods[i].primaryBonusValue.replace("%", "").replace("+", ""));
-            var secondaryType_1 = char.mods[i].secondaryType_1;
-            var secondaryType_2 = char.mods[i].secondaryType_2;
-            var secondaryType_3 = char.mods[i].secondaryType_3;
-            var secondaryType_4 = char.mods[i].secondaryType_4;
-            var secondaryValue_1 = Number(char.mods[i].secondaryValue_1.replace("%", "").replace("+", ""));
-            var secondaryValue_2 = Number(char.mods[i].secondaryValue_2.replace("%", "").replace("+", ""));
+            var primaryType = char.mods[i].primaryStat.unitStat;
+            var primaryBonusValue = Number(char.mods[i].primaryStat.value);
+            var secondaryType_1 = char.mods[i].secondaryStat[0].unitStat;
+            var secondaryType_2 = char.mods[i].secondaryStat[1].unitStat;
+            var secondaryType_3 = char.mods[i].secondaryStat[2].unitStat;
+            var secondaryType_4 = char.mods[i].secondaryStat[3].unitStat;
+            var secondaryValue_1 = Number(char.mods[i].secondaryStat[0].value);
+            var secondaryValue_2 = Number(char.mods[i].secondaryStat[1].value);
             ;
-            var secondaryValue_3 = Number(char.mods[i].secondaryValue_3.replace("%", "").replace("+", ""));
+            var secondaryValue_3 = Number(char.mods[i].secondaryStat[2].value);
             ;
-            var secondaryValue_4 = Number(char.mods[i].secondaryValue_4.replace("%", "").replace("+", ""));
+            var secondaryValue_4 = Number(char.mods[i].secondaryStat[3].value);
             ;
             if (modValuesTotal[primaryType] == null)
                 modValuesTotal[primaryType] = 0;
@@ -1423,11 +1615,11 @@ var ComparerComponent = /** @class */ (function () {
             modValuesTotal[secondaryType_2] += secondaryValue_2;
             modValuesTotal[secondaryType_3] += secondaryValue_3;
             modValuesTotal[secondaryType_4] += secondaryValue_4;
-            if (modSetsTotal[char.mods[i].setId] == null) {
-                modSetsTotal[char.mods[i].setId] = 1;
+            if (modSetsTotal[char.mods[i].set] == null) {
+                modSetsTotal[char.mods[i].set] = 1;
             }
             else {
-                modSetsTotal[char.mods[i].setId] += 1;
+                modSetsTotal[char.mods[i].set] += 1;
             }
         }
         console.log("modSetsTotal", modSetsTotal);
@@ -1436,10 +1628,10 @@ var ComparerComponent = /** @class */ (function () {
             ModSetNow = this_1.GildenService.ModSets.find(function (modset) { return modset.id == key; });
             if (ModSetNow != null) {
                 if (ModSetNow.setCount <= modSetsTotal[key]) {
-                    if (charData.total[this_1.mapKeyOfModStat(ModSetNow.name)] != null) {
-                        console.log(charData.total[this_1.mapKeyOfModStat(ModSetNow.name)]);
-                        charData.total[this_1.mapKeyOfModStat(ModSetNow.name)] = Number(charData.total[this_1.mapKeyOfModStat(ModSetNow.name)]) + ((((Number(ModSetNow.maxLevelBonus.stat.statValueDecimal)) / 100) * 2) / 100) * Number(charData.base[this_1.mapKeyOfModStat(ModSetNow.name)]);
-                        console.log(charData.total[this_1.mapKeyOfModStat(ModSetNow.name)]);
+                    if (charData.total[this_1.mapKeyOfModStat(ModSetNow.nameKey)] != null) {
+                        console.log(charData.total[this_1.mapKeyOfModStat(ModSetNow.nameKey)]);
+                        charData.total[this_1.mapKeyOfModStat(ModSetNow.nameKey)] = Number(charData.total[this_1.mapKeyOfModStat(ModSetNow.nameKey)]) + ((((Number(ModSetNow.maxLevelBonus.stat.statValueDecimal)) / 100) * 2) / 100) * Number(charData.base[this_1.mapKeyOfModStat(ModSetNow.nameKey)]);
+                        console.log(charData.total[this_1.mapKeyOfModStat(ModSetNow.nameKey)]);
                     }
                     else {
                         console.log("cant calculate modset ", ModSetNow);
@@ -1632,7 +1824,7 @@ module.exports = "input[type=text] {\r\n  width: 100%;\r\n  padding: 12px 20px;\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"GildenService.SWGOHEvents\">\r\n  <div *ngFor=\"let event of GildenService.SWGOHEvents\">\r\n    <fieldset *ngIf=\"(event.id | eventShow)\" style=\"width:100%\">\r\n      <legend>\r\n        <span *ngIf=\"event.id == 'EVENT_TRAINING_DROID_SMUGGLING' || event.id == 'EVENT_CREDIT_HEIST_GETAWAY_V2' || event.id == 'EVENT_GALACTIC_BOUNTY_01' || event.type == 3\" style=\"color:#0000ff\">\r\n          {{event.name}}\r\n        </span>\r\n        <span *ngIf=\"event.id != 'EVENT_TRAINING_DROID_SMUGGLING' && event.id != 'EVENT_CREDIT_HEIST_GETAWAY_V2' && event.id != 'EVENT_GALACTIC_BOUNTY_01' && event.type != 3\">\r\n          {{event.name}}\r\n        </span>\r\n      </legend>\r\n        Desc: {{event.desc}} <br />\r\n        Start: {{event.schedule[0].start | date : 'dd.MM.yyyy HH:mm'}} <br />\r\n        End: {{event.schedule[0].end | date : 'dd.MM.yyyy HH:mm'}} <br />\r\n\r\n</fieldset>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div *ngIf=\"GildenService.SWGOHEvents\">\r\n  <div *ngFor=\"let event of GildenService.SWGOHEvents\">\r\n    <fieldset *ngIf=\"(event.id | eventShow)\" style=\"width:100%\">\r\n      <legend>\r\n        <span *ngIf=\"event.id == 'EVENT_TRAINING_DROID_SMUGGLING' || event.id == 'EVENT_CREDIT_HEIST_GETAWAY_V2' || event.id == 'EVENT_GALACTIC_BOUNTY_01' || event.id == 'EVENT_GALACTIC_BOUNTY_02' || event.id == 'EVENT_RESOURCE_CONTRABAND_CARGO' || event.id == 'EVENT_RESOURCE_SMUGGLERS_RUN' || event.gameEventType == 3\" style=\"color:#0000ff\">\r\n          {{event.nameKey | eventname}}\r\n        </span>\r\n        <span *ngIf=\"event.id != 'EVENT_TRAINING_DROID_SMUGGLING' && event.id != 'EVENT_CREDIT_HEIST_GETAWAY_V2' && event.id != 'EVENT_GALACTIC_BOUNTY_01' && event.id != 'EVENT_GALACTIC_BOUNTY_02' && event.id != 'EVENT_RESOURCE_CONTRABAND_CARGO' && event.id != 'EVENT_RESOURCE_SMUGGLERS_RUN' && event.gameEventType != 3\">\r\n          {{event.nameKey | eventname}}\r\n        </span>\r\n      </legend>\r\n      Desc: {{event.descKey | eventname}} <br />\r\n      Start: {{event.instanceList[0].startTime | date : 'dd.MM.yyyy HH:mm'}} <br />\r\n      End: {{event.instanceList[0].endTime | date : 'dd.MM.yyyy HH:mm'}} <br />\r\n      Show at: {{event.instanceList[0].displayStartTime | date : 'dd.MM.yyyy HH:mm'}} <br />\r\n    </fieldset>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1679,6 +1871,76 @@ var EventsComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/fleetTeams/fleetTeams.css":
+/*!*******************************************!*\
+  !*** ./src/app/fleetTeams/fleetTeams.css ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "input[type=text] {\r\n  width: 100%;\r\n  padding: 12px 20px;\r\n  margin: 8px 0;\r\n  box-sizing: border-box;\r\n}\r\n\r\n\r\n#raidplannerTable tr:nth-child(even) {\r\n  background-color: #f2f2f2;\r\n}\r\n\r\n\r\n#raidplannerTable tr:hover {\r\n  background-color: #ddd;\r\n}\r\n\r\n\r\n#raidplannerTable th {\r\n  padding-top: 12px;\r\n  padding-bottom: 12px;\r\n  text-align: left;\r\n  background-color: #4CAF50;\r\n  color: white;\r\n}\r\n\r\n\r\n.parentOfImages {\r\n  position: relative;\r\n  top: 0;\r\n  left: 0;\r\n  width: 55px;\r\n  height: 80px;\r\n}\r\n\r\n\r\n.sterne {\r\n  position: absolute;\r\n  transform: scale(0.6, 0.6);\r\n  -ms-transform: scale(0.6, 0.6);\r\n  -webkit-transform: scale(0.6, 0.6);\r\n  z-index: 2;\r\n}\r\n\r\n\r\n.stern1 {\r\n  top: 25px;\r\n  left: -6px;\r\n}\r\n\r\n\r\n.stern2 {\r\n  top: 15px;\r\n  left: 6px;\r\n}\r\n\r\n\r\n.stern3 {\r\n  top: 8px;\r\n  left: 17px;\r\n}\r\n\r\n\r\n.stern4 {\r\n  top: 8px;\r\n  left: 30px;\r\n}\r\n\r\n\r\n.stern5 {\r\n  top: 8px;\r\n  left: 44px;\r\n}\r\n\r\n\r\n.stern6 {\r\n  top: 15px;\r\n  left: 57px;\r\n}\r\n\r\n\r\n.stern7 {\r\n  top: 25px;\r\n  left: 67px;\r\n}\r\n\r\n\r\n.maincharFieldset{\r\n  position:relative;\r\n  float:left;\r\n}\r\n\r\n\r\n.gearImage {\r\n  position: absolute;\r\n  top: 10px;\r\n  left: 0px;\r\n  z-index: 0;\r\n  transform: scale(0.7, 0.7);\r\n  -ms-transform: scale(0.7, 0.7);\r\n  -webkit-transform: scale(0.7, 0.7);\r\n}\r\n\r\n\r\n.charImage {\r\n  z-index: 0;\r\n  position: absolute;\r\n  top: -78px;\r\n  left: -88px;\r\n  border-radius: 50%;\r\n  transform: scale(0.21, 0.21);\r\n  -ms-transform: scale(0.21, 0.21);\r\n  -webkit-transform: scale(0.21, 0.21);\r\n}\r\n\r\n\r\n.char-level {\r\n  color: #fff;\r\n  background-color: #264257;\r\n  border: 2px solid #fff;\r\n  text-align: center;\r\n  border-radius: 100%/130% 130% 15px 15px;\r\n  position: absolute;\r\n  top: 55px;\r\n  left: 40px;\r\n  z-index: 2;\r\n  width: 15px;\r\n  padding: 0 5px;\r\n  font-size: x-small;\r\n}\r\n\r\n\r\n.char-gear-level {\r\n  color: #fff;\r\n  background-color: #006600;\r\n  border: 2px solid #fff;\r\n  text-align: center;\r\n  border-radius: 100%/130% 130% 15px 15px;\r\n  position: absolute;\r\n  left: 25px;\r\n  top: 65px;\r\n  z-index: 3;\r\n  width: 15px;\r\n  padding: 0 5px;\r\n  font-size: x-small;\r\n}\r\n\r\n\r\n.divForChar {\r\n  width: 58px;\r\n  height: 90px;\r\n  display: inline-block;\r\n  left: -20px;\r\n  position: relative;\r\n}\r\n\r\n\r\n.progress1 {\r\n  background-color: #bcd6ff;\r\n  border: 0;\r\n  position: absolute;\r\n  top: 72px;\r\n  left: 13px;\r\n  height: 18px;\r\n  width: 55px;\r\n}\r\n\r\n\r\n.progressText {\r\n  position: absolute;\r\n  top: 72px;\r\n  left: 23px;\r\n}\r\n\r\n\r\nselect {\r\n  padding: 10px 10px;\r\n  border: none;\r\n  border-radius: 4px;\r\n  background-color: #f1f1f1;\r\n}\r\n\r\n\r\nbutton {\r\n  background-color: #2196F3;\r\n  border: none;\r\n  color: white;\r\n  /*padding: 16px 32px;*/\r\n  text-decoration: none;\r\n  /*margin: 4px 2px;*/\r\n  cursor: pointer;\r\n}\r\n\r\n\r\n/* The Modal (background) */\r\n\r\n\r\n.modal {\r\n  display: none; /* Hidden by default */\r\n  position: fixed; /* Stay in place */\r\n  z-index: 11; /* Sit on top */\r\n  padding-top: 50px; /* Location of the box */\r\n  left: 0;\r\n  top: 0;\r\n  width: 100%; /* Full width */\r\n  height: 100%; /* Full height */\r\n  overflow: auto; /* Enable scroll if needed */\r\n  background-color: rgb(0,0,0); /* Fallback color */\r\n  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */\r\n}\r\n\r\n\r\n/* Modal Content */\r\n\r\n\r\n.modal-content {\r\n  position: relative;\r\n  background-color: #fefefe;\r\n  margin: auto;\r\n  padding: 0;\r\n  border: 1px solid #888;\r\n  width: 95%;\r\n  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);\r\n  -webkit-animation-name: animatetop;\r\n  -webkit-animation-duration: 0.4s;\r\n  animation-name: animatetop;\r\n  animation-duration: 0.4s\r\n}\r\n\r\n\r\n/* Add Animation */\r\n\r\n\r\n@-webkit-keyframes animatetop {\r\n  from {\r\n    top: -300px;\r\n    opacity: 0\r\n  }\r\n\r\n  to {\r\n    top: 0;\r\n    opacity: 1\r\n  }\r\n}\r\n\r\n\r\n@keyframes animatetop {\r\n  from {\r\n    top: -300px;\r\n    opacity: 0\r\n  }\r\n\r\n  to {\r\n    top: 0;\r\n    opacity: 1\r\n  }\r\n}\r\n\r\n\r\n/* The Close Button */\r\n\r\n\r\n.close {\r\n  color: white;\r\n  float: right;\r\n  font-size: 28px;\r\n  font-weight: bold;\r\n}\r\n\r\n\r\n.close:hover,\r\n  .close:focus {\r\n    color: #000;\r\n    text-decoration: none;\r\n    cursor: pointer;\r\n  }\r\n\r\n\r\n.modal-header {\r\n  padding: 2px 16px;\r\n  background-color: #2196F3;\r\n  color: white;\r\n}\r\n\r\n\r\n.modal-body {\r\n  padding: 2px 16px;\r\n}\r\n\r\n\r\nprogress {\r\n  background-color: #f3f3f3;\r\n  border: 0;\r\n  top: 80px;\r\n  position: absolute;\r\n  height: 18px;\r\n  border-radius: 9px;\r\n}\r\n\r\n\r\n.selectedImg {\r\n  position: absolute;\r\n  top: -304px;\r\n  left: -350px;\r\n  transform: scale(0.1, 0.1);\r\n  -ms-transform: scale(0.1, 0.1);\r\n  -webkit-transform: scale(0.1, 0.1);\r\n  z-index: 3;\r\n}\r\n\r\n\r\n.zeta1 {\r\n  position: absolute;\r\n  top: 15px;\r\n  left: 65px;\r\n  transform: scale(0.6, 0.6);\r\n  -ms-transform: scale(0.6, 0.6);\r\n  -webkit-transform: scale(0.6, 0.6);\r\n  z-index: 3;\r\n}\r\n\r\n\r\n.zeta2 {\r\n  position: absolute;\r\n  top: 35px;\r\n  left: 65px;\r\n  transform: scale(0.6, 0.6);\r\n  -ms-transform: scale(0.6, 0.6);\r\n  -webkit-transform: scale(0.6, 0.6);\r\n  z-index: 3;\r\n}\r\n\r\n\r\n.zeta3 {\r\n  position: absolute;\r\n  top: 55px;\r\n  left: 65px;\r\n  transform: scale(0.6, 0.6);\r\n  -ms-transform: scale(0.6, 0.6);\r\n  -webkit-transform: scale(0.6, 0.6);\r\n  z-index: 3;\r\n}\r\n\r\n"
+
+/***/ }),
+
+/***/ "./src/app/fleetTeams/fleetTeams.html":
+/*!********************************************!*\
+  !*** ./src/app/fleetTeams/fleetTeams.html ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div *ngFor=\"let team of AllFleetTeams;let i = index\" class=\"charNow\">\r\n  <fieldset>\r\n    <legend>{{team.besitzer}} {{'WithRank' | language}} {{team.rang}}</legend>\r\n    <fieldset *ngFor=\"let char of team.charaktere\" class=\"maincharFieldset\">\r\n      <legend>{{char.nameKey}}</legend>\r\n      <div style=\"height:60px;\">\r\n        <img *ngIf=\"char.rarity>0\" src=\"/assets/picture/star.png\" class=\"sterne stern1\">\r\n        <img *ngIf=\"char.rarity<1\" src=\"/assets/picture/nostar.png\" class=\"sterne stern1\">\r\n        <img *ngIf=\"char.rarity>1\" src=\"/assets/picture/star.png\" class=\"sterne stern2\">\r\n        <img *ngIf=\"char.rarity<2\" src=\"/assets/picture/nostar.png\" class=\"sterne stern2\">\r\n        <img *ngIf=\"char.rarity>2\" src=\"/assets/picture/star.png\" class=\"sterne stern3\">\r\n        <img *ngIf=\"char.rarity<3\" src=\"/assets/picture/nostar.png\" class=\"sterne stern3\">\r\n        <img *ngIf=\"char.rarity>3\" src=\"/assets/picture/star.png\" class=\"sterne stern4\">\r\n        <img *ngIf=\"char.rarity<4\" src=\"/assets/picture/nostar.png\" class=\"sterne stern4\">\r\n        <img *ngIf=\"char.rarity>4\" src=\"/assets/picture/star.png\" class=\"sterne stern5\">\r\n        <img *ngIf=\"char.rarity<5\" src=\"/assets/picture/nostar.png\" class=\"sterne stern5\">\r\n        <img *ngIf=\"char.rarity>5\" src=\"/assets/picture/star.png\" class=\"sterne stern6\">\r\n        <img *ngIf=\"char.rarity<6\" src=\"/assets/picture/nostar.png\" class=\"sterne stern6\">\r\n        <img *ngIf=\"char.rarity>6\" src=\"/assets/picture/star.png\" class=\"sterne stern7\">\r\n        <img *ngIf=\"char.rarity<7\" src=\"/assets/picture/nostar.png\" class=\"sterne stern7\">\r\n\r\n        <img class=\"charImage\" [src]=\"char | fleetimagelink\" [alt]=\"char.nameKey\">\r\n        <img class=\"gearImage\" [src]=\"char | gearlink\" [alt]=\"char.nameKey\">\r\n        <span class=\"char-gear-level\">{{char.level}}</span>\r\n      </div>\r\n\r\n    </fieldset>\r\n  </fieldset>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/fleetTeams/fleetTeams.ts":
+/*!******************************************!*\
+  !*** ./src/app/fleetTeams/fleetTeams.ts ***!
+  \******************************************/
+/*! exports provided: FleetTeamsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FleetTeamsComponent", function() { return FleetTeamsComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var _services_gildenService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/gildenService */ "./src/app/services/gildenService.ts");
+/* harmony import */ var _services_settingsService__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/settingsService */ "./src/app/services/settingsService.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var FleetTeamsComponent = /** @class */ (function () {
+    function FleetTeamsComponent(settingsService, gildenService) {
+        this.settingsService = settingsService;
+        this.gildenService = gildenService;
+        this.showMods = new Array();
+        this.AllFleetTeams = gildenService.getAllFleetArenaTeams();
+        this.AllFleetTeams.sort(function (a, b) { return a.rang - b.rang; });
+    }
+    FleetTeamsComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'fleetTeams',
+            template: __webpack_require__(/*! ./fleetTeams.html */ "./src/app/fleetTeams/fleetTeams.html"),
+            styles: [__webpack_require__(/*! ./fleetTeams.css */ "./src/app/fleetTeams/fleetTeams.css")]
+        }),
+        __metadata("design:paramtypes", [_services_settingsService__WEBPACK_IMPORTED_MODULE_2__["SettingsService"], _services_gildenService__WEBPACK_IMPORTED_MODULE_1__["gildenService"]])
+    ], FleetTeamsComponent);
+    return FleetTeamsComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/home/home.css":
 /*!*******************************!*\
   !*** ./src/app/home/home.css ***!
@@ -1697,7 +1959,7 @@ module.exports = "tr:nth-child(even) {\r\n  background-color: #f2f2f2;\r\n}\r\n\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"text-align:center\">\r\n  <h3>\r\n    {{'WelcomeText' | language}}\r\n  </h3>\r\n\r\n  <table *ngIf=\"gildenService.gildenInfos.members>0 && !gildenService.isInSync\" style=\"width: 100%;\">\r\n    <tr>\r\n      <td>{{'AllDataText' | language}} <a href=\"http://swgoh.help\">swgoh.help</a> {{'AllPictureText' | language}} <a href=\"http://www.swgoh.gg\">www.swgoh.gg</a></td>\r\n    </tr>\r\n    <tr>\r\n      <td>{{'GuildName' | language}} = {{gildenService.gildenInfos.name}}</td>\r\n    </tr>\r\n    <tr>\r\n      <td>{{'GildenGP' | language}} = {{gildenService.gildenInfos.gp}}</td>\r\n    </tr>\r\n    <tr>\r\n      <td>{{'GildenDescription' | language}} = {{gildenService.gildenInfos.desc}}</td>\r\n    </tr>\r\n    <tr> </tr>\r\n    <tr> </tr>\r\n    <tr>\r\n      <td>{{'RaidsPlayed' | language}}:</td>\r\n    </tr>\r\n    <tr>\r\n      <td>Rancor = {{gildenService.gildenInfos.raid.rancor}}</td>\r\n    </tr>\r\n    <tr>\r\n      <td>AAT = {{gildenService.gildenInfos.raid.aat}}</td>\r\n    </tr>\r\n    <tr>\r\n      <td>STR = {{gildenService.gildenInfos.raid.sith_raid}}</td>\r\n    </tr>\r\n    <tr> </tr>\r\n    <tr> </tr>\r\n    <tr>\r\n      <td>{{'LastSync' | language}} = {{gildenService.gildenInfos.updated | date: \"dd.MM.yyyy HH:mm:ss\"}}</td>\r\n    </tr>\r\n  </table>\r\n\r\n <dx-text-area *ngIf=\"gildenService.isInSync\" [height]=\"windowNow.innerHeight-175\" [readOnly]=\"true\" [(value)]=\"gildenService.syncstatus\"></dx-text-area>\r\n\r\n  \r\n  <h3 *ngIf=\"settingsService.settings.allycode==''\">{{'EnterAllyCode' | language}}</h3>\r\n  <h3 *ngIf=\"gildenService.gildenInfos.members==0&&settingsService.settings.allycode!=''\">{{'PleaseSync' | language}}</h3>\r\n\r\n</div>\r\n\r\n<button (click)=\"syncApi()\" style=\"position: absolute; bottom: 10px; left: 0px;\">{{'Synchronise' | language}} ({{gildenService.isInSync}})</button>\r\n"
+module.exports = "<div style=\"text-align:center\">\r\n  <h3>\r\n    {{'WelcomeText' | language}}\r\n  </h3>\r\n\r\n  <table *ngIf=\"gildenService.gildenInfos && gildenService.gildenInfos.members>0 && !gildenService.isInSync\" style=\"width: 100%;\">\r\n    <tr>\r\n      <td>{{'AllDataText' | language}} <a href=\"http://swgoh.help\">swgoh.help</a> {{'AllPictureText' | language}} <a href=\"http://www.swgoh.gg\">www.swgoh.gg</a></td>\r\n    </tr>\r\n    <tr>\r\n      <td>{{'GuildName' | language}} = {{gildenService.gildenInfos.name}}</td>\r\n    </tr>\r\n    <tr>\r\n      <td>{{'GildenGP' | language}} = {{gildenService.gildenInfos.gp}}</td>\r\n    </tr>\r\n    <tr>\r\n      <td>{{'GildenDescription' | language}} = {{gildenService.gildenInfos.desc}}</td>\r\n    </tr>\r\n    <tr> </tr>\r\n    <tr> </tr>\r\n    <tr>\r\n      <td>{{'RaidsPlayed' | language}}:</td>\r\n    </tr>\r\n    <tr>\r\n      <td>Rancor = {{gildenService.gildenInfos.raid.rancor}}</td>\r\n    </tr>\r\n    <tr>\r\n      <td>AAT = {{gildenService.gildenInfos.raid.aat}}</td>\r\n    </tr>\r\n    <tr>\r\n      <td>STR = {{gildenService.gildenInfos.raid.sith_raid}}</td>\r\n    </tr>\r\n    <tr> </tr>\r\n    <tr> </tr>\r\n    <tr>\r\n      <td>{{'LastSync' | language}} = {{gildenService.gildenInfos.updated | date: \"dd.MM.yyyy HH:mm:ss\"}}</td>\r\n    </tr>\r\n  </table>\r\n\r\n <dx-text-area *ngIf=\"gildenService.isInSync\" [height]=\"windowNow.innerHeight-175\" [readOnly]=\"true\" [(value)]=\"gildenService.syncstatus\"></dx-text-area>\r\n\r\n  \r\n  <h3 *ngIf=\"settingsService.settings.allycode==''\">{{'EnterAllyCode' | language}}</h3>\r\n  <h3 *ngIf=\"gildenService.gildenInfos && gildenService.gildenInfos.members==0 && settingsService.settings.allycode!=''\">{{'PleaseSync' | language}}</h3>\r\n\r\n</div>\r\n\r\n<button (click)=\"syncApi()\" style=\"position: absolute; bottom: 10px; left: 0px;\">{{'Synchronise' | language}} ({{gildenService.isInSync}})</button>\r\n"
 
 /***/ }),
 
@@ -1776,7 +2038,7 @@ module.exports = "input[type=text] {\r\n  width: 100%;\r\n  padding: 12px 20px;\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<input type=\"text\" placeholder=\"{{'CharNamePlaceHolder'| language}}\" [(ngModel)]=\"charToSearch\" (ngModelChange)=\"searchCharaktere()\">\r\n\r\n<div *ngIf=\"charaktere\">\r\n  <fieldset *ngFor=\"let char of charaktere;let i = index\" class=\"maincharFieldset\">\r\n    <legend>{{char.besitzer}}</legend>\r\n    <div style=\"height:60px;\">\r\n      <img *ngIf=\"char.charakter.rarity>0\" src=\"/assets/picture/star.png\" class=\"sterne stern1\">\r\n      <img *ngIf=\"char.charakter.rarity<1\" src=\"/assets/picture/nostar.png\" class=\"sterne stern1\">\r\n      <img *ngIf=\"char.charakter.rarity>1\" src=\"/assets/picture/star.png\" class=\"sterne stern2\">\r\n      <img *ngIf=\"char.charakter.rarity<2\" src=\"/assets/picture/nostar.png\" class=\"sterne stern2\">\r\n      <img *ngIf=\"char.charakter.rarity>2\" src=\"/assets/picture/star.png\" class=\"sterne stern3\">\r\n      <img *ngIf=\"char.charakter.rarity<3\" src=\"/assets/picture/nostar.png\" class=\"sterne stern3\">\r\n      <img *ngIf=\"char.charakter.rarity>3\" src=\"/assets/picture/star.png\" class=\"sterne stern4\">\r\n      <img *ngIf=\"char.charakter.rarity<4\" src=\"/assets/picture/nostar.png\" class=\"sterne stern4\">\r\n      <img *ngIf=\"char.charakter.rarity>4\" src=\"/assets/picture/star.png\" class=\"sterne stern5\">\r\n      <img *ngIf=\"char.charakter.rarity<5\" src=\"/assets/picture/nostar.png\" class=\"sterne stern5\">\r\n      <img *ngIf=\"char.charakter.rarity>5\" src=\"/assets/picture/star.png\" class=\"sterne stern6\">\r\n      <img *ngIf=\"char.charakter.rarity<6\" src=\"/assets/picture/nostar.png\" class=\"sterne stern6\">\r\n      <img *ngIf=\"char.charakter.rarity>6\" src=\"/assets/picture/star.png\" class=\"sterne stern7\">\r\n      <img *ngIf=\"char.charakter.rarity<7\" src=\"/assets/picture/nostar.png\" class=\"sterne stern7\">\r\n\r\n      <img class=\"charImage\" [src]=\"char.charakter | charimagelink\" [alt]=\"char | charname\">\r\n      <img class=\"gearImage\" [src]=\"char.charakter | gearlink\" [alt]=\"char | charname\">\r\n      <span class=\"char-level\">{{char.charakter.level}}</span>\r\n      <span class=\"char-gear-level\">{{char.charakter | chargear}}</span>\r\n    </div>\r\n\r\n    <div>{{'Charpower' | language}}: {{char.charakter.gp}}</div>\r\n\r\n    <button (click)=\"showMods[i] = !showMods[i]\">{{'Show/Hide'| language}}</button>\r\n\r\n    <div *ngIf=\"showMods[i]\">\r\n      <fieldset *ngFor=\"let mod of char.charakter.mods\" style=\"position:relative; float:left;\">\r\n        <legend>{{(mod.setId | modsetname) | language}}-{{(mod.slot | modslotname) | language}} L:{{mod.level}} S:{{mod.pips}}</legend>\r\n        <div style=\"color:blue\">{{(mod.primaryBonusType | modstatname) | language}}: {{mod.primaryBonusValue | modstatvalue : (mod.primaryBonusType | modstatname)}}</div>\r\n        <div>{{(mod.secondaryType_1 | modstatname) | language}}: {{mod.secondaryValue_1 | modstatvalue : (mod.secondaryType_1 | modstatname)}}</div>\r\n        <div>{{(mod.secondaryType_2 | modstatname) | language}}: {{mod.secondaryValue_2 | modstatvalue : (mod.secondaryType_2 | modstatname)}}</div>\r\n        <div>{{(mod.secondaryType_3 | modstatname) | language}}: {{mod.secondaryValue_3 | modstatvalue : (mod.secondaryType_3 | modstatname)}}</div>\r\n        <div>{{(mod.secondaryType_4 | modstatname) | language}}: {{mod.secondaryValue_4 | modstatvalue : (mod.secondaryType_4 | modstatname)}}</div>\r\n      </fieldset>\r\n    </div>\r\n  </fieldset>\r\n</div>\r\n"
+module.exports = "<input type=\"text\" placeholder=\"{{'CharNamePlaceHolder'| language}}\" [(ngModel)]=\"charToSearch\" (ngModelChange)=\"searchCharaktere()\">\r\n\r\n<div *ngIf=\"charaktere\">\r\n  <fieldset *ngFor=\"let char of charaktere;let i = index\" class=\"maincharFieldset\">\r\n    <legend>{{char.besitzer}}</legend>\r\n    <div>\r\n      <div style=\"height:60px;width:70px;display:inline-block\">\r\n        <img *ngIf=\"char.charakter.rarity>0\" src=\"/assets/picture/star.png\" class=\"sterne stern1\">\r\n        <img *ngIf=\"char.charakter.rarity<1\" src=\"/assets/picture/nostar.png\" class=\"sterne stern1\">\r\n        <img *ngIf=\"char.charakter.rarity>1\" src=\"/assets/picture/star.png\" class=\"sterne stern2\">\r\n        <img *ngIf=\"char.charakter.rarity<2\" src=\"/assets/picture/nostar.png\" class=\"sterne stern2\">\r\n        <img *ngIf=\"char.charakter.rarity>2\" src=\"/assets/picture/star.png\" class=\"sterne stern3\">\r\n        <img *ngIf=\"char.charakter.rarity<3\" src=\"/assets/picture/nostar.png\" class=\"sterne stern3\">\r\n        <img *ngIf=\"char.charakter.rarity>3\" src=\"/assets/picture/star.png\" class=\"sterne stern4\">\r\n        <img *ngIf=\"char.charakter.rarity<4\" src=\"/assets/picture/nostar.png\" class=\"sterne stern4\">\r\n        <img *ngIf=\"char.charakter.rarity>4\" src=\"/assets/picture/star.png\" class=\"sterne stern5\">\r\n        <img *ngIf=\"char.charakter.rarity<5\" src=\"/assets/picture/nostar.png\" class=\"sterne stern5\">\r\n        <img *ngIf=\"char.charakter.rarity>5\" src=\"/assets/picture/star.png\" class=\"sterne stern6\">\r\n        <img *ngIf=\"char.charakter.rarity<6\" src=\"/assets/picture/nostar.png\" class=\"sterne stern6\">\r\n        <img *ngIf=\"char.charakter.rarity>6\" src=\"/assets/picture/star.png\" class=\"sterne stern7\">\r\n        <img *ngIf=\"char.charakter.rarity<7\" src=\"/assets/picture/nostar.png\" class=\"sterne stern7\">\r\n\r\n        <img class=\"charImage\" [src]=\"char.charakter | charimagelink\" [alt]=\"char.nameKey\">\r\n        <img class=\"gearImage\" [src]=\"char.charakter | gearlink\" [alt]=\"char.nameKey\">\r\n        <span class=\"char-level\">{{char.charakter.level}}</span>\r\n        <span class=\"char-gear-level\">{{char.charakter | chargear}}</span>\r\n      </div>\r\n\r\n      <div style=\"display:inline-block\">\r\n        <div *ngFor=\"let skill of char.charakter.skills\">\r\n          <span *ngIf=\"skill.isZeta == true && skill.tier == 8\">Zeta: {{skill.nameKey}}</span>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n    <div>{{'Charpower' | language}}: {{char.charakter.gp}}</div>\r\n\r\n    <button (click)=\"showMods[i] = !showMods[i]\">{{'Show/Hide'| language}}</button>\r\n\r\n    <div *ngIf=\"showMods[i]\">\r\n      <fieldset *ngFor=\"let mod of char.charakter.mods\" style=\"position:relative; float:left;\">\r\n        <legend>{{(mod.set | modsetname) | language}}-{{(mod.slot | modslotname) | language}} L:{{mod.level}} S:{{mod.pips}}</legend>\r\n        <div style=\"color:blue\">{{(mod.primaryStat.unitStat | modstatname) | language}}: {{mod.primaryStat.value | modstatvalue : (mod.primaryStat.unitStat | modstatname)}}</div>\r\n        <div *ngFor=\"let stat of mod.secondaryStat\">{{(stat.unitStat | modstatname) | language}}: {{stat.value | modstatvalue : (stat.unitStat | modstatname)}}</div>\r\n      </fieldset>\r\n    </div>\r\n  </fieldset>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1866,6 +2128,47 @@ var MapToIterable = /** @class */ (function () {
         })
     ], MapToIterable);
     return MapToIterable;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/pipes/SkillMemberNames.pipe.ts":
+/*!************************************************!*\
+  !*** ./src/app/pipes/SkillMemberNames.pipe.ts ***!
+  \************************************************/
+/*! exports provided: SkillMemberNames */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SkillMemberNames", function() { return SkillMemberNames; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var SkillMemberNames = /** @class */ (function () {
+    function SkillMemberNames() {
+    }
+    SkillMemberNames.prototype.transform = function (data) {
+        var tempString = "";
+        tempString += data.data.skillName + ": \n\r";
+        for (var u = 0; u < data.data.Membernames.length; u++) {
+            tempString += data.data.Membernames[u] + ", \n\r";
+        }
+        return tempString;
+    };
+    SkillMemberNames = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Pipe"])({
+            name: 'skillmembernames'
+        })
+    ], SkillMemberNames);
+    return SkillMemberNames;
 }());
 
 
@@ -1978,7 +2281,7 @@ var CharImageLinkPipe = /** @class */ (function () {
                 return "/assets/picture/" + charInfoNow.image.substr(charInfoNow.image.indexOf('/tex.') + 5, (charInfoNow.image.length - charInfoNow.image.indexOf('/tex.')) - 5);
             }
         }
-        return value.name;
+        return value.nameKey;
     };
     CharImageLinkPipe = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Pipe"])({
@@ -2023,7 +2326,7 @@ var CharNamePipe = /** @class */ (function () {
     CharNamePipe.prototype.transform = function (value) {
         var charInfoNow = this.gildenservice.charInfos.find(function (info) { return info.base_id == value.defId; });
         if (charInfoNow != null)
-            return charInfoNow.name;
+            return charInfoNow.nameKey;
         return "name";
     };
     CharNamePipe = __decorate([
@@ -2033,6 +2336,55 @@ var CharNamePipe = /** @class */ (function () {
         __metadata("design:paramtypes", [_services_gildenService__WEBPACK_IMPORTED_MODULE_1__["gildenService"]])
     ], CharNamePipe);
     return CharNamePipe;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/pipes/charpipe/fleetlink.pipe.ts":
+/*!**************************************************!*\
+  !*** ./src/app/pipes/charpipe/fleetlink.pipe.ts ***!
+  \**************************************************/
+/*! exports provided: FleetImageLinkPipe */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FleetImageLinkPipe", function() { return FleetImageLinkPipe; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var _services_gildenService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/gildenService */ "./src/app/services/gildenService.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var FleetImageLinkPipe = /** @class */ (function () {
+    function FleetImageLinkPipe(GildenService) {
+        this.gildenservice = GildenService;
+    }
+    FleetImageLinkPipe.prototype.transform = function (value) {
+        var shipInfoNow = this.gildenservice.shipInfos.find(function (info) { return info.base_id == value.defId; });
+        if (shipInfoNow != null) {
+            if (shipInfoNow.image.indexOf('/tex.') > 0) {
+                return "/assets/picture/" + shipInfoNow.image.substr(shipInfoNow.image.indexOf('/tex.') + 5, (shipInfoNow.image.length - shipInfoNow.image.indexOf('/tex.')) - 5);
+            }
+        }
+        return value.nameKey;
+    };
+    FleetImageLinkPipe = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Pipe"])({
+            name: 'fleetimagelink'
+        }),
+        __metadata("design:paramtypes", [_services_gildenService__WEBPACK_IMPORTED_MODULE_1__["gildenService"]])
+    ], FleetImageLinkPipe);
+    return FleetImageLinkPipe;
 }());
 
 
@@ -2235,6 +2587,46 @@ var ColumnWidthPipe = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/pipes/events/eventName.pipe.ts":
+/*!************************************************!*\
+  !*** ./src/app/pipes/events/eventName.pipe.ts ***!
+  \************************************************/
+/*! exports provided: EventNamePipe */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EventNamePipe", function() { return EventNamePipe; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var EventNamePipe = /** @class */ (function () {
+    function EventNamePipe() {
+    }
+    EventNamePipe.prototype.transform = function (value) {
+        return value.replace(/\[\/?[^\]]*\]/g, '').replace("\\n", " ");
+    };
+    EventNamePipe = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Pipe"])({
+            name: 'eventname'
+        }),
+        __metadata("design:paramtypes", [])
+    ], EventNamePipe);
+    return EventNamePipe;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/pipes/events/eventShow.pipe.ts":
 /*!************************************************!*\
   !*** ./src/app/pipes/events/eventShow.pipe.ts ***!
@@ -2394,6 +2786,10 @@ var LanguagePipe = /** @class */ (function () {
             "UNITSTATMAXSHIELD": "Schutz",
             "UNITSTATEVASIONNEGATEPERCENTADDITIVE": "Ausweichen %",
             "UNITSTATCRITICALNEGATECHANCEPERCENTADDITIVE": "Krit. Ausweichen %",
+            "Fleetarena": "Flottenarena",
+            "Shipsearch": "Schiffssuche",
+            "Membertracking": "Mitgliedanalyse",
+            "Configuration": "Konfiguration"
         };
         this.languageENG = {
             "Settings": "Settings",
@@ -2487,11 +2883,15 @@ var LanguagePipe = /** @class */ (function () {
             "UNITSTATMAXSHIELD": "Protection",
             "UNITSTATEVASIONNEGATEPERCENTADDITIVE": "Evasion %",
             "UNITSTATCRITICALNEGATECHANCEPERCENTADDITIVE": "Critical Avoidance %",
+            "Fleetarena": "Fleetarena",
+            "Shipsearch": "Shipsearch",
+            "Membertracking": "Membertracking",
+            "Configuration": "Configuration"
         };
     }
     LanguagePipe.prototype.transform = function (value) {
         var userLang = navigator.language;
-        if (userLang == "de-DE") {
+        if (userLang == "de-DE" || userLang == "de") {
             if (this.languageDE[value] != null)
                 return this.languageDE[value];
             else
@@ -2546,7 +2946,7 @@ var ModSetNamePipe = /** @class */ (function () {
     ModSetNamePipe.prototype.transform = function (value) {
         var ModSetNow = this.gildenservice.ModSets.find(function (modset) { return modset.id == value.toString(); });
         if (ModSetNow != null) {
-            return ModSetNow.name;
+            return ModSetNow.nameKey;
         }
         return value.toString();
     };
@@ -2651,7 +3051,7 @@ var ModStatNamePipe = /** @class */ (function () {
     ModStatNamePipe.prototype.transform = function (value) {
         var ModStatsNow = this.gildenservice.ModStats[value];
         if (ModStatsNow != null) {
-            return ModStatsNow.name;
+            return ModStatsNow.nameKey;
         }
         return value.toString();
     };
@@ -2744,19 +3144,67 @@ var ModStatValuePipe = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/pipes/squadToString.pipe.ts":
+/*!*********************************************!*\
+  !*** ./src/app/pipes/squadToString.pipe.ts ***!
+  \*********************************************/
+/*! exports provided: SquadToStringPipe */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SquadToStringPipe", function() { return SquadToStringPipe; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var SquadToStringPipe = /** @class */ (function () {
+    function SquadToStringPipe() {
+    }
+    SquadToStringPipe.prototype.transform = function (value) {
+        var tempString = "";
+        for (var i = 0; i < value.length; i++) {
+            if (tempString == "")
+                tempString = value[i].defId + "(L)";
+            else
+                tempString += ", " + value[i].defId;
+        }
+        return tempString;
+    };
+    SquadToStringPipe = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Pipe"])({
+            name: 'squadtostring'
+        })
+    ], SquadToStringPipe);
+    return SquadToStringPipe;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/services/gildenService.ts":
 /*!*******************************************!*\
   !*** ./src/app/services/gildenService.ts ***!
   \*******************************************/
-/*! exports provided: gildenService, GildenInfos, Charakter, MappedCharakter, ArenaTeamHelper, CharFindHelper, Schedule, SWGOHEvent */
+/*! exports provided: gildenService, GildenInfos, ArenaChar, Charakter, MappedCharakter, ModPrimaryStat, ModSecondaryStat, Skill, squad, ArenaTeamHelper, CharFindHelper, Schedule, SWGOHEvent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "gildenService", function() { return gildenService; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GildenInfos", function() { return GildenInfos; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ArenaChar", function() { return ArenaChar; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Charakter", function() { return Charakter; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MappedCharakter", function() { return MappedCharakter; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModPrimaryStat", function() { return ModPrimaryStat; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModSecondaryStat", function() { return ModSecondaryStat; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Skill", function() { return Skill; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "squad", function() { return squad; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ArenaTeamHelper", function() { return ArenaTeamHelper; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CharFindHelper", function() { return CharFindHelper; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Schedule", function() { return Schedule; });
@@ -2775,6 +3223,41 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (undefined && undefined.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
 
 
 
@@ -2783,18 +3266,16 @@ var gildenService = /** @class */ (function () {
     function gildenService(settingsService, http, lz) {
         this.settingsService = settingsService;
         this.lz = lz;
-        this.settings = new _services_settingsService__WEBPACK_IMPORTED_MODULE_1__["Settings"]();
         this.gildenInfos = new GildenInfos();
         this.gildenInfosTemp = new GildenInfos();
         this.syncstatus = '';
         this.isInSync = false;
         this.token = '';
         //swgoh-help
-        this.apiHelpURL = 'https://apiv2.swgoh.help';
+        this.apiHelpURL = 'https://api.swgoh.help';
         this.language = 'ENG_US';
-        this.settings = this.settingsService.getSettings();
         this.http = http;
-        if (navigator.language == "de-DE") {
+        if (navigator.language == "de-DE" || navigator.language == "de") {
             this.language = 'GER_DE';
         }
         else {
@@ -2808,7 +3289,6 @@ var gildenService = /** @class */ (function () {
         console.log(this.charInfos);
         console.log(this.shipInfos);
         console.log(this.ModStats);
-        console.log(this.ModSets);
     }
     gildenService.prototype.getModStats = function () {
         if (localStorage.midiModStats != null)
@@ -2846,11 +3326,16 @@ var gildenService = /** @class */ (function () {
     };
     gildenService.prototype.getSWGOHHelpResponse = function () {
         if (localStorage.swgohHelpGilde != null) {
-            this.gildenInfos = JSON.parse(this.lz.decompress(localStorage.swgohHelpGilde));
-            this.gildenInfos.roster = this.gildenInfos.roster.sort(function (a, b) {
-                return b.gpFull - a.gpFull;
-            });
-            console.log(this.gildenInfos);
+            var decompressed = this.lz.decompress(localStorage.swgohHelpGilde);
+            if (decompressed.startsWith("{")) {
+                this.gildenInfos = JSON.parse(decompressed);
+                if (this.gildenInfos != null && this.gildenInfos.roster[0].stats != undefined) {
+                    this.gildenInfos.roster = this.gildenInfos.roster.sort(function (a, b) {
+                        return b.stats.find(function (stat) { return stat.index == 2; }).value - a.stats.find(function (stat) { return stat.index == 2; }).value;
+                    });
+                }
+                console.log(this.gildenInfos);
+            }
         }
     };
     gildenService.prototype.saveSWGOHHelpResponse = function () {
@@ -2864,6 +3349,7 @@ var gildenService = /** @class */ (function () {
         guildInfoNow.raid = this.jsonResponseSWGOHHelpGuild.raid;
         guildInfoNow.required = this.jsonResponseSWGOHHelpGuild.required;
         guildInfoNow.updated = this.jsonResponseSWGOHHelpGuild.updated;
+        guildInfoNow.gp = this.jsonResponseSWGOHHelpGuild.gp;
         guildInfoNow.roster = this.jsonResponseSWGOHHelpGuildRosters;
         var answerAsJSON = JSON.stringify(guildInfoNow);
         console.log('Full Size: ' + answerAsJSON.length);
@@ -2888,7 +3374,8 @@ var gildenService = /** @class */ (function () {
     gildenService.prototype.loginToSWGOHHelp = function () {
         var _this = this;
         var user = "username=sdtbarbarossa";
-        user += "&password=ExsJfR!nzYB*7Mqr";
+        //user += "&password=ExsJfR!nzYB*7Mqr";
+        user += "&password=1234midi";
         user += "&grant_type=password";
         user += "&client_id=123";
         user += "&client_secret=ABC";
@@ -2900,14 +3387,19 @@ var gildenService = /** @class */ (function () {
                 this.syncstatus += 'Bereits eingeloggt... überspringe login \n\r';
             else
                 this.syncstatus += 'Already logged in.... skip login \n\r';
-            this.loadGildenInfos();
+            if (this.settingsService.settings.loadSync == true) {
+                this.loadGildenInfos();
+            }
+            else {
+                this.loadGildenInfosAsync();
+            }
         }
         else {
             if (navigator.language == "de-DE")
                 this.syncstatus += 'Logge ein bei swgoh.help... \n\r';
             else
                 this.syncstatus += 'Login at swgoh.help... \n\r';
-            this.http.post('https://apiv2.swgoh.help/auth/signin/', user, { headers: headers })
+            this.http.post('https://api.swgoh.help/auth/signin/', user, { headers: headers })
                 .subscribe(function (data) {
                 var response = data;
                 _this.token = response.access_token;
@@ -2915,7 +3407,12 @@ var gildenService = /** @class */ (function () {
                     _this.syncstatus += 'Login erfolgreich! \n\r';
                 else
                     _this.syncstatus += 'Login suceeded! \n\r';
-                _this.loadGildenInfos();
+                if (_this.settingsService.settings.loadSync == true) {
+                    _this.loadGildenInfos();
+                }
+                else {
+                    _this.loadGildenInfosAsync();
+                }
             }, function (Error) {
                 if (navigator.language == "de-DE") {
                     _this.syncstatus += 'Fehler beim Login... breche ab \n\r';
@@ -2933,7 +3430,8 @@ var gildenService = /** @class */ (function () {
     gildenService.prototype.loginToSWGOHHelpForCharStats = function (charname, member, isA) {
         var _this = this;
         var user = "username=sdtbarbarossa";
-        user += "&password=ExsJfR!nzYB*7Mqr";
+        //user += "&password=ExsJfR!nzYB*7Mqr";
+        user += "&password=1234midi";
         user += "&grant_type=password";
         user += "&client_id=123";
         user += "&client_secret=ABC";
@@ -2944,7 +3442,7 @@ var gildenService = /** @class */ (function () {
             this.loadCharStats(charname, member, isA);
         }
         else {
-            this.http.post('https://apiv2.swgoh.help/auth/signin/', user, { headers: headers })
+            this.http.post('https://api.swgoh.help/auth/signin/', user, { headers: headers })
                 .subscribe(function (data) {
                 var response = data;
                 _this.token = response.access_token;
@@ -2963,7 +3461,8 @@ var gildenService = /** @class */ (function () {
     gildenService.prototype.loginEventToSWGOHHelp = function () {
         var _this = this;
         var user = "username=sdtbarbarossa";
-        user += "&password=ExsJfR!nzYB*7Mqr";
+        //user += "&password=ExsJfR!nzYB*7Mqr";
+        user += "&password=1234midi";
         user += "&grant_type=password";
         user += "&client_id=123";
         user += "&client_secret=ABC";
@@ -2974,7 +3473,7 @@ var gildenService = /** @class */ (function () {
             this.loadEventData();
         }
         else {
-            this.http.post('https://apiv2.swgoh.help/auth/signin/', user, { headers: headers })
+            this.http.post('https://api.swgoh.help/auth/signin/', user, { headers: headers })
                 .subscribe(function (data) {
                 var response = data;
                 _this.token = response.access_token;
@@ -2996,11 +3495,13 @@ var gildenService = /** @class */ (function () {
         var header2 = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]();
         header2 = header2.append("Authorization", "Bearer " + this.token);
         header2.append('Access-Control-Allow-Headers', 'Authorization');
-        this.http.post('https://apiv2.swgoh.help/swgoh/events', payload, { headers: header2 })
+        this.http.post('https://api.swgoh.help/swgoh/events', payload, { headers: header2 })
             .subscribe(function (data2) {
             console.log(data2);
-            _this.SWGOHEvents = data2;
-            _this.SWGOHEvents.sort(function (a, b) { return a.schedule[0].start - b.schedule[0].start; });
+            _this.SWGOHEvents = data2[0].events;
+            _this.SWGOHEvents.sort(function (a, b) {
+                return a.instanceList[0].startTime - b.instanceList[0].startTime;
+            });
         }, function (Error) {
             alert(Error.message);
         });
@@ -3008,23 +3509,29 @@ var gildenService = /** @class */ (function () {
     gildenService.prototype.loadGildenInfos = function () {
         var _this = this;
         if (navigator.language == "de-DE") {
-            this.syncstatus += 'Lade Gildendaten für ' + this.settings.allycode + '... \n\r';
-            this.syncstatus += 'Dies kann bis zu 2 min dauern... \n\r';
+            this.syncstatus += 'Lade Gildendaten für ' + this.settingsService.settings.allycode + '... \n\r';
         }
         else {
-            this.syncstatus += 'Load Guilddata for ' + this.settings.allycode + '... \n\r';
-            this.syncstatus += 'This can take several minutes... \n\r';
+            this.syncstatus += 'Load Guilddata for ' + this.settingsService.settings.allycode + '... \n\r';
         }
         var payload = {
-            allycode: this.settings.allycode,
+            allycode: this.settingsService.settings.allycode,
             language: this.language
         };
         var header2 = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]();
         header2 = header2.append("Authorization", "Bearer " + this.token);
         header2.append('Access-Control-Allow-Headers', 'Authorization');
-        this.http.post('https://apiv2.swgoh.help/swgoh/guild/', payload, { headers: header2 })
+        this.http.post('https://api.swgoh.help/swgoh/guild/', payload, { headers: header2 })
             .subscribe(function (data2) {
-            _this.jsonResponseSWGOHHelpGuild = data2;
+            _this.jsonResponseSWGOHHelpGuild = data2[0];
+            if (navigator.language == "de-DE") {
+                _this.syncstatus += 'Gilde "' + _this.jsonResponseSWGOHHelpGuild.name + '" gefunden. \n\rLade Spielerinfos... \n\r';
+                _this.syncstatus += 'Dies kann bis zu 2 min dauern... \n\r';
+            }
+            else {
+                _this.syncstatus += 'Guild "' + _this.jsonResponseSWGOHHelpGuild.name + '" found. \n\rLoad Playerinfos... \n\r';
+                _this.syncstatus += 'This can take several minutes... \n\r';
+            }
             var allycodes = new Array();
             for (var i = 0; i < _this.jsonResponseSWGOHHelpGuild.roster.length; i++) {
                 allycodes.push(_this.jsonResponseSWGOHHelpGuild.roster[i].allyCode);
@@ -3033,7 +3540,8 @@ var gildenService = /** @class */ (function () {
                 allycode: allycodes,
                 language: _this.language
             };
-            _this.http.post('https://apiv2.swgoh.help/swgoh/player/', payload2, { headers: header2 })
+            _this.http.post('https://api.swgoh.help/swgoh/player/', payload2, { headers: header2 })
+                .timeout(1000 * 60 * 10)
                 .subscribe(function (data3) {
                 _this.jsonResponseSWGOHHelpGuildRosters = data3;
                 _this.saveSWGOHHelpResponse();
@@ -3063,6 +3571,93 @@ var gildenService = /** @class */ (function () {
             }
         });
     };
+    gildenService.prototype.loadGildenInfosAsync = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            var payload, header2;
+            return __generator(this, function (_a) {
+                if (navigator.language == "de-DE") {
+                    this.syncstatus += 'Lade Gildendaten für ' + this.settingsService.settings.allycode + '... \n\r';
+                }
+                else {
+                    this.syncstatus += 'Load Guilddata for ' + this.settingsService.settings.allycode + '... \n\r';
+                }
+                payload = {
+                    allycode: this.settingsService.settings.allycode,
+                    language: this.language
+                };
+                header2 = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]();
+                header2 = header2.append("Authorization", "Bearer " + this.token);
+                header2.append('Access-Control-Allow-Headers', 'Authorization');
+                this.http.post('https://api.swgoh.help/swgoh/guild/', payload, { headers: header2 })
+                    .subscribe(function (data2) { return __awaiter(_this, void 0, void 0, function () {
+                    var allycodes, guildRosters, i, payload2, result;
+                    return __generator(this, function (_a) {
+                        switch (_a.label) {
+                            case 0:
+                                this.jsonResponseSWGOHHelpGuild = data2[0];
+                                if (navigator.language == "de-DE") {
+                                    this.syncstatus += 'Gilde "' + this.jsonResponseSWGOHHelpGuild.name + '" gefunden. Lade Spielerinfos... \n\r';
+                                    this.syncstatus += 'Dies kann bis zu 2 min dauern... \n\r';
+                                }
+                                else {
+                                    this.syncstatus += 'Guild "' + this.jsonResponseSWGOHHelpGuild.name + '" found.Load Playerinfos... \n\r';
+                                    this.syncstatus += 'This can take several minutes... \n\r';
+                                }
+                                allycodes = new Array();
+                                guildRosters = new Array();
+                                i = 0;
+                                _a.label = 1;
+                            case 1:
+                                if (!(i < this.jsonResponseSWGOHHelpGuild.roster.length)) return [3 /*break*/, 4];
+                                payload2 = {
+                                    allycode: this.jsonResponseSWGOHHelpGuild.roster[i].allyCode,
+                                    language: this.language
+                                };
+                                if (navigator.language == "de-DE") {
+                                    this.syncstatus += 'Lade Daten für: "' + this.jsonResponseSWGOHHelpGuild.roster[i].name + '" \n\r';
+                                }
+                                else {
+                                    this.syncstatus += 'Updating data for: "' + this.jsonResponseSWGOHHelpGuild.roster[i].name + '" \n\r';
+                                }
+                                return [4 /*yield*/, this.http.post('https://api.swgoh.help/swgoh/player/', payload2, { headers: header2 })
+                                        .timeout(1000 * 60 * 5).toPromise()];
+                            case 2:
+                                result = _a.sent();
+                                guildRosters.push(result[0]);
+                                if (navigator.language == "de-DE") {
+                                    this.syncstatus += 'Erfolgreich geupdated: "' + result[0].name + '" \n\r';
+                                }
+                                else {
+                                    this.syncstatus += 'Done with updating: "' + result[0].name + '" \n\r';
+                                }
+                                _a.label = 3;
+                            case 3:
+                                i++;
+                                return [3 /*break*/, 1];
+                            case 4:
+                                this.jsonResponseSWGOHHelpGuildRosters = guildRosters;
+                                this.saveSWGOHHelpResponse();
+                                this.loadSWGOHHelpExtras();
+                                return [2 /*return*/];
+                        }
+                    });
+                }); }, function (Error) {
+                    if (navigator.language == "de-DE") {
+                        _this.syncstatus += 'Fehler beim abrufen der Daten... breche ab \n\r';
+                        _this.syncstatus += Error.message + '\n\r';
+                        _this.syncstatus += 'Ende der Synchronisation! \n\r';
+                    }
+                    else {
+                        _this.syncstatus += 'Error on getting Guilddata...aborting... \n\r';
+                        _this.syncstatus += Error.message + '\n\r';
+                        _this.syncstatus += 'End of Sync! \n\r';
+                    }
+                });
+                return [2 /*return*/];
+            });
+        });
+    };
     gildenService.prototype.loadSWGOHHelpExtras = function () {
         var _this = this;
         this.syncstatus += 'Hole Mod-Set-Infos... \n\r';
@@ -3073,7 +3668,7 @@ var gildenService = /** @class */ (function () {
         var header2 = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]();
         header2 = header2.append("Authorization", "Bearer " + this.token);
         header2.append('Access-Control-Allow-Headers', 'Authorization');
-        this.http.post('https://apiv2.swgoh.help/swgoh/data/', Payload, { headers: header2 })
+        this.http.post('https://api.swgoh.help/swgoh/data/', Payload, { headers: header2 })
             .subscribe(function (data2) {
             _this.ModSets = data2;
             _this.saveModSets(_this.ModSets);
@@ -3085,7 +3680,7 @@ var gildenService = /** @class */ (function () {
             var header2 = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]();
             header2 = header2.append("Authorization", "Bearer " + _this.token);
             header2.append('Access-Control-Allow-Headers', 'Authorization');
-            _this.http.post('https://apiv2.swgoh.help/swgoh/data/', Payload2, { headers: header2 })
+            _this.http.post('https://api.swgoh.help/swgoh/data/', Payload2, { headers: header2 })
                 .subscribe(function (data2) {
                 _this.ModStats = data2;
                 _this.saveModStats(_this.ModStats);
@@ -3152,13 +3747,13 @@ var gildenService = /** @class */ (function () {
         else
             this.syncstatus = 'Request from swgoh.help \n\r';
         this.isInSync = true;
-        if (!this.checkIfItsANumber(this.settings.allycode)) {
+        if (!this.checkIfItsANumber(this.settingsService.settings.allycode)) {
             if (navigator.language == "de-DE") {
-                alert('Verbündetencode "' + this.settings.allycode + '" ist entweder leer oder im falschen Format. Es muss eine 9 stellige Zahl sein ( ohne - )');
+                alert('Verbündetencode "' + this.settingsService.settings.allycode + '" ist entweder leer oder im falschen Format. Es muss eine 9 stellige Zahl sein ( ohne - )');
                 this.syncstatus += 'abgebrochen \n\r';
             }
             else {
-                alert('AllyCode "' + this.settings.allycode + '" is either empty or in the wrong format. It must be a string with 9 numbers ( no - )');
+                alert('AllyCode "' + this.settingsService.settings.allycode + '" is either empty or in the wrong format. It must be a string with 9 numbers ( no - )');
                 this.syncstatus += 'aborted \n\r';
             }
             return;
@@ -3168,7 +3763,7 @@ var gildenService = /** @class */ (function () {
     gildenService.prototype.getAllCharsByName = function (name) {
         var charsFound = new Array();
         for (var i = 0; i < this.gildenInfos.roster.length; i++) {
-            var foundChars = this.gildenInfos.roster[i].roster.filter(function (char) { return (char.name.toLowerCase().indexOf(name.toLowerCase()) > -1) && char.type != "SHIP"; });
+            var foundChars = this.gildenInfos.roster[i].roster.filter(function (char) { return (char.nameKey.toLowerCase().indexOf(name.toLowerCase()) > -1) && char.combatType != 2; });
             if (foundChars == null || foundChars.length == 0) {
             }
             else {
@@ -3187,6 +3782,33 @@ var gildenService = /** @class */ (function () {
         charsFound.sort(function (a, b) { return b.charakter.gp - a.charakter.gp; });
         return charsFound;
     };
+    gildenService.prototype.getAllShipsByName = function (name) {
+        var shipsFound = new Array();
+        for (var i = 0; i < this.gildenInfos.roster.length; i++) {
+            if (name == "ALL") {
+                var foundShips = this.gildenInfos.roster[i].roster.filter(function (char) { return char.combatType == 2; });
+            }
+            else {
+                var foundShips = this.gildenInfos.roster[i].roster.filter(function (char) { return (char.nameKey.toLowerCase().indexOf(name.toLowerCase()) > -1) && char.combatType == 2; });
+            }
+            if (foundShips == null || foundShips.length == 0) {
+            }
+            else {
+                for (var x = 0; x < foundShips.length; x++) {
+                    if (foundShips[x] == null || foundShips[x] == undefined) {
+                    }
+                    else {
+                        var charHelperNow = new CharFindHelper();
+                        charHelperNow.besitzer = this.gildenInfos.roster[i].name;
+                        charHelperNow.charakter = foundShips[x];
+                        shipsFound.push(charHelperNow);
+                    }
+                }
+            }
+        }
+        shipsFound.sort(function (a, b) { return b.charakter.gp - a.charakter.gp; });
+        return shipsFound;
+    };
     gildenService.prototype.getAllCharArenaTeams = function () {
         var allTeams = new Array();
         for (var i = 0; i < this.gildenInfos.roster.length; i++) {
@@ -3195,7 +3817,23 @@ var gildenService = /** @class */ (function () {
             var teamNow = this.gildenInfos.roster[i].arena.char;
             arenaTeamNow.rang = teamNow.rank;
             for (var x = 0; x < teamNow.squad.length; x++) {
-                var charNow = this.gildenInfos.roster[i].roster.find(function (char) { return char.name == teamNow.squad[x].name; });
+                var charNow = this.gildenInfos.roster[i].roster.find(function (char) { return char.defId == teamNow.squad[x].defId; });
+                if (charNow != null)
+                    arenaTeamNow.charaktere.push(charNow);
+            }
+            allTeams.push(arenaTeamNow);
+        }
+        return allTeams;
+    };
+    gildenService.prototype.getAllFleetArenaTeams = function () {
+        var allTeams = new Array();
+        for (var i = 0; i < this.gildenInfos.roster.length; i++) {
+            var arenaTeamNow = new ArenaTeamHelper();
+            arenaTeamNow.besitzer = this.gildenInfos.roster[i].name;
+            var teamNow = this.gildenInfos.roster[i].arena.ship;
+            arenaTeamNow.rang = teamNow.rank;
+            for (var x = 0; x < teamNow.squad.length; x++) {
+                var charNow = this.gildenInfos.roster[i].roster.find(function (char) { return char.defId == teamNow.squad[x].defId; });
                 if (charNow != null)
                     arenaTeamNow.charaktere.push(charNow);
             }
@@ -3219,7 +3857,7 @@ var gildenService = /** @class */ (function () {
         for (var i = 0; i < this.gildenInfos.roster.length; i++) {
             if (this.gildenInfos.roster[i].name == memberName) {
                 for (var x = 0; x < this.gildenInfos.roster[i].roster.length; x++) {
-                    if (this.gildenInfos.roster[i].roster[x].name == charName) {
+                    if (this.gildenInfos.roster[i].roster[x].nameKey == charName) {
                         return this.gildenInfos.roster[i].roster[x];
                     }
                 }
@@ -3348,11 +3986,11 @@ var gildenService = /** @class */ (function () {
         if (idName != null)
             name = idName.base_id;
         for (var i = 0; i < member.roster.length; i++) {
-            if (member.roster[i].name.toLowerCase().includes(name.toLowerCase())) {
+            if (member.roster[i].nameKey.toLowerCase().includes(name.toLowerCase())) {
                 if (idName != null)
                     var mappedChar = this.mappChar(member.roster[i], member.name, idName.name);
                 else
-                    var mappedChar = this.mappChar(member.roster[i], member.name, member.roster[i].name);
+                    var mappedChar = this.mappChar(member.roster[i], member.name, member.roster[i].nameKey);
                 return mappedChar;
             }
         }
@@ -3363,7 +4001,7 @@ var gildenService = /** @class */ (function () {
             return null;
         }
         for (var i = 0; i < member.roster.length; i++) {
-            if (member.roster[i].name.toLowerCase().includes(name.toLowerCase())) {
+            if (member.roster[i].nameKey.toLowerCase().includes(name.toLowerCase())) {
                 return member.roster[i];
             }
         }
@@ -3393,7 +4031,7 @@ var gildenService = /** @class */ (function () {
             mappedChar.Name = oldName;
         }
         else
-            mappedChar.Name = newchar.name;
+            mappedChar.Name = newchar.nameKey;
         mappedChar.Power = newchar.gp;
         mappedChar.Sterne = newchar.rarity;
         if (this.charInfos != null) {
@@ -3442,12 +4080,12 @@ var gildenService = /** @class */ (function () {
             console.log('didnt found ' + name);
         }
         for (var i = 0; i < member.roster.length; i++) {
-            if (member.roster[i].name.toLowerCase() == name.toLowerCase()) {
+            if (member.roster[i].defId.toLowerCase() == name.toLowerCase()) {
                 if (idName != null) {
                     return this.mappChar(member.roster[i], member.name, idName.name);
                 }
                 else {
-                    return this.mappChar(member.roster[i], member.name, member.roster[i].name);
+                    return this.mappChar(member.roster[i], member.name, member.roster[i].nameKey);
                 }
             }
         }
@@ -3489,16 +4127,22 @@ var Member = /** @class */ (function () {
     function Member() {
         this.allyCode = 0;
         this.arena = new Arena();
-        this.gpChar = 0;
-        this.gpFull = 0;
-        this.gpShip = 0;
         this.guildName = "";
         this.level = 0;
         this.name = "";
         this.roster = new Array();
+        this.stats = new Array();
         this.updated = new Date();
     }
     return Member;
+}());
+var MemberStats = /** @class */ (function () {
+    function MemberStats() {
+        this.index = 0;
+        this.name = "";
+        this.value = 0;
+    }
+    return MemberStats;
 }());
 var Arena = /** @class */ (function () {
     function Arena() {
@@ -3517,11 +4161,12 @@ var ArenaHelper = /** @class */ (function () {
 var ArenaChar = /** @class */ (function () {
     function ArenaChar() {
         this.id = "";
-        this.name = "";
+        this.defId = "";
         this.type = 0;
     }
     return ArenaChar;
 }());
+
 var Charakter = /** @class */ (function () {
     function Charakter() {
         this.defId = "";
@@ -3531,10 +4176,10 @@ var Charakter = /** @class */ (function () {
         this.id = "";
         this.level = 0;
         this.mods = new Array();
-        this.name = "";
+        this.nameKey = "";
         this.rarity = 0;
         this.skills = new Array();
-        this.type = "";
+        this.combatType = 0;
         this.xp = 0;
     }
     return Charakter;
@@ -3558,31 +4203,41 @@ var Mod = /** @class */ (function () {
         this.id = "";
         this.level = 0;
         this.pips = 0;
-        this.primaryBonusType = "";
-        this.primaryBonusValue = "";
-        this.secondaryType_1 = "";
-        this.secondaryType_2 = "";
-        this.secondaryType_3 = "";
-        this.secondaryType_4 = "";
-        this.secondaryValue_1 = "";
-        this.secondaryValue_2 = "";
-        this.secondaryValue_3 = "";
-        this.secondaryValue_4 = "";
+        this.primaryStat = new ModPrimaryStat();
+        this.secondaryStat = new Array();
         this.set = 0;
-        this.setId = 0;
+        this.tier = 0;
         this.slot = 0;
     }
     return Mod;
 }());
+var ModPrimaryStat = /** @class */ (function () {
+    function ModPrimaryStat() {
+        this.unitStat = 0;
+        this.value = 0;
+    }
+    return ModPrimaryStat;
+}());
+
+var ModSecondaryStat = /** @class */ (function () {
+    function ModSecondaryStat() {
+        this.roll = 0;
+        this.unitStat = 0;
+        this.value = 0;
+    }
+    return ModSecondaryStat;
+}());
+
 var Skill = /** @class */ (function () {
     function Skill() {
         this.id = "";
         this.isZeta = false;
-        this.name = "";
+        this.nameKey = "";
         this.tier = 0;
     }
     return Skill;
 }());
+
 var squad = /** @class */ (function () {
     function squad() {
         this.Name = 'SquadName';
@@ -3590,6 +4245,7 @@ var squad = /** @class */ (function () {
     }
     return squad;
 }());
+
 var loginResponse = /** @class */ (function () {
     function loginResponse() {
     }
@@ -3674,6 +4330,7 @@ var Settings = /** @class */ (function () {
         this.allycode = "";
         this.sortMemberBy = "OGM";
         this.showErrors = true;
+        this.loadSync = true;
         this.useAutoComplete = true;
         this.autoSyncNow = false;
     }
@@ -3702,7 +4359,7 @@ module.exports = "select {\r\n  width: 100%;\r\n  padding: 16px 20px;\r\n  borde
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\r\n\r\n  <fieldset>\r\n    <legend>{{'Settings' | language}} :</legend>\r\n\r\n    <p style=\"float:left\">{{'Allycode' | language}}:</p>\r\n    <input type=\"text\" placeholder=\"{{'AllycodeEG' | language}}\" [(ngModel)]=\"this.settings.allycode\" (change)=\"changedAllycode()\">\r\n\r\n    <p style=\"float:left\">{{'SortMemberby' | language}}:</p>\r\n    <select [(ngModel)]=\"this.settings.sortMemberBy\">\r\n      <option value=\"OGM\">Overall GM</option>\r\n      <option value=\"CGM\">Charakter GM</option>\r\n      <option value=\"FGM\">Fleet GM</option>\r\n      <option value=\"Name\">Name</option>\r\n    </select>\r\n\r\n    <p>{{'UseAutocomplete' | language}}:</p>\r\n\r\n    <p>{{'ShowErrors' | language}}:</p>\r\n\r\n    <label class=\"container\" style=\"top:-85px\">\r\n      <input type=\"checkbox\" [(ngModel)]=\"this.settings.useAutoComplete\">\r\n      <span class=\"checkmark\"></span>\r\n    </label>\r\n\r\n\r\n    <label class=\"container\">\r\n      <input type=\"checkbox\" [(ngModel)]=\"this.settings.showErrors\">\r\n      <span class=\"checkmark\"></span>\r\n    </label>\r\n\r\n    <button (click)=\"saveSettings()\">{{'SaveSettings' | language}}</button>\r\n  </fieldset>\r\n\r\n</div>\r\n"
+module.exports = "<div>\r\n\r\n  <fieldset>\r\n    <legend>{{'Settings' | language}} :</legend>\r\n\r\n    <p style=\"float:left\">{{'Allycode' | language}}:</p>\r\n    <input type=\"text\" placeholder=\"{{'AllycodeEG' | language}}\" [(ngModel)]=\"this.settings.allycode\" (change)=\"changedAllycode()\">\r\n\r\n    <p style=\"float:left\">{{'SortMemberby' | language}}:</p>\r\n    <select [(ngModel)]=\"this.settings.sortMemberBy\">\r\n      <option value=\"OGM\">Overall GM</option>\r\n      <option value=\"CGM\">Charakter GM</option>\r\n      <option value=\"FGM\">Fleet GM</option>\r\n      <option value=\"Name\">Name</option>\r\n    </select>\r\n\r\n    <p>{{'UseAutocomplete' | language}}:</p>\r\n\r\n    <p>{{'LoadSync' | language}}:</p>\r\n\r\n    <label class=\"container\" style=\"top:-85px\">\r\n      <input type=\"checkbox\" [(ngModel)]=\"this.settings.useAutoComplete\">\r\n      <span class=\"checkmark\"></span>\r\n    </label>\r\n\r\n\r\n    <label class=\"container\">\r\n      <input type=\"checkbox\" [(ngModel)]=\"this.settings.loadSync\">\r\n      <span class=\"checkmark\"></span>\r\n    </label>\r\n\r\n    <button (click)=\"saveSettings()\">{{'SaveSettings' | language}}</button>\r\n  </fieldset>\r\n\r\n</div>\r\n"
 
 /***/ }),
 
@@ -3763,6 +4420,78 @@ var SettingComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/shipSearch/shipSearch.css":
+/*!*******************************************!*\
+  !*** ./src/app/shipSearch/shipSearch.css ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "input[type=text] {\r\n  width: 100%;\r\n  padding: 12px 20px;\r\n  margin: 8px 0;\r\n  box-sizing: border-box;\r\n}\r\n\r\n\r\n#raidplannerTable tr:nth-child(even) {\r\n  background-color: #f2f2f2;\r\n}\r\n\r\n\r\n#raidplannerTable tr:hover {\r\n  background-color: #ddd;\r\n}\r\n\r\n\r\n#raidplannerTable th {\r\n  padding-top: 12px;\r\n  padding-bottom: 12px;\r\n  text-align: left;\r\n  background-color: #4CAF50;\r\n  color: white;\r\n}\r\n\r\n\r\n.parentOfImages {\r\n  position: relative;\r\n  top: 0;\r\n  left: 0;\r\n  width: 55px;\r\n  height: 80px;\r\n}\r\n\r\n\r\n.sterne {\r\n  position: absolute;\r\n  transform: scale(0.6, 0.6);\r\n  -ms-transform: scale(0.6, 0.6);\r\n  -webkit-transform: scale(0.6, 0.6);\r\n  z-index: 2;\r\n}\r\n\r\n\r\n.stern1 {\r\n  top: 25px;\r\n  left: -6px;\r\n}\r\n\r\n\r\n.stern2 {\r\n  top: 15px;\r\n  left: 6px;\r\n}\r\n\r\n\r\n.stern3 {\r\n  top: 8px;\r\n  left: 17px;\r\n}\r\n\r\n\r\n.stern4 {\r\n  top: 8px;\r\n  left: 30px;\r\n}\r\n\r\n\r\n.stern5 {\r\n  top: 8px;\r\n  left: 44px;\r\n}\r\n\r\n\r\n.stern6 {\r\n  top: 15px;\r\n  left: 57px;\r\n}\r\n\r\n\r\n.stern7 {\r\n  top: 25px;\r\n  left: 67px;\r\n}\r\n\r\n\r\n.maincharFieldset{\r\n  position:relative;\r\n  float:left;\r\n}\r\n\r\n\r\n.gearImage {\r\n  position: absolute;\r\n  top: 10px;\r\n  left: 0px;\r\n  z-index: 0;\r\n  transform: scale(0.7, 0.7);\r\n  -ms-transform: scale(0.7, 0.7);\r\n  -webkit-transform: scale(0.7, 0.7);\r\n}\r\n\r\n\r\n.charImage {\r\n  z-index: 0;\r\n  position: absolute;\r\n  top: -78px;\r\n  left: -88px;\r\n  border-radius: 50%;\r\n  transform: scale(0.21, 0.21);\r\n  -ms-transform: scale(0.21, 0.21);\r\n  -webkit-transform: scale(0.21, 0.21);\r\n}\r\n\r\n\r\n.char-level {\r\n  color: #fff;\r\n  background-color: #264257;\r\n  border: 2px solid #fff;\r\n  text-align: center;\r\n  border-radius: 100%/130% 130% 15px 15px;\r\n  position: absolute;\r\n  top: 55px;\r\n  left: 40px;\r\n  z-index: 2;\r\n  width: 15px;\r\n  padding: 0 5px;\r\n  font-size: x-small;\r\n}\r\n\r\n\r\n.char-gear-level {\r\n  color: #fff;\r\n  background-color: #006600;\r\n  border: 2px solid #fff;\r\n  text-align: center;\r\n  border-radius: 100%/130% 130% 15px 15px;\r\n  position: absolute;\r\n  left: 25px;\r\n  top: 65px;\r\n  z-index: 3;\r\n  width: 15px;\r\n  padding: 0 5px;\r\n  font-size: x-small;\r\n}\r\n\r\n\r\n.divForChar {\r\n  width: 58px;\r\n  height: 90px;\r\n  display: inline-block;\r\n  left: -20px;\r\n  position: relative;\r\n}\r\n\r\n\r\n.progress1 {\r\n  background-color: #bcd6ff;\r\n  border: 0;\r\n  position: absolute;\r\n  top: 72px;\r\n  left: 13px;\r\n  height: 18px;\r\n  width: 55px;\r\n}\r\n\r\n\r\n.progressText {\r\n  position: absolute;\r\n  top: 72px;\r\n  left: 23px;\r\n}\r\n\r\n\r\nselect {\r\n  padding: 10px 10px;\r\n  border: none;\r\n  border-radius: 4px;\r\n  background-color: #f1f1f1;\r\n}\r\n\r\n\r\nbutton {\r\n  background-color: #2196F3;\r\n  border: none;\r\n  color: white;\r\n  /*padding: 16px 32px;*/\r\n  text-decoration: none;\r\n  /*margin: 4px 2px;*/\r\n  cursor: pointer;\r\n}\r\n\r\n\r\n/* The Modal (background) */\r\n\r\n\r\n.modal {\r\n  display: none; /* Hidden by default */\r\n  position: fixed; /* Stay in place */\r\n  z-index: 11; /* Sit on top */\r\n  padding-top: 50px; /* Location of the box */\r\n  left: 0;\r\n  top: 0;\r\n  width: 100%; /* Full width */\r\n  height: 100%; /* Full height */\r\n  overflow: auto; /* Enable scroll if needed */\r\n  background-color: rgb(0,0,0); /* Fallback color */\r\n  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */\r\n}\r\n\r\n\r\n/* Modal Content */\r\n\r\n\r\n.modal-content {\r\n  position: relative;\r\n  background-color: #fefefe;\r\n  margin: auto;\r\n  padding: 0;\r\n  border: 1px solid #888;\r\n  width: 95%;\r\n  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);\r\n  -webkit-animation-name: animatetop;\r\n  -webkit-animation-duration: 0.4s;\r\n  animation-name: animatetop;\r\n  animation-duration: 0.4s\r\n}\r\n\r\n\r\n/* Add Animation */\r\n\r\n\r\n@-webkit-keyframes animatetop {\r\n  from {\r\n    top: -300px;\r\n    opacity: 0\r\n  }\r\n\r\n  to {\r\n    top: 0;\r\n    opacity: 1\r\n  }\r\n}\r\n\r\n\r\n@keyframes animatetop {\r\n  from {\r\n    top: -300px;\r\n    opacity: 0\r\n  }\r\n\r\n  to {\r\n    top: 0;\r\n    opacity: 1\r\n  }\r\n}\r\n\r\n\r\n/* The Close Button */\r\n\r\n\r\n.close {\r\n  color: white;\r\n  float: right;\r\n  font-size: 28px;\r\n  font-weight: bold;\r\n}\r\n\r\n\r\n.close:hover,\r\n  .close:focus {\r\n    color: #000;\r\n    text-decoration: none;\r\n    cursor: pointer;\r\n  }\r\n\r\n\r\n.modal-header {\r\n  padding: 2px 16px;\r\n  background-color: #2196F3;\r\n  color: white;\r\n}\r\n\r\n\r\n.modal-body {\r\n  padding: 2px 16px;\r\n}\r\n\r\n\r\nprogress {\r\n  background-color: #f3f3f3;\r\n  border: 0;\r\n  top: 80px;\r\n  position: absolute;\r\n  height: 18px;\r\n  border-radius: 9px;\r\n}\r\n\r\n\r\n.selectedImg {\r\n  position: absolute;\r\n  top: -304px;\r\n  left: -350px;\r\n  transform: scale(0.1, 0.1);\r\n  -ms-transform: scale(0.1, 0.1);\r\n  -webkit-transform: scale(0.1, 0.1);\r\n  z-index: 3;\r\n}\r\n\r\n\r\n.zeta1 {\r\n  position: absolute;\r\n  top: 15px;\r\n  left: 65px;\r\n  transform: scale(0.6, 0.6);\r\n  -ms-transform: scale(0.6, 0.6);\r\n  -webkit-transform: scale(0.6, 0.6);\r\n  z-index: 3;\r\n}\r\n\r\n\r\n.zeta2 {\r\n  position: absolute;\r\n  top: 35px;\r\n  left: 65px;\r\n  transform: scale(0.6, 0.6);\r\n  -ms-transform: scale(0.6, 0.6);\r\n  -webkit-transform: scale(0.6, 0.6);\r\n  z-index: 3;\r\n}\r\n\r\n\r\n.zeta3 {\r\n  position: absolute;\r\n  top: 55px;\r\n  left: 65px;\r\n  transform: scale(0.6, 0.6);\r\n  -ms-transform: scale(0.6, 0.6);\r\n  -webkit-transform: scale(0.6, 0.6);\r\n  z-index: 3;\r\n}\r\n\r\n"
+
+/***/ }),
+
+/***/ "./src/app/shipSearch/shipSearch.html":
+/*!********************************************!*\
+  !*** ./src/app/shipSearch/shipSearch.html ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<input type=\"text\" placeholder=\"{{'CharNamePlaceHolder'| language}}\" [(ngModel)]=\"charToSearch\" (ngModelChange)=\"searchCharaktere()\">\r\n\r\n<div *ngIf=\"charaktere\">\r\n  <fieldset *ngFor=\"let char of charaktere;let i = index\" class=\"maincharFieldset\">\r\n    <legend>{{char.besitzer}}</legend>\r\n    <div style=\"height:60px;\">\r\n      <img *ngIf=\"char.charakter.rarity>0\" src=\"/assets/picture/star.png\" class=\"sterne stern1\">\r\n      <img *ngIf=\"char.charakter.rarity<1\" src=\"/assets/picture/nostar.png\" class=\"sterne stern1\">\r\n      <img *ngIf=\"char.charakter.rarity>1\" src=\"/assets/picture/star.png\" class=\"sterne stern2\">\r\n      <img *ngIf=\"char.charakter.rarity<2\" src=\"/assets/picture/nostar.png\" class=\"sterne stern2\">\r\n      <img *ngIf=\"char.charakter.rarity>2\" src=\"/assets/picture/star.png\" class=\"sterne stern3\">\r\n      <img *ngIf=\"char.charakter.rarity<3\" src=\"/assets/picture/nostar.png\" class=\"sterne stern3\">\r\n      <img *ngIf=\"char.charakter.rarity>3\" src=\"/assets/picture/star.png\" class=\"sterne stern4\">\r\n      <img *ngIf=\"char.charakter.rarity<4\" src=\"/assets/picture/nostar.png\" class=\"sterne stern4\">\r\n      <img *ngIf=\"char.charakter.rarity>4\" src=\"/assets/picture/star.png\" class=\"sterne stern5\">\r\n      <img *ngIf=\"char.charakter.rarity<5\" src=\"/assets/picture/nostar.png\" class=\"sterne stern5\">\r\n      <img *ngIf=\"char.charakter.rarity>5\" src=\"/assets/picture/star.png\" class=\"sterne stern6\">\r\n      <img *ngIf=\"char.charakter.rarity<6\" src=\"/assets/picture/nostar.png\" class=\"sterne stern6\">\r\n      <img *ngIf=\"char.charakter.rarity>6\" src=\"/assets/picture/star.png\" class=\"sterne stern7\">\r\n      <img *ngIf=\"char.charakter.rarity<7\" src=\"/assets/picture/nostar.png\" class=\"sterne stern7\">\r\n\r\n      <img class=\"charImage\" [src]=\"char.charakter | fleetimagelink\" [alt]=\"char.charakter.nameKey\">\r\n      <img class=\"gearImage\" [src]=\"char.charakter | gearlink\" [alt]=\"char.charakter.nameKey\">\r\n      <span class=\"char-gear-level\">{{char.charakter.level}}</span>\r\n    </div>\r\n\r\n    <div>{{'Charpower' | language}}: {{char.charakter.gp}}</div>\r\n\r\n  </fieldset>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/shipSearch/shipSearch.ts":
+/*!******************************************!*\
+  !*** ./src/app/shipSearch/shipSearch.ts ***!
+  \******************************************/
+/*! exports provided: ShipSearchComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ShipSearchComponent", function() { return ShipSearchComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var _services_gildenService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/gildenService */ "./src/app/services/gildenService.ts");
+/* harmony import */ var _services_settingsService__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/settingsService */ "./src/app/services/settingsService.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var ShipSearchComponent = /** @class */ (function () {
+    function ShipSearchComponent(settingsService, GildenService) {
+        this.settingsService = settingsService;
+        this.GildenService = GildenService;
+        this.showMods = new Array();
+    }
+    ShipSearchComponent.prototype.searchCharaktere = function () {
+        if (this.charToSearch != null && this.charToSearch != "" && this.charToSearch.length > 1)
+            this.charaktere = this.GildenService.getAllShipsByName(this.charToSearch);
+    };
+    ShipSearchComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'shipSearch',
+            template: __webpack_require__(/*! ./shipSearch.html */ "./src/app/shipSearch/shipSearch.html"),
+            styles: [__webpack_require__(/*! ./shipSearch.css */ "./src/app/shipSearch/shipSearch.css")]
+        }),
+        __metadata("design:paramtypes", [_services_settingsService__WEBPACK_IMPORTED_MODULE_2__["SettingsService"], _services_gildenService__WEBPACK_IMPORTED_MODULE_1__["gildenService"]])
+    ], ShipSearchComponent);
+    return ShipSearchComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/squadSearch/squadsearch.css":
 /*!*********************************************!*\
   !*** ./src/app/squadSearch/squadsearch.css ***!
@@ -3781,7 +4510,7 @@ module.exports = "input[type=text] {\r\n  width: 100%;\r\n  padding: 12px 20px;\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"width:100%;\">\r\n  <div style=\"width:68%; display: inline-block;\">\r\n    <select style=\"width:100%;\" [(ngModel)]=\"selectedTeam\" (ngModelChange)=\"getSquadsFromGildenInfos()\">\r\n      <option *ngFor=\"let team of myTeams\" [ngValue]=\"team\">{{team.Name}}</option>\r\n    </select>\r\n  </div>\r\n  <div style=\"width: 30%; display: inline-block;\">\r\n    <button (click)=\"deleteThisTeam()\" style=\"display: inline-block; position: relative; padding: 7px 5px; width: 30%;\">{{'Del'| language}}</button>\r\n    <button (click)=\"openModal()\" style=\"display: inline-block; position: relative; padding: 7px 5px; width: 30%;\">{{'Add'| language}}</button>\r\n    </div>\r\n</div>\r\n\r\n<div *ngFor=\"let squad of squadsFromGildenInfos\" class=\"charNow\">\r\n  <fieldset style=\"height:80px\">\r\n    <legend>{{selectedTeam.Name}} {{'of'| language}} {{squad[0].Besitzer}} {{squad | squadpower}}</legend>\r\n    <div style=\"height:80%; width:100%\">\r\n      <div *ngIf=\"squad[0]\" class=\"divForChar\">\r\n        <div class=\"parentOfImages\">\r\n\r\n          <img *ngIf=\"squad[0].Sterne>0\" src=\"/assets/picture/star.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[0].Sterne<1\" src=\"/assets/picture/nostar.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[0].Sterne>1\" src=\"/assets/picture/star.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[0].Sterne<2\" src=\"/assets/picture/nostar.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[0].Sterne>2\" src=\"/assets/picture/star.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[0].Sterne<3\" src=\"/assets/picture/nostar.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[0].Sterne>3\" src=\"/assets/picture/star.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[0].Sterne<4\" src=\"/assets/picture/nostar.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[0].Sterne>4\" src=\"/assets/picture/star.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[0].Sterne<5\" src=\"/assets/picture/nostar.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[0].Sterne>5\" src=\"/assets/picture/star.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[0].Sterne<6\" src=\"/assets/picture/nostar.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[0].Sterne>6\" src=\"/assets/picture/star.png\" class=\"star17\">\r\n          <img *ngIf=\"squad[0].Sterne<7\" src=\"/assets/picture/nostar.png\" class=\"star17\">\r\n\r\n          <img *ngIf=\"squad[0].Zetas>=1\" src=\"/assets/picture/zeta.png\" class=\"zeta1\">\r\n          <img *ngIf=\"squad[0].Zetas>=2\" src=\"/assets/picture/zeta.png\" class=\"zeta2\">\r\n          <img *ngIf=\"squad[0].Zetas>=3\" src=\"/assets/picture/zeta.png\" class=\"zeta3\">\r\n\r\n          <img class=\"charImage\" src=\"/assets/picture/{{squad[0].imageUrl}}\" alt=\"{{squad[0].Name}}\">\r\n          <img class=\"gearImage\" src=\"/assets/GearPNG/gear-icon-g{{squad[0].gearLevel}}.png\" alt=\"{{squad[0].Name}}\">\r\n          <span class=\"char-level\">{{squad[0].Level}}</span>\r\n          <span class=\"char-gear-level\">{{formatGearLevel(squad[0].gearLevel)}}</span>\r\n        </div>\r\n\r\n      </div>\r\n\r\n      <div *ngIf=\"squad[1]\" class=\"divForChar\">\r\n        <div class=\"parentOfImages\">\r\n\r\n          <img *ngIf=\"squad[1].Sterne>0\" src=\"/assets/picture/star.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[1].Sterne<1\" src=\"/assets/picture/nostar.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[1].Sterne>1\" src=\"/assets/picture/star.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[1].Sterne<2\" src=\"/assets/picture/nostar.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[1].Sterne>2\" src=\"/assets/picture/star.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[1].Sterne<3\" src=\"/assets/picture/nostar.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[1].Sterne>3\" src=\"/assets/picture/star.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[1].Sterne<4\" src=\"/assets/picture/nostar.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[1].Sterne>4\" src=\"/assets/picture/star.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[1].Sterne<5\" src=\"/assets/picture/nostar.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[1].Sterne>5\" src=\"/assets/picture/star.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[1].Sterne<6\" src=\"/assets/picture/nostar.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[1].Sterne>6\" src=\"/assets/picture/star.png\" class=\"star17\">\r\n          <img *ngIf=\"squad[1].Sterne<7\" src=\"/assets/picture/nostar.png\" class=\"star17\">\r\n\r\n          <img *ngIf=\"squad[1].Zetas>=1\" src=\"/assets/picture/zeta.png\" class=\"zeta1\">\r\n          <img *ngIf=\"squad[1].Zetas>=2\" src=\"/assets/picture/zeta.png\" class=\"zeta2\">\r\n          <img *ngIf=\"squad[1].Zetas>=3\" src=\"/assets/picture/zeta.png\" class=\"zeta3\">\r\n\r\n          <img class=\"charImage\" src=\"/assets/picture/{{squad[1].imageUrl}}\" alt=\"{{squad[1].Name}}\">\r\n          <img class=\"gearImage\" src=\"/assets/GearPNG/gear-icon-g{{squad[1].gearLevel}}.png\" alt=\"{{squad[1].Name}}\">\r\n          <span class=\"char-level\">{{squad[1].Level}}</span>\r\n          <span class=\"char-gear-level\">{{formatGearLevel(squad[1].gearLevel)}}</span>\r\n        </div>\r\n\r\n      </div>\r\n\r\n      <div *ngIf=\"squad[2]\" class=\"divForChar\">\r\n        <div class=\"parentOfImages\">\r\n\r\n          <img *ngIf=\"squad[2].Sterne>0\" src=\"/assets/picture/star.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[2].Sterne<1\" src=\"/assets/picture/nostar.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[2].Sterne>1\" src=\"/assets/picture/star.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[2].Sterne<2\" src=\"/assets/picture/nostar.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[2].Sterne>2\" src=\"/assets/picture/star.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[2].Sterne<3\" src=\"/assets/picture/nostar.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[2].Sterne>3\" src=\"/assets/picture/star.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[2].Sterne<4\" src=\"/assets/picture/nostar.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[2].Sterne>4\" src=\"/assets/picture/star.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[2].Sterne<5\" src=\"/assets/picture/nostar.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[2].Sterne>5\" src=\"/assets/picture/star.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[2].Sterne<6\" src=\"/assets/picture/nostar.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[2].Sterne>6\" src=\"/assets/picture/star.png\" class=\"star17\">\r\n          <img *ngIf=\"squad[2].Sterne<7\" src=\"/assets/picture/nostar.png\" class=\"star17\">\r\n\r\n          <img *ngIf=\"squad[2].Zetas>=1\" src=\"/assets/picture/zeta.png\" class=\"zeta1\">\r\n          <img *ngIf=\"squad[2].Zetas>=2\" src=\"/assets/picture/zeta.png\" class=\"zeta2\">\r\n          <img *ngIf=\"squad[2].Zetas>=3\" src=\"/assets/picture/zeta.png\" class=\"zeta3\">\r\n\r\n          <img class=\"charImage\" src=\"/assets/picture/{{squad[2].imageUrl}}\" alt=\"{{squad[2].Name}}\">\r\n          <img class=\"gearImage\" src=\"/assets/GearPNG/gear-icon-g{{squad[2].gearLevel}}.png\" alt=\"{{squad[2].Name}}\">\r\n          <span class=\"char-level\">{{squad[2].Level}}</span>\r\n          <span class=\"char-gear-level\">{{formatGearLevel(squad[2].gearLevel)}}</span>\r\n        </div>\r\n\r\n      </div>\r\n\r\n      <div *ngIf=\"squad[3]\" class=\"divForChar\">\r\n        <div class=\"parentOfImages\">\r\n\r\n          <img *ngIf=\"squad[3].Sterne>0\" src=\"/assets/picture/star.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[3].Sterne<1\" src=\"/assets/picture/nostar.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[3].Sterne>1\" src=\"/assets/picture/star.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[3].Sterne<2\" src=\"/assets/picture/nostar.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[3].Sterne>2\" src=\"/assets/picture/star.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[3].Sterne<3\" src=\"/assets/picture/nostar.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[3].Sterne>3\" src=\"/assets/picture/star.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[3].Sterne<4\" src=\"/assets/picture/nostar.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[3].Sterne>4\" src=\"/assets/picture/star.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[3].Sterne<5\" src=\"/assets/picture/nostar.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[3].Sterne>5\" src=\"/assets/picture/star.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[3].Sterne<6\" src=\"/assets/picture/nostar.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[3].Sterne>6\" src=\"/assets/picture/star.png\" class=\"star17\">\r\n          <img *ngIf=\"squad[3].Sterne<7\" src=\"/assets/picture/nostar.png\" class=\"star17\">\r\n\r\n          <img *ngIf=\"squad[3].Zetas>=1\" src=\"/assets/picture/zeta.png\" class=\"zeta1\">\r\n          <img *ngIf=\"squad[3].Zetas>=2\" src=\"/assets/picture/zeta.png\" class=\"zeta2\">\r\n          <img *ngIf=\"squad[3].Zetas>=3\" src=\"/assets/picture/zeta.png\" class=\"zeta3\">\r\n\r\n          <img class=\"charImage\" src=\"/assets/picture/{{squad[3].imageUrl}}\" alt=\"{{squad[3].Name}}\">\r\n          <img class=\"gearImage\" src=\"/assets/GearPNG/gear-icon-g{{squad[3].gearLevel}}.png\" alt=\"{{squad[3].Name}}\">\r\n          <span class=\"char-level\">{{squad[3].Level}}</span>\r\n          <span class=\"char-gear-level\">{{formatGearLevel(squad[3].gearLevel)}}</span>\r\n        </div>\r\n\r\n      </div>\r\n\r\n      <div *ngIf=\"squad[4]\" class=\"divForChar\">\r\n        <div class=\"parentOfImages\">\r\n\r\n          <img *ngIf=\"squad[4].Sterne>0\" src=\"/assets/picture/star.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[4].Sterne<1\" src=\"/assets/picture/nostar.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[4].Sterne>1\" src=\"/assets/picture/star.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[4].Sterne<2\" src=\"/assets/picture/nostar.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[4].Sterne>2\" src=\"/assets/picture/star.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[4].Sterne<3\" src=\"/assets/picture/nostar.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[4].Sterne>3\" src=\"/assets/picture/star.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[4].Sterne<4\" src=\"/assets/picture/nostar.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[4].Sterne>4\" src=\"/assets/picture/star.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[4].Sterne<5\" src=\"/assets/picture/nostar.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[4].Sterne>5\" src=\"/assets/picture/star.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[4].Sterne<6\" src=\"/assets/picture/nostar.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[4].Sterne>6\" src=\"/assets/picture/star.png\" class=\"star17\">\r\n          <img *ngIf=\"squad[4].Sterne<7\" src=\"/assets/picture/nostar.png\" class=\"star17\">\r\n\r\n          <img *ngIf=\"squad[4].Zetas>=1\" src=\"/assets/picture/zeta.png\" class=\"zeta1\">\r\n          <img *ngIf=\"squad[4].Zetas>=2\" src=\"/assets/picture/zeta.png\" class=\"zeta2\">\r\n          <img *ngIf=\"squad[4].Zetas>=3\" src=\"/assets/picture/zeta.png\" class=\"zeta3\">\r\n\r\n          <img class=\"charImage\" src=\"/assets/picture/{{squad[4].imageUrl}}\" alt=\"{{squad[4].Name}}\">\r\n          <img class=\"gearImage\" src=\"/assets/GearPNG/gear-icon-g{{squad[4].gearLevel}}.png\" alt=\"{{squad[4].Name}}\">\r\n          <span class=\"char-level\">{{squad[4].Level}}</span>\r\n          <span class=\"char-gear-level\">{{formatGearLevel(squad[4].gearLevel)}}</span>\r\n        </div>\r\n\r\n      </div>\r\n\r\n    </div>\r\n  </fieldset>\r\n</div>\r\n\r\n\r\n\r\n<!-- The Modal -->\r\n<div id=\"myModal\" class=\"modal\">\r\n\r\n  <!-- Modal content -->\r\n  <div class=\"modal-content\">\r\n    <div class=\"modal-header\">\r\n      <span class=\"close\" (click)=\"closeModal()\">&times;</span>\r\n      <h2>{{'AddSquad'| language}}</h2>\r\n    </div>\r\n    <div class=\"modal-body\">\r\n\r\n      <p>\r\n        <input type=\"text\" placeholder=\"Squadname ( e.g 'Phönix' or 'Brotini'  )\" [(ngModel)]=\"squadName\">\r\n      </p>\r\n      <p style=\"width:100%;\">\r\n        Leader :\r\n        <select *ngIf=\"!(settingsService.settings.useAutoComplete)\" [(ngModel)]=\"selectedLeader\">\r\n          <option *ngFor=\"let char of gildenService.charInfos\" [ngValue]=\"char.name\">{{char.name}}</option>\r\n        </select>\r\n\r\n        <ngx-select-dropdown *ngIf=\"(settingsService.settings.useAutoComplete)\"  [config]=\"autoCompleteConfig\" [options]=\"gildenService.charInfos\"\r\n                             [(value)]=\"selectedLeader\" [multiple]=\"false\">\r\n        </ngx-select-dropdown>\r\n      </p>\r\n      <p style=\"width:100%;\">\r\n        Char 2 :\r\n        <select *ngIf=\"!(settingsService.settings.useAutoComplete)\" [(ngModel)]=\"selectedChar2\">\r\n          <option *ngFor=\"let char of gildenService.charInfos\" [ngValue]=\"char.name\">{{char.name}}</option>\r\n        </select>\r\n\r\n        <ngx-select-dropdown *ngIf=\"(settingsService.settings.useAutoComplete)\" [config]=\"autoCompleteConfig\" [options]=\"gildenService.charInfos\"\r\n                             [(value)]=\"selectedChar2\" [multiple]=\"false\">\r\n        </ngx-select-dropdown>\r\n      </p>\r\n      <p style=\"width:100%;\">\r\n        Char 3 :\r\n        <select *ngIf=\"!(settingsService.settings.useAutoComplete)\" [(ngModel)]=\"selectedChar3\">\r\n          <option *ngFor=\"let char of gildenService.charInfos\" [ngValue]=\"char.name\">{{char.name}}</option>\r\n        </select>\r\n\r\n        <ngx-select-dropdown *ngIf=\"(settingsService.settings.useAutoComplete)\" [config]=\"autoCompleteConfig\" [options]=\"gildenService.charInfos\"\r\n                             [(value)]=\"selectedChar3\" [multiple]=\"false\">\r\n        </ngx-select-dropdown>\r\n      </p>\r\n      <p style=\"width:100%;\">\r\n        Char 4 :\r\n        <select *ngIf=\"!(settingsService.settings.useAutoComplete)\" [(ngModel)]=\"selectedChar4\">\r\n          <option *ngFor=\"let char of gildenService.charInfos\" [ngValue]=\"char.name\">{{char.name}}</option>\r\n        </select>\r\n\r\n        <ngx-select-dropdown *ngIf=\"(settingsService.settings.useAutoComplete)\" [config]=\"autoCompleteConfig\" [options]=\"gildenService.charInfos\"\r\n                             [(value)]=\"selectedChar4\" [multiple]=\"false\">\r\n        </ngx-select-dropdown>\r\n      </p>\r\n      <p style=\"width:100%;\">\r\n        Char 5 :\r\n        <select *ngIf=\"!(settingsService.settings.useAutoComplete)\" [(ngModel)]=\"selectedChar5\">\r\n          <option *ngFor=\"let char of gildenService.charInfos\" [ngValue]=\"char.name\">{{char.name}}</option>\r\n        </select>\r\n\r\n        <ngx-select-dropdown *ngIf=\"(settingsService.settings.useAutoComplete)\" [config]=\"autoCompleteConfig\" [options]=\"gildenService.charInfos\"\r\n                             [(value)]=\"selectedChar5\" [multiple]=\"false\">\r\n        </ngx-select-dropdown>\r\n      </p>\r\n\r\n      <button style=\"width: 100%\" (click)=\"addSquadToMyTeams()\">{{'Confirm'| language}}</button>\r\n\r\n    </div>\r\n  </div>\r\n\r\n</div>\r\n"
+module.exports = "<div style=\"width:100%;\">\r\n  <div style=\"width:68%; display: inline-block;\">\r\n    <select style=\"width:100%;\" [(ngModel)]=\"selectedTeam\" (ngModelChange)=\"getSquadsFromGildenInfos()\">\r\n      <option *ngFor=\"let team of myTeams\" [ngValue]=\"team\">{{team.Name}}</option>\r\n    </select>\r\n  </div>\r\n  <div style=\"width: 30%; display: inline-block;\">\r\n    <button (click)=\"deleteThisTeam()\" style=\"display: inline-block; position: relative; padding: 7px 5px; width: 30%;\">{{'Del'| language}}</button>\r\n    <button (click)=\"openModal()\" style=\"display: inline-block; position: relative; padding: 7px 5px; width: 30%;\">{{'Add'| language}}</button>\r\n    </div>\r\n</div>\r\n\r\n<div *ngFor=\"let squad of squadsFromGildenInfos\" class=\"charNow\">\r\n  <fieldset style=\"height:80px\">\r\n    <legend>{{selectedTeam.Name}} {{'of'| language}} {{squad[0].Besitzer}} {{squad | squadpower}}</legend>\r\n    <div style=\"height:80%; width:100%\">\r\n      <div *ngIf=\"squad[0]\" class=\"divForChar\">\r\n        <div class=\"parentOfImages\">\r\n\r\n          <img *ngIf=\"squad[0].Sterne>0\" src=\"/assets/picture/star.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[0].Sterne<1\" src=\"/assets/picture/nostar.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[0].Sterne>1\" src=\"/assets/picture/star.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[0].Sterne<2\" src=\"/assets/picture/nostar.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[0].Sterne>2\" src=\"/assets/picture/star.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[0].Sterne<3\" src=\"/assets/picture/nostar.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[0].Sterne>3\" src=\"/assets/picture/star.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[0].Sterne<4\" src=\"/assets/picture/nostar.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[0].Sterne>4\" src=\"/assets/picture/star.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[0].Sterne<5\" src=\"/assets/picture/nostar.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[0].Sterne>5\" src=\"/assets/picture/star.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[0].Sterne<6\" src=\"/assets/picture/nostar.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[0].Sterne>6\" src=\"/assets/picture/star.png\" class=\"star17\">\r\n          <img *ngIf=\"squad[0].Sterne<7\" src=\"/assets/picture/nostar.png\" class=\"star17\">\r\n\r\n          <img *ngIf=\"squad[0].Zetas>=1\" src=\"/assets/picture/zeta.png\" class=\"zeta1\">\r\n          <img *ngIf=\"squad[0].Zetas>=2\" src=\"/assets/picture/zeta.png\" class=\"zeta2\">\r\n          <img *ngIf=\"squad[0].Zetas>=3\" src=\"/assets/picture/zeta.png\" class=\"zeta3\">\r\n\r\n          <img class=\"charImage\" src=\"/assets/picture/{{squad[0].imageUrl}}\" alt=\"{{squad[0].nameKey}}\">\r\n          <img class=\"gearImage\" src=\"/assets/GearPNG/gear-icon-g{{squad[0].gearLevel}}.png\" alt=\"{{squad[0].nameKey}}\">\r\n          <span class=\"char-level\">{{squad[0].Level}}</span>\r\n          <span class=\"char-gear-level\">{{formatGearLevel(squad[0].gearLevel)}}</span>\r\n        </div>\r\n\r\n      </div>\r\n\r\n      <div *ngIf=\"squad[1]\" class=\"divForChar\">\r\n        <div class=\"parentOfImages\">\r\n\r\n          <img *ngIf=\"squad[1].Sterne>0\" src=\"/assets/picture/star.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[1].Sterne<1\" src=\"/assets/picture/nostar.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[1].Sterne>1\" src=\"/assets/picture/star.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[1].Sterne<2\" src=\"/assets/picture/nostar.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[1].Sterne>2\" src=\"/assets/picture/star.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[1].Sterne<3\" src=\"/assets/picture/nostar.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[1].Sterne>3\" src=\"/assets/picture/star.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[1].Sterne<4\" src=\"/assets/picture/nostar.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[1].Sterne>4\" src=\"/assets/picture/star.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[1].Sterne<5\" src=\"/assets/picture/nostar.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[1].Sterne>5\" src=\"/assets/picture/star.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[1].Sterne<6\" src=\"/assets/picture/nostar.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[1].Sterne>6\" src=\"/assets/picture/star.png\" class=\"star17\">\r\n          <img *ngIf=\"squad[1].Sterne<7\" src=\"/assets/picture/nostar.png\" class=\"star17\">\r\n\r\n          <img *ngIf=\"squad[1].Zetas>=1\" src=\"/assets/picture/zeta.png\" class=\"zeta1\">\r\n          <img *ngIf=\"squad[1].Zetas>=2\" src=\"/assets/picture/zeta.png\" class=\"zeta2\">\r\n          <img *ngIf=\"squad[1].Zetas>=3\" src=\"/assets/picture/zeta.png\" class=\"zeta3\">\r\n\r\n          <img class=\"charImage\" src=\"/assets/picture/{{squad[1].imageUrl}}\" alt=\"{{squad[1].nameKey}}\">\r\n          <img class=\"gearImage\" src=\"/assets/GearPNG/gear-icon-g{{squad[1].gearLevel}}.png\" alt=\"{{squad[1].nameKey}}\">\r\n          <span class=\"char-level\">{{squad[1].Level}}</span>\r\n          <span class=\"char-gear-level\">{{formatGearLevel(squad[1].gearLevel)}}</span>\r\n        </div>\r\n\r\n      </div>\r\n\r\n      <div *ngIf=\"squad[2]\" class=\"divForChar\">\r\n        <div class=\"parentOfImages\">\r\n\r\n          <img *ngIf=\"squad[2].Sterne>0\" src=\"/assets/picture/star.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[2].Sterne<1\" src=\"/assets/picture/nostar.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[2].Sterne>1\" src=\"/assets/picture/star.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[2].Sterne<2\" src=\"/assets/picture/nostar.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[2].Sterne>2\" src=\"/assets/picture/star.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[2].Sterne<3\" src=\"/assets/picture/nostar.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[2].Sterne>3\" src=\"/assets/picture/star.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[2].Sterne<4\" src=\"/assets/picture/nostar.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[2].Sterne>4\" src=\"/assets/picture/star.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[2].Sterne<5\" src=\"/assets/picture/nostar.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[2].Sterne>5\" src=\"/assets/picture/star.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[2].Sterne<6\" src=\"/assets/picture/nostar.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[2].Sterne>6\" src=\"/assets/picture/star.png\" class=\"star17\">\r\n          <img *ngIf=\"squad[2].Sterne<7\" src=\"/assets/picture/nostar.png\" class=\"star17\">\r\n\r\n          <img *ngIf=\"squad[2].Zetas>=1\" src=\"/assets/picture/zeta.png\" class=\"zeta1\">\r\n          <img *ngIf=\"squad[2].Zetas>=2\" src=\"/assets/picture/zeta.png\" class=\"zeta2\">\r\n          <img *ngIf=\"squad[2].Zetas>=3\" src=\"/assets/picture/zeta.png\" class=\"zeta3\">\r\n\r\n          <img class=\"charImage\" src=\"/assets/picture/{{squad[2].imageUrl}}\" alt=\"{{squad[2].nameKey}}\">\r\n          <img class=\"gearImage\" src=\"/assets/GearPNG/gear-icon-g{{squad[2].gearLevel}}.png\" alt=\"{{squad[2].nameKey}}\">\r\n          <span class=\"char-level\">{{squad[2].Level}}</span>\r\n          <span class=\"char-gear-level\">{{formatGearLevel(squad[2].gearLevel)}}</span>\r\n        </div>\r\n\r\n      </div>\r\n\r\n      <div *ngIf=\"squad[3]\" class=\"divForChar\">\r\n        <div class=\"parentOfImages\">\r\n\r\n          <img *ngIf=\"squad[3].Sterne>0\" src=\"/assets/picture/star.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[3].Sterne<1\" src=\"/assets/picture/nostar.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[3].Sterne>1\" src=\"/assets/picture/star.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[3].Sterne<2\" src=\"/assets/picture/nostar.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[3].Sterne>2\" src=\"/assets/picture/star.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[3].Sterne<3\" src=\"/assets/picture/nostar.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[3].Sterne>3\" src=\"/assets/picture/star.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[3].Sterne<4\" src=\"/assets/picture/nostar.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[3].Sterne>4\" src=\"/assets/picture/star.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[3].Sterne<5\" src=\"/assets/picture/nostar.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[3].Sterne>5\" src=\"/assets/picture/star.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[3].Sterne<6\" src=\"/assets/picture/nostar.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[3].Sterne>6\" src=\"/assets/picture/star.png\" class=\"star17\">\r\n          <img *ngIf=\"squad[3].Sterne<7\" src=\"/assets/picture/nostar.png\" class=\"star17\">\r\n\r\n          <img *ngIf=\"squad[3].Zetas>=1\" src=\"/assets/picture/zeta.png\" class=\"zeta1\">\r\n          <img *ngIf=\"squad[3].Zetas>=2\" src=\"/assets/picture/zeta.png\" class=\"zeta2\">\r\n          <img *ngIf=\"squad[3].Zetas>=3\" src=\"/assets/picture/zeta.png\" class=\"zeta3\">\r\n\r\n          <img class=\"charImage\" src=\"/assets/picture/{{squad[3].imageUrl}}\" alt=\"{{squad[3].nameKey}}\">\r\n          <img class=\"gearImage\" src=\"/assets/GearPNG/gear-icon-g{{squad[3].gearLevel}}.png\" alt=\"{{squad[3].nameKey}}\">\r\n          <span class=\"char-level\">{{squad[3].Level}}</span>\r\n          <span class=\"char-gear-level\">{{formatGearLevel(squad[3].gearLevel)}}</span>\r\n        </div>\r\n\r\n      </div>\r\n\r\n      <div *ngIf=\"squad[4]\" class=\"divForChar\">\r\n        <div class=\"parentOfImages\">\r\n\r\n          <img *ngIf=\"squad[4].Sterne>0\" src=\"/assets/picture/star.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[4].Sterne<1\" src=\"/assets/picture/nostar.png\" class=\"star11\">\r\n          <img *ngIf=\"squad[4].Sterne>1\" src=\"/assets/picture/star.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[4].Sterne<2\" src=\"/assets/picture/nostar.png\" class=\"star12\">\r\n          <img *ngIf=\"squad[4].Sterne>2\" src=\"/assets/picture/star.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[4].Sterne<3\" src=\"/assets/picture/nostar.png\" class=\"star13\">\r\n          <img *ngIf=\"squad[4].Sterne>3\" src=\"/assets/picture/star.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[4].Sterne<4\" src=\"/assets/picture/nostar.png\" class=\"star14\">\r\n          <img *ngIf=\"squad[4].Sterne>4\" src=\"/assets/picture/star.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[4].Sterne<5\" src=\"/assets/picture/nostar.png\" class=\"star15\">\r\n          <img *ngIf=\"squad[4].Sterne>5\" src=\"/assets/picture/star.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[4].Sterne<6\" src=\"/assets/picture/nostar.png\" class=\"star16\">\r\n          <img *ngIf=\"squad[4].Sterne>6\" src=\"/assets/picture/star.png\" class=\"star17\">\r\n          <img *ngIf=\"squad[4].Sterne<7\" src=\"/assets/picture/nostar.png\" class=\"star17\">\r\n\r\n          <img *ngIf=\"squad[4].Zetas>=1\" src=\"/assets/picture/zeta.png\" class=\"zeta1\">\r\n          <img *ngIf=\"squad[4].Zetas>=2\" src=\"/assets/picture/zeta.png\" class=\"zeta2\">\r\n          <img *ngIf=\"squad[4].Zetas>=3\" src=\"/assets/picture/zeta.png\" class=\"zeta3\">\r\n\r\n          <img class=\"charImage\" src=\"/assets/picture/{{squad[4].imageUrl}}\" alt=\"{{squad[4].nameKey}}\">\r\n          <img class=\"gearImage\" src=\"/assets/GearPNG/gear-icon-g{{squad[4].gearLevel}}.png\" alt=\"{{squad[4].nameKey}}\">\r\n          <span class=\"char-level\">{{squad[4].Level}}</span>\r\n          <span class=\"char-gear-level\">{{formatGearLevel(squad[4].gearLevel)}}</span>\r\n        </div>\r\n\r\n      </div>\r\n\r\n    </div>\r\n  </fieldset>\r\n</div>\r\n\r\n\r\n\r\n<!-- The Modal -->\r\n<div id=\"myModal\" class=\"modal\">\r\n\r\n  <!-- Modal content -->\r\n  <div class=\"modal-content\">\r\n    <div class=\"modal-header\">\r\n      <span class=\"close\" (click)=\"closeModal()\">&times;</span>\r\n      <h2>{{'AddSquad'| language}}</h2>\r\n    </div>\r\n    <div class=\"modal-body\">\r\n\r\n      <p>\r\n        <input type=\"text\" placeholder=\"Squadname ( e.g 'Phönix' or 'Brotini'  )\" [(ngModel)]=\"squadName\">\r\n      </p>\r\n      <p style=\"width:100%;\">\r\n        Leader :\r\n        <select *ngIf=\"!(settingsService.settings.useAutoComplete)\" [(ngModel)]=\"selectedLeader\">\r\n          <option *ngFor=\"let char of gildenService.charInfos\" [ngValue]=\"char.nameKey\">{{char.nameKey}}</option>\r\n        </select>\r\n\r\n        <ngx-select-dropdown *ngIf=\"(settingsService.settings.useAutoComplete)\"  [config]=\"autoCompleteConfig\" [options]=\"gildenService.charInfos\"\r\n                             [(value)]=\"selectedLeader\" [multiple]=\"false\">\r\n        </ngx-select-dropdown>\r\n      </p>\r\n      <p style=\"width:100%;\">\r\n        Char 2 :\r\n        <select *ngIf=\"!(settingsService.settings.useAutoComplete)\" [(ngModel)]=\"selectedChar2\">\r\n          <option *ngFor=\"let char of gildenService.charInfos\" [ngValue]=\"char.nameKey\">{{char.nameKey}}</option>\r\n        </select>\r\n\r\n        <ngx-select-dropdown *ngIf=\"(settingsService.settings.useAutoComplete)\" [config]=\"autoCompleteConfig\" [options]=\"gildenService.charInfos\"\r\n                             [(value)]=\"selectedChar2\" [multiple]=\"false\">\r\n        </ngx-select-dropdown>\r\n      </p>\r\n      <p style=\"width:100%;\">\r\n        Char 3 :\r\n        <select *ngIf=\"!(settingsService.settings.useAutoComplete)\" [(ngModel)]=\"selectedChar3\">\r\n          <option *ngFor=\"let char of gildenService.charInfos\" [ngValue]=\"char.nameKey\">{{char.nameKey}}</option>\r\n        </select>\r\n\r\n        <ngx-select-dropdown *ngIf=\"(settingsService.settings.useAutoComplete)\" [config]=\"autoCompleteConfig\" [options]=\"gildenService.charInfos\"\r\n                             [(value)]=\"selectedChar3\" [multiple]=\"false\">\r\n        </ngx-select-dropdown>\r\n      </p>\r\n      <p style=\"width:100%;\">\r\n        Char 4 :\r\n        <select *ngIf=\"!(settingsService.settings.useAutoComplete)\" [(ngModel)]=\"selectedChar4\">\r\n          <option *ngFor=\"let char of gildenService.charInfos\" [ngValue]=\"char.nameKey\">{{char.nameKey}}</option>\r\n        </select>\r\n\r\n        <ngx-select-dropdown *ngIf=\"(settingsService.settings.useAutoComplete)\" [config]=\"autoCompleteConfig\" [options]=\"gildenService.charInfos\"\r\n                             [(value)]=\"selectedChar4\" [multiple]=\"false\">\r\n        </ngx-select-dropdown>\r\n      </p>\r\n      <p style=\"width:100%;\">\r\n        Char 5 :\r\n        <select *ngIf=\"!(settingsService.settings.useAutoComplete)\" [(ngModel)]=\"selectedChar5\">\r\n          <option *ngFor=\"let char of gildenService.charInfos\" [ngValue]=\"char.name\">{{char.name}}</option>\r\n        </select>\r\n\r\n        <ngx-select-dropdown *ngIf=\"(settingsService.settings.useAutoComplete)\" [config]=\"autoCompleteConfig\" [options]=\"gildenService.charInfos\"\r\n                             [(value)]=\"selectedChar5\" [multiple]=\"false\">\r\n        </ngx-select-dropdown>\r\n      </p>\r\n\r\n      <button style=\"width: 100%\" (click)=\"addSquadToMyTeams()\">{{'Confirm'| language}}</button>\r\n\r\n    </div>\r\n  </div>\r\n\r\n</div>\r\n"
 
 /***/ }),
 
@@ -3951,6 +4680,115 @@ var squad = /** @class */ (function () {
         this.Charaktere = new Array();
     }
     return squad;
+}());
+
+
+/***/ }),
+
+/***/ "./src/app/zetas/zetas.css":
+/*!*********************************!*\
+  !*** ./src/app/zetas/zetas.css ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "input[type=text] {\r\n  width: 100%;\r\n  padding: 12px 20px;\r\n  margin: 8px 0;\r\n  box-sizing: border-box;\r\n}\r\n\r\n\r\n#raidplannerTable tr:nth-child(even) {\r\n  background-color: #f2f2f2;\r\n}\r\n\r\n\r\n#raidplannerTable tr:hover {\r\n  background-color: #ddd;\r\n}\r\n\r\n\r\n#raidplannerTable th {\r\n  padding-top: 12px;\r\n  padding-bottom: 12px;\r\n  text-align: left;\r\n  background-color: #4CAF50;\r\n  color: white;\r\n}\r\n\r\n\r\n.parentOfImages {\r\n  position: relative;\r\n  top: 0;\r\n  left: 0;\r\n  width: 55px;\r\n  height: 80px;\r\n}\r\n\r\n\r\n.sterne {\r\n  position: absolute;\r\n  transform: scale(0.6, 0.6);\r\n  -ms-transform: scale(0.6, 0.6);\r\n  -webkit-transform: scale(0.6, 0.6);\r\n  z-index: 2;\r\n}\r\n\r\n\r\n.stern1 {\r\n  top: 25px;\r\n  left: -6px;\r\n}\r\n\r\n\r\n.stern2 {\r\n  top: 15px;\r\n  left: 6px;\r\n}\r\n\r\n\r\n.stern3 {\r\n  top: 8px;\r\n  left: 17px;\r\n}\r\n\r\n\r\n.stern4 {\r\n  top: 8px;\r\n  left: 30px;\r\n}\r\n\r\n\r\n.stern5 {\r\n  top: 8px;\r\n  left: 44px;\r\n}\r\n\r\n\r\n.stern6 {\r\n  top: 15px;\r\n  left: 57px;\r\n}\r\n\r\n\r\n.stern7 {\r\n  top: 25px;\r\n  left: 67px;\r\n}\r\n\r\n\r\n.maincharFieldset{\r\n  position:relative;\r\n  float:left;\r\n}\r\n\r\n\r\n.gearImage {\r\n  position: absolute;\r\n  top: 10px;\r\n  left: 0px;\r\n  z-index: 0;\r\n  transform: scale(0.7, 0.7);\r\n  -ms-transform: scale(0.7, 0.7);\r\n  -webkit-transform: scale(0.7, 0.7);\r\n}\r\n\r\n\r\n.charImage {\r\n  z-index: 0;\r\n  position: absolute;\r\n  top: -13px;\r\n  left: -24px;\r\n  border-radius: 50%;\r\n  transform: scale(0.4, 0.4);\r\n  -ms-transform: scale(0.4, 0.4);\r\n  -webkit-transform: scale(0.4, 0.4);\r\n}\r\n\r\n\r\n.char-level {\r\n  color: #fff;\r\n  background-color: #264257;\r\n  border: 2px solid #fff;\r\n  text-align: center;\r\n  border-radius: 100%/130% 130% 15px 15px;\r\n  position: absolute;\r\n  top: 55px;\r\n  left: 40px;\r\n  z-index: 2;\r\n  width: 15px;\r\n  padding: 0 5px;\r\n  font-size: x-small;\r\n}\r\n\r\n\r\n.char-gear-level {\r\n  color: #fff;\r\n  background-color: #006600;\r\n  border: 2px solid #fff;\r\n  text-align: center;\r\n  border-radius: 100%/130% 130% 15px 15px;\r\n  position: absolute;\r\n  left: 25px;\r\n  top: 65px;\r\n  z-index: 3;\r\n  width: 15px;\r\n  padding: 0 5px;\r\n  font-size: x-small;\r\n}\r\n\r\n\r\n.divForChar {\r\n  width: 58px;\r\n  height: 90px;\r\n  display: inline-block;\r\n  left: -20px;\r\n  position: relative;\r\n}\r\n\r\n\r\n.progress1 {\r\n  background-color: #bcd6ff;\r\n  border: 0;\r\n  position: absolute;\r\n  top: 72px;\r\n  left: 13px;\r\n  height: 18px;\r\n  width: 55px;\r\n}\r\n\r\n\r\n.progressText {\r\n  position: absolute;\r\n  top: 72px;\r\n  left: 23px;\r\n}\r\n\r\n\r\nselect {\r\n  padding: 10px 10px;\r\n  border: none;\r\n  border-radius: 4px;\r\n  background-color: #f1f1f1;\r\n}\r\n\r\n\r\nbutton {\r\n  background-color: #2196F3;\r\n  border: none;\r\n  color: white;\r\n  /*padding: 16px 32px;*/\r\n  text-decoration: none;\r\n  /*margin: 4px 2px;*/\r\n  cursor: pointer;\r\n}\r\n\r\n\r\n/* The Modal (background) */\r\n\r\n\r\n.modal {\r\n  display: none; /* Hidden by default */\r\n  position: fixed; /* Stay in place */\r\n  z-index: 11; /* Sit on top */\r\n  padding-top: 50px; /* Location of the box */\r\n  left: 0;\r\n  top: 0;\r\n  width: 100%; /* Full width */\r\n  height: 100%; /* Full height */\r\n  overflow: auto; /* Enable scroll if needed */\r\n  background-color: rgb(0,0,0); /* Fallback color */\r\n  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */\r\n}\r\n\r\n\r\n/* Modal Content */\r\n\r\n\r\n.modal-content {\r\n  position: relative;\r\n  background-color: #fefefe;\r\n  margin: auto;\r\n  padding: 0;\r\n  border: 1px solid #888;\r\n  width: 95%;\r\n  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);\r\n  -webkit-animation-name: animatetop;\r\n  -webkit-animation-duration: 0.4s;\r\n  animation-name: animatetop;\r\n  animation-duration: 0.4s\r\n}\r\n\r\n\r\n/* Add Animation */\r\n\r\n\r\n@-webkit-keyframes animatetop {\r\n  from {\r\n    top: -300px;\r\n    opacity: 0\r\n  }\r\n\r\n  to {\r\n    top: 0;\r\n    opacity: 1\r\n  }\r\n}\r\n\r\n\r\n@keyframes animatetop {\r\n  from {\r\n    top: -300px;\r\n    opacity: 0\r\n  }\r\n\r\n  to {\r\n    top: 0;\r\n    opacity: 1\r\n  }\r\n}\r\n\r\n\r\n/* The Close Button */\r\n\r\n\r\n.close {\r\n  color: white;\r\n  float: right;\r\n  font-size: 28px;\r\n  font-weight: bold;\r\n}\r\n\r\n\r\n.close:hover,\r\n  .close:focus {\r\n    color: #000;\r\n    text-decoration: none;\r\n    cursor: pointer;\r\n  }\r\n\r\n\r\n.modal-header {\r\n  padding: 2px 16px;\r\n  background-color: #2196F3;\r\n  color: white;\r\n}\r\n\r\n\r\n.modal-body {\r\n  padding: 2px 16px;\r\n}\r\n\r\n\r\nprogress {\r\n  background-color: #f3f3f3;\r\n  border: 0;\r\n  top: 80px;\r\n  position: absolute;\r\n  height: 18px;\r\n  border-radius: 9px;\r\n}\r\n\r\n\r\n.selectedImg {\r\n  position: absolute;\r\n  top: -304px;\r\n  left: -350px;\r\n  transform: scale(0.1, 0.1);\r\n  -ms-transform: scale(0.1, 0.1);\r\n  -webkit-transform: scale(0.1, 0.1);\r\n  z-index: 3;\r\n}\r\n\r\n\r\n.zeta1 {\r\n  position: absolute;\r\n  top: 15px;\r\n  left: 65px;\r\n  transform: scale(0.6, 0.6);\r\n  -ms-transform: scale(0.6, 0.6);\r\n  -webkit-transform: scale(0.6, 0.6);\r\n  z-index: 3;\r\n}\r\n\r\n\r\n.zeta2 {\r\n  position: absolute;\r\n  top: 35px;\r\n  left: 65px;\r\n  transform: scale(0.6, 0.6);\r\n  -ms-transform: scale(0.6, 0.6);\r\n  -webkit-transform: scale(0.6, 0.6);\r\n  z-index: 3;\r\n}\r\n\r\n\r\n.zeta3 {\r\n  position: absolute;\r\n  top: 55px;\r\n  left: 65px;\r\n  transform: scale(0.6, 0.6);\r\n  -ms-transform: scale(0.6, 0.6);\r\n  -webkit-transform: scale(0.6, 0.6);\r\n  z-index: 3;\r\n}\r\n\r\n"
+
+/***/ }),
+
+/***/ "./src/app/zetas/zetas.html":
+/*!**********************************!*\
+  !*** ./src/app/zetas/zetas.html ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div *ngIf=\"!allZetas\">Lädt...</div>\r\n\r\n<dx-data-grid *ngIf=\"allZetas\"\r\n              [dataSource]=\"allZetas\"\r\n              [allowColumnReordering]=\"true\"\r\n              [showBorders]=\"true\"\r\n              [allowColumnResizing]=\"true\"\r\n              [columnMinWidth]=\"50\"\r\n              [columnAutoWidth]=\"true\">\r\n\r\n  <dxo-filter-row [visible]=\"true\"></dxo-filter-row>\r\n  <dxo-scrolling mode=\"infinite\"></dxo-scrolling>\r\n\r\n  <dxo-column-chooser [enabled]=\"true\"\r\n                      mode=\"dragAndDrop\">\r\n  </dxo-column-chooser>\r\n\r\n  <dxi-column dataField=\"CharName\" caption=\"Charname\" [dataType]=\"string\" cellTemplate=\"SkillnameTemplate\"></dxi-column>\r\n  <dxi-column dataField=\"skillName\" caption=\"Skillname\" [dataType]=\"string\" cellTemplate=\"SkillnameTemplate\"></dxi-column>\r\n  <dxi-column dataField=\"anzahl\" caption=\"Anzahl Zetas\" [dataType]=\"number\" sortOrder=\"desc\" cellTemplate=\"SkillnameTemplate\"></dxi-column>\r\n  <dxi-column dataField=\"Membernames\" caption=\"Membernames\" [visible]=\"false\" cellTemplate=\"MembernamesTemplate\"></dxi-column>\r\n\r\n  <div *dxTemplate=\"let data of 'MembernamesTemplate'\">\r\n    <span *ngFor=\"let membername of data.value\">{{membername}}, </span>\r\n  </div>\r\n\r\n  <div *dxTemplate=\"let data of 'SkillnameTemplate'\">\r\n    <div [tooltip]=\"data | skillmembernames\" trigger=\"click\" hide-delay=\"5000\" hide-delay-mobile=\"5000\" width=\"100%\">{{data.value}}</div>\r\n  </div>\r\n\r\n  <div *dxTemplate=\"let data of 'SkillnameTemplate'\">\r\n    <div [tooltip]=\"data | skillmembernames\" trigger=\"click\" hide-delay=\"5000\" hide-delay-mobile=\"5000\" width=\"100%\">{{data.value}}</div>\r\n  </div>\r\n\r\n</dx-data-grid>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/zetas/zetas.ts":
+/*!********************************!*\
+  !*** ./src/app/zetas/zetas.ts ***!
+  \********************************/
+/*! exports provided: ZetasComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ZetasComponent", function() { return ZetasComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var _services_gildenService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/gildenService */ "./src/app/services/gildenService.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var ZetasComponent = /** @class */ (function () {
+    function ZetasComponent(GildenService) {
+        this.GildenService = GildenService;
+        var allZetasTemps = new Array();
+        for (var i = 0; i < GildenService.gildenInfos.roster.length; i++) {
+            var allZetaCharsNow = GildenService.gildenInfos.roster[i].roster.filter(function (char) { return char.skills.find(function (skill) { return skill.isZeta == true && skill.tier == 8; }); });
+            if (allZetaCharsNow != null) {
+                for (var x = 0; x < allZetaCharsNow.length; x++) {
+                    var CharName = allZetaCharsNow[x].nameKey;
+                    for (var z = 0; z < allZetaCharsNow[x].skills.length; z++) {
+                        if (allZetaCharsNow[x].skills[z].isZeta == true && allZetaCharsNow[x].skills[z].tier == 8) {
+                            var tempZetaReporter = allZetasTemps.find(function (skill) { return skill.skillName == allZetaCharsNow[x].skills[z].nameKey; });
+                            if (tempZetaReporter != null) {
+                                tempZetaReporter.anzahl++;
+                                tempZetaReporter.Membernames.push(GildenService.gildenInfos.roster[i].name);
+                            }
+                            else {
+                                var ZetaNow = new ZetaReportHelper();
+                                ZetaNow.CharName = CharName;
+                                ZetaNow.anzahl = 1;
+                                ZetaNow.skillName = allZetaCharsNow[x].skills[z].nameKey;
+                                ZetaNow.Membernames = new Array();
+                                ZetaNow.Membernames.push(GildenService.gildenInfos.roster[i].name);
+                                allZetasTemps.push(ZetaNow);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        allZetasTemps.sort(function (a, b) {
+            return b.anzahl - a.anzahl;
+        });
+        this.allZetas = allZetasTemps;
+        console.log(this.allZetas);
+    }
+    ZetasComponent.prototype.ShowMemberNames = function (data) {
+        var tempString = "";
+        tempString += data.data.skillName + ": \n\r";
+        for (var u = 0; u < data.data.Membernames.length; u++) {
+            tempString += data.data.Membernames[u] + "\n\r";
+        }
+        alert(tempString);
+    };
+    ZetasComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'zetas',
+            template: __webpack_require__(/*! ./zetas.html */ "./src/app/zetas/zetas.html"),
+            styles: [__webpack_require__(/*! ./zetas.css */ "./src/app/zetas/zetas.css")]
+        }),
+        __metadata("design:paramtypes", [_services_gildenService__WEBPACK_IMPORTED_MODULE_1__["gildenService"]])
+    ], ZetasComponent);
+    return ZetasComponent;
+}());
+
+var ZetaReportHelper = /** @class */ (function () {
+    function ZetaReportHelper() {
+    }
+    return ZetaReportHelper;
 }());
 
 

@@ -22,10 +22,10 @@ export class ComparerComponent {
   onValueChanged(charSelectBox, MemberSelectBoxA, MemberSelectBoxB)
   {
     console.log('value changed');
-    if (MemberSelectBoxA.value != null && MemberSelectBoxB.value != null && charSelectBox.value != null && MemberSelectBoxA.value.name != MemberSelectBoxB.value.name) {
+    if (MemberSelectBoxA.value != null && MemberSelectBoxB.value != null && charSelectBox.value != null && MemberSelectBoxA.value.nameKey != MemberSelectBoxB.value.nameKey) {
 
-      var charA = this.GildenService.getCharByNameAndMemberExact(charSelectBox.value.name, MemberSelectBoxA.value);
-      var charB = this.GildenService.getCharByNameAndMemberExact(charSelectBox.value.name, MemberSelectBoxB.value);
+      var charA = this.GildenService.getCharByNameAndMemberExact(charSelectBox.value.nameKey, MemberSelectBoxA.value);
+      var charB = this.GildenService.getCharByNameAndMemberExact(charSelectBox.value.nameKey, MemberSelectBoxB.value);
 
       if(charA != null)
         this.loadChar("A", charA);
@@ -102,16 +102,16 @@ export class ComparerComponent {
     console.log("mods", char.mods);
 
     for (var i = 0; i < char.mods.length; i++) {
-      var primaryType = char.mods[i].primaryBonusType;
-      var primaryBonusValue = Number(char.mods[i].primaryBonusValue.replace("%", "").replace("+", ""));
-      var secondaryType_1 = char.mods[i].secondaryType_1;
-      var secondaryType_2 = char.mods[i].secondaryType_2;
-      var secondaryType_3 = char.mods[i].secondaryType_3;
-      var secondaryType_4 = char.mods[i].secondaryType_4;
-      var secondaryValue_1 = Number(char.mods[i].secondaryValue_1.replace("%", "").replace("+", ""));
-      var secondaryValue_2 = Number(char.mods[i].secondaryValue_2.replace("%", "").replace("+", ""));;
-      var secondaryValue_3 = Number(char.mods[i].secondaryValue_3.replace("%", "").replace("+", ""));;
-      var secondaryValue_4 = Number(char.mods[i].secondaryValue_4.replace("%", "").replace("+", ""));;
+      var primaryType = char.mods[i].primaryStat.unitStat;
+      var primaryBonusValue = Number(char.mods[i].primaryStat.value);
+      var secondaryType_1 = char.mods[i].secondaryStat[0].unitStat;
+      var secondaryType_2 = char.mods[i].secondaryStat[1].unitStat;
+      var secondaryType_3 = char.mods[i].secondaryStat[2].unitStat;
+      var secondaryType_4 = char.mods[i].secondaryStat[3].unitStat;
+      var secondaryValue_1 = Number(char.mods[i].secondaryStat[0].value);
+      var secondaryValue_2 = Number(char.mods[i].secondaryStat[1].value);;
+      var secondaryValue_3 = Number(char.mods[i].secondaryStat[2].value);;
+      var secondaryValue_4 = Number(char.mods[i].secondaryStat[3].value);;
       
       if (modValuesTotal[primaryType] == null)
         modValuesTotal[primaryType] = 0;
@@ -130,11 +130,11 @@ export class ComparerComponent {
       modValuesTotal[secondaryType_3] += secondaryValue_3;
       modValuesTotal[secondaryType_4] += secondaryValue_4;
 
-      if (modSetsTotal[char.mods[i].setId] == null) {
-        modSetsTotal[char.mods[i].setId] = 1
+      if (modSetsTotal[char.mods[i].set] == null) {
+        modSetsTotal[char.mods[i].set] = 1
       }
       else {
-        modSetsTotal[char.mods[i].setId] += 1;
+        modSetsTotal[char.mods[i].set] += 1;
       }
 
     }
@@ -149,10 +149,10 @@ export class ComparerComponent {
 
         if (ModSetNow.setCount <= modSetsTotal[key]) {
           
-          if (charData.total[this.mapKeyOfModStat(ModSetNow.name)] != null) {
-            console.log(charData.total[this.mapKeyOfModStat(ModSetNow.name)]);
-            charData.total[this.mapKeyOfModStat(ModSetNow.name)] = Number(charData.total[this.mapKeyOfModStat(ModSetNow.name)]) + ((((Number(ModSetNow.maxLevelBonus.stat.statValueDecimal)) / 100) * 2) / 100) * Number(charData.base[this.mapKeyOfModStat(ModSetNow.name)]);
-            console.log(charData.total[this.mapKeyOfModStat(ModSetNow.name)]);
+          if (charData.total[this.mapKeyOfModStat(ModSetNow.nameKey)] != null) {
+            console.log(charData.total[this.mapKeyOfModStat(ModSetNow.nameKey)]);
+            charData.total[this.mapKeyOfModStat(ModSetNow.nameKey)] = Number(charData.total[this.mapKeyOfModStat(ModSetNow.nameKey)]) + ((((Number(ModSetNow.maxLevelBonus.stat.statValueDecimal)) / 100) * 2) / 100) * Number(charData.base[this.mapKeyOfModStat(ModSetNow.nameKey)]);
+            console.log(charData.total[this.mapKeyOfModStat(ModSetNow.nameKey)]);
           } else {
             console.log("cant calculate modset ", ModSetNow);
           }

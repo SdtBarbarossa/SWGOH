@@ -11,6 +11,8 @@ import { EventsComponent } from './events/events';
 import { ComparerComponent } from './comparer/comparer';
 import { FleetTeamsComponent } from './fleetTeams/fleetTeams';
 import { ShipSearchComponent } from './shipSearch/shipSearch';
+import { MemberTrackingComponent } from './MemberTracking/membertracking';
+import { ZetasComponent } from './zetas/zetas';
 
 const routes: Routes = [
   {
@@ -61,6 +63,14 @@ const routes: Routes = [
   {
     path: 'shipsearch',
     component: ShipSearchComponent
+  },
+  {
+    path: 'membertracking',
+    component: MemberTrackingComponent
+  },
+  {
+    path: 'zetas',
+    component: ZetasComponent
   }, 
   {
     path: '**',

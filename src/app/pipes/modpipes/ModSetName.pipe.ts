@@ -17,7 +17,7 @@ export class ModSetNamePipe implements PipeTransform {
     var ModSetNow = this.gildenservice.ModSets.find(modset => modset.id == value.toString());
 
     if (ModSetNow != null) {
-      return ModSetNow.name;
+      return ModSetNow.nameKey;
     }
 
     return value.toString();

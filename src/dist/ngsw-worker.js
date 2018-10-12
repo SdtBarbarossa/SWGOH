@@ -349,16 +349,16 @@ class AssetGroup {
          * Regular expression patterns.
          */
         this.patterns = [];
-        this.name = config.name;
+        this.nameKey = config.nameKey;
         // Patterns in the config are regular expressions disguised as strings. Breathe life into them.
         this.patterns = this.config.patterns.map(pattern => new RegExp(pattern));
         // This is the primary cache, which holds all of the cached requests for this group. If a
         // resource
         // isn't in this cache, it hasn't been fetched yet.
-        this.cache = this.scope.caches.open(`${this.prefix}:${this.config.name}:cache`);
+        this.cache = this.scope.caches.open(`${this.prefix}:${this.config.nameKey}:cache`);
         // This is the metadata table, which holds specific information for each cached URL, such as
         // the timestamp of when it was added to the cache.
-        this.metadata = this.db.open(`${this.prefix}:${this.config.name}:meta`);
+        this.metadata = this.db.open(`${this.prefix}:${this.config.nameKey}:meta`);
         // Determine the origin from the registration scope. This is used to differentiate between
         // relative and absolute URLs.
         this.origin =
@@ -386,8 +386,8 @@ class AssetGroup {
      * Clean up all the cached data for this group.
      */
     async cleanup() {
-        await this.scope.caches.delete(`${this.prefix}:${this.config.name}:cache`);
-        await this.db.delete(`${this.prefix}:${this.config.name}:meta`);
+        await this.scope.caches.delete(`${this.prefix}:${this.config.nameKey}:cache`);
+        await this.db.delete(`${this.prefix}:${this.config.nameKey}:meta`);
     }
     /**
      * Process a request for a given resource and return it, or return null if it's not available.
@@ -417,7 +417,7 @@ class AssetGroup {
                     // This resource has no hash, and yet exists in the cache. Check how old this request is
                     // to make sure it's still usable.
                     if (await this.needToRevalidate(req, cachedResponse)) {
-                        this.idle.schedule(`revalidate(${this.prefix}, ${this.config.name}): ${req.url}`, async () => { await this.fetchAndCacheOnce(req); });
+                        this.idle.schedule(`revalidate(${this.prefix}, ${this.config.nameKey}): ${req.url}`, async () => { await this.fetchAndCacheOnce(req); });
                     }
                     // In either case (revalidation or not), the cached response must be good.
                     return cachedResponse;
@@ -583,7 +583,7 @@ class AssetGroup {
             }
             // This response is safe to cache (as long as it's cloned). Wait until the cache operation
             // is complete.
-            const cache = await this.scope.caches.open(`${this.prefix}:${this.config.name}:cache`);
+            const cache = await this.scope.caches.open(`${this.prefix}:${this.config.nameKey}:cache`);
             await cache.put(req, res.clone());
             // If the request is not hashed, update its metadata, especially the timestamp. This is needed
             // for future determination of whether this cached response is stale or not.
@@ -983,9 +983,9 @@ class DataGroup {
          */
         this._lru = null;
         this.patterns = this.config.patterns.map(pattern => new RegExp(pattern));
-        this.cache = this.scope.caches.open(`${this.prefix}:dynamic:${this.config.name}:cache`);
-        this.lruTable = this.db.open(`${this.prefix}:dynamic:${this.config.name}:lru`);
-        this.ageTable = this.db.open(`${this.prefix}:dynamic:${this.config.name}:age`);
+        this.cache = this.scope.caches.open(`${this.prefix}:dynamic:${this.config.nameKey}:cache`);
+        this.lruTable = this.db.open(`${this.prefix}:dynamic:${this.config.nameKey}:lru`);
+        this.ageTable = this.db.open(`${this.prefix}:dynamic:${this.config.nameKey}:age`);
     }
     /**
      * Lazily initialize/load the LRU chain.
@@ -1227,9 +1227,9 @@ class DataGroup {
     async cleanup() {
         // Remove both the cache and the database entries which track LRU stats.
         await Promise.all([
-            this.scope.caches.delete(`${this.prefix}:dynamic:${this.config.name}:cache`),
-            this.db.delete(`${this.prefix}:dynamic:${this.config.name}:age`),
-            this.db.delete(`${this.prefix}:dynamic:${this.config.name}:lru`),
+            this.scope.caches.delete(`${this.prefix}:dynamic:${this.config.nameKey}:cache`),
+            this.db.delete(`${this.prefix}:dynamic:${this.config.nameKey}:age`),
+            this.db.delete(`${this.prefix}:dynamic:${this.config.nameKey}:lru`),
         ]);
     }
     /**
@@ -1576,7 +1576,7 @@ ${msgIdle}`, { headers: this.adapter.newHeaders({ 'Content-Type': 'text/plain' }
         // Log the message.
         this.debugLogA.push({ value, time: this.adapter.time, context });
     }
-    errorToString(err) { return `${err.name}(${err.message}, ${err.stack})`; }
+    errorToString(err) { return `${err.nameKey}(${err.message}, ${err.stack})`; }
     formatDebugLog(log) {
         return log.map(entry => `[${this.since(entry.time)}] ${entry.value} ${entry.context}`)
             .join('\n');

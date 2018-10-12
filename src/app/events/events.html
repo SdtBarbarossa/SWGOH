@@ -2,17 +2,17 @@
   <div *ngFor="let event of GildenService.SWGOHEvents">
     <fieldset *ngIf="(event.id | eventShow)" style="width:100%">
       <legend>
-        <span *ngIf="event.id == 'EVENT_TRAINING_DROID_SMUGGLING' || event.id == 'EVENT_CREDIT_HEIST_GETAWAY_V2' || event.id == 'EVENT_GALACTIC_BOUNTY_01' || event.type == 3" style="color:#0000ff">
-          {{event.name}}
+        <span *ngIf="event.id == 'EVENT_TRAINING_DROID_SMUGGLING' || event.id == 'EVENT_CREDIT_HEIST_GETAWAY_V2' || event.id == 'EVENT_GALACTIC_BOUNTY_01' || event.id == 'EVENT_GALACTIC_BOUNTY_02' || event.id == 'EVENT_RESOURCE_CONTRABAND_CARGO' || event.id == 'EVENT_RESOURCE_SMUGGLERS_RUN' || event.gameEventType == 3" style="color:#0000ff">
+          {{event.nameKey | eventname}}
         </span>
-        <span *ngIf="event.id != 'EVENT_TRAINING_DROID_SMUGGLING' && event.id != 'EVENT_CREDIT_HEIST_GETAWAY_V2' && event.id != 'EVENT_GALACTIC_BOUNTY_01' && event.type != 3">
-          {{event.name}}
+        <span *ngIf="event.id != 'EVENT_TRAINING_DROID_SMUGGLING' && event.id != 'EVENT_CREDIT_HEIST_GETAWAY_V2' && event.id != 'EVENT_GALACTIC_BOUNTY_01' && event.id != 'EVENT_GALACTIC_BOUNTY_02' && event.id != 'EVENT_RESOURCE_CONTRABAND_CARGO' && event.id != 'EVENT_RESOURCE_SMUGGLERS_RUN' && event.gameEventType != 3">
+          {{event.nameKey | eventname}}
         </span>
       </legend>
-        Desc: {{event.desc}} <br />
-        Start: {{event.schedule[0].start | date : 'dd.MM.yyyy HH:mm'}} <br />
-        End: {{event.schedule[0].end | date : 'dd.MM.yyyy HH:mm'}} <br />
-
-</fieldset>
+      Desc: {{event.descKey | eventname}} <br />
+      Start: {{event.instanceList[0].startTime | date : 'dd.MM.yyyy HH:mm'}} <br />
+      End: {{event.instanceList[0].endTime | date : 'dd.MM.yyyy HH:mm'}} <br />
+      Show at: {{event.instanceList[0].displayStartTime | date : 'dd.MM.yyyy HH:mm'}} <br />
+    </fieldset>
   </div>
 </div>

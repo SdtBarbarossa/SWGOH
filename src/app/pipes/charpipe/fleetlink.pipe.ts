@@ -22,6 +22,6 @@ export class FleetImageLinkPipe implements PipeTransform {
       }
     }
 
-    return value.name;
+    return value.nameKey;
   }
 }

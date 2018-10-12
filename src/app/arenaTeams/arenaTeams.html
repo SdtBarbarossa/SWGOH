@@ -2,41 +2,47 @@
   <fieldset>
     <legend>{{team.besitzer}} {{'WithRank' | language}} {{team.rang}}</legend>
     <fieldset *ngFor="let char of team.charaktere" class="maincharFieldset">
-      <legend>{{char | charname}}</legend>
-      <div style="height:60px;">
-        <img *ngIf="char.rarity>0" src="/assets/picture/star.png" class="sterne stern1">
-        <img *ngIf="char.rarity<1" src="/assets/picture/nostar.png" class="sterne stern1">
-        <img *ngIf="char.rarity>1" src="/assets/picture/star.png" class="sterne stern2">
-        <img *ngIf="char.rarity<2" src="/assets/picture/nostar.png" class="sterne stern2">
-        <img *ngIf="char.rarity>2" src="/assets/picture/star.png" class="sterne stern3">
-        <img *ngIf="char.rarity<3" src="/assets/picture/nostar.png" class="sterne stern3">
-        <img *ngIf="char.rarity>3" src="/assets/picture/star.png" class="sterne stern4">
-        <img *ngIf="char.rarity<4" src="/assets/picture/nostar.png" class="sterne stern4">
-        <img *ngIf="char.rarity>4" src="/assets/picture/star.png" class="sterne stern5">
-        <img *ngIf="char.rarity<5" src="/assets/picture/nostar.png" class="sterne stern5">
-        <img *ngIf="char.rarity>5" src="/assets/picture/star.png" class="sterne stern6">
-        <img *ngIf="char.rarity<6" src="/assets/picture/nostar.png" class="sterne stern6">
-        <img *ngIf="char.rarity>6" src="/assets/picture/star.png" class="sterne stern7">
-        <img *ngIf="char.rarity<7" src="/assets/picture/nostar.png" class="sterne stern7">
+      <legend>{{char.nameKey}}</legend>
+      <div>
+        <div style="height:60px;width:70px;display:inline-block">
+          <img *ngIf="char.rarity>0" src="/assets/picture/star.png" class="sterne stern1">
+          <img *ngIf="char.rarity<1" src="/assets/picture/nostar.png" class="sterne stern1">
+          <img *ngIf="char.rarity>1" src="/assets/picture/star.png" class="sterne stern2">
+          <img *ngIf="char.rarity<2" src="/assets/picture/nostar.png" class="sterne stern2">
+          <img *ngIf="char.rarity>2" src="/assets/picture/star.png" class="sterne stern3">
+          <img *ngIf="char.rarity<3" src="/assets/picture/nostar.png" class="sterne stern3">
+          <img *ngIf="char.rarity>3" src="/assets/picture/star.png" class="sterne stern4">
+          <img *ngIf="char.rarity<4" src="/assets/picture/nostar.png" class="sterne stern4">
+          <img *ngIf="char.rarity>4" src="/assets/picture/star.png" class="sterne stern5">
+          <img *ngIf="char.rarity<5" src="/assets/picture/nostar.png" class="sterne stern5">
+          <img *ngIf="char.rarity>5" src="/assets/picture/star.png" class="sterne stern6">
+          <img *ngIf="char.rarity<6" src="/assets/picture/nostar.png" class="sterne stern6">
+          <img *ngIf="char.rarity>6" src="/assets/picture/star.png" class="sterne stern7">
+          <img *ngIf="char.rarity<7" src="/assets/picture/nostar.png" class="sterne stern7">
 
-        <img class="charImage" [src]="char | charimagelink" [alt]="char | charname">
-        <img class="gearImage" [src]="char | gearlink" [alt]="char | charname">
-        <span class="char-level">{{char.level}}</span>
-        <span class="char-gear-level">{{char | chargear}}</span>
+          <img class="charImage" [src]="char | charimagelink" [alt]="char.nameKey">
+          <img class="gearImage" [src]="char | gearlink" [alt]="char.nameKey">
+          <span class="char-level">{{char.level}}</span>
+          <span class="char-gear-level">{{char | chargear}}</span>
+        </div>
+
+        <div style="display:inline-block">
+          <div *ngFor="let skill of char.skills">
+            <span *ngIf="skill.isZeta == true && skill.tier == 8">Zeta: {{skill.nameKey}}</span>
+          </div>
+        </div>
       </div>
 
       <button (click)="showMods[i] = !showMods[i]">{{'Show/Hide'| language}}</button>
 
       <div *ngIf="showMods[i]">
         <fieldset *ngFor="let mod of char.mods" style="position:relative; float:left;">
-          <legend>{{(mod.setId | modsetname) | language}}-{{(mod.slot | modslotname) | language}} L:{{mod.level}} S:{{mod.pips}}</legend>
-          <div style="color:blue">{{(mod.primaryBonusType | modstatname) | language}}: {{mod.primaryBonusValue | modstatvalue : (mod.primaryBonusType | modstatname)}}</div>
-          <div>{{(mod.secondaryType_1 | modstatname) | language}}: {{mod.secondaryValue_1 | modstatvalue : (mod.secondaryType_1 | modstatname)}}</div>
-          <div>{{(mod.secondaryType_2 | modstatname) | language}}: {{mod.secondaryValue_2 | modstatvalue : (mod.secondaryType_2 | modstatname)}}</div>
-          <div>{{(mod.secondaryType_3 | modstatname) | language}}: {{mod.secondaryValue_3 | modstatvalue : (mod.secondaryType_3 | modstatname)}}</div>
-          <div>{{(mod.secondaryType_4 | modstatname) | language}}: {{mod.secondaryValue_4 | modstatvalue : (mod.secondaryType_4 | modstatname)}}</div>
+          <legend>{{(mod.set | modsetname) | language}}-{{(mod.slot | modslotname) | language}} L:{{mod.level}} S:{{mod.pips}}</legend>
+          <div style="color:blue">{{(mod.primaryStat.unitStat | modstatname) | language}}: {{mod.primaryStat.value | modstatvalue : (mod.primaryStat.unitStat | modstatname)}}</div>
+          <div *ngFor="let stat of mod.secondaryStat">{{(stat.unitStat | modstatname) | language}}: {{stat.value | modstatvalue : (stat.unitStat | modstatname)}}</div>
         </fieldset>
-        </div>
+      </div>
+
     </fieldset>
   </fieldset>
 </div>

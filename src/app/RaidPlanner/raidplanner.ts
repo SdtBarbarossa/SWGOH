@@ -11,12 +11,17 @@ import { forEach } from '@angular/router/src/utils/collection';
 export class RaidPlannerComponent {
   
   public dmgP4 = 100;
-  public squads: squad[];
+  public squads: squad[] = null;
+  public selectedSquad: squad;
   public raidDataSource: any;
   public columns: string[] = new Array();
-
+  
   constructor(public settingsService: SettingsService, public gildenService: gildenService) {
 
+    this.getRaidPlannerTeams();
+
+    if (this.squads == null)
+    {
     this.squads = new Array();
 
     var jtr = new squad();
@@ -226,8 +231,26 @@ export class RaidPlannerComponent {
 
     this.squads.push(firstOrder);
 
+    this.saveRaidPlannerTeams(this.squads);
+
+    }
+
+    this.selectedSquad = this.squads[0];
+
     this.loadGridDatasource();
 
+  }
+  
+  getRaidPlannerTeams() {
+    if (localStorage.midiSquads != null)
+      this.squads = JSON.parse(localStorage.midiSquads);
+    console.log('squads', this.squads);
+  }
+
+  saveRaidPlannerTeams(squads: squad[]) {
+    localStorage.midiSquads = JSON.stringify(squads);
+    this.squads = squads;
+    console.log('squads', this.squads);
   }
 
   onToolbarPreparing(e) {
@@ -253,6 +276,52 @@ export class RaidPlannerComponent {
         }
       }, 
     );
+  }
+
+  deleteThisSquad() {
+    var index = this.squads.indexOf(this.selectedSquad);
+    if (index > -1) {
+      this.squads.splice(index, 1);
+    }
+    this.selectedSquad = this.squads[this.squads.length-1];
+    this.saveRaidPlannerTeams(this.squads);
+  }
+
+  addNewSquad() {
+    var template = new squad();
+    template.Name = "New Squad"
+
+    template.Charaktere.push("BB-8");
+    template.Charaktere.push("BB-8");
+    template.Charaktere.push("BB-8");
+    template.Charaktere.push("BB-8");
+    template.Charaktere.push("BB-8");
+
+    template.Zetas.push(0);
+    template.Zetas.push(0);
+    template.Zetas.push(0);
+    template.Zetas.push(0);
+    template.Zetas.push(0);
+
+    this.squads.push(template);
+    this.selectedSquad = this.squads[this.squads.length - 1];
+
+    this.saveRaidPlannerTeams(this.squads);
+  }
+
+  // When the user clicks the button, open the modal 
+  openModal() {
+    // Get the modal
+    var modal = document.getElementById('myModal');
+    modal.style.display = "block";
+  }
+
+  // When the user clicks on <span> (x), close the modal
+  closeModal() {  // Get the modal
+    var modal = document.getElementById('myModal');
+    modal.style.display = "none";
+    this.loadGridDatasource();
+    this.saveRaidPlannerTeams(this.squads);
   }
 
   loadGridDatasource() {

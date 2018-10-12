@@ -180,6 +180,10 @@ DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
 
   0. You just DO WHAT THE FUCK YOU WANT TO.
 
+ng2-tooltip-directive@2.1.5
+MIT
+MIT
+
 ngx-select-dropdown@0.4.1
 MIT
 MIT License

@@ -2,7 +2,7 @@
   <fieldset>
     <legend>{{team.besitzer}} {{'WithRank' | language}} {{team.rang}}</legend>
     <fieldset *ngFor="let char of team.charaktere" class="maincharFieldset">
-      <legend>{{char.name}}</legend>
+      <legend>{{char.nameKey}}</legend>
       <div style="height:60px;">
         <img *ngIf="char.rarity>0" src="/assets/picture/star.png" class="sterne stern1">
         <img *ngIf="char.rarity<1" src="/assets/picture/nostar.png" class="sterne stern1">
@@ -19,8 +19,8 @@
         <img *ngIf="char.rarity>6" src="/assets/picture/star.png" class="sterne stern7">
         <img *ngIf="char.rarity<7" src="/assets/picture/nostar.png" class="sterne stern7">
 
-        <img class="charImage" [src]="char | fleetimagelink" [alt]="char.name">
-        <img class="gearImage" [src]="char | gearlink" [alt]="char.name">
+        <img class="charImage" [src]="char | fleetimagelink" [alt]="char.nameKey">
+        <img class="gearImage" [src]="char | gearlink" [alt]="char.nameKey">
         <span class="char-gear-level">{{char.level}}</span>
       </div>
 

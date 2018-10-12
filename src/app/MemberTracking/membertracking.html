@@ -1,0 +1,52 @@
+<div *ngIf="!gildenService.gildenInfos.roster">Lädt Memberinfos...</div>
+
+<dx-data-grid *ngIf="gildenService.gildenInfos.roster"
+              [dataSource]="gildenService.gildenInfos.roster"
+              [allowColumnReordering]="true"
+              [showBorders]="true"
+              [allowColumnResizing]="true"
+              [columnMinWidth]="50"
+              [columnAutoWidth]="true">
+
+  <dxo-filter-row [visible]="true"></dxo-filter-row>
+  <dxo-scrolling mode="infinite"></dxo-scrolling>
+  <dxo-state-storing [enabled]="true" type="localStorage" storageKey="membergridstorage"></dxo-state-storing>
+
+  <dxo-column-chooser [enabled]="true"
+                      mode="dragAndDrop">
+  </dxo-column-chooser>
+
+  <dxi-column dataField="name" caption="Member" [dataType]="string" [fixed]="true"></dxi-column>
+  <dxi-column dataField="arena.char.rank" caption="Chararena" [dataType]="number" cellTemplate="squadCharRankTemplate"></dxi-column>
+  <dxi-column dataField="arena.ship.rank" caption="Fleetarena" [dataType]="number" cellTemplate="squadShipRankTemplate"></dxi-column>
+  <dxi-column dataField="stats[0].value" caption="GP" [dataType]="number"></dxi-column>
+  <dxi-column dataField="stats[1].value" caption="Char-GP" [dataType]="number"></dxi-column>
+  <dxi-column dataField="stats[2].value" caption="Ship-GP" [dataType]="number"></dxi-column>
+  <dxi-column dataField="level" caption="Level" [dataType]="number"></dxi-column>
+  <dxi-column dataField="arena.char.squad" caption="CharSquad" [visible]="false" cellTemplate="squadTemplate"></dxi-column>
+  <dxi-column dataField="arena.ship.squad" caption="ShipSquad" [visible]="false" cellTemplate="squadTemplate"></dxi-column>
+  <dxi-column dataField="allyCode" caption="Allycode" [dataType]="number"></dxi-column>
+  <dxi-column dataField="stats[6].value" caption="PVE-Hardnodes won" [visible]="false" [dataType]="number"></dxi-column>
+  <dxi-column dataField="stats[3].value" caption="PVP-Ships won" [visible]="false" [dataType]="number"></dxi-column>
+  <dxi-column dataField="stats[9].value" caption="Gildentoken" [visible]="false" [dataType]="number"></dxi-column>
+  <dxi-column dataField="stats[4].value" caption="PVP-Arena won" [visible]="false" [dataType]="number"></dxi-column>
+  <dxi-column dataField="stats[5].value" caption="PvE-Battles won" [visible]="false" [dataType]="number"></dxi-column>
+  <dxi-column dataField="stats[7].value" caption="Galactic Battles Won" [visible]="false" [dataType]="number"></dxi-column>
+  <dxi-column dataField="stats[10].value" caption="Gildenspenden total" [visible]="false" [dataType]="number"></dxi-column>
+  <dxi-column dataField="stats[8].value" caption="Raids won" [visible]="false" [dataType]="number"></dxi-column>
+
+  <div *dxTemplate="let data of 'squadTemplate'">
+    <span *ngFor="let char of data.value">{{char.nameKey}}, </span>
+  </div>
+
+  <div *dxTemplate="let data of 'squadCharRankTemplate'">
+    <div [tooltip]="data.row.data.arena.char.squad | squadtostring" trigger="click" hide-delay="5000" hide-delay-mobile="5000" width="100%">{{data.value}}</div>
+  </div>
+
+  <div *dxTemplate="let data of 'squadShipRankTemplate'">
+
+    <div [tooltip]="data.row.data.arena.ship.squad | squadtostring" trigger="click" hide-delay="5000" hide-delay-mobile="5000" width="100%">{{data.value}}</div>
+
+  </div>
+
+</dx-data-grid>

@@ -3,7 +3,7 @@
     {{'WelcomeText' | language}}
   </h3>
 
-  <table *ngIf="gildenService.gildenInfos.members>0 && !gildenService.isInSync" style="width: 100%;">
+  <table *ngIf="gildenService.gildenInfos && gildenService.gildenInfos.members>0 && !gildenService.isInSync" style="width: 100%;">
     <tr>
       <td>{{'AllDataText' | language}} <a href="http://swgoh.help">swgoh.help</a> {{'AllPictureText' | language}} <a href="http://www.swgoh.gg">www.swgoh.gg</a></td>
     </tr>
@@ -41,7 +41,7 @@
 
   
   <h3 *ngIf="settingsService.settings.allycode==''">{{'EnterAllyCode' | language}}</h3>
-  <h3 *ngIf="gildenService.gildenInfos.members==0&&settingsService.settings.allycode!=''">{{'PleaseSync' | language}}</h3>
+  <h3 *ngIf="gildenService.gildenInfos && gildenService.gildenInfos.members==0 && settingsService.settings.allycode!=''">{{'PleaseSync' | language}}</h3>
 
 </div>
 

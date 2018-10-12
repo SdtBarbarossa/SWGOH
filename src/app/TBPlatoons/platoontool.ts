@@ -21,6 +21,14 @@ export class TBPlatoonComponent {
   public AllChars6: neededChar[] = new Array();
   public AllChars7: neededChar[] = new Array();
 
+  public AllShips1: neededChar[] = new Array();
+  public AllShips2: neededChar[] = new Array();
+  public AllShips3: neededChar[] = new Array();
+  public AllShips4: neededChar[] = new Array();
+  public AllShips5: neededChar[] = new Array();
+  public AllShips6: neededChar[] = new Array();
+  public AllShips7: neededChar[] = new Array();
+
   public DSTB1: neededChar[] = new Array();
   public DSTB2: neededChar[] = new Array();
   public DSTB3: neededChar[] = new Array();
@@ -39,6 +47,16 @@ export class TBPlatoonComponent {
       this.AllChars5.push(new neededChar(gildenService.charInfos[x].name, 10, 5, false));
       this.AllChars6.push(new neededChar(gildenService.charInfos[x].name, 10, 6, false));
       this.AllChars7.push(new neededChar(gildenService.charInfos[x].name, 10, 7, false));
+    }
+
+    for (var x = 0; x < gildenService.shipInfos.length; x++) {
+      this.AllShips1.push(new neededChar(gildenService.shipInfos[x].name, 10, 1, true));
+      this.AllShips2.push(new neededChar(gildenService.shipInfos[x].name, 10, 2, true));
+      this.AllShips3.push(new neededChar(gildenService.shipInfos[x].name, 10, 3, true));
+      this.AllShips4.push(new neededChar(gildenService.shipInfos[x].name, 10, 4, true));
+      this.AllShips5.push(new neededChar(gildenService.shipInfos[x].name, 10, 5, true));
+      this.AllShips6.push(new neededChar(gildenService.shipInfos[x].name, 10, 6, true));
+      this.AllShips7.push(new neededChar(gildenService.shipInfos[x].name, 10, 7, true));
     }
 
     this.DSTB1.push(new neededChar("TIE Fighter Pilot", 11, 2, false ));
@@ -409,6 +427,9 @@ export class TBPlatoonComponent {
         if (gildencount != null) {
           this.ActualPhase[i].gildenbesitz = gildencount.length;
           this.ActualPhase[i].differenz = (this.ActualPhase[i].benoetigt - gildencount.length);
+        }
+        else {
+          console.log("Gildencount for " + this.ActualPhase[i].name + " is null");
         }
       }
     }

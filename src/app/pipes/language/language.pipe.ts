@@ -9,7 +9,7 @@ export class LanguagePipe implements PipeTransform {
 
     var userLang = navigator.language;
     
-    if (userLang == "de-DE") {
+    if (userLang == "de-DE" || userLang == "de") {
       if (this.languageDE[value] != null)
         return this.languageDE[value];
       else
@@ -118,6 +118,8 @@ export class LanguagePipe implements PipeTransform {
     "UNITSTATCRITICALNEGATECHANCEPERCENTADDITIVE": "Krit. Ausweichen %",
     "Fleetarena": "Flottenarena",
     "Shipsearch": "Schiffssuche",
+    "Membertracking": "Mitgliedanalyse",
+    "Configuration" : "Konfiguration"
   };
 
   public languageENG: { [id: string]: string; } = {
@@ -214,6 +216,8 @@ export class LanguagePipe implements PipeTransform {
     "UNITSTATCRITICALNEGATECHANCEPERCENTADDITIVE": "Critical Avoidance %",
     "Fleetarena": "Fleetarena",
     "Shipsearch": "Shipsearch",
+    "Membertracking": "Membertracking",
+    "Configuration": "Configuration"
   };
 
 }

@@ -25,6 +25,7 @@ export class Settings {
   allycode: string = "";
   sortMemberBy: string = "OGM";
   showErrors: boolean = true;
+  loadSync: boolean = true;
   useAutoComplete: boolean = true;
   autoSyncNow: boolean = false;
 }

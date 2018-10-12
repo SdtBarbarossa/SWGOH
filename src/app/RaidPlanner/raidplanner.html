@@ -1,5 +1,9 @@
 <div *ngIf="!raidDataSource">Lädt Raidplan...</div>
 
+<div *ngIf="raidDataSource" style="width:100%;">
+  <button (click)="openModal()" style="display: inline-block; position: relative; padding: 7px 5px; width: 100%;">{{'Configuration'| language}}</button>
+</div>
+
 <dx-data-grid *ngIf="raidDataSource"
               [dataSource]="raidDataSource"
               [allowColumnReordering]="true"
@@ -17,3 +21,43 @@
   <dxi-column *ngFor="let columnNow of columns; let i = index" dataField="{{i}}" [caption]="columnNow" [width]="i | columnwidth" [dataType]="i | columntype" [fixed]="i | columnfixed"></dxi-column>
 
 </dx-data-grid>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close" (click)="closeModal()">&times;</span>
+      <h2>{{'Configuration'| language}}</h2>
+    </div>
+    <div class="modal-body">
+
+      <div style="width:100%;">
+
+        <div style="width:68%; display: inline-block;">
+          <select style="width:100%;" [(ngModel)]="selectedSquad">
+            <option *ngFor="let squad of squads" [ngValue]="squad">{{squad.Name}}</option>
+          </select>
+        </div>
+        <div style="width: 30%; display: inline-block;">
+          <button (click)="deleteThisSquad()" style="display: inline-block; position: relative; padding: 7px 5px; width: 30%;">{{'Del'| language}}</button>
+          <button (click)="addNewSquad()" style="display: inline-block; position: relative; padding: 7px 5px; width: 30%;">{{'Add'| language}}</button>
+        </div>
+
+        <div>Squadname: <input style="width:100px" [(ngModel)]="selectedSquad.Name"/> </div>
+        <div *ngFor="let char of selectedSquad.Charaktere; let i = index">
+          Charakter :
+          <select style="width:150px" [(ngModel)]="selectedSquad.Charaktere[i]">
+            <option *ngFor="let char of gildenService.charInfos" [ngValue]="char.name">{{char.name}}</option>
+          </select>
+
+          Zetasneeded: <input type="number" style="width:30px" [(ngModel)]="selectedSquad.Zetas[i]" />
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>

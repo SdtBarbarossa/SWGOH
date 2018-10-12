@@ -22,6 +22,6 @@ export class CharImageLinkPipe implements PipeTransform {
       }
     }
 
-    return value.name;
+    return value.nameKey;
   }
 }
