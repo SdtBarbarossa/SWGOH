@@ -91,12 +91,12 @@ input[type=text] {
 .charImage {
   z-index: 0;
   position: absolute;
-  top: -78px;
-  left: -88px;
+  top: -50px;
+  left: -60px;
   border-radius: 50%;
-  transform: scale(0.21, 0.21);
-  -ms-transform: scale(0.21, 0.21);
-  -webkit-transform: scale(0.21, 0.21);
+  transform: scale(0.25, 0.25);
+  -ms-transform: scale(0.25, 0.25);
+  -webkit-transform: scale(0.25, 0.25);
 }
 
 .char-level {

@@ -36,7 +36,7 @@
           <img *ngIf="squad[0].Zetas>=2" src="/assets/picture/zeta.png" class="zeta2">
           <img *ngIf="squad[0].Zetas>=3" src="/assets/picture/zeta.png" class="zeta3">
 
-          <img class="charImage" src="/assets/picture/{{squad[0].imageUrl}}" alt="{{squad[0].nameKey}}">
+          <img class="charImage" [src]="squad[0] | charimagelink" alt="{{squad[0].nameKey}}">
           <img class="gearImage" src="/assets/GearPNG/gear-icon-g{{squad[0].gearLevel}}.png" alt="{{squad[0].nameKey}}">
           <span class="char-level">{{squad[0].Level}}</span>
           <span class="char-gear-level">{{formatGearLevel(squad[0].gearLevel)}}</span>
@@ -66,7 +66,7 @@
           <img *ngIf="squad[1].Zetas>=2" src="/assets/picture/zeta.png" class="zeta2">
           <img *ngIf="squad[1].Zetas>=3" src="/assets/picture/zeta.png" class="zeta3">
 
-          <img class="charImage" src="/assets/picture/{{squad[1].imageUrl}}" alt="{{squad[1].nameKey}}">
+          <img class="charImage" [src]="squad[1] | charimagelink" alt="{{squad[1].nameKey}}">
           <img class="gearImage" src="/assets/GearPNG/gear-icon-g{{squad[1].gearLevel}}.png" alt="{{squad[1].nameKey}}">
           <span class="char-level">{{squad[1].Level}}</span>
           <span class="char-gear-level">{{formatGearLevel(squad[1].gearLevel)}}</span>
@@ -96,7 +96,7 @@
           <img *ngIf="squad[2].Zetas>=2" src="/assets/picture/zeta.png" class="zeta2">
           <img *ngIf="squad[2].Zetas>=3" src="/assets/picture/zeta.png" class="zeta3">
 
-          <img class="charImage" src="/assets/picture/{{squad[2].imageUrl}}" alt="{{squad[2].nameKey}}">
+          <img class="charImage" [src]="squad[2] | charimagelink" alt="{{squad[2].nameKey}}">
           <img class="gearImage" src="/assets/GearPNG/gear-icon-g{{squad[2].gearLevel}}.png" alt="{{squad[2].nameKey}}">
           <span class="char-level">{{squad[2].Level}}</span>
           <span class="char-gear-level">{{formatGearLevel(squad[2].gearLevel)}}</span>
@@ -126,7 +126,7 @@
           <img *ngIf="squad[3].Zetas>=2" src="/assets/picture/zeta.png" class="zeta2">
           <img *ngIf="squad[3].Zetas>=3" src="/assets/picture/zeta.png" class="zeta3">
 
-          <img class="charImage" src="/assets/picture/{{squad[3].imageUrl}}" alt="{{squad[3].nameKey}}">
+          <img class="charImage" [src]="squad[3] | charimagelink" alt="{{squad[3].nameKey}}">
           <img class="gearImage" src="/assets/GearPNG/gear-icon-g{{squad[3].gearLevel}}.png" alt="{{squad[3].nameKey}}">
           <span class="char-level">{{squad[3].Level}}</span>
           <span class="char-gear-level">{{formatGearLevel(squad[3].gearLevel)}}</span>
@@ -156,7 +156,7 @@
           <img *ngIf="squad[4].Zetas>=2" src="/assets/picture/zeta.png" class="zeta2">
           <img *ngIf="squad[4].Zetas>=3" src="/assets/picture/zeta.png" class="zeta3">
 
-          <img class="charImage" src="/assets/picture/{{squad[4].imageUrl}}" alt="{{squad[4].nameKey}}">
+          <img class="charImage" [src]="squad[4] | charimagelink" alt="{{squad[4].nameKey}}">
           <img class="gearImage" src="/assets/GearPNG/gear-icon-g{{squad[4].gearLevel}}.png" alt="{{squad[4].nameKey}}">
           <span class="char-level">{{squad[4].Level}}</span>
           <span class="char-gear-level">{{formatGearLevel(squad[4].gearLevel)}}</span>

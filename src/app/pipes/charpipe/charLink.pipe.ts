@@ -13,15 +13,17 @@ export class CharImageLinkPipe implements PipeTransform {
   }
 
   transform(value: Charakter): string {
+    
+    return "https://api.swgoh.help/image/char/" + value.defId;
 
-    var charInfoNow = this.gildenservice.charInfos.find(info => info.base_id == value.defId);
+    //var charInfoNow = this.gildenservice.charInfos.find(info => info.base_id == value.defId);
 
-    if (charInfoNow != null) {
-      if (charInfoNow.image.indexOf('/tex.') > 0) {
-        return "/assets/picture/" + charInfoNow.image.substr(charInfoNow.image.indexOf('/tex.') + 5, (charInfoNow.image.length - charInfoNow.image.indexOf('/tex.')) - 5);
-      }
-    }
+    //if (charInfoNow != null) {
+    //  if (charInfoNow.image.indexOf('/tex.') > 0) {
+    //    return "/assets/picture/" + charInfoNow.image.substr(charInfoNow.image.indexOf('/tex.') + 5, (charInfoNow.image.length - charInfoNow.image.indexOf('/tex.')) - 5);
+    //  }
+    //}
 
-    return value.nameKey;
+    //return value.nameKey;
   }
 }

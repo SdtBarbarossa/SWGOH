@@ -4,9 +4,15 @@
     <option [ngValue]="DSTB1">DS-TB-Phase 1</option>
     <option [ngValue]="DSTB2">DS-TB-Phase 2</option>
     <option [ngValue]="DSTB3">DS-TB-Phase 3</option>
+    <option [ngValue]="DSTB4">DS-TB-Phase 4</option>
+    <option [ngValue]="DSTB5">DS-TB-Phase 5</option>
+    <option [ngValue]="DSTB6">DS-TB-Phase 6</option>
     <option [ngValue]="LSTB1">LS-TB-Phase 1</option>
     <option [ngValue]="LSTB2">LS-TB-Phase 2</option>
     <option [ngValue]="LSTB3">LS-TB-Phase 3</option>
+    <option [ngValue]="LSTB4">LS-TB-Phase 4</option>
+    <option [ngValue]="LSTB5">LS-TB-Phase 5</option>
+    <option [ngValue]="LSTB6">LS-TB-Phase 6</option>
     <option [ngValue]="AllChars1">All Chars - 1 Star</option>
     <option [ngValue]="AllChars2">All Chars - 2 Star</option>
     <option [ngValue]="AllChars3">All Chars - 3 Star</option>
@@ -37,8 +43,9 @@
 
       <td *ngIf="neededChar.benoetigt > neededChar.gildenbesitz" style="background:red">{{neededChar.gildenbesitz}}</td>
       <td *ngIf="(neededChar.benoetigt == neededChar.gildenbesitz)" style="background:orange">{{neededChar.gildenbesitz}}</td>
-      <td *ngIf="(neededChar.benoetigt < neededChar.gildenbesitz) && !(neededChar.benoetigt*2 <= neededChar.gildenbesitz)" style="background:yellow">{{neededChar.gildenbesitz}}</td>
-      <td *ngIf="neededChar.benoetigt*2 <= neededChar.gildenbesitz" style="background:green">{{neededChar.gildenbesitz}}</td>
+      <td *ngIf="(neededChar.benoetigt < neededChar.gildenbesitz) && !(neededChar.benoetigt*2 <= neededChar.gildenbesitz && neededChar.differenz < -2)" style="background:yellow">{{neededChar.gildenbesitz}}</td>
+      <td *ngIf="neededChar.benoetigt*2 <= neededChar.gildenbesitz && neededChar.differenz < -2" style="background:green">{{neededChar.gildenbesitz}}</td>
+
       <td>{{neededChar.differenz}}</td>
       <td>{{neededChar.sterne}}</td>
     </tr>

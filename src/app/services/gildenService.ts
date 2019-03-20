@@ -319,7 +319,7 @@ export class gildenService {
     this.http.post('https://api.swgoh.help/swgoh/events', payload, { headers: header2 })
       .subscribe(data2 => {
         console.log(data2);
-        this.SWGOHEvents = data2[0].events as SWGOHEvent[];
+        this.SWGOHEvents = (data2 as SWGOHEventWrapper).events as SWGOHEvent[];
         this.SWGOHEvents.sort(function (a, b) {
           return a.instanceList[0].startTime - b.instanceList[0].startTime; });
       }, Error => {
@@ -941,9 +941,9 @@ export class gildenService {
       if (member.roster[i].nameKey.toLowerCase().includes(name.toLowerCase())) {
         
         if (idName != null)
-          var mappedChar = this.mappChar(member.roster[i], member.name, idName.name);
+          var mappedChar = this.mappChar(member.roster[i], member.name, idName.name, member.roster[i].defId);
         else
-          var mappedChar = this.mappChar(member.roster[i], member.name, member.roster[i].nameKey);
+          var mappedChar = this.mappChar(member.roster[i], member.name, member.roster[i].nameKey, member.roster[i].defId);
         return mappedChar;
       }
     }
@@ -986,11 +986,12 @@ export class gildenService {
     return null;
   }
   
-  mappChar(newchar, besitzer, oldName) {
+  mappChar(newchar, besitzer, oldName, defID) {
 
     var mappedChar = new MappedCharakter();
     mappedChar.Besitzer = besitzer;
 
+    mappedChar.defId = defID;
     mappedChar.gearLevel = newchar.gear;
     mappedChar.Level = newchar.level;
     if (oldName != null) {
@@ -1041,7 +1042,7 @@ export class gildenService {
 
     for (var i = 0; i < member.roster.length; i++) {
       if (member.roster[i].defId.toLowerCase() == name.toLowerCase()) {
-        return this.mappChar(member.roster[i], member.name, idName.name);
+        return this.mappChar(member.roster[i], member.name, idName.name, member.roster[i].defId);
       }
     }
     return null;
@@ -1065,10 +1066,10 @@ export class gildenService {
     for (var i = 0; i < member.roster.length; i++) {
       if (member.roster[i].defId.toLowerCase() == name.toLowerCase()) {
         if (idName != null) {
-          return this.mappChar(member.roster[i], member.name, idName.name);
+          return this.mappChar(member.roster[i], member.name, idName.name, member.roster[i].defId);
         }
         else {
-          return this.mappChar(member.roster[i], member.name, member.roster[i].nameKey);
+          return this.mappChar(member.roster[i], member.name, member.roster[i].nameKey, member.roster[i].defId);
         }
       }
     }
@@ -1160,6 +1161,7 @@ export class MappedCharakter {
   Zetas: number;
   imageUrl: string;
   charUrl: string;
+  defId: string;
 }
 
 class Gear {
@@ -1227,6 +1229,12 @@ export class Schedule {
   displayEndTime: number;
   rewardTime: number;
   
+}
+
+export class SWGOHEventWrapper {
+  events: SWGOHEvent[];
+  id: string;
+  updated: number;
 }
 
 export class SWGOHEvent {
