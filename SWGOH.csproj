@@ -38,6 +38,7 @@
     <None Remove="src\app\services\settingsService.ts" />
     <None Remove="src\app\settings\setting.ts" />
     <None Remove="src\app\shipSearch\shipSearch.ts" />
+    <None Remove="src\app\skInternal\skinternal.ts" />
     <None Remove="src\app\TBPlatoons\platoontool.ts" />
     <None Remove="src\app\squadSearch\squadsearch.ts" />
     <None Remove="src\app\zetas\zetas.ts" />
@@ -55,6 +56,7 @@
 
   <ItemGroup>
     <TypeScriptCompile Include="src\app\pipes\SkillMemberNames.pipe.ts" />
+    <TypeScriptCompile Include="src\app\skInternal\skinternal.ts" />
     <TypeScriptCompile Include="src\app\zetas\zetas.ts" />
     <TypeScriptCompile Include="src\app\fleetTeams\fleetTeams.ts" />
     <TypeScriptCompile Include="src\app\comparer\comparer.ts" />

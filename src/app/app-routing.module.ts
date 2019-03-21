@@ -13,6 +13,7 @@ import { FleetTeamsComponent } from './fleetTeams/fleetTeams';
 import { ShipSearchComponent } from './shipSearch/shipSearch';
 import { MemberTrackingComponent } from './MemberTracking/membertracking';
 import { ZetasComponent } from './zetas/zetas';
+import { SKInternalComponent } from './skInternal/skinternal';
 
 const routes: Routes = [
   {
@@ -71,6 +72,10 @@ const routes: Routes = [
   {
     path: 'zetas',
     component: ZetasComponent
+  },
+  {
+    path: 'skinternal',
+    component: SKInternalComponent
   }, 
   {
     path: '**',

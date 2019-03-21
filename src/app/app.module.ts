@@ -26,7 +26,7 @@ import { ModStatNamePipe } from './pipes/modpipes/ModStatName.pipe';
 import { ModStatValuePipe } from './pipes/modpipes/ModStatValue.pipe';
 import { ModSlotNamePipe } from './pipes/modpipes/ModSlotName.pipe';
 import { newCharSearchComponent } from './newCharSearch/newCharSearch';
-import { DxDataGridModule, DxTextAreaModule, DxSelectBoxModule, DxTooltipModule } from 'devextreme-angular';
+import { DxDataGridModule, DxTextAreaModule, DxSelectBoxModule, DxTooltipModule, DxChartModule } from 'devextreme-angular';
 import { ColumnWidthPipe } from './pipes/columnwidth.pipe';
 import { ColumnTypePipe } from './pipes/columntype.pipe';
 import { ColumnFixedPipe } from './pipes/columnfixed.pipe';
@@ -45,6 +45,7 @@ import { SquadToStringPipe } from './pipes/squadToString.pipe';
 import { EventNamePipe } from './pipes/events/eventName.pipe';
 import { ZetasComponent } from './zetas/zetas';
 import { SkillMemberNames } from './pipes/SkillMemberNames.pipe';
+import { SKInternalComponent } from './skInternal/skinternal';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { SkillMemberNames } from './pipes/SkillMemberNames.pipe';
     ShipSearchComponent,
     MemberTrackingComponent,
     ZetasComponent,
+    SKInternalComponent,
 
     //Pipes here
 
@@ -100,7 +102,8 @@ import { SkillMemberNames } from './pipes/SkillMemberNames.pipe';
     DxTextAreaModule,
     DxSelectBoxModule,
     DxTooltipModule,
-    TooltipModule
+    TooltipModule,
+    DxChartModule
   ],
   providers: [SettingsService, gildenService, HttpClient, LZStringService ],
   bootstrap: [AppComponent]
