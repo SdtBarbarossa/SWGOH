@@ -15,7 +15,7 @@ export class SKInternalComponent {
   public dmgP4 = 100;
 
   private context: ODataContext = new ODataContext({
-    url: "http://schattenkollektiv.gear.host/",
+    url: "https://schattenkollektiv.gear.host/",
   entities: {
     internalGuildTracking: {
       key: "ID",
@@ -52,5 +52,21 @@ export class SKInternalComponent {
       series.show();
     }
   }
+
+  onSeriesClick(e) {
+    let series = e.target;
+    if (series.isVisible()) {
+      series.hide();
+    } else {
+      series.show();
+    }
+  }
+
+  customizeTooltip(arg) {
+    console.log(arg);
+        return {
+          text: arg.seriesName + ": " + arg.valueText
+        }
+    }
 
 }

@@ -1390,12 +1390,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _shipSearch_shipSearch__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./shipSearch/shipSearch */ "./src/app/shipSearch/shipSearch.ts");
 /* harmony import */ var _MemberTracking_membertracking__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./MemberTracking/membertracking */ "./src/app/MemberTracking/membertracking.ts");
 /* harmony import */ var _zetas_zetas__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./zetas/zetas */ "./src/app/zetas/zetas.ts");
+/* harmony import */ var _skInternal_skinternal__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./skInternal/skinternal */ "./src/app/skInternal/skinternal.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -1470,6 +1472,10 @@ var routes = [
         component: _zetas_zetas__WEBPACK_IMPORTED_MODULE_14__["ZetasComponent"]
     },
     {
+        path: 'skinternal',
+        component: _skInternal_skinternal__WEBPACK_IMPORTED_MODULE_15__["SKInternalComponent"]
+    },
+    {
         path: '**',
         redirectTo: 'home'
     }
@@ -1508,7 +1514,7 @@ module.exports = "ul {\r\n  list-style-type: none;\r\n  margin: 0;\r\n  padding:
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"mySidenav\" class=\"sidenav\">\r\n  <a href=\"javascript:void(0)\" class=\"closebtn\" (click)=\"closeNav()\">&times;</a>\r\n  <a routerLink=\"/home\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Home' | language}}</a>\r\n  <a routerLink=\"/newCharSearch\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Charsearch' | language}}</a>\r\n  <a routerLink=\"/shipsearch\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Shipsearch' | language}}</a>\r\n  <a routerLink=\"/squadsearch\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Squadsearch' | language}}</a>\r\n  <a routerLink=\"/platoontool\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'TB-Platoon' | language}}</a>\r\n  <a routerLink=\"/raidplanner\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Raid-Planner' | language}}</a>\r\n  <a routerLink=\"/arenateams\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'ArenaTeams' | language}}</a>\r\n  <a routerLink=\"/fleetarena\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Fleetarena' | language}}</a>\r\n  <a routerLink=\"/membertracking\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Membertracking' | language}}</a>\r\n  <a routerLink=\"/events\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Events' | language}}</a>\r\n  <a routerLink=\"/zetas\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Zetas' | language}}</a>\r\n  <a routerLink=\"/comparer\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Comparer' | language}}</a>\r\n  <a routerLink=\"/settings\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Settings' | language}}</a>\r\n</div>\r\n\r\n<!-- Use any element to open the sidenav -->\r\n<div>\r\n  <ul>\r\n    <li>\r\n      <a href=\"javascript:void(0)\" (click)=\"openNav()\">&#9776;</a>\r\n    </li>\r\n    <li style=\"float:right\"><a routerLink=\"/settings\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Settings' | language}}</a></li>\r\n  </ul>\r\n  <div style=\"height:40px;\">\r\n\r\n  </div>\r\n  <div>\r\n    <router-outlet></router-outlet>\r\n  </div>\r\n\r\n  </div>\r\n"
+module.exports = "<div id=\"mySidenav\" class=\"sidenav\">\r\n  <a href=\"javascript:void(0)\" class=\"closebtn\" (click)=\"closeNav()\">&times;</a>\r\n  <a routerLink=\"/home\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Home' | language}}</a>\r\n  <a routerLink=\"/newCharSearch\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Charsearch' | language}}</a>\r\n  <a routerLink=\"/shipsearch\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Shipsearch' | language}}</a>\r\n  <a routerLink=\"/squadsearch\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Squadsearch' | language}}</a>\r\n  <a routerLink=\"/platoontool\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'TB-Platoon' | language}}</a>\r\n  <a routerLink=\"/raidplanner\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Raid-Planner' | language}}</a>\r\n  <a routerLink=\"/arenateams\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'ArenaTeams' | language}}</a>\r\n  <a routerLink=\"/fleetarena\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Fleetarena' | language}}</a>\r\n  <a routerLink=\"/membertracking\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Membertracking' | language}}</a>\r\n  <a routerLink=\"/events\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Events' | language}}</a>\r\n  <a routerLink=\"/zetas\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Zetas' | language}}</a>\r\n  <a routerLink=\"/comparer\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Comparer' | language}}</a>\r\n  <a routerLink=\"/settings\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Settings' | language}}</a>\r\n  <a routerLink=\"/skinternal\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'SKInternal' | language}}</a>\r\n</div>\r\n\r\n<!-- Use any element to open the sidenav -->\r\n<div>\r\n  <ul>\r\n    <li>\r\n      <a href=\"javascript:void(0)\" (click)=\"openNav()\">&#9776;</a>\r\n    </li>\r\n    <li style=\"float:right\"><a routerLink=\"/settings\" routerLinkActive=\"active\" (click)=\"closeNav()\">{{'Settings' | language}}</a></li>\r\n  </ul>\r\n  <div style=\"height:40px;\">\r\n\r\n  </div>\r\n  <div>\r\n    <router-outlet></router-outlet>\r\n  </div>\r\n\r\n  </div>\r\n"
 
 /***/ }),
 
@@ -1625,12 +1631,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pipes_events_eventName_pipe__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./pipes/events/eventName.pipe */ "./src/app/pipes/events/eventName.pipe.ts");
 /* harmony import */ var _zetas_zetas__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./zetas/zetas */ "./src/app/zetas/zetas.ts");
 /* harmony import */ var _pipes_SkillMemberNames_pipe__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! ./pipes/SkillMemberNames.pipe */ "./src/app/pipes/SkillMemberNames.pipe.ts");
+/* harmony import */ var _skInternal_skinternal__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! ./skInternal/skinternal */ "./src/app/skInternal/skinternal.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -1697,6 +1705,7 @@ var AppModule = /** @class */ (function () {
                 _shipSearch_shipSearch__WEBPACK_IMPORTED_MODULE_39__["ShipSearchComponent"],
                 _MemberTracking_membertracking__WEBPACK_IMPORTED_MODULE_40__["MemberTrackingComponent"],
                 _zetas_zetas__WEBPACK_IMPORTED_MODULE_44__["ZetasComponent"],
+                _skInternal_skinternal__WEBPACK_IMPORTED_MODULE_46__["SKInternalComponent"],
                 //Pipes here
                 _pipes_charpipe_gearLink_pipe__WEBPACK_IMPORTED_MODULE_18__["gearLinkPipe"],
                 _pipes_charpipe_charName_pipe__WEBPACK_IMPORTED_MODULE_19__["CharNamePipe"],
@@ -1732,7 +1741,8 @@ var AppModule = /** @class */ (function () {
                 devextreme_angular__WEBPACK_IMPORTED_MODULE_27__["DxTextAreaModule"],
                 devextreme_angular__WEBPACK_IMPORTED_MODULE_27__["DxSelectBoxModule"],
                 devextreme_angular__WEBPACK_IMPORTED_MODULE_27__["DxTooltipModule"],
-                ng2_tooltip_directive__WEBPACK_IMPORTED_MODULE_41__["TooltipModule"]
+                ng2_tooltip_directive__WEBPACK_IMPORTED_MODULE_41__["TooltipModule"],
+                devextreme_angular__WEBPACK_IMPORTED_MODULE_27__["DxChartModule"]
             ],
             providers: [_services_settingsService__WEBPACK_IMPORTED_MODULE_9__["SettingsService"], _services_gildenService__WEBPACK_IMPORTED_MODULE_10__["gildenService"], _angular_common_http__WEBPACK_IMPORTED_MODULE_11__["HttpClient"], ng_lz_string__WEBPACK_IMPORTED_MODULE_16__["LZStringService"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
@@ -4829,6 +4839,128 @@ var ShipSearchComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [_services_settingsService__WEBPACK_IMPORTED_MODULE_2__["SettingsService"], _services_gildenService__WEBPACK_IMPORTED_MODULE_1__["gildenService"]])
     ], ShipSearchComponent);
     return ShipSearchComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/skInternal/skinternal.css":
+/*!*******************************************!*\
+  !*** ./src/app/skInternal/skinternal.css ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "input[type=text] {\r\n  width: 100%;\r\n  padding: 12px 20px;\r\n  margin: 8px 0;\r\n  box-sizing: border-box;\r\n}\r\n\r\n\r\n#raidplannerTable tr:nth-child(even) {\r\n  background-color: #f2f2f2;\r\n}\r\n\r\n\r\n#raidplannerTable tr:hover {\r\n  background-color: #ddd;\r\n}\r\n\r\n\r\n#raidplannerTable th {\r\n  padding-top: 12px;\r\n  padding-bottom: 12px;\r\n  text-align: left;\r\n  background-color: #4CAF50;\r\n  color: white;\r\n}\r\n\r\n\r\n.parentOfImages {\r\n  position: relative;\r\n  top: 0;\r\n  left: 0;\r\n  width: 55px;\r\n  height: 80px;\r\n}\r\n\r\n\r\n.charImage {\r\n  z-index: 0;\r\n  position: absolute;\r\n  top: -25px;\r\n  left: -25px;\r\n  border-radius: 50%;\r\n  transform: scale(0.4, 0.4);\r\n  -ms-transform: scale(0.4, 0.4);\r\n  -webkit-transform: scale(0.4, 0.4);\r\n}\r\n\r\n\r\n.star11 {\r\n  position: absolute;\r\n  top: 7px;\r\n  left: 6px;\r\n  transform: scale(0.6, 0.6);\r\n  -ms-transform: scale(0.6, 0.6);\r\n  -webkit-transform: scale(0.6, 0.6);\r\n  z-index: 2;\r\n}\r\n\r\n\r\n.star12 {\r\n  position: absolute;\r\n  top: 0px;\r\n  left: 13px;\r\n  transform: scale(0.6, 0.6);\r\n  -ms-transform: scale(0.6, 0.6);\r\n  -webkit-transform: scale(0.6, 0.6);\r\n  z-index: 2;\r\n}\r\n\r\n\r\n.star13 {\r\n  position: absolute;\r\n  top: -3px;\r\n  left: 21px;\r\n  transform: scale(0.6, 0.6);\r\n  -ms-transform: scale(0.6, 0.6);\r\n  -webkit-transform: scale(0.6, 0.6);\r\n  z-index: 2;\r\n}\r\n\r\n\r\n.star14 {\r\n  position: absolute;\r\n  top: -5px;\r\n  left: 30px;\r\n  transform: scale(0.6, 0.6);\r\n  -ms-transform: scale(0.6, 0.6);\r\n  -webkit-transform: scale(0.6, 0.6);\r\n  z-index: 2;\r\n}\r\n\r\n\r\n.star15 {\r\n  position: absolute;\r\n  top: -3px;\r\n  left: 39px;\r\n  transform: scale(0.6, 0.6);\r\n  -ms-transform: scale(0.6, 0.6);\r\n  -webkit-transform: scale(0.6, 0.6);\r\n  z-index: 2;\r\n}\r\n\r\n\r\n.star16 {\r\n  position: absolute;\r\n  top: 0px;\r\n  left: 48px;\r\n  transform: scale(0.6, 0.6);\r\n  -ms-transform: scale(0.6, 0.6);\r\n  -webkit-transform: scale(0.6, 0.6);\r\n  z-index: 2;\r\n}\r\n\r\n\r\n.star17 {\r\n  position: absolute;\r\n  top: 7px;\r\n  left: 55px;\r\n  transform: scale(0.6, 0.6);\r\n  -ms-transform: scale(0.6, 0.6);\r\n  -webkit-transform: scale(0.6, 0.6);\r\n  z-index: 2;\r\n}\r\n\r\n\r\n.gearImage {\r\n  position: absolute;\r\n  top: -0px;\r\n  left: -0px;\r\n  z-index: 0;\r\n  transform: scale(0.7, 0.7);\r\n  -ms-transform: scale(0.7, 0.7);\r\n  -webkit-transform: scale(0.7, 0.7);\r\n}\r\n\r\n\r\n.char-level {\r\n  color: #fff;\r\n  background-color: #264257;\r\n  border: 2px solid #fff;\r\n  text-align: center;\r\n  border-radius: 100%/130% 130% 15px 15px;\r\n  position: absolute;\r\n  top: 45px;\r\n  left: 40px;\r\n  z-index: 2;\r\n  width: 15px;\r\n  padding: 0 5px;\r\n  font-size: x-small;\r\n}\r\n\r\n\r\n.char-gear-level {\r\n  color: #fff;\r\n  background-color: #006600;\r\n  border: 2px solid #fff;\r\n  text-align: center;\r\n  border-radius: 100%/130% 130% 15px 15px;\r\n  position: absolute;\r\n  left: 25px;\r\n  top: 55px;\r\n  z-index: 3;\r\n  width: 15px;\r\n  padding: 0 5px;\r\n  font-size: x-small;\r\n}\r\n\r\n\r\n.divForChar {\r\n  width: 58px;\r\n  height: 90px;\r\n  display: inline-block;\r\n  left: -20px;\r\n  position: relative;\r\n}\r\n\r\n\r\n.progress1 {\r\n  background-color: #bcd6ff;\r\n  border: 0;\r\n  position: absolute;\r\n  top: 72px;\r\n  left: 13px;\r\n  height: 18px;\r\n  width: 55px;\r\n}\r\n\r\n\r\n.progressText {\r\n  position: absolute;\r\n  top: 72px;\r\n  left: 23px;\r\n}\r\n\r\n\r\nselect {\r\n  padding: 10px 10px;\r\n  border: none;\r\n  border-radius: 4px;\r\n  background-color: #f1f1f1;\r\n}\r\n\r\n\r\nbutton {\r\n  background-color: #2196F3;\r\n  border: none;\r\n  color: white;\r\n  padding: 16px 32px;\r\n  text-decoration: none;\r\n  /*margin: 4px 2px;*/\r\n  cursor: pointer;\r\n}\r\n\r\n\r\n/* The Modal (background) */\r\n\r\n\r\n.modal {\r\n  display: none; /* Hidden by default */\r\n  position: fixed; /* Stay in place */\r\n  z-index: 11; /* Sit on top */\r\n  padding-top: 50px; /* Location of the box */\r\n  left: 0;\r\n  top: 0;\r\n  width: 100%; /* Full width */\r\n  height: 100%; /* Full height */\r\n  overflow: auto; /* Enable scroll if needed */\r\n  background-color: rgb(0,0,0); /* Fallback color */\r\n  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */\r\n}\r\n\r\n\r\n/* Modal Content */\r\n\r\n\r\n.modal-content {\r\n  position: relative;\r\n  background-color: #fefefe;\r\n  margin: auto;\r\n  padding: 0;\r\n  border: 1px solid #888;\r\n  width: 95%;\r\n  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);\r\n  -webkit-animation-name: animatetop;\r\n  -webkit-animation-duration: 0.4s;\r\n  animation-name: animatetop;\r\n  animation-duration: 0.4s\r\n}\r\n\r\n\r\n/* Add Animation */\r\n\r\n\r\n@-webkit-keyframes animatetop {\r\n  from {\r\n    top: -300px;\r\n    opacity: 0\r\n  }\r\n\r\n  to {\r\n    top: 0;\r\n    opacity: 1\r\n  }\r\n}\r\n\r\n\r\n@keyframes animatetop {\r\n  from {\r\n    top: -300px;\r\n    opacity: 0\r\n  }\r\n\r\n  to {\r\n    top: 0;\r\n    opacity: 1\r\n  }\r\n}\r\n\r\n\r\n/* The Close Button */\r\n\r\n\r\n.close {\r\n  color: white;\r\n  float: right;\r\n  font-size: 28px;\r\n  font-weight: bold;\r\n}\r\n\r\n\r\n.close:hover,\r\n  .close:focus {\r\n    color: #000;\r\n    text-decoration: none;\r\n    cursor: pointer;\r\n  }\r\n\r\n\r\n.modal-header {\r\n  padding: 2px 16px;\r\n  background-color: #2196F3;\r\n  color: white;\r\n}\r\n\r\n\r\n.modal-body {\r\n  padding: 2px 16px;\r\n}\r\n\r\n\r\nprogress {\r\n  background-color: #f3f3f3;\r\n  border: 0;\r\n  top: 80px;\r\n  position: absolute;\r\n  height: 18px;\r\n  border-radius: 9px;\r\n}\r\n\r\n\r\n.selectedImg {\r\n  position: absolute;\r\n  top: -304px;\r\n  left: -350px;\r\n  transform: scale(0.1, 0.1);\r\n  -ms-transform: scale(0.1, 0.1);\r\n  -webkit-transform: scale(0.1, 0.1);\r\n  z-index: 3;\r\n}\r\n\r\n\r\n.zeta1 {\r\n  position: absolute;\r\n  top: 15px;\r\n  left: 65px;\r\n  transform: scale(0.6, 0.6);\r\n  -ms-transform: scale(0.6, 0.6);\r\n  -webkit-transform: scale(0.6, 0.6);\r\n  z-index: 3;\r\n}\r\n\r\n\r\n.zeta2 {\r\n  position: absolute;\r\n  top: 35px;\r\n  left: 65px;\r\n  transform: scale(0.6, 0.6);\r\n  -ms-transform: scale(0.6, 0.6);\r\n  -webkit-transform: scale(0.6, 0.6);\r\n  z-index: 3;\r\n}\r\n\r\n\r\n.zeta3 {\r\n  position: absolute;\r\n  top: 55px;\r\n  left: 65px;\r\n  transform: scale(0.6, 0.6);\r\n  -ms-transform: scale(0.6, 0.6);\r\n  -webkit-transform: scale(0.6, 0.6);\r\n  z-index: 3;\r\n}\r\n\r\n"
+
+/***/ }),
+
+/***/ "./src/app/skInternal/skinternal.html":
+/*!********************************************!*\
+  !*** ./src/app/skInternal/skinternal.html ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\r\n<dx-chart [dataSource]=\"dataSource\"\r\n          (onLegendClick)=\"onLegendClick($event)\">\r\n  <dxo-common-series-settings argumentField=\"timestamp\"\r\n                              [valueField]=\"selectBox.value || currentfield\"\r\n                              type=\"spline\">\r\n  </dxo-common-series-settings>\r\n  <dxo-series-template nameField=\"name\"></dxo-series-template>\r\n  <dxo-tooltip [enabled]=\"true\"\r\n               [customizeTooltip]=\"customizeTooltip\">\r\n  </dxo-tooltip>\r\n</dx-chart>\r\n\r\n  <dx-select-box #selectBox [items]=\"fieldNames\"\r\n                 [value]=\"currentfield\"></dx-select-box>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/skInternal/skinternal.ts":
+/*!******************************************!*\
+  !*** ./src/app/skInternal/skinternal.ts ***!
+  \******************************************/
+/*! exports provided: SKInternalComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SKInternalComponent", function() { return SKInternalComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var _services_gildenService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/gildenService */ "./src/app/services/gildenService.ts");
+/* harmony import */ var _services_settingsService__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/settingsService */ "./src/app/services/settingsService.ts");
+/* harmony import */ var devextreme_data_odata_context__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! devextreme/data/odata/context */ "./node_modules/devextreme/data/odata/context.js");
+/* harmony import */ var devextreme_data_odata_context__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(devextreme_data_odata_context__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var devextreme_data_data_source__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! devextreme/data/data_source */ "./node_modules/devextreme/data/data_source.js");
+/* harmony import */ var devextreme_data_data_source__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(devextreme_data_data_source__WEBPACK_IMPORTED_MODULE_4__);
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var SKInternalComponent = /** @class */ (function () {
+    function SKInternalComponent(settingsService, gildenService) {
+        this.settingsService = settingsService;
+        this.gildenService = gildenService;
+        this.dmgP4 = 100;
+        this.context = new devextreme_data_odata_context__WEBPACK_IMPORTED_MODULE_3___default.a({
+            url: "https://schattenkollektiv.gear.host/",
+            entities: {
+                internalGuildTracking: {
+                    key: "ID",
+                    keyType: "int"
+                }
+            },
+            version: 4
+        });
+        this.currentfield = "arenarank";
+        this.fieldNames = [
+            "arenarank",
+            "fleetrank",
+            "overallGM",
+            "charGM",
+            "fleetGM",
+            "spenden"
+        ];
+        //http://schattenkollektiv.gear.host/internalGuildTracking?
+        this.dataSource = new devextreme_data_data_source__WEBPACK_IMPORTED_MODULE_4___default.a({
+            store: this.context['internalGuildTracking'],
+            pageSize: 10000
+        });
+    }
+    SKInternalComponent.prototype.onLegendClick = function (e) {
+        var series = e.target;
+        if (series.isVisible()) {
+            series.hide();
+        }
+        else {
+            series.show();
+        }
+    };
+    SKInternalComponent.prototype.onSeriesClick = function (e) {
+        var series = e.target;
+        if (series.isVisible()) {
+            series.hide();
+        }
+        else {
+            series.show();
+        }
+    };
+    SKInternalComponent.prototype.customizeTooltip = function (arg) {
+        console.log(arg);
+        return {
+            text: arg.seriesName + ": " + arg.valueText
+        };
+    };
+    SKInternalComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'skinternal',
+            template: __webpack_require__(/*! ./skinternal.html */ "./src/app/skInternal/skinternal.html"),
+            styles: [__webpack_require__(/*! ./skinternal.css */ "./src/app/skInternal/skinternal.css")]
+        }),
+        __metadata("design:paramtypes", [_services_settingsService__WEBPACK_IMPORTED_MODULE_2__["SettingsService"], _services_gildenService__WEBPACK_IMPORTED_MODULE_1__["gildenService"]])
+    ], SKInternalComponent);
+    return SKInternalComponent;
 }());
 
 

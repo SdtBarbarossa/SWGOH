@@ -1,12 +1,15 @@
 
-  <dx-chart [dataSource]="dataSource"
-            (onLegendClick)="onLegendClick($event)">
-    <dxo-common-series-settings argumentField="timestamp"
-                                [valueField]="selectBox.value || currentfield"
-                                type="spline">
-    </dxo-common-series-settings>
-    <dxo-series-template nameField="name"></dxo-series-template>
-  </dx-chart>
+<dx-chart [dataSource]="dataSource"
+          (onLegendClick)="onLegendClick($event)">
+  <dxo-common-series-settings argumentField="timestamp"
+                              [valueField]="selectBox.value || currentfield"
+                              type="spline">
+  </dxo-common-series-settings>
+  <dxo-series-template nameField="name"></dxo-series-template>
+  <dxo-tooltip [enabled]="true"
+               [customizeTooltip]="customizeTooltip">
+  </dxo-tooltip>
+</dx-chart>
 
   <dx-select-box #selectBox [items]="fieldNames"
                  [value]="currentfield"></dx-select-box>
