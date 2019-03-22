@@ -14,6 +14,7 @@ import { ShipSearchComponent } from './shipSearch/shipSearch';
 import { MemberTrackingComponent } from './MemberTracking/membertracking';
 import { ZetasComponent } from './zetas/zetas';
 import { SKInternalComponent } from './skInternal/skinternal';
+import { GuildchartsComponent } from './guildcharts/guildcharts';
 
 const routes: Routes = [
   {
@@ -76,6 +77,10 @@ const routes: Routes = [
   {
     path: 'skinternal',
     component: SKInternalComponent
+  },
+  {
+    path: 'guildcharts',
+    component: GuildchartsComponent
   }, 
   {
     path: '**',

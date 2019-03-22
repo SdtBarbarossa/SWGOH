@@ -87,7 +87,7 @@ export class ZetasComponent {
 
 
 
-class ZetaReportHelper {
+export class ZetaReportHelper {
   CharName: string;
   anzahl: number;
   skillName: string;

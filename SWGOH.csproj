@@ -11,6 +11,7 @@
     <None Remove="src\app\comparer\comparer.ts" />
     <None Remove="src\app\events\events.ts" />
     <None Remove="src\app\fleetTeams\fleetTeams.ts" />
+    <None Remove="src\app\guildcharts\guildcharts.ts" />
     <None Remove="src\app\home\home.ts" />
     <None Remove="src\app\MemberTracking\membertracking.ts" />
     <None Remove="src\app\newCharSearch\newCharSearch.ts" />
@@ -56,6 +57,7 @@
 
   <ItemGroup>
     <TypeScriptCompile Include="src\app\pipes\SkillMemberNames.pipe.ts" />
+    <TypeScriptCompile Include="src\app\guildcharts\guildcharts.ts" />
     <TypeScriptCompile Include="src\app\skInternal\skinternal.ts" />
     <TypeScriptCompile Include="src\app\zetas\zetas.ts" />
     <TypeScriptCompile Include="src\app\fleetTeams\fleetTeams.ts" />

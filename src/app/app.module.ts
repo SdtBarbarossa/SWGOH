@@ -26,7 +26,7 @@ import { ModStatNamePipe } from './pipes/modpipes/ModStatName.pipe';
 import { ModStatValuePipe } from './pipes/modpipes/ModStatValue.pipe';
 import { ModSlotNamePipe } from './pipes/modpipes/ModSlotName.pipe';
 import { newCharSearchComponent } from './newCharSearch/newCharSearch';
-import { DxDataGridModule, DxTextAreaModule, DxSelectBoxModule, DxTooltipModule, DxChartModule } from 'devextreme-angular';
+import { DxDataGridModule, DxTextAreaModule, DxSelectBoxModule, DxTooltipModule, DxChartModule, DxPieChartModule, DxNumberBoxModule  } from 'devextreme-angular';
 import { ColumnWidthPipe } from './pipes/columnwidth.pipe';
 import { ColumnTypePipe } from './pipes/columntype.pipe';
 import { ColumnFixedPipe } from './pipes/columnfixed.pipe';
@@ -46,6 +46,7 @@ import { EventNamePipe } from './pipes/events/eventName.pipe';
 import { ZetasComponent } from './zetas/zetas';
 import { SkillMemberNames } from './pipes/SkillMemberNames.pipe';
 import { SKInternalComponent } from './skInternal/skinternal';
+import { GuildchartsComponent } from './guildcharts/guildcharts';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { SKInternalComponent } from './skInternal/skinternal';
     MemberTrackingComponent,
     ZetasComponent,
     SKInternalComponent,
+    GuildchartsComponent,
 
     //Pipes here
 
@@ -103,7 +105,9 @@ import { SKInternalComponent } from './skInternal/skinternal';
     DxSelectBoxModule,
     DxTooltipModule,
     TooltipModule,
-    DxChartModule
+    DxChartModule,
+    DxPieChartModule,
+    DxNumberBoxModule 
   ],
   providers: [SettingsService, gildenService, HttpClient, LZStringService ],
   bootstrap: [AppComponent]

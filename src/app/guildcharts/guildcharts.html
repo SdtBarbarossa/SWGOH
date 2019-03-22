@@ -1,0 +1,58 @@
+<dx-select-box #selectBox [items]="possiblestats"
+               value="Arenaleaders"></dx-select-box>
+
+<dx-pie-chart *ngIf="selectBox.value == 'Arenaleaders'" [dataSource]="arenaLeaderDataSource"
+              type="doughnut"
+              title="Arenaleaders">
+
+  <dxi-series argumentField="Leader" valueField="Value">
+    <dxo-label [visible]="true">
+      <dxo-connector [visible]="true"></dxo-connector>
+    </dxo-label>
+  </dxi-series>
+
+  <dxo-tooltip [enabled]="true"
+               [customizeTooltip]="customizeLeaderTooltip">
+  </dxo-tooltip>
+</dx-pie-chart>
+
+<dx-pie-chart *ngIf="selectBox.value == 'Fleetleaders'" [dataSource]="fleetLeaderDataSource"
+              type="doughnut"
+              title="Fleetleaders">
+
+  <dxi-series argumentField="Leader" valueField="Value">
+    <dxo-label [visible]="true">
+      <dxo-connector [visible]="true"></dxo-connector>
+    </dxo-label>
+  </dxi-series>
+
+  <dxo-tooltip [enabled]="true"
+               [customizeTooltip]="customizeLeaderTooltip">
+  </dxo-tooltip>
+</dx-pie-chart>
+
+<!--Zetas-->
+<div *ngIf="selectBox.value == 'Zetas'">
+
+  <dx-chart [dataSource]="allZetas"
+            title="Zetareport">
+
+    <dxi-series argumentField="skillName"
+                valueField="anzahl"
+                type="bar">
+    </dxi-series>
+
+
+    <dxo-tooltip [enabled]="true"
+                 [customizeTooltip]="customizeLeaderTooltip">
+    </dxo-tooltip>
+  </dx-chart>
+
+  Minval: <dx-number-box [value]="20"
+               [min]="1"
+               [max]="1000"
+               placeholder="Top"
+               (onValueChanged)="topZetasChanged($event)">
+        </dx-number-box>
+
+</div>

@@ -62,6 +62,11 @@ export class SKInternalComponent {
     }
   }
 
+  maxValChanged(e, fieldname, skinternalChart) {
+    this.dataSource.filter([fieldname, "<=", e.value]);
+    this.dataSource.load();
+  }
+
   customizeTooltip(arg) {
     console.log(arg);
         return {

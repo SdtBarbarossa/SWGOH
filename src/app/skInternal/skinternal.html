@@ -1,5 +1,5 @@
 
-<dx-chart [dataSource]="dataSource"
+<dx-chart #skinternalChart [dataSource]="dataSource"
           (onLegendClick)="onLegendClick($event)">
   <dxo-common-series-settings argumentField="timestamp"
                               [valueField]="selectBox.value || currentfield"
@@ -13,3 +13,13 @@
 
   <dx-select-box #selectBox [items]="fieldNames"
                  [value]="currentfield"></dx-select-box>
+
+  <div *ngIf="selectBox.value == 'arenarank' || selectBox.value == 'fleetrank'">
+    Maxval: <dx-number-box [value]="50"
+                           [min]="1"
+                           [max]="1000000"
+                           placeholder="Top"
+                           (onValueChanged)="maxValChanged($event, selectBox.value, skinternalChart)">
+    </dx-number-box>
+
+  </div>
