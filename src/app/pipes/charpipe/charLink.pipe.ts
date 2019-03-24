@@ -14,7 +14,7 @@ export class CharImageLinkPipe implements PipeTransform {
 
   transform(value: Charakter): string {
     
-    return "https://api.swgoh.help/image/char/" + value.defId;
+    return "https://echobase.app/images/collectibles/" + value.defId + "/open.png";
 
     //var charInfoNow = this.gildenservice.charInfos.find(info => info.base_id == value.defId);
 

@@ -12,14 +12,15 @@
 </dx-chart>
 
   <dx-select-box #selectBox [items]="fieldNames"
-                 [value]="currentfield"></dx-select-box>
+                 [value]="currentfield"
+                 (onValueChanged)="resetFilters()"></dx-select-box>
 
   <div *ngIf="selectBox.value == 'arenarank' || selectBox.value == 'fleetrank'">
-    Maxval: <dx-number-box [value]="50"
+    Maxval: <dx-number-box #numberbox [value]="10000"
                            [min]="1"
                            [max]="1000000"
                            placeholder="Top"
-                           (onValueChanged)="maxValChanged($event, selectBox.value, skinternalChart)">
+                           (onEnterKey)="maxValChanged(numberbox, selectBox.value, skinternalChart)">
     </dx-number-box>
 
   </div>

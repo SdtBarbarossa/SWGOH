@@ -53,6 +53,16 @@ export class SKInternalComponent {
     }
   }
 
+  resetFilters() {
+    console.log("resetFilters");
+    var filter = this.dataSource.filter();
+
+    if (filter != null) {
+      this.dataSource.filter(null);
+      this.dataSource.load();
+    }
+  }
+
   onSeriesClick(e) {
     let series = e.target;
     if (series.isVisible()) {

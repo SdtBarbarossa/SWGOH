@@ -14,7 +14,7 @@ export class FleetImageLinkPipe implements PipeTransform {
 
   transform(value: Charakter): string {
 
-    return "https://api.swgoh.help/image/ship/" + value.defId;
+    return "https://echobase.app/images/collectibles/" + value.defId + "/open.png";
 
     //var shipInfoNow = this.gildenservice.shipInfos.find(info => info.base_id == value.defId);
 

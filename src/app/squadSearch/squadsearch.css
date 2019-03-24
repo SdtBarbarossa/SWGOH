@@ -14,14 +14,14 @@ input[type=text] {
 }
 
 .charImage {
-  z-index: -1;
+  z-index: 0;
   position: absolute;
-  top: -60px;
-  left: -60px;
+  top: -25px;
+  left: -25px;
   border-radius: 50%;
-  transform: scale(0.25, 0.25);
-  -ms-transform: scale(0.25, 0.25);
-  -webkit-transform: scale(0.25, 0.25);
+  transform: scale(0.4, 0.4);
+  -ms-transform: scale(0.4, 0.4);
+  -webkit-transform: scale(0.4, 0.4);
 }
 
 .star11 {

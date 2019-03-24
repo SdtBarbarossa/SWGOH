@@ -36,23 +36,23 @@
 
   <dx-chart [dataSource]="allZetas"
             title="Zetareport">
-
-    <dxi-series argumentField="skillName"
+    <dxo-common-series-settings argumentField="skillName"
                 valueField="anzahl"
                 type="bar">
-    </dxi-series>
+    </dxo-common-series-settings>
 
+    <dxo-series-template nameField="skillName"></dxo-series-template>
 
     <dxo-tooltip [enabled]="true"
                  [customizeTooltip]="customizeLeaderTooltip">
     </dxo-tooltip>
   </dx-chart>
 
-  Minval: <dx-number-box [value]="20"
+  Minval: <dx-number-box #numberbox [value]="1"
                [min]="1"
                [max]="1000"
                placeholder="Top"
-               (onValueChanged)="topZetasChanged($event)">
+               (onEnterKey)="topZetasChanged(numberbox)">
         </dx-number-box>
 
 </div>
