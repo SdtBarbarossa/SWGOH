@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { gildenService } from '../services/gildenService';
 import { SettingsService, Settings } from '../services/settingsService';
-import { forEach } from '@angular/router/src/utils/collection';
+
 import ODataContext from "devextreme/data/odata/context";
 import DataSource from "devextreme/data/data_source";
 
@@ -38,9 +38,12 @@ export class SKInternalComponent {
 
   constructor(public settingsService: SettingsService, public gildenService: gildenService) {
     //http://schattenkollektiv.gear.host/internalGuildTracking?
+    let lastweek = (d => new Date(d.setDate(d.getDate() - 8)))(new Date);
+
     this.dataSource = new DataSource({
       store: this.context['internalGuildTracking'],
-      pageSize: 10000
+      pageSize: 10000,
+      filter: ["timestamp", ">=", lastweek]
     });
   }
 
@@ -58,7 +61,8 @@ export class SKInternalComponent {
     var filter = this.dataSource.filter();
 
     if (filter != null) {
-      this.dataSource.filter(null);
+      let lastweek = (d => new Date(d.setDate(d.getDate() - 8)))(new Date);
+      this.dataSource.filter(["timestamp", ">=", lastweek]);
       this.dataSource.load();
     }
   }
@@ -73,7 +77,8 @@ export class SKInternalComponent {
   }
 
   maxValChanged(e, fieldname, skinternalChart) {
-    this.dataSource.filter([fieldname, "<=", e.value]);
+    let lastweek = (d => new Date(d.setDate(d.getDate() - 8)))(new Date);
+    this.dataSource.filter([[fieldname, "<=", e.value], ["timestamp", ">=", lastweek] ]);
     this.dataSource.load();
   }
 

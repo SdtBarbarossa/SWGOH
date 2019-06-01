@@ -81,28 +81,11 @@ export class SquadSearchComponent {
     var teamNow = new squad();
     teamNow.Name = this.squadName;
 
-    if (this.settingsService.settings.useAutoComplete)
-    {
-      console.log(this.selectedLeader[0]);
-      if (this.selectedLeader != null)
-        teamNow.Charaktere.push(this.selectedLeader[0].name);
-      if (this.selectedChar2 != null)
-        teamNow.Charaktere.push(this.selectedChar2[0].name);
-      if (this.selectedChar3 != null)
-        teamNow.Charaktere.push(this.selectedChar3[0].name);
-      if (this.selectedChar4 != null)
-        teamNow.Charaktere.push(this.selectedChar4[0].name);
-      if (this.selectedChar5 != null)
-        teamNow.Charaktere.push(this.selectedChar5[0].name);
-    }
-    else
-    {
       teamNow.Charaktere.push(this.selectedLeader);
       teamNow.Charaktere.push(this.selectedChar2);
       teamNow.Charaktere.push(this.selectedChar3);
       teamNow.Charaktere.push(this.selectedChar4);
       teamNow.Charaktere.push(this.selectedChar5);
-    }
 
     console.log(teamNow);
 

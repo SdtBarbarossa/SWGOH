@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { gildenService } from '../services/gildenService';
 import { SettingsService, Settings } from '../services/settingsService';
-import { forEach } from '@angular/router/src/utils/collection';
+
 import ODataContext from "devextreme/data/odata/context";
 import DataSource from "devextreme/data/data_source";
 import { ZetaReportHelper } from '../zetas/zetas';

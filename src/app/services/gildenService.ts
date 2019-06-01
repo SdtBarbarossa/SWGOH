@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { SettingsService, Settings } from '../services/settingsService';
 import { HttpClient, HttpClientJsonpModule, HttpHeaders, HttpResponse } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
 import { LZStringService } from 'ng-lz-string';
-import { forEach } from '@angular/router/src/utils/collection';
+import { timeout, catchError } from 'rxjs/operators';
 
 @Injectable()
 export class gildenService {
@@ -372,7 +371,9 @@ export class gildenService {
         };
 
         this.http.post('https://api.swgoh.help/swgoh/player/', payload2, { headers: header2 })
-          .timeout(1000*60*10)
+          .pipe(
+            timeout(1000 * 60 * 5)
+          )
           .subscribe(data3 => {
 
             this.jsonResponseSWGOHHelpGuildRosters = data3;
@@ -457,7 +458,10 @@ export class gildenService {
           }
 
           let result = await this.http.post('https://api.swgoh.help/swgoh/player/', payload2, { headers: header2 })
-            .timeout(1000 * 60 * 5).toPromise();
+            .pipe(
+            timeout(1000 * 60 * 5)
+            )
+            .toPromise();
 
           guildRosters.push(result[0]);
 

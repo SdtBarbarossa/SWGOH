@@ -14,7 +14,6 @@ import { HttpClient, HttpClientModule, HttpClientJsonpModule  } from '@angular/c
 import { SquadSearchComponent } from './squadSearch/squadsearch';
 import { TBPlatoonComponent } from './TBPlatoons/platoontool';
 import { RaidPlannerComponent } from './RaidPlanner/raidplanner';
-import { SelectDropDownModule } from 'ngx-select-dropdown';
 import { LZStringModule, LZStringService } from 'ng-lz-string';
 import { ArenaTeamsComponent } from './arenaTeams/arenaTeams';
 import { gearLinkPipe } from './pipes/charpipe/gearLink.pipe';
@@ -98,7 +97,6 @@ import { GuildchartsComponent } from './guildcharts/guildcharts';
     ReactiveFormsModule,
     HttpClientModule,
     HttpClientJsonpModule,
-    SelectDropDownModule,
     LZStringModule,
     DxDataGridModule,
     DxTextAreaModule,

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { gildenService, ArenaTeamHelper, Charakter, CharFindHelper, GildenInfos } from '../services/gildenService';
 import { SettingsService, Settings } from '../services/settingsService';
-import { forEach } from '@angular/router/src/utils/collection';
+
 import { HttpClient, HttpClientJsonpModule, HttpHeaders, HttpResponse, HttpParams } from '@angular/common/http';
 
 @Component({

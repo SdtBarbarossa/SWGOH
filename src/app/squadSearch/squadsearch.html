@@ -186,53 +186,33 @@
       </p>
       <p style="width:100%;">
         Leader :
-        <select *ngIf="!(settingsService.settings.useAutoComplete)" [(ngModel)]="selectedLeader">
-          <option *ngFor="let char of gildenService.charInfos" [ngValue]="char.nameKey">{{char.nameKey}}</option>
+        <select [(ngModel)]="selectedLeader">
+          <option *ngFor="let char of gildenService.charInfos" [ngValue]="char.name">{{char.name}}</option>
         </select>
-
-        <ngx-select-dropdown *ngIf="(settingsService.settings.useAutoComplete)"  [config]="autoCompleteConfig" [options]="gildenService.charInfos"
-                             [(value)]="selectedLeader" [multiple]="false">
-        </ngx-select-dropdown>
       </p>
       <p style="width:100%;">
         Char 2 :
-        <select *ngIf="!(settingsService.settings.useAutoComplete)" [(ngModel)]="selectedChar2">
-          <option *ngFor="let char of gildenService.charInfos" [ngValue]="char.nameKey">{{char.nameKey}}</option>
+        <select [(ngModel)]="selectedChar2">
+          <option *ngFor="let char of gildenService.charInfos" [ngValue]="char.name">{{char.name}}</option>
         </select>
-
-        <ngx-select-dropdown *ngIf="(settingsService.settings.useAutoComplete)" [config]="autoCompleteConfig" [options]="gildenService.charInfos"
-                             [(value)]="selectedChar2" [multiple]="false">
-        </ngx-select-dropdown>
       </p>
       <p style="width:100%;">
         Char 3 :
-        <select *ngIf="!(settingsService.settings.useAutoComplete)" [(ngModel)]="selectedChar3">
-          <option *ngFor="let char of gildenService.charInfos" [ngValue]="char.nameKey">{{char.nameKey}}</option>
+        <select [(ngModel)]="selectedChar3">
+          <option *ngFor="let char of gildenService.charInfos" [ngValue]="char.name">{{char.name}}</option>
         </select>
-
-        <ngx-select-dropdown *ngIf="(settingsService.settings.useAutoComplete)" [config]="autoCompleteConfig" [options]="gildenService.charInfos"
-                             [(value)]="selectedChar3" [multiple]="false">
-        </ngx-select-dropdown>
       </p>
       <p style="width:100%;">
         Char 4 :
-        <select *ngIf="!(settingsService.settings.useAutoComplete)" [(ngModel)]="selectedChar4">
-          <option *ngFor="let char of gildenService.charInfos" [ngValue]="char.nameKey">{{char.nameKey}}</option>
+        <select [(ngModel)]="selectedChar4">
+          <option *ngFor="let char of gildenService.charInfos" [ngValue]="char.name">{{char.name}}</option>
         </select>
-
-        <ngx-select-dropdown *ngIf="(settingsService.settings.useAutoComplete)" [config]="autoCompleteConfig" [options]="gildenService.charInfos"
-                             [(value)]="selectedChar4" [multiple]="false">
-        </ngx-select-dropdown>
       </p>
       <p style="width:100%;">
         Char 5 :
-        <select *ngIf="!(settingsService.settings.useAutoComplete)" [(ngModel)]="selectedChar5">
+        <select [(ngModel)]="selectedChar5">
           <option *ngFor="let char of gildenService.charInfos" [ngValue]="char.name">{{char.name}}</option>
         </select>
-
-        <ngx-select-dropdown *ngIf="(settingsService.settings.useAutoComplete)" [config]="autoCompleteConfig" [options]="gildenService.charInfos"
-                             [(value)]="selectedChar5" [multiple]="false">
-        </ngx-select-dropdown>
       </p>
 
       <button style="width: 100%" (click)="addSquadToMyTeams()">{{'Confirm'| language}}</button>

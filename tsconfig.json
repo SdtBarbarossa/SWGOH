@@ -18,11 +18,13 @@
         "../node_modules/jszip/dist/jszip.min.js"
       ]
     },
-    "preserveWhitespaces": "off",
     "sourceMap": true,
     "target": "es2015",
     "typeRoots": [
       "node_modules/@types"
     ]
+  },
+  "angularCompilerOptions": {
+    "preserveWhitespaces": false
   }
 }
