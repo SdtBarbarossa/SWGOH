@@ -26,14 +26,24 @@
   <dxi-column dataField="arena.char.squad" caption="CharSquad" [visible]="false" cellTemplate="squadTemplate"></dxi-column>
   <dxi-column dataField="arena.ship.squad" caption="ShipSquad" [visible]="false" cellTemplate="squadTemplate"></dxi-column>
   <dxi-column dataField="allyCode" caption="Allycode" [dataType]="number"></dxi-column>
-  <dxi-column dataField="stats[6].value" caption="PVE-Hardnodes won" [visible]="false" [dataType]="number"></dxi-column>
-  <dxi-column dataField="stats[3].value" caption="PVP-Ships won" [visible]="false" [dataType]="number"></dxi-column>
-  <dxi-column dataField="stats[9].value" caption="Gildentoken" [visible]="false" [dataType]="number"></dxi-column>
-  <dxi-column dataField="stats[4].value" caption="PVP-Arena won" [visible]="false" [dataType]="number"></dxi-column>
-  <dxi-column dataField="stats[5].value" caption="PvE-Battles won" [visible]="false" [dataType]="number"></dxi-column>
-  <dxi-column dataField="stats[7].value" caption="Galactic Battles Won" [visible]="false" [dataType]="number"></dxi-column>
-  <dxi-column dataField="stats[10].value" caption="Gildenspenden total" [visible]="false" [dataType]="number"></dxi-column>
-  <dxi-column dataField="stats[8].value" caption="Raids won" [visible]="false" [dataType]="number"></dxi-column>
+  <dxi-column dataField="stats[3].value" caption="GAC-Points Total" [visible]="false" [dataType]="number"></dxi-column>
+  <dxi-column dataField="stats[4].value" caption="PVP-Ships won" [visible]="false" [dataType]="number"></dxi-column>
+  <dxi-column dataField="stats[5].value" caption="PVP-Arena won" [visible]="false" [dataType]="number"></dxi-column>
+  <dxi-column dataField="stats[6].value" caption="PvE-Battles won" [visible]="false" [dataType]="number"></dxi-column>
+  <dxi-column dataField="stats[7].value" caption="PVE-Hardnodes won" [visible]="false" [dataType]="number"></dxi-column>
+  <dxi-column dataField="stats[8].value" caption="Galactic Battles Won" [visible]="false" [dataType]="number"></dxi-column>
+  <dxi-column dataField="stats[9].value" caption="Raids won" [visible]="false" [dataType]="number"></dxi-column>
+  <dxi-column dataField="stats[10].value" caption="Gildentoken" [visible]="false" [dataType]="number"></dxi-column>
+  <dxi-column dataField="stats[11].value" caption="Guilddonations total" [visible]="false" [dataType]="number"></dxi-column>
+  <dxi-column dataField="stats[12].value" caption="GAC-Promotions" [visible]="false" [dataType]="number"></dxi-column>
+  <dxi-column dataField="stats[13].value" caption="GAC-Won-Attacks" [visible]="false" [dataType]="number"></dxi-column>
+  <dxi-column dataField="stats[14].value" caption="GAC-Won-Defenses" [visible]="false" [dataType]="number"></dxi-column>
+  <dxi-column dataField="stats[15].value" caption="GAC-Banner" [visible]="false" [dataType]="number"></dxi-column>
+  <dxi-column dataField="stats[16].value" caption="GAC-Completed-Rounds" [visible]="false" [dataType]="number"></dxi-column>
+  <dxi-column dataField="stats[17].value" caption="GAC-Won-With-Undersized-Team" [visible]="false" [dataType]="number"></dxi-column>
+  <dxi-column dataField="stats[18].value" caption="GAC-Territorys-Cleared" [visible]="false" [dataType]="number"></dxi-column>
+  <dxi-column dataField="stats[19].value" caption="Highest GAC Points" [visible]="false" [dataType]="number"></dxi-column>
+  <dxi-column dataField="stats[20].value" caption="Highest GAC Rank" [visible]="false" [dataType]="number"></dxi-column>
 
   <div *dxTemplate="let data of 'squadTemplate'">
     <span *ngFor="let char of data.value">{{char.nameKey}}, </span>
